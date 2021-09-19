@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class frmMain : Form
+    public partial class frmNewAccount : Form
     {
-        public frmMain()
+        public frmNewAccount()
         {
             InitializeComponent();
         }
+
+        
     }
 }
