@@ -73,12 +73,19 @@ namespace Team3
         private void lblForgot_Click(object sender, EventArgs e)
         {
             string strLogin = tbxLogin.Text.Trim();
-            if (tbxLogin.Text == "")
+            try
             {
-                MessageBox.Show("Login cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (tbxLogin.Text == "")
+                {
+                    MessageBox.Show("Login cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                Logon.VerifyLogon(strLogin);
             }
-            Logon.VerifyLogon(strLogin);
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
