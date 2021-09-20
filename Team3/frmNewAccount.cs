@@ -17,6 +17,10 @@ namespace Team3
             InitializeComponent();
         }
 
-        
+        private void frmNewAccount_Load(object sender, EventArgs e)
+        {
+            Image myimage = new Bitmap(@"taco.jpg");
+            this.BackgroundImage = myimage;
+        }
     }
 }

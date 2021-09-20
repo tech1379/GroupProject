@@ -56,6 +56,7 @@ namespace Team3
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(112, 23);
             this.lblEmail.Name = "lblEmail";
@@ -66,6 +67,7 @@ namespace Team3
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(79, 62);
             this.lblPassword.Name = "lblPassword";
@@ -76,6 +78,7 @@ namespace Team3
             // lblConfirm
             // 
             this.lblConfirm.AutoSize = true;
+            this.lblConfirm.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirm.Location = new System.Drawing.Point(12, 101);
             this.lblConfirm.Name = "lblConfirm";
@@ -86,6 +89,7 @@ namespace Team3
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
+            this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstName.Location = new System.Drawing.Point(69, 140);
             this.lblFirstName.Name = "lblFirstName";
@@ -96,6 +100,7 @@ namespace Team3
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastName.Location = new System.Drawing.Point(70, 179);
             this.lblLastName.Name = "lblLastName";
@@ -106,6 +111,7 @@ namespace Team3
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
+            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(90, 218);
             this.lblAddress.Name = "lblAddress";
@@ -116,6 +122,7 @@ namespace Team3
             // lblCity
             // 
             this.lblCity.AutoSize = true;
+            this.lblCity.BackColor = System.Drawing.Color.Transparent;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCity.Location = new System.Drawing.Point(126, 257);
             this.lblCity.Name = "lblCity";
@@ -126,6 +133,7 @@ namespace Team3
             // lblState
             // 
             this.lblState.AutoSize = true;
+            this.lblState.BackColor = System.Drawing.Color.Transparent;
             this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblState.Location = new System.Drawing.Point(112, 296);
             this.lblState.Name = "lblState";
@@ -136,6 +144,7 @@ namespace Team3
             // lblZip
             // 
             this.lblZip.AutoSize = true;
+            this.lblZip.BackColor = System.Drawing.Color.Transparent;
             this.lblZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblZip.Location = new System.Drawing.Point(84, 335);
             this.lblZip.Name = "lblZip";
@@ -146,6 +155,7 @@ namespace Team3
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(105, 374);
             this.label1.Name = "label1";
@@ -281,7 +291,9 @@ namespace Team3
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
             this.Name = "frmNewAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Account";
+            this.Load += new System.EventHandler(this.frmNewAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
