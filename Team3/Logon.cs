@@ -34,7 +34,6 @@ namespace Team3
                 strQueryIsCustomer = "SELECT isCustomer FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '" +
     strPassword + "';";
                 strIsCustomer = ProgOps.DatabaseCommandLogon(strQueryIsCustomer);
-                MessageBox.Show(strIsManager);
 
                 if (logon == 1)
                 {
