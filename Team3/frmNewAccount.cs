@@ -84,6 +84,13 @@ namespace Team3
                     MessageBox.Show("Passwords do not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                string strLoginQuery = "SELECT COUNT(LogOnName) FROM group3fa212330.LogOn WHERE LogOnName = '" + strLogin + "';";
+                string strLoginCount = ProgOps.DatabaseCommandLogon(strLoginQuery);
+                int intLoginCount = Convert.ToInt32(strLoginCount);
+                if (intLoginCount > 0)
+                {
+                    MessageBox.Show("Login already used.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 string strInsertLogin = "INSERT INTO group3fa212330.LogOn VALUES ('" + strLogin + "', '" + strPassword +
                     "', 0, 1);";
                 ProgOps.UpdateDatabase(strInsertLogin);
