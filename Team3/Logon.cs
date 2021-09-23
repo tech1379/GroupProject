@@ -27,6 +27,7 @@ namespace Team3
                 strQueryLogOnPass = "SELECT COUNT(*) FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
                     + strPassword + "';";
                 strResult = ProgOps.DatabaseCommandLogon(strQueryLogOnPass);
+                MessageBox.Show(strResult);
                 int logon = Int32.Parse(strResult);
                 strQueryIsManager = "SELECT isManager FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '" +
                     strPassword + "';";
@@ -121,13 +122,14 @@ namespace Team3
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var stringChars = new char[8];
             var random = new Random();
-
+           
             for (int i = 0; i < stringChars.Length; i++)
             {
                 stringChars[i] = chars[random.Next(chars.Length)];
             }
 
             var finalString = new String(stringChars);
+            
             return finalString;
         }
         public static void SendEmail(string strEmail,string strRandomPassword)
@@ -136,7 +138,7 @@ namespace Team3
             {
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
-                message.From = new MailAddress("eric.tekell@gmail.com");
+                message.From = new MailAddress("denalindiantacos@gmail.com");
                 message.To.Add(new MailAddress(strEmail));
                 message.Subject = "Password Reset";
                 message.IsBodyHtml = true; //to make message body as html  
@@ -145,7 +147,7 @@ namespace Team3
                 smtp.Host = "smtp.gmail.com"; //for gmail host  
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("eric.tekell@gmail.com", "Tech90#@!");
+                smtp.Credentials = new NetworkCredential("denaliindiantacos@gmail.com", "Tech90#@!");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
             }

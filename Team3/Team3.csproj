@@ -46,23 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmEmployees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEmployees.Designer.cs">
-      <DependentUpon>frmEmployees.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmModify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmModify.Designer.cs">
-      <DependentUpon>frmModify.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNewAccount.cs">
       <SubType>Form</SubType>
@@ -80,14 +68,9 @@
     <Compile Include="ProgOps.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmEmployees.resx">
-      <DependentUpon>frmEmployees.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Validation.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmModify.resx">
-      <DependentUpon>frmModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
