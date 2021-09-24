@@ -118,6 +118,11 @@
     <Compile Include="frmUpdateMenuItem.Designer.cs">
       <DependentUpon>frmUpdateMenuItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Validation.cs" />
     <EmbeddedResource Include="frmEmergencyContact.resx">
       <DependentUpon>frmEmergencyContact.cs</DependentUpon>
@@ -151,14 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="frmUpdateMenuItem.resx">
       <DependentUpon>frmUpdateMenuItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,28 +206,16 @@
     <None Include="Resources\YiyaaFryBread.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CallNumber.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CallNumber1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\EditMenuPic.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ClockIn.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ClockOut.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StartBreak.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\StartBreak1.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ClockOut1.PNG" />
+    <None Include="Resources\ClockOut.PNG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\denali logo.png" />

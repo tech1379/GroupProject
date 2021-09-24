@@ -41,7 +41,7 @@ namespace Team3
             // 
             // pbxLogo
             // 
-            this.pbxLogo.Image = global::Team3.Properties.Resources.denali_logo;
+            this.pbxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbxLogo.Location = new System.Drawing.Point(-16, -13);
             this.pbxLogo.Name = "pbxLogo";
             this.pbxLogo.Size = new System.Drawing.Size(676, 336);

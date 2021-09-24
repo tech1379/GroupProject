@@ -73,26 +73,6 @@ namespace Team3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CallNumber {
-            get {
-                object obj = ResourceManager.GetObject("CallNumber", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap CallNumber1 {
-            get {
-                object obj = ResourceManager.GetObject("CallNumber1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ChickenFajita {
             get {
                 object obj = ResourceManager.GetObject("ChickenFajita", resourceCulture);
@@ -116,16 +96,6 @@ namespace Team3.Properties {
         internal static System.Drawing.Bitmap ClockOut {
             get {
                 object obj = ResourceManager.GetObject("ClockOut", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ClockOut1 {
-            get {
-                object obj = ResourceManager.GetObject("ClockOut1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,16 +166,6 @@ namespace Team3.Properties {
         internal static System.Drawing.Bitmap PowderedSugarHoney {
             get {
                 object obj = ResourceManager.GetObject("PowderedSugarHoney", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StartBreak {
-            get {
-                object obj = ResourceManager.GetObject("StartBreak", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

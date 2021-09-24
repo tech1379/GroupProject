@@ -70,7 +70,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Team3.Properties.Resources.ClockOut1;
+
             this.pictureBox3.Location = new System.Drawing.Point(343, 140);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(153, 112);
@@ -80,7 +80,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Team3.Properties.Resources.StartBreak1;
+
             this.pictureBox2.Location = new System.Drawing.Point(192, 140);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(146, 112);
@@ -90,7 +90,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Team3.Properties.Resources.ClockIn;
+
             this.pictureBox1.Location = new System.Drawing.Point(41, 140);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 112);

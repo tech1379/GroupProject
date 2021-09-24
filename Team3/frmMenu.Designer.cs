@@ -73,10 +73,12 @@
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.lblPriceApplePie = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.pbxApplePie8007 = new System.Windows.Forms.PictureBox();
             this.lblFarmersMarketApple = new System.Windows.Forms.Label();
             this.lblPricePowderedSugar = new System.Windows.Forms.Label();
             this.lblPowderedSugar = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.pbxPowderedSugar8006 = new System.Windows.Forms.PictureBox();
             this.lblDesserts = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -94,8 +96,6 @@
             this.lblPriceBigChief = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEntrees = new System.Windows.Forms.Label();
-            this.pbxApplePie8007 = new System.Windows.Forms.PictureBox();
-            this.pbxPowderedSugar8006 = new System.Windows.Forms.PictureBox();
             this.pbxYiyaaEat8005 = new System.Windows.Forms.PictureBox();
             this.pbxSteakTaco8004 = new System.Windows.Forms.PictureBox();
             this.pbxIndianTaco8003 = new System.Windows.Forms.PictureBox();
@@ -629,6 +629,15 @@
             this.label23.Text = "Baked Apples, Caramel, Pecans, Whipped Cream, Cheese and Ricotta Cheese, and Powd" +
     "ered Sugar";
             // 
+            // pbxApplePie8007
+            // 
+            this.pbxApplePie8007.Location = new System.Drawing.Point(155, 486);
+            this.pbxApplePie8007.Name = "pbxApplePie8007";
+            this.pbxApplePie8007.Size = new System.Drawing.Size(118, 96);
+            this.pbxApplePie8007.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxApplePie8007.TabIndex = 148;
+            this.pbxApplePie8007.TabStop = false;
+            // 
             // lblFarmersMarketApple
             // 
             this.lblFarmersMarketApple.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -667,6 +676,15 @@
             this.label19.Size = new System.Drawing.Size(122, 151);
             this.label19.TabIndex = 144;
             this.label19.Text = "Fry Bread Drizzled with Wildflower Honey and Powdered Sugar";
+            // 
+            // pbxPowderedSugar8006
+            // 
+            this.pbxPowderedSugar8006.Location = new System.Drawing.Point(15, 486);
+            this.pbxPowderedSugar8006.Name = "pbxPowderedSugar8006";
+            this.pbxPowderedSugar8006.Size = new System.Drawing.Size(118, 96);
+            this.pbxPowderedSugar8006.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxPowderedSugar8006.TabIndex = 143;
+            this.pbxPowderedSugar8006.TabStop = false;
             // 
             // lblDesserts
             // 
@@ -838,32 +856,8 @@
             this.lblEntrees.TabIndex = 126;
             this.lblEntrees.Text = "Entrees";
             // 
-            // pbxApplePie8007
-            // 
-            this.pbxApplePie8007.ErrorImage = global::Team3.Properties.Resources.ApplePieFryBread;
-            this.pbxApplePie8007.Image = global::Team3.Properties.Resources.ApplePieFryBread;
-            this.pbxApplePie8007.Location = new System.Drawing.Point(155, 486);
-            this.pbxApplePie8007.Name = "pbxApplePie8007";
-            this.pbxApplePie8007.Size = new System.Drawing.Size(118, 96);
-            this.pbxApplePie8007.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxApplePie8007.TabIndex = 148;
-            this.pbxApplePie8007.TabStop = false;
-            // 
-            // pbxPowderedSugar8006
-            // 
-            this.pbxPowderedSugar8006.ErrorImage = global::Team3.Properties.Resources.PowderedSugarHoney;
-            this.pbxPowderedSugar8006.Image = global::Team3.Properties.Resources.PowderedSugarHoney;
-            this.pbxPowderedSugar8006.Location = new System.Drawing.Point(15, 486);
-            this.pbxPowderedSugar8006.Name = "pbxPowderedSugar8006";
-            this.pbxPowderedSugar8006.Size = new System.Drawing.Size(118, 96);
-            this.pbxPowderedSugar8006.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxPowderedSugar8006.TabIndex = 143;
-            this.pbxPowderedSugar8006.TabStop = false;
-            // 
             // pbxYiyaaEat8005
             // 
-            this.pbxYiyaaEat8005.ErrorImage = global::Team3.Properties.Resources.YiyaaFryBread;
-            this.pbxYiyaaEat8005.Image = global::Team3.Properties.Resources.YiyaaFryBread;
             this.pbxYiyaaEat8005.Location = new System.Drawing.Point(555, 81);
             this.pbxYiyaaEat8005.Name = "pbxYiyaaEat8005";
             this.pbxYiyaaEat8005.Size = new System.Drawing.Size(118, 96);
@@ -873,8 +867,6 @@
             // 
             // pbxSteakTaco8004
             // 
-            this.pbxSteakTaco8004.ErrorImage = global::Team3.Properties.Resources.SteakFryBread;
-            this.pbxSteakTaco8004.Image = global::Team3.Properties.Resources.SteakFryBread;
             this.pbxSteakTaco8004.Location = new System.Drawing.Point(420, 81);
             this.pbxSteakTaco8004.Name = "pbxSteakTaco8004";
             this.pbxSteakTaco8004.Size = new System.Drawing.Size(118, 96);
@@ -884,8 +876,6 @@
             // 
             // pbxIndianTaco8003
             // 
-            this.pbxIndianTaco8003.ErrorImage = global::Team3.Properties.Resources.IndianTaco;
-            this.pbxIndianTaco8003.Image = global::Team3.Properties.Resources.IndianTaco;
             this.pbxIndianTaco8003.Location = new System.Drawing.Point(285, 81);
             this.pbxIndianTaco8003.Name = "pbxIndianTaco8003";
             this.pbxIndianTaco8003.Size = new System.Drawing.Size(118, 96);
@@ -895,8 +885,6 @@
             // 
             // pbxChickenFajita8002
             // 
-            this.pbxChickenFajita8002.ErrorImage = global::Team3.Properties.Resources.ChickenFajita;
-            this.pbxChickenFajita8002.Image = global::Team3.Properties.Resources.ChickenFajita;
             this.pbxChickenFajita8002.Location = new System.Drawing.Point(152, 81);
             this.pbxChickenFajita8002.Name = "pbxChickenFajita8002";
             this.pbxChickenFajita8002.Size = new System.Drawing.Size(118, 96);
@@ -906,8 +894,6 @@
             // 
             // pbxBigChief8000
             // 
-            this.pbxBigChief8000.ErrorImage = global::Team3.Properties.Resources.headdress;
-            this.pbxBigChief8000.Image = global::Team3.Properties.Resources.headdress;
             this.pbxBigChief8000.Location = new System.Drawing.Point(15, 81);
             this.pbxBigChief8000.Name = "pbxBigChief8000";
             this.pbxBigChief8000.Size = new System.Drawing.Size(118, 96);
