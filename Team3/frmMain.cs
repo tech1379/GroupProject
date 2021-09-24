@@ -23,6 +23,7 @@ namespace Team3
         {
             Image myimage = new Bitmap(@"taco.jpg");
             this.BackgroundImage = myimage;
+           
         }
 
         private void lblSignUp_Click(object sender, EventArgs e)

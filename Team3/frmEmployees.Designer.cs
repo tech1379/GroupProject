@@ -69,7 +69,7 @@ namespace Team3
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.Location = new System.Drawing.Point(9, 9);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(128, 23);
+            this.lblWelcome.Size = new System.Drawing.Size(275, 23);
             this.lblWelcome.TabIndex = 2;
             this.lblWelcome.Text = "Welcome (name)!";
             // 
