@@ -16,18 +16,23 @@ namespace Team3
     {
 
         SqlConnection dbConnection;
-        string EmployeeID;
 
-        //will accept a variable that holds employees ID number
-        public frmEmployees(string ID)
+        //TEST
+        string EmployeeID = "'1002'";
+        string strLogOnID;
+       
+
+        //will accept a variable that holds LogOnID number
+        public frmEmployees(string LogOnID )
         {
             InitializeComponent();
-            EmployeeID = ID;
+             strLogOnID = LogOnID;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
+            ProgOps.CloseDatabase(dbConnection);
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -44,11 +49,43 @@ namespace Team3
 
             /* FORM HAS NOT BEEN TESTED YET (9/21/21) AND IS UP FOR CHANGE */
             dbConnection = new SqlConnection("Server = cstnt.tstc.edu; Database = inew2330fa21; User Id = group3fa212330; password = 3954755");
-            ProgOps.ConnectDatabase();
+            ProgOps.OpenDatabase(dbConnection);
 
             SqlCommand resultsCmd = null;
-            String sqlStatement = "SELECT FirstName FROM group3fa212330.Employees WHERE EmployeeID = " + EmployeeID;
+            String sqlStatement = "SELECT FirstName FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
 
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            string name = (string)resultsCmd.ExecuteScalar();
+
+
+            lblWelcome.Text = "Welcome " + name + "!";
+
+            sqlStatement = "SELECT JobTitle FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
+            
+            //new command
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+            string strPosition = (string)resultsCmd.ExecuteScalar();
+
+            lblPosition.Text = "Position: " + strPosition;
+
+            sqlStatement = "SELECT Email FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
+
+            //new command
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+            string strEmail = (string)resultsCmd.ExecuteScalar();
+
+            lblEmail.Text = "Email: " + strEmail;
+
+            sqlStatement = "SELECT Address FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
+
+            //new command
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+            string strAddress = (string)resultsCmd.ExecuteScalar();
+
+            lblAddress.Text = "Address: " + strAddress;
+
+            resultsCmd.Dispose();
 
         }
     }

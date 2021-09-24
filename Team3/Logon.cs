@@ -36,11 +36,23 @@ namespace Team3
     strPassword + "';";
                 strIsCustomer = ProgOps.DatabaseCommandLogon(strQueryIsCustomer);
 
+                //ADDED 9/23/2021
+                string strLogOnID;
+                string strSqlStatement = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
+                    + strPassword + "';";
+                strLogOnID = ProgOps.DatabaseCommandLogon(strSqlStatement);
+                
+
                 if (logon == 1)
                 {
                     if (strIsManager == "True")
                     {
                         MessageBox.Show("Managers Form", "Managers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        //Close frmMain
+                        Application.OpenForms["frmMain"].Hide();
+                      
                     }
                     else if (strIsCustomer == "True")
                     {
@@ -49,6 +61,13 @@ namespace Team3
                     else
                     {
                         MessageBox.Show("Employee Form", "Employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //EMPLOYEE FORM SUBJECT TO CHANGE 9/23/2021
+                        var frmEmployees = new frmEmployees(strLogOnID);
+                        frmEmployees.Show();
+
+                        //Close frmMain
+                        Application.OpenForms["frmMain"].Hide();
                     }
                 }
                 else

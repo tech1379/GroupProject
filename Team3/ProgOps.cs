@@ -87,5 +87,30 @@ namespace Team3
 
 
 
+        //added OPEN and CLOSE database methods for other forms (SUBJECT TO CHANGE) 9/23/21
+        public static void OpenDatabase(SqlConnection _cntDatabase)
+        {
+            //method to open db and to allow use of data
+            // open the connection to books db
+            _cntDatabase.Open();
+
+
+
+        }
+
+        public static void CloseDatabase(SqlConnection _cntDatabase)
+        {
+            //method to close data and dispose of all objects
+            //close connection
+            _cntDatabase.Close();
+
+            //dispose of connection obj cmd obj
+            _cntDatabase.Dispose();
+
+            MessageBox.Show("Connection to db was closed successfully",
+                "Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
     }
 }
