@@ -229,5 +229,8 @@
   <ItemGroup>
     <None Include="Resources\ClockOut1.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\denali logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

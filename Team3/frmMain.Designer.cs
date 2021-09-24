@@ -36,13 +36,13 @@ namespace Team3
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblNew = new System.Windows.Forms.Label();
             this.lblSignUp = new System.Windows.Forms.Label();
-            this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pbxEye = new System.Windows.Forms.PictureBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.lblForgot = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
+            this.pbxEye = new System.Windows.Forms.PictureBox();
+            this.pbxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEventRequest
@@ -121,14 +121,6 @@ namespace Team3
             this.lblSignUp.Text = "&Sign Up";
             this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
             // 
-            // pbxLogo
-            // 
-            this.pbxLogo.Location = new System.Drawing.Point(245, 22);
-            this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(123, 67);
-            this.pbxLogo.TabIndex = 1;
-            this.pbxLogo.TabStop = false;
-            // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,18 +131,6 @@ namespace Team3
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pbxEye
-            // 
-            this.pbxEye.BackColor = System.Drawing.Color.Transparent;
-            this.pbxEye.Image = global::Team3.Properties.Resources.eye;
-            this.pbxEye.Location = new System.Drawing.Point(450, 235);
-            this.pbxEye.Name = "pbxEye";
-            this.pbxEye.Size = new System.Drawing.Size(41, 26);
-            this.pbxEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxEye.TabIndex = 11;
-            this.pbxEye.TabStop = false;
-            this.pbxEye.Click += new System.EventHandler(this.pbxEye_Click);
             // 
             // tbxPassword
             // 
@@ -174,6 +154,28 @@ namespace Team3
             this.lblForgot.Text = "&Forgot Password";
             this.lblForgot.Click += new System.EventHandler(this.lblForgot_Click);
             // 
+            // pbxEye
+            // 
+            this.pbxEye.BackColor = System.Drawing.Color.Transparent;
+            this.pbxEye.Image = global::Team3.Properties.Resources.eye;
+            this.pbxEye.Location = new System.Drawing.Point(450, 235);
+            this.pbxEye.Name = "pbxEye";
+            this.pbxEye.Size = new System.Drawing.Size(41, 26);
+            this.pbxEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxEye.TabIndex = 11;
+            this.pbxEye.TabStop = false;
+            this.pbxEye.Click += new System.EventHandler(this.pbxEye_Click);
+            // 
+            // pbxLogo
+            // 
+            this.pbxLogo.Image = global::Team3.Properties.Resources.denali_logo;
+            this.pbxLogo.Location = new System.Drawing.Point(245, 9);
+            this.pbxLogo.Name = "pbxLogo";
+            this.pbxLogo.Size = new System.Drawing.Size(128, 98);
+            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLogo.TabIndex = 1;
+            this.pbxLogo.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,8 +197,8 @@ namespace Team3
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Denali Indian Tacos";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
