@@ -56,7 +56,10 @@ namespace Team3
                     }
                     else if (strIsCustomer == "True")
                     {
-                        MessageBox.Show("Customer Form", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Application.OpenForms["frmMain"].Hide();
+                        frmCustomer customer = new frmCustomer();
+                        customer.ShowDialog();
+
                     }
                     else
                     {
