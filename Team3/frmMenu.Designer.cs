@@ -134,8 +134,10 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.gbxTotals);
             this.groupBox4.Controls.Add(this.dgvViewOrder);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(740, 23);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(543, 814);
@@ -150,6 +152,7 @@
             this.gbxTotals.Controls.Add(this.button3);
             this.gbxTotals.Controls.Add(this.button4);
             this.gbxTotals.Controls.Add(this.button5);
+            this.gbxTotals.ForeColor = System.Drawing.Color.White;
             this.gbxTotals.Location = new System.Drawing.Point(29, 483);
             this.gbxTotals.Name = "gbxTotals";
             this.gbxTotals.Size = new System.Drawing.Size(497, 318);
@@ -213,6 +216,7 @@
             // label37
             // 
             this.label37.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.Black;
             this.label37.Location = new System.Drawing.Point(11, 192);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(201, 27);
@@ -223,6 +227,7 @@
             // label38
             // 
             this.label38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Black;
             this.label38.Location = new System.Drawing.Point(11, 107);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(201, 27);
@@ -233,6 +238,7 @@
             // label39
             // 
             this.label39.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.Black;
             this.label39.Location = new System.Drawing.Point(11, 28);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(201, 27);
@@ -294,6 +300,7 @@
             // 
             // gbxMenu
             // 
+            this.gbxMenu.BackColor = System.Drawing.Color.Transparent;
             this.gbxMenu.Controls.Add(this.numericUpDown16);
             this.gbxMenu.Controls.Add(this.numericUpDown15);
             this.gbxMenu.Controls.Add(this.numericUpDown5);
@@ -336,6 +343,7 @@
             this.gbxMenu.Controls.Add(this.pbxIndianTaco8003);
             this.gbxMenu.Controls.Add(this.pbxChickenFajita8002);
             this.gbxMenu.Controls.Add(this.pbxBigChief8000);
+            this.gbxMenu.ForeColor = System.Drawing.Color.White;
             this.gbxMenu.Location = new System.Drawing.Point(12, 23);
             this.gbxMenu.Name = "gbxMenu";
             this.gbxMenu.Size = new System.Drawing.Size(700, 752);
@@ -370,6 +378,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(598, 557);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 56);
@@ -388,6 +397,7 @@
             // lblDescriptionLilIndian
             // 
             this.lblDescriptionLilIndian.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescriptionLilIndian.ForeColor = System.Drawing.Color.White;
             this.lblDescriptionLilIndian.Location = new System.Drawing.Point(358, 344);
             this.lblDescriptionLilIndian.Name = "lblDescriptionLilIndian";
             this.lblDescriptionLilIndian.Size = new System.Drawing.Size(267, 27);
@@ -398,6 +408,7 @@
             // lblLilIndian
             // 
             this.lblLilIndian.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLilIndian.ForeColor = System.Drawing.Color.White;
             this.lblLilIndian.Location = new System.Drawing.Point(358, 324);
             this.lblLilIndian.Name = "lblLilIndian";
             this.lblLilIndian.Size = new System.Drawing.Size(133, 27);
@@ -456,6 +467,7 @@
             this.gbxDinks.Controls.Add(this.numericUpDown7);
             this.gbxDinks.Controls.Add(this.numericUpDown6);
             this.gbxDinks.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxDinks.ForeColor = System.Drawing.Color.White;
             this.gbxDinks.Location = new System.Drawing.Point(327, 420);
             this.gbxDinks.Name = "gbxDinks";
             this.gbxDinks.Size = new System.Drawing.Size(245, 316);
@@ -466,6 +478,7 @@
             // lblDrPepper
             // 
             this.lblDrPepper.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDrPepper.ForeColor = System.Drawing.Color.White;
             this.lblDrPepper.Location = new System.Drawing.Point(8, 263);
             this.lblDrPepper.Name = "lblDrPepper";
             this.lblDrPepper.Size = new System.Drawing.Size(162, 21);
@@ -476,6 +489,7 @@
             // lblRootBeer
             // 
             this.lblRootBeer.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRootBeer.ForeColor = System.Drawing.Color.White;
             this.lblRootBeer.Location = new System.Drawing.Point(8, 230);
             this.lblRootBeer.Name = "lblRootBeer";
             this.lblRootBeer.Size = new System.Drawing.Size(162, 21);
@@ -486,6 +500,7 @@
             // lbl7UP
             // 
             this.lbl7UP.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl7UP.ForeColor = System.Drawing.Color.White;
             this.lbl7UP.Location = new System.Drawing.Point(8, 197);
             this.lbl7UP.Name = "lbl7UP";
             this.lbl7UP.Size = new System.Drawing.Size(162, 21);
@@ -496,6 +511,7 @@
             // lblDietPepsi
             // 
             this.lblDietPepsi.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDietPepsi.ForeColor = System.Drawing.Color.White;
             this.lblDietPepsi.Location = new System.Drawing.Point(8, 164);
             this.lblDietPepsi.Name = "lblDietPepsi";
             this.lblDietPepsi.Size = new System.Drawing.Size(162, 21);
@@ -506,6 +522,7 @@
             // lblPepsi
             // 
             this.lblPepsi.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPepsi.ForeColor = System.Drawing.Color.White;
             this.lblPepsi.Location = new System.Drawing.Point(6, 131);
             this.lblPepsi.Name = "lblPepsi";
             this.lblPepsi.Size = new System.Drawing.Size(162, 21);
@@ -516,6 +533,7 @@
             // lblPowWowLemonade
             // 
             this.lblPowWowLemonade.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPowWowLemonade.ForeColor = System.Drawing.Color.White;
             this.lblPowWowLemonade.Location = new System.Drawing.Point(8, 98);
             this.lblPowWowLemonade.Name = "lblPowWowLemonade";
             this.lblPowWowLemonade.Size = new System.Drawing.Size(162, 21);
@@ -526,6 +544,7 @@
             // lblPowWowTea
             // 
             this.lblPowWowTea.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPowWowTea.ForeColor = System.Drawing.Color.White;
             this.lblPowWowTea.Location = new System.Drawing.Point(8, 65);
             this.lblPowWowTea.Name = "lblPowWowTea";
             this.lblPowWowTea.Size = new System.Drawing.Size(162, 21);
@@ -536,6 +555,7 @@
             // lblOzarkaWater
             // 
             this.lblOzarkaWater.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOzarkaWater.ForeColor = System.Drawing.Color.White;
             this.lblOzarkaWater.Location = new System.Drawing.Point(8, 32);
             this.lblOzarkaWater.Name = "lblOzarkaWater";
             this.lblOzarkaWater.Size = new System.Drawing.Size(162, 21);
@@ -622,6 +642,7 @@
             // label23
             // 
             this.label23.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(155, 585);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(122, 151);
@@ -631,6 +652,7 @@
             // 
             // pbxApplePie8007
             // 
+            this.pbxApplePie8007.Image = global::Team3.Properties.Resources.ApplePieFryBread;
             this.pbxApplePie8007.Location = new System.Drawing.Point(155, 486);
             this.pbxApplePie8007.Name = "pbxApplePie8007";
             this.pbxApplePie8007.Size = new System.Drawing.Size(118, 96);
@@ -641,6 +663,7 @@
             // lblFarmersMarketApple
             // 
             this.lblFarmersMarketApple.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmersMarketApple.ForeColor = System.Drawing.Color.White;
             this.lblFarmersMarketApple.Location = new System.Drawing.Point(155, 438);
             this.lblFarmersMarketApple.Name = "lblFarmersMarketApple";
             this.lblFarmersMarketApple.Size = new System.Drawing.Size(134, 45);
@@ -662,6 +685,7 @@
             // lblPowderedSugar
             // 
             this.lblPowderedSugar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPowderedSugar.ForeColor = System.Drawing.Color.White;
             this.lblPowderedSugar.Location = new System.Drawing.Point(15, 438);
             this.lblPowderedSugar.Name = "lblPowderedSugar";
             this.lblPowderedSugar.Size = new System.Drawing.Size(134, 45);
@@ -671,6 +695,7 @@
             // label19
             // 
             this.label19.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(11, 585);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(122, 151);
@@ -679,6 +704,7 @@
             // 
             // pbxPowderedSugar8006
             // 
+            this.pbxPowderedSugar8006.Image = global::Team3.Properties.Resources.PowderedSugarHoney;
             this.pbxPowderedSugar8006.Location = new System.Drawing.Point(15, 486);
             this.pbxPowderedSugar8006.Name = "pbxPowderedSugar8006";
             this.pbxPowderedSugar8006.Size = new System.Drawing.Size(118, 96);
@@ -689,6 +715,7 @@
             // lblDesserts
             // 
             this.lblDesserts.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesserts.ForeColor = System.Drawing.Color.White;
             this.lblDesserts.Location = new System.Drawing.Point(15, 409);
             this.lblDesserts.Name = "lblDesserts";
             this.lblDesserts.Size = new System.Drawing.Size(96, 37);
@@ -698,6 +725,7 @@
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(556, 180);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(122, 126);
@@ -707,6 +735,7 @@
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(421, 180);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(122, 126);
@@ -717,6 +746,7 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(286, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(122, 126);
@@ -726,6 +756,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(151, 180);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(122, 171);
@@ -784,6 +815,7 @@
             // lblYiyaa
             // 
             this.lblYiyaa.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYiyaa.ForeColor = System.Drawing.Color.White;
             this.lblYiyaa.Location = new System.Drawing.Point(556, 53);
             this.lblYiyaa.Name = "lblYiyaa";
             this.lblYiyaa.Size = new System.Drawing.Size(117, 25);
@@ -793,6 +825,7 @@
             // lblSteakTaco
             // 
             this.lblSteakTaco.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSteakTaco.ForeColor = System.Drawing.Color.White;
             this.lblSteakTaco.Location = new System.Drawing.Point(421, 53);
             this.lblSteakTaco.Name = "lblSteakTaco";
             this.lblSteakTaco.Size = new System.Drawing.Size(117, 25);
@@ -802,6 +835,7 @@
             // lblIndianTaco
             // 
             this.lblIndianTaco.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndianTaco.ForeColor = System.Drawing.Color.White;
             this.lblIndianTaco.Location = new System.Drawing.Point(286, 53);
             this.lblIndianTaco.Name = "lblIndianTaco";
             this.lblIndianTaco.Size = new System.Drawing.Size(117, 25);
@@ -811,6 +845,7 @@
             // lblChickenFajita
             // 
             this.lblChickenFajita.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChickenFajita.ForeColor = System.Drawing.Color.White;
             this.lblChickenFajita.Location = new System.Drawing.Point(151, 53);
             this.lblChickenFajita.Name = "lblChickenFajita";
             this.lblChickenFajita.Size = new System.Drawing.Size(117, 25);
@@ -820,6 +855,7 @@
             // lblBigChief
             // 
             this.lblBigChief.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBigChief.ForeColor = System.Drawing.Color.White;
             this.lblBigChief.Location = new System.Drawing.Point(16, 53);
             this.lblBigChief.Name = "lblBigChief";
             this.lblBigChief.Size = new System.Drawing.Size(117, 25);
@@ -841,6 +877,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(16, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 171);
@@ -850,6 +887,7 @@
             // lblEntrees
             // 
             this.lblEntrees.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntrees.ForeColor = System.Drawing.Color.White;
             this.lblEntrees.Location = new System.Drawing.Point(15, 16);
             this.lblEntrees.Name = "lblEntrees";
             this.lblEntrees.Size = new System.Drawing.Size(87, 37);
@@ -858,6 +896,7 @@
             // 
             // pbxYiyaaEat8005
             // 
+            this.pbxYiyaaEat8005.Image = global::Team3.Properties.Resources.YiyaaFryBread;
             this.pbxYiyaaEat8005.Location = new System.Drawing.Point(555, 81);
             this.pbxYiyaaEat8005.Name = "pbxYiyaaEat8005";
             this.pbxYiyaaEat8005.Size = new System.Drawing.Size(118, 96);
@@ -867,6 +906,7 @@
             // 
             // pbxSteakTaco8004
             // 
+            this.pbxSteakTaco8004.Image = global::Team3.Properties.Resources.SteakFryBread;
             this.pbxSteakTaco8004.Location = new System.Drawing.Point(420, 81);
             this.pbxSteakTaco8004.Name = "pbxSteakTaco8004";
             this.pbxSteakTaco8004.Size = new System.Drawing.Size(118, 96);
@@ -876,6 +916,7 @@
             // 
             // pbxIndianTaco8003
             // 
+            this.pbxIndianTaco8003.Image = global::Team3.Properties.Resources.IndianTaco;
             this.pbxIndianTaco8003.Location = new System.Drawing.Point(285, 81);
             this.pbxIndianTaco8003.Name = "pbxIndianTaco8003";
             this.pbxIndianTaco8003.Size = new System.Drawing.Size(118, 96);
@@ -885,6 +926,7 @@
             // 
             // pbxChickenFajita8002
             // 
+            this.pbxChickenFajita8002.Image = global::Team3.Properties.Resources.ChickenFajita;
             this.pbxChickenFajita8002.Location = new System.Drawing.Point(152, 81);
             this.pbxChickenFajita8002.Name = "pbxChickenFajita8002";
             this.pbxChickenFajita8002.Size = new System.Drawing.Size(118, 96);
@@ -894,6 +936,7 @@
             // 
             // pbxBigChief8000
             // 
+            this.pbxBigChief8000.Image = global::Team3.Properties.Resources.headdress;
             this.pbxBigChief8000.Location = new System.Drawing.Point(15, 81);
             this.pbxBigChief8000.Name = "pbxBigChief8000";
             this.pbxBigChief8000.Size = new System.Drawing.Size(118, 96);
@@ -906,6 +949,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1295, 849);
             this.Controls.Add(this.gbxMenu);
             this.Controls.Add(this.groupBox4);

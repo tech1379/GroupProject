@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Team3
 {
@@ -17,6 +18,12 @@ namespace Team3
         private static SqlConnection _cntDatabase = new SqlConnection(CONNECT_STRING);
         private static SqlCommand _sqlLogOnCommand;
         private static SqlCommand _sqlUpdateCommand;
+        private static SqlCommand _sqlResultsCommand;  //managers form
+
+        ////add command object - managers form
+        private static SqlDataAdapter _daResults = new SqlDataAdapter();
+        ////add the data tables - managers form
+        private static DataTable _dtResultsTable = new DataTable();
 
         public static void ConnectDatabase()
         {
@@ -85,7 +92,37 @@ namespace Team3
             }
         }
 
+        //managers form database command connection
+        public static void DatabaseCommandManager(string stringQuery, DataGridView  dgvTester)
+        {
+            //set cmd obj to null
+            _sqlResultsCommand = null;
+            //reset data adapter and datatable to new
+            _daResults = new SqlDataAdapter();
+            _dtResultsTable = new DataTable();
 
+            try
+            {
+                //establish a command object
+                _sqlResultsCommand = new SqlCommand(stringQuery, _cntDatabase);
+                //establish data adapter
+                _daResults.SelectCommand = _sqlResultsCommand;
+                //fill the data table
+                _daResults.Fill(_dtResultsTable);
+                //bind data grid view to data table
+                dgvTester.DataSource = _dtResultsTable;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in SQL ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //dispose of cmd, adapter, and table obj
+            _sqlResultsCommand.Dispose();
+            _daResults.Dispose();
+            _dtResultsTable.Dispose();
+
+            
+        }
 
     }
 }

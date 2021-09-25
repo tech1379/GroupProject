@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnClearForm = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lbxEditMenuOutput = new System.Windows.Forms.ListBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -38,9 +41,6 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblItem = new System.Windows.Forms.Label();
-            this.lbxEditMenuOutput = new System.Windows.Forms.ListBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnClearForm = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -77,6 +77,34 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Edit Menu Items";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnClearForm
+            // 
+            this.btnClearForm.Location = new System.Drawing.Point(119, 294);
+            this.btnClearForm.Name = "btnClearForm";
+            this.btnClearForm.Size = new System.Drawing.Size(243, 34);
+            this.btnClearForm.TabIndex = 10;
+            this.btnClearForm.Text = "C&lear Form";
+            this.btnClearForm.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(119, 245);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(243, 34);
+            this.btnSubmit.TabIndex = 9;
+            this.btnSubmit.Text = "&Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            // 
+            // lbxEditMenuOutput
+            // 
+            this.lbxEditMenuOutput.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lbxEditMenuOutput.FormattingEnabled = true;
+            this.lbxEditMenuOutput.ItemHeight = 22;
+            this.lbxEditMenuOutput.Location = new System.Drawing.Point(368, 16);
+            this.lbxEditMenuOutput.Name = "lbxEditMenuOutput";
+            this.lbxEditMenuOutput.Size = new System.Drawing.Size(387, 312);
+            this.lbxEditMenuOutput.TabIndex = 8;
             // 
             // comboBox4
             // 
@@ -153,34 +181,6 @@
             this.lblItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblItem.Click += new System.EventHandler(this.lblItem_Click);
             // 
-            // lbxEditMenuOutput
-            // 
-            this.lbxEditMenuOutput.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lbxEditMenuOutput.FormattingEnabled = true;
-            this.lbxEditMenuOutput.ItemHeight = 22;
-            this.lbxEditMenuOutput.Location = new System.Drawing.Point(368, 16);
-            this.lbxEditMenuOutput.Name = "lbxEditMenuOutput";
-            this.lbxEditMenuOutput.Size = new System.Drawing.Size(387, 312);
-            this.lbxEditMenuOutput.TabIndex = 8;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(119, 245);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(243, 34);
-            this.btnSubmit.TabIndex = 9;
-            this.btnSubmit.Text = "&Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            // 
-            // btnClearForm
-            // 
-            this.btnClearForm.Location = new System.Drawing.Point(119, 294);
-            this.btnClearForm.Name = "btnClearForm";
-            this.btnClearForm.Size = new System.Drawing.Size(243, 34);
-            this.btnClearForm.TabIndex = 10;
-            this.btnClearForm.Text = "C&lear Form";
-            this.btnClearForm.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Team3.Properties.Resources.EditMenuPic;
@@ -195,6 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(781, 439);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

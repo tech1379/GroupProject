@@ -62,7 +62,6 @@
             // 
             this.groupBox1.Controls.Add(this.lblSocSecurityTax);
             this.groupBox1.Controls.Add(this.lblFICA);
-            this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnClear);
@@ -102,10 +101,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(240, 303);
+            this.btnClose.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(261, 393);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(97, 26);
+            this.btnClose.Size = new System.Drawing.Size(97, 40);
             this.btnClose.TabIndex = 16;
             this.btnClose.Text = "Cl&ose";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -131,7 +130,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(240, 214);
+            this.btnClear.Location = new System.Drawing.Point(240, 262);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(97, 26);
             this.btnClear.TabIndex = 3;
@@ -141,7 +140,7 @@
             // btnCalculate
             // 
             this.btnCalculate.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculate.Location = new System.Drawing.Point(240, 259);
+            this.btnCalculate.Location = new System.Drawing.Point(240, 306);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(97, 26);
             this.btnCalculate.TabIndex = 2;
@@ -232,9 +231,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbxOutput);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnClose);
             this.Name = "frmPayroll";
             this.Text = "frmPayroll";
             this.groupBox1.ResumeLayout(false);
