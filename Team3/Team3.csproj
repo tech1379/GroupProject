@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCustomer.cs">
+    <Compile Include="Contact.cs" />
+    <Compile Include="frmEmergencyContact.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomer.Designer.cs">
-      <DependentUpon>frmCustomer.cs</DependentUpon>
+    <Compile Include="frmEmergencyContact.Designer.cs">
+      <DependentUpon>frmEmergencyContact.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployees.cs">
+    <Compile Include="frmEventRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmployees.Designer.cs">
-      <DependentUpon>frmEmployees.cs</DependentUpon>
+    <Compile Include="frmEventRequest.Designer.cs">
+      <DependentUpon>frmEventRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -64,11 +66,17 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmModify.cs">
+    <Compile Include="frmManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModify.Designer.cs">
-      <DependentUpon>frmModify.cs</DependentUpon>
+    <Compile Include="frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNewAccount.cs">
       <SubType>Form</SubType>
@@ -76,45 +84,84 @@
     <Compile Include="frmNewAccount.Designer.cs">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewEmployee.Designer.cs">
+      <DependentUpon>frmNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayroll.Designer.cs">
+      <DependentUpon>frmPayroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSplash.Designer.cs">
       <DependentUpon>frmSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClockInClockOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClockInClockOut.Designer.cs">
+      <DependentUpon>frmClockInClockOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logon.cs" />
     <Compile Include="ProgOps.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmUpdateMenuItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateMenuItem.Designer.cs">
+      <DependentUpon>frmUpdateMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Validation.cs" />
-    <EmbeddedResource Include="frmCustomer.resx">
-      <DependentUpon>frmCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmergencyContact.resx">
+      <DependentUpon>frmEmergencyContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployees.resx">
-      <DependentUpon>frmEmployees.cs</DependentUpon>
+    <EmbeddedResource Include="frmEventRequest.resx">
+      <DependentUpon>frmEventRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModify.resx">
-      <DependentUpon>frmModify.cs</DependentUpon>
+    <EmbeddedResource Include="frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNewEmployee.resx">
+      <DependentUpon>frmNewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayroll.resx">
+      <DependentUpon>frmPayroll.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClockInClockOut.resx">
+      <DependentUpon>frmClockInClockOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="frmUpdateMenuItem.resx">
+      <DependentUpon>frmUpdateMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,6 +183,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ApplePieFryBread.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChickenFajita.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\headdress.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IndianTaco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PowderedSugarHoney.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SteakFryBread.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YiyaaFryBread.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditMenuPic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClockIn.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartBreak1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClockOut.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\denali logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
