@@ -48,6 +48,7 @@ namespace Team3
             this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxLogo.TabIndex = 0;
             this.pbxLogo.TabStop = false;
+
             // 
             // frmSplash
             // 
