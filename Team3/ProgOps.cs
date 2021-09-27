@@ -17,6 +17,7 @@ namespace Team3
         private static SqlConnection _cntDatabase = new SqlConnection(CONNECT_STRING);
         private static SqlCommand _sqlLogOnCommand;
         private static SqlCommand _sqlUpdateCommand;
+        private static string strTableName = "group3fa212330.Menu";
 
         public static void ConnectDatabase()
         {
@@ -110,6 +111,45 @@ namespace Team3
             MessageBox.Show("Connection to db was closed successfully",
                 "Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        public static List<Menu> ReloadImageList()
+        {
+            //TODO: Change the SELECT statement to the column names you are trying to use.
+            string strCommand = $"SELECT MenuID, CategoryID, Name, Description, Price, Image FROM {strTableName};"; // Query to pull two columns of data from Images table            
+            SqlCommand SelectCommand = new SqlCommand(strCommand, _cntDatabase);
+            SqlDataReader sqlReader;
+
+            List<Menu> lstMenu = new List<Menu>();
+            lstMenu.Clear(); // Empty the list before loading new images to prevent duplications
+            try
+            {
+                _cntDatabase.Open();
+                sqlReader = SelectCommand.ExecuteReader();
+
+                while (sqlReader.Read())
+                {
+                    Menu menu = new Menu();
+                    menu.menuID = sqlReader.GetInt32(0); // MS SQL Datatype int
+                    menu.categoryID = sqlReader.GetInt32(1); // MS SQL Datatype int
+                    menu.name = sqlReader.GetString(2); // MS SQL Datatype int
+                    menu.description = sqlReader.GetString(3); // MS SQL Datatype int
+                    menu.price = sqlReader.GetDecimal(4); // MS SQL Datatype int
+                    menu.Image = (byte[])sqlReader[5]; // MS SQL Datatype varbinary(MAX)
+                    lstMenu.Add(menu); // Add image object to list
+
+                    // You can use a constructor for this class to accept two parameters
+                    // and add it all at the same time. Just for demo purposes
+
+                    // lstImages.Add(new Images(sqlReader.GetInt32(0), (byte[])sqlReader[1]));
+                }
+                _cntDatabase.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error reloading images.", "Error with Loading", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return lstMenu;
         }
 
     }

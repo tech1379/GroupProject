@@ -109,6 +109,7 @@
       <DependentUpon>frmClockInClockOut.cs</DependentUpon>
     </Compile>
     <Compile Include="Logon.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="ProgOps.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
