@@ -48,8 +48,9 @@ namespace Team3
                     if (strIsManager == "True")
                     {
                         MessageBox.Show("Managers Form", "Managers", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                        //open manager form
+                        frmManager formManager = new frmManager();
+                        formManager.ShowDialog();
                         //Close frmMain
                         Application.OpenForms["frmMain"].Hide();
                       

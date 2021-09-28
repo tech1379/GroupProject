@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Team3
 {
@@ -18,6 +19,14 @@ namespace Team3
         private static SqlCommand _sqlLogOnCommand;
         private static SqlCommand _sqlUpdateCommand;
         private static string strTableName = "group3fa212330.Menu";
+
+        //////add command object managers form
+        //private static SqlCommand _sqlResultsCommand;
+        //////Add the data adapter managers form
+        //private static SqlDataAdapter _daResults = new SqlDataAdapter();
+        //////Add the data table managers form
+        //private static DataTable _dtResultsTable = new DataTable();
+
 
         public static void ConnectDatabase()
         {
@@ -36,6 +45,37 @@ namespace Team3
                 MessageBox.Show("An error occurred.", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //////database command manager form
+        //public static void DatabaseCommandManager(string stringQuery, DataGridView dgvTester)
+        //{
+        //    //set cmd obj to null
+        //    _sqlResultsCommand = null;
+        //    //reset data adapter and datatable to new
+        //    _daResults = new SqlDataAdapter();
+        //    _dtResultsTable = new DataTable();
+
+        //    try
+        //    {
+        //        //establish a command object
+        //        _sqlResultsCommand = new SqlCommand(stringQuery, _cntDatabase);
+        //        //establish data adapter
+        //        _daResults.SelectCommand = _sqlResultsCommand;
+        //        //fill the data table
+        //        _daResults.Fill(_dtResultsTable);
+        //        //bind data grid view to data table
+        //        dgvTester.DataSource = _dtResultsTable;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error in SQL ",
+        //       MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    //dispose of cmd, adapter, and table obj
+        //    _sqlResultsCommand.Dispose();
+        //    _daResults.Dispose();
+        //    _dtResultsTable.Dispose();
+        //}
 
         public static string DatabaseCommandLogon(string query)
         {
@@ -60,6 +100,7 @@ namespace Team3
 
             return result;
         }
+
         public static void UpdateDatabase(string strQuery)
         {
             try
@@ -112,7 +153,18 @@ namespace Team3
                 "Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+        ////close managers database - form close event
+        public static void CloseDatabaseManager()
+        {
+            //close connections 
+            _cntDatabase.Close();
+            //dispose db
+            _cntDatabase.Dispose();
+            //message stating connection was closed successfully
+            MessageBox.Show("Connection to db was closed successfully", "Database Connection",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
         public static List<Menu> ReloadImageList()
         {
             //TODO: Change the SELECT statement to the column names you are trying to use.
