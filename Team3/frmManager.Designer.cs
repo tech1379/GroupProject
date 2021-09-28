@@ -44,14 +44,14 @@
             this.btnPayDetails = new System.Windows.Forms.Button();
             this.btnNewEmployee = new System.Windows.Forms.Button();
             this.btnEmployees = new System.Windows.Forms.Button();
-            this.dgvResults = new System.Windows.Forms.DataGridView();
             this.inew2330fa21DataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
+            this.dgvTester = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,7 +88,7 @@
             this.btnSchedule.TabIndex = 28;
             this.btnSchedule.Text = "Schedule";
             this.btnSchedule.UseVisualStyleBackColor = true;
-
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // btnExit
             // 
@@ -122,7 +122,6 @@
             this.btnEmergencyContacts.TabIndex = 25;
             this.btnEmergencyContacts.Text = "Emergency Contacts";
             this.btnEmergencyContacts.UseVisualStyleBackColor = true;
-
             // 
             // btnHome
             // 
@@ -143,7 +142,7 @@
             this.btnPaySchedule.TabIndex = 24;
             this.btnPaySchedule.Text = "PaySchedule";
             this.btnPaySchedule.UseVisualStyleBackColor = true;
-
+            this.btnPaySchedule.Click += new System.EventHandler(this.btnPaySchedule_Click);
             // 
             // btnEventRequests
             // 
@@ -165,7 +164,7 @@
             this.btnCustomers.TabIndex = 22;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = true;
-
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnLocationToday
             // 
@@ -196,7 +195,7 @@
             this.btnOrders.TabIndex = 19;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
-
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnPayDetails
             // 
@@ -207,7 +206,7 @@
             this.btnPayDetails.TabIndex = 18;
             this.btnPayDetails.Text = "Pay Details";
             this.btnPayDetails.UseVisualStyleBackColor = true;
-
+            this.btnPayDetails.Click += new System.EventHandler(this.btnPayDetails_Click);
             // 
             // btnNewEmployee
             // 
@@ -229,15 +228,7 @@
             this.btnEmployees.TabIndex = 15;
             this.btnEmployees.Text = "Employees";
             this.btnEmployees.UseVisualStyleBackColor = true;
-
-            // 
-            // dgvResults
-            // 
-            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResults.Location = new System.Drawing.Point(207, 12);
-            this.dgvResults.Name = "dgvResults";
-            this.dgvResults.Size = new System.Drawing.Size(749, 607);
-            this.dgvResults.TabIndex = 27;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // inew2330fa21DataBindingSource
             // 
@@ -249,6 +240,14 @@
             this.inew2330fa21DataSet.DataSetName = "inew2330fa21DataSet";
             this.inew2330fa21DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // dgvTester
+            // 
+            this.dgvTester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTester.Location = new System.Drawing.Point(207, 75);
+            this.dgvTester.Name = "dgvTester";
+            this.dgvTester.Size = new System.Drawing.Size(749, 544);
+            this.dgvTester.TabIndex = 27;
+            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -256,20 +255,19 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(961, 623);
-            this.Controls.Add(this.dgvResults);
+            this.Controls.Add(this.dgvTester);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager";
-
             this.Load += new System.EventHandler(this.frmManager_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,10 +287,10 @@
         private System.Windows.Forms.Button btnPayDetails;
         private System.Windows.Forms.Button btnNewEmployee;
         private System.Windows.Forms.Button btnEmployees;
-        private System.Windows.Forms.DataGridView dgvResults;
         private System.Windows.Forms.BindingSource inew2330fa21DataBindingSource;
         private inew2330fa21DataSet inew2330fa21DataSet;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSchedule;
+        private System.Windows.Forms.DataGridView dgvTester;
     }
 }
