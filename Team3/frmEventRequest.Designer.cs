@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbxVending = new System.Windows.Forms.CheckBox();
+            this.cbxCatering = new System.Windows.Forms.CheckBox();
+            this.tbxNotes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbxLastName = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
+            this.tbxEventAddress = new System.Windows.Forms.TextBox();
+            this.tbxNumOfAttendees = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,39 +48,41 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(554, 524);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 38);
-            this.button3.TabIndex = 47;
-            this.button3.Text = "C&ANCEL";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(554, 524);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(122, 38);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "C&ANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(426, 524);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 38);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "&CLEAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClear.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(426, 524);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(122, 38);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "&CLEAR";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(298, 524);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 38);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "&SUBMIT";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSubmit.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(298, 524);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(122, 38);
+            this.btnSubmit.TabIndex = 6;
+            this.btnSubmit.Text = "&SUBMIT";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -90,35 +92,35 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(445, 26);
             this.dateTimePicker1.TabIndex = 44;
             // 
-            // checkBox2
+            // cbxVending
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(24, 544);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(201, 23);
-            this.checkBox2.TabIndex = 43;
-            this.checkBox2.Text = "Vending (paid by attendees)";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbxVending.AutoSize = true;
+            this.cbxVending.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVending.Location = new System.Drawing.Point(24, 544);
+            this.cbxVending.Name = "cbxVending";
+            this.cbxVending.Size = new System.Drawing.Size(201, 23);
+            this.cbxVending.TabIndex = 43;
+            this.cbxVending.Text = "Vending (paid by attendees)";
+            this.cbxVending.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbxCatering
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(24, 513);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(199, 23);
-            this.checkBox1.TabIndex = 42;
-            this.checkBox1.Text = "Catering (paid by organizer)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbxCatering.AutoSize = true;
+            this.cbxCatering.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCatering.Location = new System.Drawing.Point(24, 513);
+            this.cbxCatering.Name = "cbxCatering";
+            this.cbxCatering.Size = new System.Drawing.Size(199, 23);
+            this.cbxCatering.TabIndex = 42;
+            this.cbxCatering.Text = "Catering (paid by organizer)";
+            this.cbxCatering.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tbxNotes
             // 
-            this.textBox2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(18, 616);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(730, 26);
-            this.textBox2.TabIndex = 41;
+            this.tbxNotes.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNotes.Location = new System.Drawing.Point(18, 616);
+            this.tbxNotes.Name = "tbxNotes";
+            this.tbxNotes.Size = new System.Drawing.Size(730, 26);
+            this.tbxNotes.TabIndex = 5;
             // 
             // label10
             // 
@@ -141,37 +143,37 @@
             this.label9.Text = "Let us know if you have any specific menu requirements, special requests, and any" +
     " initial details about the event.";
             // 
-            // textBox7
+            // tbxLastName
             // 
-            this.textBox7.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(16, 156);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(447, 26);
-            this.textBox7.TabIndex = 38;
+            this.tbxLastName.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxLastName.Location = new System.Drawing.Point(16, 156);
+            this.tbxLastName.Name = "tbxLastName";
+            this.tbxLastName.Size = new System.Drawing.Size(447, 26);
+            this.tbxLastName.TabIndex = 1;
             // 
-            // textBox6
+            // tbxEmail
             // 
-            this.textBox6.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(16, 214);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(447, 26);
-            this.textBox6.TabIndex = 37;
+            this.tbxEmail.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEmail.Location = new System.Drawing.Point(16, 214);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(447, 26);
+            this.tbxEmail.TabIndex = 2;
             // 
-            // textBox5
+            // tbxEventAddress
             // 
-            this.textBox5.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(16, 370);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(447, 26);
-            this.textBox5.TabIndex = 36;
+            this.tbxEventAddress.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEventAddress.Location = new System.Drawing.Point(16, 370);
+            this.tbxEventAddress.Name = "tbxEventAddress";
+            this.tbxEventAddress.Size = new System.Drawing.Size(447, 26);
+            this.tbxEventAddress.TabIndex = 3;
             // 
-            // textBox4
+            // tbxNumOfAttendees
             // 
-            this.textBox4.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(16, 436);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(447, 26);
-            this.textBox4.TabIndex = 35;
+            this.tbxNumOfAttendees.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNumOfAttendees.Location = new System.Drawing.Point(16, 436);
+            this.tbxNumOfAttendees.Name = "tbxNumOfAttendees";
+            this.tbxNumOfAttendees.Size = new System.Drawing.Size(447, 26);
+            this.tbxNumOfAttendees.TabIndex = 3;
             // 
             // label8
             // 
@@ -243,13 +245,13 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "First Name";
             // 
-            // textBox1
+            // tbxFirstName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(16, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(447, 26);
-            this.textBox1.TabIndex = 27;
+            this.tbxFirstName.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxFirstName.Location = new System.Drawing.Point(24, 84);
+            this.tbxFirstName.Name = "tbxFirstName";
+            this.tbxFirstName.Size = new System.Drawing.Size(447, 26);
+            this.tbxFirstName.TabIndex = 0;
             // 
             // label1
             // 
@@ -266,19 +268,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 664);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cbxVending);
+            this.Controls.Add(this.cbxCatering);
+            this.Controls.Add(this.tbxNotes);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbxLastName);
+            this.Controls.Add(this.tbxEmail);
+            this.Controls.Add(this.tbxEventAddress);
+            this.Controls.Add(this.tbxNumOfAttendees);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -286,7 +288,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxFirstName);
             this.Controls.Add(this.label1);
             this.Name = "frmEventRequest";
             this.Text = "Event Request";
@@ -297,19 +299,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.CheckBox cbxVending;
+        private System.Windows.Forms.CheckBox cbxCatering;
+        private System.Windows.Forms.TextBox tbxNotes;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbxLastName;
+        private System.Windows.Forms.TextBox tbxEmail;
+        private System.Windows.Forms.TextBox tbxEventAddress;
+        private System.Windows.Forms.TextBox tbxNumOfAttendees;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -317,7 +319,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxFirstName;
         private System.Windows.Forms.Label label1;
     }
 }

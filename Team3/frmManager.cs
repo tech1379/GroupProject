@@ -66,6 +66,7 @@ namespace Team3
 
         }
 
+
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             sqlAll = "SELECT * FROM group3fa212330.Employees";
