@@ -95,24 +95,28 @@
             // cbxVending
             // 
             this.cbxVending.AutoSize = true;
+            this.cbxVending.BackColor = System.Drawing.Color.Transparent;
             this.cbxVending.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVending.ForeColor = System.Drawing.Color.White;
             this.cbxVending.Location = new System.Drawing.Point(24, 544);
             this.cbxVending.Name = "cbxVending";
             this.cbxVending.Size = new System.Drawing.Size(201, 23);
             this.cbxVending.TabIndex = 43;
             this.cbxVending.Text = "Vending (paid by attendees)";
-            this.cbxVending.UseVisualStyleBackColor = true;
+            this.cbxVending.UseVisualStyleBackColor = false;
             // 
             // cbxCatering
             // 
             this.cbxCatering.AutoSize = true;
+            this.cbxCatering.BackColor = System.Drawing.Color.Transparent;
             this.cbxCatering.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCatering.ForeColor = System.Drawing.Color.White;
             this.cbxCatering.Location = new System.Drawing.Point(24, 513);
             this.cbxCatering.Name = "cbxCatering";
             this.cbxCatering.Size = new System.Drawing.Size(199, 23);
             this.cbxCatering.TabIndex = 42;
             this.cbxCatering.Text = "Catering (paid by organizer)";
-            this.cbxCatering.UseVisualStyleBackColor = true;
+            this.cbxCatering.UseVisualStyleBackColor = false;
             // 
             // tbxNotes
             // 
@@ -125,18 +129,22 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkOrange;
             this.label10.Location = new System.Drawing.Point(19, 254);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 19);
+            this.label10.Size = new System.Drawing.Size(91, 22);
             this.label10.TabIndex = 40;
             this.label10.Text = "Event Date";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(70, 581);
+            this.label9.ForeColor = System.Drawing.Color.BurlyWood;
+            this.label9.Location = new System.Drawing.Point(70, 584);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(678, 19);
             this.label9.TabIndex = 39;
@@ -178,70 +186,84 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(20, 581);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 19);
+            this.label8.Size = new System.Drawing.Size(51, 22);
             this.label8.TabIndex = 34;
             this.label8.Text = "Notes";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(20, 480);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 19);
+            this.label7.Size = new System.Drawing.Size(112, 22);
             this.label7.TabIndex = 33;
             this.label7.Text = "Checkbox List";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(20, 413);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 19);
+            this.label6.Size = new System.Drawing.Size(196, 22);
             this.label6.TabIndex = 32;
             this.label6.Text = "Expected No. of Attendees";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(20, 346);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 19);
+            this.label5.Size = new System.Drawing.Size(113, 22);
             this.label5.TabIndex = 31;
             this.label5.Text = "Event Address";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(20, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 19);
+            this.label4.Size = new System.Drawing.Size(52, 22);
             this.label4.TabIndex = 30;
             this.label4.Text = "Email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkOrange;
             this.label3.Location = new System.Drawing.Point(14, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 19);
+            this.label3.Size = new System.Drawing.Size(87, 22);
             this.label3.TabIndex = 29;
             this.label3.Text = "Last Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poor Richard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(12, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Size = new System.Drawing.Size(88, 22);
             this.label2.TabIndex = 28;
             this.label2.Text = "First Name";
             // 
@@ -267,6 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(767, 664);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
