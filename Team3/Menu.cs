@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team3
 {
-    class Menu
+    public class Menu
     {
         public int menuID { get; set; }
 

@@ -171,10 +171,10 @@ namespace Team3
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-        public static List<Menu> ReloadImageList()
+        public static List<Menu> ReloadImageList(string strCommand)
         {
             //TODO: Change the SELECT statement to the column names you are trying to use.
-            string strCommand = $"SELECT MenuID, CategoryID, Name, Description, Price, Image FROM {strTableName};"; // Query to pull two columns of data from Images table            
+            //string strCommand = $"SELECT MenuID, CategoryID, Name, Description, Price, Image FROM {strTableName};"; // Query to pull two columns of data from Images table            
             SqlCommand SelectCommand = new SqlCommand(strCommand, _cntDatabase);
             SqlDataReader sqlReader;
 
