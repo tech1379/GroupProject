@@ -21,8 +21,14 @@ namespace Team3
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Image myimage = new Bitmap(@"Background.jpg");
+<<<<<<< Updated upstream
+            Image myimage = new Bitmap(@"taco.jpg");
             this.BackgroundImage = myimage;
+           
+=======
+           // Image myimage = new Bitmap(@"Background.jpg");
+           // this.BackgroundImage = myimage;
+>>>>>>> Stashed changes
         }
 
         private void lblSignUp_Click(object sender, EventArgs e)

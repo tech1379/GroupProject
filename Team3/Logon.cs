@@ -13,8 +13,6 @@ namespace Team3
     class Logon
     {
         public static string message = "An error has occurred in the program.";
-        public static string strFirstName = "";
-        public static string strLastName = "";
         public static void Verify(string strUserName, string strPassword)
         {
             //password check routine, verify username and password then get person type
@@ -38,34 +36,28 @@ namespace Team3
     strPassword + "';";
                 strIsCustomer = ProgOps.DatabaseCommandLogon(strQueryIsCustomer);
 
-                
+                //ADDED 9/23/2021
+                string strLogOnID;
+                string strSqlStatement = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
+                    + strPassword + "';";
+                strLogOnID = ProgOps.DatabaseCommandLogon(strSqlStatement);
                 
 
                 if (logon == 1)
                 {
-                    //ADDED 9/23/2021
-                    string strLogOnID;
-                    string strSqlStatement = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
-                        + strPassword + "';";
-                    strLogOnID = ProgOps.DatabaseCommandLogon(strSqlStatement);
                     if (strIsManager == "True")
                     {
                         MessageBox.Show("Managers Form", "Managers", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //open manager form
-                        frmManager formManager = new frmManager();
-                        formManager.ShowDialog();
+
+
                         //Close frmMain
                         Application.OpenForms["frmMain"].Hide();
                       
                     }
                     else if (strIsCustomer == "True")
                     {
-                        string strFirstNameQuery = "SELECT FirstName FROM group3fa212330.Customers WHERE LogOnID = " + strLogOnID + ";";
-                        strFirstName = ProgOps.DatabaseCommandLogon(strFirstNameQuery);
-                        string strLastNameQuery = "SELECT LastName FROM group3fa212330.Customers WHERE LogOnID = " + strLogOnID + ";";
-                        strLastName = ProgOps.DatabaseCommandLogon(strLastNameQuery);
                         Application.OpenForms["frmMain"].Hide();
-                        frmCustomer customer = new frmCustomer(strFirstName, strLastName);
+                        frmCustomer customer = new frmCustomer();
                         customer.ShowDialog();
 
                     }
