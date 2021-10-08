@@ -48,11 +48,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
+    <Compile Include="Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmergencyContact.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmergencyContact.Designer.cs">
       <DependentUpon>frmEmergencyContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployees.Designer.cs">
+      <DependentUpon>frmEmployees.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEventRequest.cs">
       <SubType>Form</SubType>
@@ -77,6 +95,12 @@
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModify.Designer.cs">
+      <DependentUpon>frmModify.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNewAccount.cs">
       <SubType>Form</SubType>
@@ -108,7 +132,13 @@
     <Compile Include="frmClockInClockOut.Designer.cs">
       <DependentUpon>frmClockInClockOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="inew2330fa21DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inew2330fa21DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logon.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="ProgOps.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,8 +154,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
+    <EmbeddedResource Include="Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmergencyContact.resx">
       <DependentUpon>frmEmergencyContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployees.resx">
+      <DependentUpon>frmEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEventRequest.resx">
       <DependentUpon>frmEventRequest.cs</DependentUpon>
@@ -138,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModify.resx">
+      <DependentUpon>frmModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
@@ -162,6 +204,17 @@
     <EmbeddedResource Include="frmUpdateMenuItem.resx">
       <DependentUpon>frmUpdateMenuItem.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="inew2330fa21DataSet.xsc">
+      <DependentUpon>inew2330fa21DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="inew2330fa21DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>inew2330fa21DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="inew2330fa21DataSet.xss">
+      <DependentUpon>inew2330fa21DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Team3
 {
@@ -17,6 +18,15 @@ namespace Team3
         private static SqlConnection _cntDatabase = new SqlConnection(CONNECT_STRING);
         private static SqlCommand _sqlLogOnCommand;
         private static SqlCommand _sqlUpdateCommand;
+        private static string strTableName = "group3fa212330.Menu";
+
+        ////add command object managers form
+        private static SqlCommand _sqlResultsCommand;
+        ////Add the data adapter managers form
+        private static SqlDataAdapter _daResults = new SqlDataAdapter();
+        ////Add the data table managers form
+        private static DataTable _dtResultsTable = new DataTable();
+
 
         public static void ConnectDatabase()
         {
@@ -34,6 +44,43 @@ namespace Team3
             {
                 MessageBox.Show("An error occurred.", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        ////database command manager form
+        public static void DatabaseCommandManager(string stringQuery, DataGridView dgvTester)
+        {
+            SqlConnection _cntDatabase = new SqlConnection(CONNECT_STRING);
+            //set cmd obj to null
+            _sqlResultsCommand = null;
+            //reset data adapter and datatable to new
+            _daResults = new SqlDataAdapter();
+            _dtResultsTable = new DataTable();
+
+            try
+            {
+                _cntDatabase.Open();
+                MessageBox.Show("Database Open");
+                //establish a command object
+                _sqlResultsCommand = new SqlCommand(stringQuery, _cntDatabase);
+                //establish data adapter
+                _daResults.SelectCommand = _sqlResultsCommand;
+                //fill the data table
+                _daResults.Fill(_dtResultsTable);
+                dgvTester.DataSource = _dtResultsTable;
+                _cntDatabase.Close();
+                _cntDatabase.Dispose();
+                MessageBox.Show("Database Closed");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in SQL ",
+               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //dispose of cmd, adapter, and table obj
+            _sqlResultsCommand.Dispose();
+            _daResults.Dispose();
+            _dtResultsTable.Dispose();
+  
+ 
         }
 
         public static string DatabaseCommandLogon(string query)
@@ -59,6 +106,7 @@ namespace Team3
 
             return result;
         }
+
         public static void UpdateDatabase(string strQuery)
         {
             try
@@ -110,6 +158,56 @@ namespace Team3
             MessageBox.Show("Connection to db was closed successfully",
                 "Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+        ////close managers database - form close event
+        public static void CloseDatabaseManager()
+        {
+            //close connections 
+            _cntDatabase.Close();
+            //dispose db
+            _cntDatabase.Dispose();
+            //message stating connection was closed successfully
+            MessageBox.Show("Connection to db was closed successfully", "Database Connection",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        public static List<Menu> ReloadImageList(string strCommand)
+        {
+            //TODO: Change the SELECT statement to the column names you are trying to use.
+            //string strCommand = $"SELECT MenuID, CategoryID, Name, Description, Price, Image FROM {strTableName};"; // Query to pull two columns of data from Images table            
+            SqlCommand SelectCommand = new SqlCommand(strCommand, _cntDatabase);
+            SqlDataReader sqlReader;
+
+            List<Menu> lstMenu = new List<Menu>();
+            lstMenu.Clear(); // Empty the list before loading new images to prevent duplications
+            try
+            {
+                _cntDatabase.Open();
+                sqlReader = SelectCommand.ExecuteReader();
+
+                while (sqlReader.Read())
+                {
+                    Menu menu = new Menu();
+                    menu.menuID = sqlReader.GetInt32(0); // MS SQL Datatype int
+                    menu.categoryID = sqlReader.GetInt32(1); // MS SQL Datatype int
+                    menu.name = sqlReader.GetString(2); // MS SQL Datatype int
+                    menu.description = sqlReader.GetString(3); // MS SQL Datatype int
+                    menu.price = sqlReader.GetDecimal(4); // MS SQL Datatype int
+                    menu.Image = (byte[])sqlReader[5]; // MS SQL Datatype varbinary(MAX)
+                    lstMenu.Add(menu); // Add image object to list
+
+                    // You can use a constructor for this class to accept two parameters
+                    // and add it all at the same time. Just for demo purposes
+
+                    // lstImages.Add(new Images(sqlReader.GetInt32(0), (byte[])sqlReader[1]));
+                }
+                _cntDatabase.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error reloading images.", "Error with Loading", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return lstMenu;
         }
 
     }

@@ -21,9 +21,8 @@ namespace Team3
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Image myimage = new Bitmap(@"taco.jpg");
+            Image myimage = new Bitmap(@"Background.jpg");
             this.BackgroundImage = myimage;
-           
         }
 
         private void lblSignUp_Click(object sender, EventArgs e)

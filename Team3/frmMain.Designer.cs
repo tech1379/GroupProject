@@ -50,6 +50,7 @@ namespace Team3
             this.lblEventRequest.AutoSize = true;
             this.lblEventRequest.BackColor = System.Drawing.Color.Transparent;
             this.lblEventRequest.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventRequest.ForeColor = System.Drawing.Color.White;
             this.lblEventRequest.Location = new System.Drawing.Point(12, 9);
             this.lblEventRequest.Name = "lblEventRequest";
             this.lblEventRequest.Size = new System.Drawing.Size(111, 18);
@@ -59,7 +60,7 @@ namespace Team3
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Yellow;
+            this.lblTitle.BackColor = System.Drawing.Color.Goldenrod;
             this.lblTitle.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(20, 110);
             this.lblTitle.Name = "lblTitle";
@@ -72,6 +73,7 @@ namespace Team3
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(170, 180);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 22);
@@ -102,6 +104,7 @@ namespace Team3
             this.lblNew.AutoSize = true;
             this.lblNew.BackColor = System.Drawing.Color.Transparent;
             this.lblNew.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNew.ForeColor = System.Drawing.Color.White;
             this.lblNew.Location = new System.Drawing.Point(229, 334);
             this.lblNew.Name = "lblNew";
             this.lblNew.Size = new System.Drawing.Size(117, 20);
@@ -113,7 +116,7 @@ namespace Team3
             this.lblSignUp.AutoSize = true;
             this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
             this.lblSignUp.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignUp.ForeColor = System.Drawing.Color.Blue;
+            this.lblSignUp.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblSignUp.Location = new System.Drawing.Point(352, 334);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(64, 20);
@@ -146,7 +149,7 @@ namespace Team3
             this.lblForgot.AutoSize = true;
             this.lblForgot.BackColor = System.Drawing.Color.Transparent;
             this.lblForgot.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForgot.ForeColor = System.Drawing.Color.Blue;
+            this.lblForgot.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblForgot.Location = new System.Drawing.Point(325, 266);
             this.lblForgot.Name = "lblForgot";
             this.lblForgot.Size = new System.Drawing.Size(119, 20);
@@ -156,7 +159,7 @@ namespace Team3
             // 
             // pbxEye
             // 
-            this.pbxEye.BackColor = System.Drawing.Color.Transparent;
+            this.pbxEye.BackColor = System.Drawing.Color.Gray;
             this.pbxEye.Image = global::Team3.Properties.Resources.eye;
             this.pbxEye.Location = new System.Drawing.Point(450, 235);
             this.pbxEye.Name = "pbxEye";
@@ -180,6 +183,7 @@ namespace Team3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(645, 372);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pbxEye);
