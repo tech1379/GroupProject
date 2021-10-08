@@ -34,6 +34,16 @@ namespace Team3
             this.tbDesserts = new System.Windows.Forms.TabPage();
             this.tbDrinks = new System.Windows.Forms.TabPage();
             this.tbOrder = new System.Windows.Forms.TabPage();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.tbxExpirationDate = new System.Windows.Forms.TextBox();
+            this.tbxCreditCard = new System.Windows.Forms.TextBox();
+            this.lblExpirationDate = new System.Windows.Forms.Label();
+            this.lblCreditCard = new System.Windows.Forms.Label();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnRemoveAll = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTaxes = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblTt = new System.Windows.Forms.Label();
             this.lblTx = new System.Windows.Forms.Label();
             this.lblSub = new System.Windows.Forms.Label();
@@ -42,16 +52,6 @@ namespace Team3
             this.lblCust = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblSubTotal = new System.Windows.Forms.Label();
-            this.lblTaxes = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.btnRemoveAll = new System.Windows.Forms.Button();
-            this.btnRemoveItem = new System.Windows.Forms.Button();
-            this.lblCreditCard = new System.Windows.Forms.Label();
-            this.lblExpirationDate = new System.Windows.Forms.Label();
-            this.tbxCreditCard = new System.Windows.Forms.TextBox();
-            this.tbxExpirationDate = new System.Windows.Forms.TextBox();
-            this.btnOrder = new System.Windows.Forms.Button();
             this.tbMenu.SuspendLayout();
             this.tbOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
@@ -129,6 +129,99 @@ namespace Team3
             this.tbOrder.Text = "View Order";
             this.tbOrder.UseVisualStyleBackColor = true;
             // 
+            // btnOrder
+            // 
+            this.btnOrder.Location = new System.Drawing.Point(531, 472);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(75, 54);
+            this.btnOrder.TabIndex = 14;
+            this.btnOrder.Text = "&Order";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // tbxExpirationDate
+            // 
+            this.tbxExpirationDate.Location = new System.Drawing.Point(18, 352);
+            this.tbxExpirationDate.MaxLength = 5;
+            this.tbxExpirationDate.Name = "tbxExpirationDate";
+            this.tbxExpirationDate.Size = new System.Drawing.Size(100, 25);
+            this.tbxExpirationDate.TabIndex = 13;
+            // 
+            // tbxCreditCard
+            // 
+            this.tbxCreditCard.Location = new System.Drawing.Point(18, 259);
+            this.tbxCreditCard.MaxLength = 19;
+            this.tbxCreditCard.Name = "tbxCreditCard";
+            this.tbxCreditCard.Size = new System.Drawing.Size(219, 25);
+            this.tbxCreditCard.TabIndex = 12;
+            // 
+            // lblExpirationDate
+            // 
+            this.lblExpirationDate.AutoSize = true;
+            this.lblExpirationDate.ForeColor = System.Drawing.Color.White;
+            this.lblExpirationDate.Location = new System.Drawing.Point(15, 311);
+            this.lblExpirationDate.Name = "lblExpirationDate";
+            this.lblExpirationDate.Size = new System.Drawing.Size(122, 17);
+            this.lblExpirationDate.TabIndex = 11;
+            this.lblExpirationDate.Text = "Expiration Date:";
+            // 
+            // lblCreditCard
+            // 
+            this.lblCreditCard.AutoSize = true;
+            this.lblCreditCard.ForeColor = System.Drawing.Color.White;
+            this.lblCreditCard.Location = new System.Drawing.Point(15, 228);
+            this.lblCreditCard.Name = "lblCreditCard";
+            this.lblCreditCard.Size = new System.Drawing.Size(95, 17);
+            this.lblCreditCard.TabIndex = 10;
+            this.lblCreditCard.Text = "Credit Card:";
+            // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.Location = new System.Drawing.Point(417, 472);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(75, 54);
+            this.btnRemoveItem.TabIndex = 9;
+            this.btnRemoveItem.Text = "Remove &Item";
+            this.btnRemoveItem.UseVisualStyleBackColor = true;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
+            // 
+            // btnRemoveAll
+            // 
+            this.btnRemoveAll.Location = new System.Drawing.Point(305, 472);
+            this.btnRemoveAll.Name = "btnRemoveAll";
+            this.btnRemoveAll.Size = new System.Drawing.Size(75, 54);
+            this.btnRemoveAll.TabIndex = 2;
+            this.btnRemoveAll.Text = "&Remove All";
+            this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(715, 490);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(134, 23);
+            this.lblTotal.TabIndex = 8;
+            // 
+            // lblTaxes
+            // 
+            this.lblTaxes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTaxes.ForeColor = System.Drawing.Color.White;
+            this.lblTaxes.Location = new System.Drawing.Point(715, 432);
+            this.lblTaxes.Name = "lblTaxes";
+            this.lblTaxes.Size = new System.Drawing.Size(134, 23);
+            this.lblTaxes.TabIndex = 7;
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSubTotal.ForeColor = System.Drawing.Color.White;
+            this.lblSubTotal.Location = new System.Drawing.Point(715, 380);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(134, 23);
+            this.lblSubTotal.TabIndex = 6;
+            // 
             // lblTt
             // 
             this.lblTt.AutoSize = true;
@@ -165,10 +258,10 @@ namespace Team3
             this.dgvResults.AllowUserToDeleteRows = false;
             this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResults.Location = new System.Drawing.Point(383, 74);
+            this.dgvResults.Location = new System.Drawing.Point(261, 74);
             this.dgvResults.Name = "dgvResults";
             this.dgvResults.ReadOnly = true;
-            this.dgvResults.Size = new System.Drawing.Size(456, 254);
+            this.dgvResults.Size = new System.Drawing.Size(578, 254);
             this.dgvResults.TabIndex = 2;
             // 
             // lblCustomerName
@@ -211,99 +304,6 @@ namespace Team3
             this.btnAdd.Text = "&Add to Order";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // lblSubTotal
-            // 
-            this.lblSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSubTotal.ForeColor = System.Drawing.Color.White;
-            this.lblSubTotal.Location = new System.Drawing.Point(715, 380);
-            this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(134, 23);
-            this.lblSubTotal.TabIndex = 6;
-            // 
-            // lblTaxes
-            // 
-            this.lblTaxes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTaxes.ForeColor = System.Drawing.Color.White;
-            this.lblTaxes.Location = new System.Drawing.Point(715, 432);
-            this.lblTaxes.Name = "lblTaxes";
-            this.lblTaxes.Size = new System.Drawing.Size(134, 23);
-            this.lblTaxes.TabIndex = 7;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(715, 490);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(134, 23);
-            this.lblTotal.TabIndex = 8;
-            // 
-            // btnRemoveAll
-            // 
-            this.btnRemoveAll.Location = new System.Drawing.Point(305, 472);
-            this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(75, 54);
-            this.btnRemoveAll.TabIndex = 2;
-            this.btnRemoveAll.Text = "&Remove All";
-            this.btnRemoveAll.UseVisualStyleBackColor = true;
-            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
-            // 
-            // btnRemoveItem
-            // 
-            this.btnRemoveItem.Location = new System.Drawing.Point(417, 472);
-            this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(75, 54);
-            this.btnRemoveItem.TabIndex = 9;
-            this.btnRemoveItem.Text = "Remove &Item";
-            this.btnRemoveItem.UseVisualStyleBackColor = true;
-            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
-            // 
-            // lblCreditCard
-            // 
-            this.lblCreditCard.AutoSize = true;
-            this.lblCreditCard.ForeColor = System.Drawing.Color.White;
-            this.lblCreditCard.Location = new System.Drawing.Point(15, 228);
-            this.lblCreditCard.Name = "lblCreditCard";
-            this.lblCreditCard.Size = new System.Drawing.Size(95, 17);
-            this.lblCreditCard.TabIndex = 10;
-            this.lblCreditCard.Text = "Credit Card:";
-            // 
-            // lblExpirationDate
-            // 
-            this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.ForeColor = System.Drawing.Color.White;
-            this.lblExpirationDate.Location = new System.Drawing.Point(15, 311);
-            this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(122, 17);
-            this.lblExpirationDate.TabIndex = 11;
-            this.lblExpirationDate.Text = "Expiration Date:";
-            // 
-            // tbxCreditCard
-            // 
-            this.tbxCreditCard.Location = new System.Drawing.Point(18, 259);
-            this.tbxCreditCard.MaxLength = 19;
-            this.tbxCreditCard.Name = "tbxCreditCard";
-            this.tbxCreditCard.Size = new System.Drawing.Size(267, 25);
-            this.tbxCreditCard.TabIndex = 12;
-            // 
-            // tbxExpirationDate
-            // 
-            this.tbxExpirationDate.Location = new System.Drawing.Point(18, 352);
-            this.tbxExpirationDate.MaxLength = 5;
-            this.tbxExpirationDate.Name = "tbxExpirationDate";
-            this.tbxExpirationDate.Size = new System.Drawing.Size(100, 25);
-            this.tbxExpirationDate.TabIndex = 13;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.Location = new System.Drawing.Point(531, 472);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(75, 54);
-            this.btnOrder.TabIndex = 14;
-            this.btnOrder.Text = "&Order";
-            this.btnOrder.UseVisualStyleBackColor = true;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // frmCustomer
             // 

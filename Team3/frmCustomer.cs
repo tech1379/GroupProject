@@ -83,6 +83,7 @@ namespace Team3
                 LoadDesserts();
 
                 //set dgv for Order
+                dgvResults.Columns.Add("Category", "Category");
                 dgvResults.Columns.Add("Menu Item", "Menu Item");
                 dgvResults.Columns.Add("Quantity", "Quantity");
                 dgvResults.Columns.Add("Line Item Total", "Line Item Total");
@@ -365,38 +366,41 @@ namespace Team3
                 {
                     dgvResults.Rows.Clear();
                 }
+                dgvResults.Rows.Add("Entrees");
                 //load DGV
                 dgvResults.RowsDefaultCellStyle.BackColor = Color.White;
                 //fill the datagrid view with values from Shop form
                  for (int i = 0; i < lstQuantityEntrees.Count(); i++)
                     {
                         dgvResults.Rows.Add();
-                        dgvResults[0, i].Value = lstNameEntrees[i];
-                        dgvResults[1, i].Value = lstQuantityEntrees[i];
-                        dgvResults[2, i].Value = ((lstQuantityEntrees[i] * lstPriceEntrees[i]).ToString("C2"));
+                        dgvResults[1, i+1].Value = lstNameEntrees[i];
+                        dgvResults[2, i+1].Value = lstQuantityEntrees[i];
+                        dgvResults[3, i+1].Value = ((lstQuantityEntrees[i] * lstPriceEntrees[i]).ToString("C2"));
                         intK++;
                     }
                 intL = (intK);
-                    for (int i = 0; i < lstQuantityDrinks.Count(); i++)
+                dgvResults.Rows.Add("Drinks");
+                for (int i = 0; i < lstQuantityDrinks.Count(); i++)
                     {
                         dgvResults.Rows.Add();
-                        dgvResults.Rows[i + (intK)].Cells[0].Style.BackColor = Color.LightGray;
-                        dgvResults.Rows[i + (intK)].Cells[1].Style.BackColor = Color.LightGray;
-                        dgvResults.Rows[i + (intK)].Cells[2].Style.BackColor = Color.LightGray;
-                        dgvResults[0, i + (intK)].Value = lstNameDrinks[i];
-                        dgvResults[1, i + (intK)].Value = lstQuantityDrinks[i];
-                        dgvResults[2, i + (intK)].Value = ((lstQuantityDrinks[i] * lstPriceDrinks[i]).ToString("C2"));
+                        dgvResults.Rows[i + (intK+2)].Cells[0].Style.BackColor = Color.LightGray;
+                        dgvResults.Rows[i + (intK+2)].Cells[1].Style.BackColor = Color.LightGray;
+                        dgvResults.Rows[i + (intK+2)].Cells[2].Style.BackColor = Color.LightGray;
+                        dgvResults[1, i + (intK+2)].Value = lstNameDrinks[i];
+                        dgvResults[2, i + (intK+2)].Value = lstQuantityDrinks[i];
+                        dgvResults[3, i + (intK+2)].Value = ((lstQuantityDrinks[i] * lstPriceDrinks[i]).ToString("C2"));
                         intL++;
                     }
-                    for (int i = 0; i < lstQuantityDesserts.Count(); i++)
+                dgvResults.Rows.Add("Desserts");
+                for (int i = 0; i < lstQuantityDesserts.Count(); i++)
                     {
                         dgvResults.Rows.Add();
-                        dgvResults.Rows[i + (intL)].Cells[0].Style.BackColor = Color.LightPink;
-                        dgvResults.Rows[i + (intL)].Cells[1].Style.BackColor = Color.LightPink;
-                        dgvResults.Rows[i + (intL)].Cells[2].Style.BackColor = Color.LightPink;
-                        dgvResults[0, i + (intL)].Value = lstNameDesserts[i];
-                        dgvResults[1, i + (intL)].Value = lstQuantityDesserts[i];
-                        dgvResults[2, i + (intL)].Value = ((lstQuantityDesserts[i] * lstPriceDesserts[i]).ToString("C2"));
+                        dgvResults.Rows[i + (intL+3)].Cells[0].Style.BackColor = Color.LightPink;
+                        dgvResults.Rows[i + (intL+3)].Cells[1].Style.BackColor = Color.LightPink;
+                        dgvResults.Rows[i + (intL+3)].Cells[2].Style.BackColor = Color.LightPink;
+                        dgvResults[1, i + (intL+3)].Value = lstNameDesserts[i];
+                        dgvResults[2, i + (intL+3)].Value = lstQuantityDesserts[i];
+                        dgvResults[3, i + (intL+3)].Value = ((lstQuantityDesserts[i] * lstPriceDesserts[i]).ToString("C2"));
                     }
                 
             }
@@ -491,32 +495,44 @@ namespace Team3
                 int index = dgvResults.CurrentRow.Index;
                 for (int i = 0; i < lstNameEntrees.Count(); i++)
                 {
-                    if (dgvResults[0, index].Value.ToString() == lstNameEntrees[i])
+                    if (dgvResults[1, index].Value != null)
                     {
-                        lstNameEntrees.Remove(lstNameEntrees[i]);
-                        lstPriceEntrees.Remove(lstPriceEntrees[i]);
-                        lstQuantityEntrees.Remove(lstQuantityEntrees[i]);
+                        if (dgvResults[1, index].Value.ToString() == lstNameEntrees[i])
+                        {
+                            lstNameEntrees.Remove(lstNameEntrees[i]);
+                            lstPriceEntrees.Remove(lstPriceEntrees[i]);
+                            lstQuantityEntrees.Remove(lstQuantityEntrees[i]);
+                        }
                     }
                 }
                 for (int i = 0; i < lstNameDrinks.Count(); i++)
                 {
-                    if (dgvResults[0, index].Value.ToString() == lstNameDrinks[i])
+                    if (dgvResults[1, index].Value != null)
                     {
-                        lstNameEntrees.Remove(lstNameDrinks[i]);
-                        lstPriceEntrees.Remove(lstPriceDrinks[i]);
-                        lstQuantityEntrees.Remove(lstQuantityDrinks[i]);
+                        if (dgvResults[1, index].Value.ToString() == lstNameDrinks[i])
+                        {
+                            lstNameDrinks.Remove(lstNameDrinks[i]);
+                            lstPriceDrinks.Remove(lstPriceDrinks[i]);
+                            lstQuantityDrinks.Remove(lstQuantityDrinks[i]);
+                        }
                     }
                 }
                 for (int i = 0; i < lstNameDesserts.Count(); i++)
                 {
-                    if (dgvResults[0, index].Value.ToString() == lstNameDesserts[i])
+                    if (dgvResults[1, index].Value != null)
                     {
-                        lstNameEntrees.Remove(lstNameDesserts[i]);
-                        lstPriceEntrees.Remove(lstPriceDesserts[i]);
-                        lstQuantityEntrees.Remove(lstQuantityDesserts[i]);
+                        if (dgvResults[1, index].Value.ToString() == lstNameDesserts[i])
+                        {
+                            lstNameDesserts.Remove(lstNameDesserts[i]);
+                            lstPriceDesserts.Remove(lstPriceDesserts[i]);
+                            lstQuantityDesserts.Remove(lstQuantityDesserts[i]);
+                        }
                     }
                 }
-                dgvResults.Rows.RemoveAt(index);
+                if (dgvResults[1, index].Value != null)
+                {
+                    dgvResults.Rows.RemoveAt(index);
+                }
                 decSubTotal = 0;
                 LoadLabels();
             }
