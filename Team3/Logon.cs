@@ -15,6 +15,7 @@ namespace Team3
         public static string message = "An error has occurred in the program.";
         public static string strFirstName = "";
         public static string strLastName = "";
+        public static string strCustomerID = "";
         public static void Verify(string strUserName, string strPassword)
         {
             //password check routine, verify username and password then get person type
@@ -64,8 +65,10 @@ namespace Team3
                         strFirstName = ProgOps.DatabaseCommandLogon(strFirstNameQuery);
                         string strLastNameQuery = "SELECT LastName FROM group3fa212330.Customers WHERE LogOnID = " + strLogOnID + ";";
                         strLastName = ProgOps.DatabaseCommandLogon(strLastNameQuery);
+                        string strCustomerIDQuery = "SELECT CustomerID FROM group3fa212330.Customers WHERE LogOnID = " + strLogOnID + ";";
+                        strCustomerID = ProgOps.DatabaseCommandLogon(strCustomerIDQuery);
                         Application.OpenForms["frmMain"].Hide();
-                        frmCustomer customer = new frmCustomer(strFirstName, strLastName);
+                        frmCustomer customer = new frmCustomer(strFirstName, strLastName, strCustomerID);
                         customer.ShowDialog();
 
                     }

@@ -22,6 +22,7 @@ namespace Team3
         public static List<Image> lstImagesDesserts = new List<Image>();
         public static string strFirstName = "";
         public static string strLastName = "";
+        public static string strCustomerID = "";
         NumericUpDown[] numQuantity;
         NumericUpDown[] numQuantityDrinks;
         NumericUpDown[] numQuantityDesserts;
@@ -31,16 +32,24 @@ namespace Team3
         public static List<int> lstQuantityDrinks = new List<int>();
         public static List<string> lstNameDrinks = new List<string>();
         public static List<decimal> lstPriceDrinks = new List<decimal>();
+        public static List<int> lstQuantityDesserts = new List<int>();
+        public static List<string> lstNameDesserts = new List<string>();
+        public static List<decimal> lstPriceDesserts = new List<decimal>();
         public static bool boolAdded = false;
+        public static bool boolEntreesAdded = false;
+        public static decimal decSubTotal = 0;
+        public static decimal decTaxes = 0;
+        public static decimal decTotal = 0;
 
 
 
 
-        public frmCustomer(string FirstName, string LastName)
+        public frmCustomer(string FirstName, string LastName, string CustomerID)
         {
             InitializeComponent();
             strFirstName = FirstName;
             strLastName = LastName;
+            strCustomerID = CustomerID;
         }
 
         private void frmCustomer_Load(object sender, EventArgs e)
@@ -148,7 +157,6 @@ namespace Team3
         {
             try
             {
-                
                 for (int i = 0; i < lstEntrees.Count; i++)
                 {
                     if (numQuantity[i].Value > 0)
@@ -156,6 +164,7 @@ namespace Team3
                         lstQuantityEntrees.Add(Convert.ToInt32(numQuantity[i].Value));
                         lstNameEntrees.Add(lstEntrees[i].name);
                         lstPriceEntrees.Add(lstEntrees[i].price);
+                        numQuantity[i].Value = 0;
                     }
                 }
                 for (int i = 0; i < lstDrinks.Count; i++)
@@ -165,9 +174,23 @@ namespace Team3
                         lstQuantityDrinks.Add(Convert.ToInt32(numQuantityDrinks[i].Value));
                         lstNameDrinks.Add(lstDrinks[i].name);
                         lstPriceDrinks.Add(lstDrinks[i].price);
+                        numQuantityDrinks[i].Value = 0;
                     }
                 }
+                for (int i = 0; i < lstDesserts.Count; i++)
+                {
+                    if (numQuantityDesserts[i].Value > 0)
+                    {
+                        lstQuantityDesserts.Add(Convert.ToInt32(numQuantityDesserts[i].Value));
+                        lstNameDesserts.Add(lstDesserts[i].name);
+                        lstPriceDesserts.Add(lstDesserts[i].price);
+                        numQuantityDesserts[i].Value = 0;
+                    }
+                }
+                boolEntreesAdded = true;
                 LoadDGV();
+                decSubTotal = 0;
+                LoadLabels();
             }
             catch (Exception ex)
             {
@@ -337,36 +360,271 @@ namespace Team3
             {
                 int intK = 0;
                 int intL = 0;
+                //clear dgv and remake it so it looks nice each time
+                if (dgvResults.RowCount != 0)
+                {
+                    dgvResults.Rows.Clear();
+                }
                 //load DGV
-               
-                //fill the datagrid view with values from Shop form
-                for (int i = 0; i < lstQuantityEntrees.Count(); i++)
-                {
-                    dgvResults.Rows.Add();
-                    dgvResults[0, i].Value = lstNameEntrees[i];
-                    dgvResults[1, i].Value = lstQuantityEntrees[i];
-                    dgvResults[2, i].Value = ((lstQuantityEntrees[i] * lstPriceEntrees[i]).ToString("C2"));
-                    intK++;
-                }
-                MessageBox.Show(intK.ToString());
-                for (int i = 0; i < lstQuantityDrinks.Count(); i++)
-                {
-                    dgvResults.Rows.Add();
-                    dgvResults.Rows[i + (intK)].Cells[0].Style.BackColor = Color.LightGray;
-                    dgvResults.Rows[i + (intK)].Cells[1].Style.BackColor = Color.LightGray;
-                    dgvResults.Rows[i + (intK)].Cells[2].Style.BackColor = Color.LightGray;
-                    dgvResults[0, i + (intK)].Value = lstNameDrinks[i];
-                    dgvResults[1, i + (intK)].Value = lstQuantityDrinks[i];
-                    dgvResults[2, i + (intK)].Value = ((lstQuantityDrinks[i] * lstPriceDrinks[i]).ToString("C2"));
-                    intL++;
-                }
                 dgvResults.RowsDefaultCellStyle.BackColor = Color.White;
+                //fill the datagrid view with values from Shop form
+                 for (int i = 0; i < lstQuantityEntrees.Count(); i++)
+                    {
+                        dgvResults.Rows.Add();
+                        dgvResults[0, i].Value = lstNameEntrees[i];
+                        dgvResults[1, i].Value = lstQuantityEntrees[i];
+                        dgvResults[2, i].Value = ((lstQuantityEntrees[i] * lstPriceEntrees[i]).ToString("C2"));
+                        intK++;
+                    }
+                intL = (intK);
+                    for (int i = 0; i < lstQuantityDrinks.Count(); i++)
+                    {
+                        dgvResults.Rows.Add();
+                        dgvResults.Rows[i + (intK)].Cells[0].Style.BackColor = Color.LightGray;
+                        dgvResults.Rows[i + (intK)].Cells[1].Style.BackColor = Color.LightGray;
+                        dgvResults.Rows[i + (intK)].Cells[2].Style.BackColor = Color.LightGray;
+                        dgvResults[0, i + (intK)].Value = lstNameDrinks[i];
+                        dgvResults[1, i + (intK)].Value = lstQuantityDrinks[i];
+                        dgvResults[2, i + (intK)].Value = ((lstQuantityDrinks[i] * lstPriceDrinks[i]).ToString("C2"));
+                        intL++;
+                    }
+                    for (int i = 0; i < lstQuantityDesserts.Count(); i++)
+                    {
+                        dgvResults.Rows.Add();
+                        dgvResults.Rows[i + (intL)].Cells[0].Style.BackColor = Color.LightPink;
+                        dgvResults.Rows[i + (intL)].Cells[1].Style.BackColor = Color.LightPink;
+                        dgvResults.Rows[i + (intL)].Cells[2].Style.BackColor = Color.LightPink;
+                        dgvResults[0, i + (intL)].Value = lstNameDesserts[i];
+                        dgvResults[1, i + (intL)].Value = lstQuantityDesserts[i];
+                        dgvResults[2, i + (intL)].Value = ((lstQuantityDesserts[i] * lstPriceDesserts[i]).ToString("C2"));
+                    }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
+        public void LoadLabels()
+        {
+            try
+            {
+                if (lstQuantityEntrees.Count > 0)
+                {
+                    for (int i = 0; i < lstQuantityEntrees.Count(); i++)
+                    {
+                        decSubTotal += lstQuantityEntrees[i] * lstPriceEntrees[i];
+                    }
+                }
+                if (lstQuantityDrinks.Count > 0)
+                {
+                    for (int i = 0; i < lstQuantityDrinks.Count(); i++)
+                    {
+                        decSubTotal += lstQuantityDrinks[i] * lstPriceDrinks[i];
+                    }
+                }
+                if (lstQuantityDesserts.Count > 0)
+                {
+                    for (int i = 0; i < lstQuantityDesserts.Count(); i++)
+                    {
+                        decSubTotal += lstQuantityDesserts[i] * lstPriceDesserts[i];
+                    }
+                }
+                lblSubTotal.Text = decSubTotal.ToString("C2");
+                decTaxes = decSubTotal * .0825M;
+                lblTaxes.Text = decTaxes.ToString("C2");
+                decTotal = decSubTotal + decTaxes;
+                lblTotal.Text = decTotal.ToString("C2");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void btnRemoveAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvResults.RowCount == 0)
+                {
+                    MessageBox.Show("Nothing to Remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                lstNameEntrees.Clear();
+                lstNameDrinks.Clear();
+                lstNameDesserts.Clear();
+                lstPriceDrinks.Clear();
+                lstPriceDesserts.Clear();
+                lstPriceEntrees.Clear();
+                lstQuantityDesserts.Clear();
+                lstQuantityDrinks.Clear();
+                lstQuantityEntrees.Clear();
+
+                //clear the datagrid view
+                dgvResults.Rows.Clear();
+
+                //clear labels
+                decSubTotal = 0;
+                lblSubTotal.Text = "";
+                lblTaxes.Text = "";
+                lblTotal.Text = "";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvResults.RowCount == 0)
+                {
+                    MessageBox.Show("Nothing to Remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int index = dgvResults.CurrentRow.Index;
+                for (int i = 0; i < lstNameEntrees.Count(); i++)
+                {
+                    if (dgvResults[0, index].Value.ToString() == lstNameEntrees[i])
+                    {
+                        lstNameEntrees.Remove(lstNameEntrees[i]);
+                        lstPriceEntrees.Remove(lstPriceEntrees[i]);
+                        lstQuantityEntrees.Remove(lstQuantityEntrees[i]);
+                    }
+                }
+                for (int i = 0; i < lstNameDrinks.Count(); i++)
+                {
+                    if (dgvResults[0, index].Value.ToString() == lstNameDrinks[i])
+                    {
+                        lstNameEntrees.Remove(lstNameDrinks[i]);
+                        lstPriceEntrees.Remove(lstPriceDrinks[i]);
+                        lstQuantityEntrees.Remove(lstQuantityDrinks[i]);
+                    }
+                }
+                for (int i = 0; i < lstNameDesserts.Count(); i++)
+                {
+                    if (dgvResults[0, index].Value.ToString() == lstNameDesserts[i])
+                    {
+                        lstNameEntrees.Remove(lstNameDesserts[i]);
+                        lstPriceEntrees.Remove(lstPriceDesserts[i]);
+                        lstQuantityEntrees.Remove(lstQuantityDesserts[i]);
+                    }
+                }
+                dgvResults.Rows.RemoveAt(index);
+                decSubTotal = 0;
+                LoadLabels();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public bool ExpirationDatePast(string strExpirationDate)
+        { //check to see if credit card expiration date is past
+            bool boolPastExpiration = true;
+            try
+            {
+                int intMonth = DateTime.Now.Month;
+                int intYear = DateTime.Now.Year;
+                string strMonth = strExpirationDate.Substring(0, 2);
+                string strYear = strExpirationDate.Substring(3);
+                int intMonthExp = Convert.ToInt32(strMonth);
+                int intYearExp = Convert.ToInt32(strYear) + 2000;
+                if (intYearExp <= intYear)
+                {
+                    if (intYearExp < intYear)
+                    {
+                        boolPastExpiration = true;
+                    }
+                    else if (intYearExp == intYear)
+                    {
+                        if (intMonthExp < intMonth)
+                        {
+                            boolPastExpiration = true;
+                        }
+                        else
+                        {
+                            boolPastExpiration = false;
+                        }
+                    }
+                }
+                else
+                {
+                    boolPastExpiration = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return boolPastExpiration;
+        }
+
+        public bool CreditCardUpdate()
+        {
+            //validate credit card and expiration format and update database
+            bool boolCreditCardUpdate = false;
+            try
+            {
+                string strCreditCard = tbxCreditCard.Text;
+                string strExpiration = tbxExpirationDate.Text;
+                if (strCreditCard == "")
+                {
+                    MessageBox.Show("Credit Card cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    boolCreditCardUpdate = false;
+                }
+                else if (!Validation.ValidCreditCard(strCreditCard))
+                {
+                    MessageBox.Show("Credit Card Format 1234-5678-1234-5678.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    boolCreditCardUpdate = false;
+                }
+                else if (strExpiration == "")
+                {
+                    MessageBox.Show("Expiration Date cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    boolCreditCardUpdate = false;
+                }
+                else if (!Validation.ValidExpiration(strExpiration))
+                {
+                    MessageBox.Show("Expiration Date Format MM/YY.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    boolCreditCardUpdate = false;
+                }
+                else if (ExpirationDatePast(strExpiration))
+                {
+                    MessageBox.Show("Card is Expired.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    boolCreditCardUpdate = false;
+                }
+                else
+                {
+                    string strInsertCreditCardQuery = "INSERT INTO group3fa212330.CreditCard VALUES (" + Convert.ToInt32(strCustomerID) + ", '" + strCreditCard +
+                        "', '" + strExpiration + "');";
+                    ProgOps.UpdateDatabase(strInsertCreditCardQuery);
+                    boolCreditCardUpdate = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return boolCreditCardUpdate;
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            bool boolCreditCardValid = CreditCardUpdate();
+            if (boolCreditCardValid == true)
+            {
+                MessageBox.Show("Valid CC");
+            }
+            else
+            {
+                MessageBox.Show("Invalid CC");
+            }
+        }
     }
 }
