@@ -74,8 +74,15 @@ namespace Team3
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            sqlAll = "SELECT * FROM group3fa212330.Orders";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
+            try
+            {
+                sqlAll = "SELECT * FROM group3fa212330.Orders";
+                ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void btnPayDetails_Click(object sender, EventArgs e)
