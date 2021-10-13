@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxEmpID = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.pbxClockOut = new System.Windows.Forms.PictureBox();
-            this.pbxStartBreak = new System.Windows.Forms.PictureBox();
-            this.pbxClockIn = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClockOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxStartBreak)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClockIn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnClockIn = new System.Windows.Forms.Button();
+            this.btnClockOut = new System.Windows.Forms.Button();
+            this.tbxTimeOutput = new System.Windows.Forms.TextBox();
+            this.lblClockText = new System.Windows.Forms.Label();
+            this.lblMinutes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -49,9 +48,9 @@
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.lblWelcome.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(182, 9);
+            this.lblWelcome.Location = new System.Drawing.Point(181, 9);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(197, 48);
+            this.lblWelcome.Size = new System.Drawing.Size(196, 48);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,108 +60,134 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(206, 58);
+            this.label1.Location = new System.Drawing.Point(208, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 23);
             this.label1.TabIndex = 4;
             this.label1.Text = "Enter EmployeeID";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // tbxEmpID
             // 
-            this.textBox1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(203, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 29);
-            this.textBox1.TabIndex = 5;
+            this.tbxEmpID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEmpID.Location = new System.Drawing.Point(205, 140);
+            this.tbxEmpID.Name = "tbxEmpID";
+            this.tbxEmpID.Size = new System.Drawing.Size(149, 29);
+            this.tbxEmpID.TabIndex = 5;
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(201, 246);
+            this.btnCancel.Location = new System.Drawing.Point(206, 307);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(149, 35);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // pbxClockOut
+            // lblTime
             // 
-            this.pbxClockOut.Image = global::Team3.Properties.Resources.ClockOut;
-            this.pbxClockOut.Location = new System.Drawing.Point(366, 118);
-            this.pbxClockOut.Name = "pbxClockOut";
-            this.pbxClockOut.Size = new System.Drawing.Size(153, 112);
-            this.pbxClockOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxClockOut.TabIndex = 3;
-            this.pbxClockOut.TabStop = false;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(194, 212);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(171, 51);
+            this.lblTime.TabIndex = 9;
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pbxStartBreak
+            // lblDate
             // 
-            this.pbxStartBreak.Image = global::Team3.Properties.Resources.StartBreak1;
-            this.pbxStartBreak.Location = new System.Drawing.Point(204, 118);
-            this.pbxStartBreak.Name = "pbxStartBreak";
-            this.pbxStartBreak.Size = new System.Drawing.Size(146, 112);
-            this.pbxStartBreak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxStartBreak.TabIndex = 2;
-            this.pbxStartBreak.TabStop = false;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(27, 57);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(505, 51);
+            this.lblDate.TabIndex = 10;
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pbxClockIn
+            // timer1
             // 
-            this.pbxClockIn.Image = global::Team3.Properties.Resources.ClockIn;
-            this.pbxClockIn.Location = new System.Drawing.Point(40, 118);
-            this.pbxClockIn.Name = "pbxClockIn";
-            this.pbxClockIn.Size = new System.Drawing.Size(146, 112);
-            this.pbxClockIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxClockIn.TabIndex = 1;
-            this.pbxClockIn.TabStop = false;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
+            // btnClockIn
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Team3.Properties.Resources.denali_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(70, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.btnClockIn.BackColor = System.Drawing.Color.Transparent;
+            this.btnClockIn.BackgroundImage = global::Team3.Properties.Resources.ClockIn;
+            this.btnClockIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClockIn.Location = new System.Drawing.Point(42, 176);
+            this.btnClockIn.Name = "btnClockIn";
+            this.btnClockIn.Size = new System.Drawing.Size(146, 112);
+            this.btnClockIn.TabIndex = 11;
+            this.btnClockIn.UseVisualStyleBackColor = false;
+            this.btnClockIn.Click += new System.EventHandler(this.btnClockIn_Click);
             // 
-            // pictureBox2
+            // btnClockOut
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Image = global::Team3.Properties.Resources.denali_logo;
-            this.pictureBox2.Location = new System.Drawing.Point(385, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.btnClockOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnClockOut.BackgroundImage = global::Team3.Properties.Resources.ClockOut;
+            this.btnClockOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClockOut.Location = new System.Drawing.Point(371, 176);
+            this.btnClockOut.Name = "btnClockOut";
+            this.btnClockOut.Size = new System.Drawing.Size(146, 112);
+            this.btnClockOut.TabIndex = 12;
+            this.btnClockOut.UseVisualStyleBackColor = false;
+            this.btnClockOut.Click += new System.EventHandler(this.btnClockOut_Click);
+            // 
+            // tbxTimeOutput
+            // 
+            this.tbxTimeOutput.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxTimeOutput.Location = new System.Drawing.Point(340, 360);
+            this.tbxTimeOutput.Name = "tbxTimeOutput";
+            this.tbxTimeOutput.Size = new System.Drawing.Size(117, 29);
+            this.tbxTimeOutput.TabIndex = 13;
+            // 
+            // lblClockText
+            // 
+            this.lblClockText.BackColor = System.Drawing.Color.Transparent;
+            this.lblClockText.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClockText.ForeColor = System.Drawing.Color.White;
+            this.lblClockText.Location = new System.Drawing.Point(12, 360);
+            this.lblClockText.Name = "lblClockText";
+            this.lblClockText.Size = new System.Drawing.Size(322, 29);
+            this.lblClockText.TabIndex = 14;
+            this.lblClockText.Text = "Thank your for your hard work!  You worked ";
+            // 
+            // lblMinutes
+            // 
+            this.lblMinutes.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinutes.ForeColor = System.Drawing.Color.White;
+            this.lblMinutes.Location = new System.Drawing.Point(463, 360);
+            this.lblMinutes.Name = "lblMinutes";
+            this.lblMinutes.Size = new System.Drawing.Size(69, 29);
+            this.lblMinutes.TabIndex = 15;
+            this.lblMinutes.Text = "hours!";
             // 
             // frmClockInClockOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aquamarine;
+            this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(560, 306);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(560, 402);
+            this.Controls.Add(this.lblMinutes);
+            this.Controls.Add(this.lblClockText);
+            this.Controls.Add(this.tbxTimeOutput);
+            this.Controls.Add(this.btnClockOut);
+            this.Controls.Add(this.btnClockIn);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxEmpID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbxClockOut);
-            this.Controls.Add(this.pbxStartBreak);
-            this.Controls.Add(this.pbxClockIn);
             this.Controls.Add(this.lblWelcome);
             this.DoubleBuffered = true;
             this.Name = "frmClockInClockOut";
             this.Text = "Clock In / Clock Out";
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClockOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxStartBreak)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClockIn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Load += new System.EventHandler(this.frmClockInClockOut_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,13 +196,16 @@
         #endregion
 
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.PictureBox pbxClockIn;
-        private System.Windows.Forms.PictureBox pbxStartBreak;
-        private System.Windows.Forms.PictureBox pbxClockOut;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxEmpID;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnClockIn;
+        private System.Windows.Forms.Button btnClockOut;
+        private System.Windows.Forms.TextBox tbxTimeOutput;
+        private System.Windows.Forms.Label lblClockText;
+        private System.Windows.Forms.Label lblMinutes;
     }
 }

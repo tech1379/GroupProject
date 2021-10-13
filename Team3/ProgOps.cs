@@ -142,8 +142,6 @@ namespace Team3
             // open the connection to books db
             _cntDatabase.Open();
 
-
-
         }
 
         public static void CloseDatabase(SqlConnection _cntDatabase)
