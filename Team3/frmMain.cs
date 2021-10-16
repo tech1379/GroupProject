@@ -12,17 +12,22 @@ namespace Team3
 {
     public partial class frmMain : Form
     {
+       
         public static string message = "An error has occurred in the program.";
         int intToggle = 0;
         public frmMain()
         {
             InitializeComponent();
+           
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        internal void frmMain_Load(object sender, EventArgs e)
         {
             Image myimage = new Bitmap(@"Background.jpg");
             this.BackgroundImage = myimage;
+            tbxLogin.Clear();
+            tbxPassword.Clear();
+            tbxLogin.Focus();
         }
 
         private void lblSignUp_Click(object sender, EventArgs e)
