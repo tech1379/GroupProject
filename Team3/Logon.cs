@@ -30,7 +30,6 @@ namespace Team3
                 strQueryLogOnPass = "SELECT COUNT(*) FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
                     + strPassword + "';";
                 strResult = ProgOps.DatabaseCommandLogon(strQueryLogOnPass);
-                MessageBox.Show(strResult);
                 int logon = Int32.Parse(strResult);
                 strQueryIsManager = "SELECT isManager FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '" +
                     strPassword + "';";
