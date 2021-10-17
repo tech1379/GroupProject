@@ -23,11 +23,18 @@ namespace Team3
 
         internal void frmMain_Load(object sender, EventArgs e)
         {
-            Image myimage = new Bitmap(@"Background.jpg");
-            this.BackgroundImage = myimage;
-            tbxLogin.Clear();
-            tbxPassword.Clear();
-            tbxLogin.Focus();
+            try
+            {
+                Image myimage = new Bitmap(@"Background.jpg");
+                this.BackgroundImage = myimage;
+                tbxLogin.Clear();
+                tbxPassword.Clear();
+                tbxLogin.Focus();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lblSignUp_Click(object sender, EventArgs e)

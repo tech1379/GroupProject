@@ -133,6 +133,7 @@
     <Compile Include="frmClockInClockOut.Designer.cs">
       <DependentUpon>frmClockInClockOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperMp3.cs" />
     <Compile Include="inew2330fa21DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

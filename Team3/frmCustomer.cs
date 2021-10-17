@@ -48,6 +48,9 @@ namespace Team3
         public static string strMaxOrderID;
         public static string strPhoneNumber;
         public static int intMusicCount = 0;
+        public static bool boolOrderMade = false;
+        public static bool boolPlayMusic = false;
+        
 
 
 
@@ -57,6 +60,7 @@ namespace Team3
             strFirstName = FirstName;
             strLastName = LastName;
             strCustomerID = CustomerID;
+            
         }
 
         private void frmCustomer_Load(object sender, EventArgs e)
@@ -71,8 +75,9 @@ namespace Team3
             tbDesserts.BackgroundImage = myimage;
             tbOrder.BackgroundImage = myimage;
             lblCustomerName.Text = strFirstName + " " + strLastName;
-           
-            //load images to the tabs
+
+                
+                //load images to the tabs
                 string strCommand = $"SELECT MenuID, CategoryID, Name, Description, Price, Image FROM group3fa212330.Menu WHERE CategoryID = 9000;"; // 
                 lstEntrees = ProgOps.ReloadImageList(strCommand);
                 lstImages = ListImages(lstEntrees);
@@ -94,23 +99,8 @@ namespace Team3
                 dgvResults.Columns.Add("Menu Item", "Menu Item");
                 dgvResults.Columns.Add("Quantity", "Quantity");
                 dgvResults.Columns.Add("Line Item Total", "Line Item Total");
-                try
-                {
-                    if (intMusicCount == 0 || intMusicCount == 1)
-                    {
-                        WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
 
-                        wplayer.URL = "runningdownadream.mp3";
-                        wplayer.settings.setMode("loop", true);
-                        wplayer.controls.play();
-                        intMusicCount++;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No music. Windows Media Player not installed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                HelperMp3 playMusic = new HelperMp3();
 
 
             }
@@ -183,6 +173,7 @@ namespace Team3
         {
             try
             {
+                
                 for (int i = 0; i < lstEntrees.Count; i++)
                 {
                     if (numQuantity[i].Value > 0)
@@ -708,6 +699,7 @@ namespace Team3
                     ProgOps.UpdateDatabase(strInsertOrderItems);
                 }
                 MessageBox.Show("Order Updated Successfully.", "Order Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                boolOrderMade = true;
             }
             catch (Exception ex)
             {
@@ -823,6 +815,11 @@ namespace Team3
         {
             try
             {
+                if (boolOrderMade == false)
+                {
+                    MessageBox.Show("You must make a order.", "Order Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 StringBuilder html = new StringBuilder();
                 html = GenerateReport();
                 PrintReport(html);
@@ -848,6 +845,6 @@ namespace Team3
             }
         }
 
-       
+        
     }
 }

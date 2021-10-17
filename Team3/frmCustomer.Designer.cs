@@ -34,6 +34,7 @@ namespace Team3
             this.tbDesserts = new System.Windows.Forms.TabPage();
             this.tbDrinks = new System.Windows.Forms.TabPage();
             this.tbOrder = new System.Windows.Forms.TabPage();
+            this.btnReceipt = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.tbxExpirationDate = new System.Windows.Forms.TextBox();
             this.tbxCreditCard = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@ namespace Team3
             this.lblCust = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnReceipt = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.tbMenu.SuspendLayout();
             this.tbOrder.SuspendLayout();
@@ -131,6 +131,16 @@ namespace Team3
             this.tbOrder.TabIndex = 3;
             this.tbOrder.Text = "View Order";
             this.tbOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnReceipt
+            // 
+            this.btnReceipt.Location = new System.Drawing.Point(517, 472);
+            this.btnReceipt.Name = "btnReceipt";
+            this.btnReceipt.Size = new System.Drawing.Size(75, 54);
+            this.btnReceipt.TabIndex = 15;
+            this.btnReceipt.Text = "&Print Receipt";
+            this.btnReceipt.UseVisualStyleBackColor = true;
+            this.btnReceipt.Click += new System.EventHandler(this.btnReceipt_Click);
             // 
             // btnOrder
             // 
@@ -308,16 +318,6 @@ namespace Team3
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnReceipt
-            // 
-            this.btnReceipt.Location = new System.Drawing.Point(517, 472);
-            this.btnReceipt.Name = "btnReceipt";
-            this.btnReceipt.Size = new System.Drawing.Size(75, 54);
-            this.btnReceipt.TabIndex = 15;
-            this.btnReceipt.Text = "&Print Receipt";
-            this.btnReceipt.UseVisualStyleBackColor = true;
-            this.btnReceipt.Click += new System.EventHandler(this.btnReceipt_Click);
-            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(562, 12);
@@ -344,8 +344,8 @@ namespace Team3
             this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            //this.Activated += new System.EventHandler(this.frmCustomer_Activated);
             this.Load += new System.EventHandler(this.frmCustomer_Load);
-           // this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmCustomer_MouseMove);
             this.tbMenu.ResumeLayout(false);
             this.tbOrder.ResumeLayout(false);
             this.tbOrder.PerformLayout();
