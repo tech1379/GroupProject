@@ -50,7 +50,8 @@ namespace Team3
         public static int intMusicCount = 0;
         public static bool boolOrderMade = false;
         public static bool boolPlayMusic = false;
-        
+        WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+
 
 
 
@@ -100,7 +101,24 @@ namespace Team3
                 dgvResults.Columns.Add("Quantity", "Quantity");
                 dgvResults.Columns.Add("Line Item Total", "Line Item Total");
 
-                HelperMp3 playMusic = new HelperMp3();
+                try
+                {
+
+                   
+                    wplayer.PlayStateChange +=
+               new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(Player_PlayStateChange);
+                    wplayer.MediaError +=
+                        new WMPLib._WMPOCXEvents_MediaErrorEventHandler(Player_MediaError);
+                    wplayer.URL = "runningdownadream.mp3";
+                    //wplayer.settings.setMode("loop", true);
+                    wplayer.controls.play();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No music. Windows Media Player not installed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
 
             }
@@ -173,7 +191,6 @@ namespace Team3
         {
             try
             {
-                
                 for (int i = 0; i < lstEntrees.Count; i++)
                 {
                     if (numQuantity[i].Value > 0)
@@ -834,6 +851,7 @@ namespace Team3
         {
             try
             {
+                wplayer.controls.stop();
                 this.Hide();
                 Application.OpenForms["frmMain"].Show();
                 frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
@@ -845,6 +863,18 @@ namespace Team3
             }
         }
 
-        
+        private void Player_PlayStateChange(int NewState)
+        {
+            if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+
+            }
+        }
+
+        private void Player_MediaError(object pMediaObject)
+        {
+            MessageBox.Show("Cannot play media file.");
+            this.Close();
+        }
     }
 }
