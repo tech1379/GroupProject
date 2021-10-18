@@ -25,6 +25,7 @@ namespace Team3
         {
             try
             {
+                //just to see if it works on github
                 Image myimage = new Bitmap(@"Background.jpg");
                 this.BackgroundImage = myimage;
                 tbxLogin.Clear();
