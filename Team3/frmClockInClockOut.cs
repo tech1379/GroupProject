@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Team3
 {
-    public partial class frmPayroll : Form
+    public partial class frmClockInClockOut : Form
     {
-        public frmPayroll()
+        public frmClockInClockOut()
         {
             InitializeComponent();
         }

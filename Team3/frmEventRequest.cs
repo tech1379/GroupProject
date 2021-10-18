@@ -16,21 +16,5 @@ namespace Team3
         {
             InitializeComponent();
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            tbxFirstName.Clear();
-            tbxLastName.Clear();
-            tbxEmail.Clear();
-            tbxEventAddress.Clear();
-            tbxNumOfAttendees.Clear();
-            tbxFirstName.Focus();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }

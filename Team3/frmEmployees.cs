@@ -18,7 +18,7 @@ namespace Team3
         SqlConnection dbConnection;
 
         //TEST
-        string EmployeeID = "'1002'";
+        int EmployeeID;
         string strLogOnID;
        
 
@@ -39,7 +39,7 @@ namespace Team3
         {
             //Modify button will be primarly use to edit personal info such as address and contact info.
             //will open a new form
-            var frmModify = new frmModify();
+            var frmModify = new frmModify(EmployeeID, dbConnection);
             frmModify.Show();
         }
 
@@ -85,14 +85,14 @@ namespace Team3
 
             lblAddress.Text = "Address: " + strAddress;
 
+            //new command
+            sqlStatement = "SELECT EmployeeID FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
+
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+            EmployeeID = (int)resultsCmd.ExecuteScalar();
+
             resultsCmd.Dispose();
 
-        }
-
-        private void btnTimeClock_Click(object sender, EventArgs e)
-        {
-            frmClockInClockOut formTimeClock = new frmClockInClockOut();
-            formTimeClock.ShowDialog();
         }
     }
 }

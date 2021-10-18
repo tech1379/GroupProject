@@ -127,9 +127,9 @@ namespace Team3
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(520, 328);
+            this.btnExit.Location = new System.Drawing.Point(509, 319);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(105, 26);
+            this.btnExit.Size = new System.Drawing.Size(105, 41);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -197,6 +197,7 @@ namespace Team3
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbxLogo);
             this.Controls.Add(this.lblEventRequest);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Denali Indian Tacos";
@@ -214,13 +215,13 @@ namespace Team3
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox tbxLogin;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblNew;
         private System.Windows.Forms.Label lblSignUp;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pbxEye;
-        private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Label lblForgot;
+        public System.Windows.Forms.TextBox tbxLogin;
+        public System.Windows.Forms.TextBox tbxPassword;
     }
 }

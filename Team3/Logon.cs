@@ -13,6 +13,9 @@ namespace Team3
     class Logon
     {
         public static string message = "An error has occurred in the program.";
+        public static string strFirstName = "";
+        public static string strLastName = "";
+        public static string strCustomerID = "";
         public static void Verify(string strUserName, string strPassword)
         {
             //password check routine, verify username and password then get person type
@@ -27,7 +30,6 @@ namespace Team3
                 strQueryLogOnPass = "SELECT COUNT(*) FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
                     + strPassword + "';";
                 strResult = ProgOps.DatabaseCommandLogon(strQueryLogOnPass);
-                MessageBox.Show(strResult);
                 int logon = Int32.Parse(strResult);
                 strQueryIsManager = "SELECT isManager FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '" +
                     strPassword + "';";
@@ -36,15 +38,16 @@ namespace Team3
     strPassword + "';";
                 strIsCustomer = ProgOps.DatabaseCommandLogon(strQueryIsCustomer);
 
-                //ADDED 9/23/2021
-                string strLogOnID;
-                string strSqlStatement = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
-                    + strPassword + "';";
-                strLogOnID = ProgOps.DatabaseCommandLogon(strSqlStatement);
+                
                 
 
                 if (logon == 1)
                 {
+                    //ADDED 9/23/2021
+                    string strLogOnID;
+                    string strSqlStatement = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogonName = '" + strUserName + "' AND Password = '"
+                        + strPassword + "';";
+                    strLogOnID = ProgOps.DatabaseCommandLogon(strSqlStatement);
                     if (strIsManager == "True")
                     {
                         MessageBox.Show("Managers Form", "Managers", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -57,8 +60,14 @@ namespace Team3
                     }
                     else if (strIsCustomer == "True")
                     {
+                        string strFirstNameQuery = "SELECT FirstName FROM group3fa212330.Customers WHERE LogOnID = " + strLogOnID + ";";
+                        strFirstName = ProgOps.DatabaseCommandLogon(strFirstNameQuery);
+                        string strLastNameQuery = "SELECT LastName FROM group3fa212330.Customers WHERE LogOnID = " + strLogOnID + ";";
+                        strLastName = ProgOps.DatabaseCommandLogon(strLastNameQuery);
+                        string strCustomerIDQuery = "SELECT CustomerID FROM group3fa212330.Customers WHERE LogOnID = " + strLogOnID + ";";
+                        strCustomerID = ProgOps.DatabaseCommandLogon(strCustomerIDQuery);
                         Application.OpenForms["frmMain"].Hide();
-                        frmCustomer customer = new frmCustomer();
+                        frmCustomer customer = new frmCustomer(strFirstName, strLastName, strCustomerID);
                         customer.ShowDialog();
 
                     }
