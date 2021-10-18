@@ -49,12 +49,6 @@
   <ItemGroup>
     <Compile Include="clsLogo.cs" />
     <Compile Include="Contact.cs" />
-    <Compile Include="Employees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employees.Designer.cs">
-      <DependentUpon>Employees.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,9 +149,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
-    <EmbeddedResource Include="Employees.resx">
-      <DependentUpon>Employees.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
