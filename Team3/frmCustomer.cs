@@ -117,7 +117,7 @@ namespace Team3
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No music. Windows Media Player not installed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Windows Media Player Error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 
