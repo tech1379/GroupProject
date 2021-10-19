@@ -90,6 +90,9 @@ namespace Team3
                 if (intLoginCount > 0)
                 {
                     MessageBox.Show("Login already used.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbxLogin.Clear();
+                    tbxLogin.Focus();
+                    return;
                 }
                 string strInsertLogin = "INSERT INTO group3fa212330.LogOn VALUES ('" + strLogin + "', '" + strPassword +
                     "', 0, 1);";
