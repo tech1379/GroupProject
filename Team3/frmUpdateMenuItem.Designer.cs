@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClearForm = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lbxEditMenuOutput = new System.Windows.Forms.ListBox();
@@ -41,7 +42,6 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblItem = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,6 +78,16 @@
             this.tabPage1.Text = "Edit Menu Items";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Team3.Properties.Resources.EditMenuPic;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 223);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(105, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnClearForm
             // 
             this.btnClearForm.Location = new System.Drawing.Point(119, 294);
@@ -86,6 +96,7 @@
             this.btnClearForm.TabIndex = 10;
             this.btnClearForm.Text = "C&lear Form";
             this.btnClearForm.UseVisualStyleBackColor = true;
+            this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
             // btnSubmit
             // 
@@ -180,16 +191,6 @@
             this.lblItem.Text = "Item";
             this.lblItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblItem.Click += new System.EventHandler(this.lblItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Team3.Properties.Resources.EditMenuPic;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 223);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
             // 
             // frmUpdateMenuItem
             // 

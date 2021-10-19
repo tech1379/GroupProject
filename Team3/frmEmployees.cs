@@ -94,5 +94,11 @@ namespace Team3
             resultsCmd.Dispose();
 
         }
+
+        private void btnTimeClock_Click(object sender, EventArgs e)
+        {
+            frmClockInClockOut formTimeClock = new frmClockInClockOut();
+            formTimeClock.ShowDialog();
+        }
     }
 }
