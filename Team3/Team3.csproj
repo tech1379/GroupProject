@@ -49,12 +49,6 @@
   <ItemGroup>
     <Compile Include="clsLogo.cs" />
     <Compile Include="Contact.cs" />
-    <Compile Include="Employees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employees.Designer.cs">
-      <DependentUpon>Employees.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,12 +66,6 @@
     </Compile>
     <Compile Include="frmEmployees.Designer.cs">
       <DependentUpon>frmEmployees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEventRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEventRequest.Designer.cs">
-      <DependentUpon>frmEventRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -155,9 +143,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
-    <EmbeddedResource Include="Employees.resx">
-      <DependentUpon>Employees.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,9 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployees.resx">
       <DependentUpon>frmEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEventRequest.resx">
-      <DependentUpon>frmEventRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
