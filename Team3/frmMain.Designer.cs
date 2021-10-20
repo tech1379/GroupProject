@@ -29,7 +29,7 @@ namespace Team3
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblEventRequest = new System.Windows.Forms.Label();
+            this.lblTruckLocation = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.tbxLogin = new System.Windows.Forms.TextBox();
@@ -45,17 +45,18 @@ namespace Team3
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblEventRequest
+            // lblTruckLocation
             // 
-            this.lblEventRequest.AutoSize = true;
-            this.lblEventRequest.BackColor = System.Drawing.Color.Transparent;
-            this.lblEventRequest.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEventRequest.ForeColor = System.Drawing.Color.White;
-            this.lblEventRequest.Location = new System.Drawing.Point(12, 9);
-            this.lblEventRequest.Name = "lblEventRequest";
-            this.lblEventRequest.Size = new System.Drawing.Size(111, 18);
-            this.lblEventRequest.TabIndex = 0;
-            this.lblEventRequest.Text = "&Event Request";
+            this.lblTruckLocation.AutoSize = true;
+            this.lblTruckLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lblTruckLocation.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTruckLocation.ForeColor = System.Drawing.Color.White;
+            this.lblTruckLocation.Location = new System.Drawing.Point(12, 9);
+            this.lblTruckLocation.Name = "lblTruckLocation";
+            this.lblTruckLocation.Size = new System.Drawing.Size(122, 18);
+            this.lblTruckLocation.TabIndex = 0;
+            this.lblTruckLocation.Text = "&Truck Location";
+            this.lblTruckLocation.Click += new System.EventHandler(this.lblTruckLocation_Click);
             // 
             // lblTitle
             // 
@@ -196,7 +197,7 @@ namespace Team3
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbxLogo);
-            this.Controls.Add(this.lblEventRequest);
+            this.Controls.Add(this.lblTruckLocation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -211,7 +212,7 @@ namespace Team3
 
         #endregion
 
-        private System.Windows.Forms.Label lblEventRequest;
+        private System.Windows.Forms.Label lblTruckLocation;
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblEmail;
