@@ -105,5 +105,25 @@ namespace Team3
         {
             Application.Exit();
         }
+
+        private void lblTruckLocation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strSqlLatQuery = "SELECT Latitude FROM group3fa212330.TruckLocation;";
+                string strSqlLongQuery = "SELECT Longitude FROM group3fa212330.TruckLocation;";
+                string latitude = ProgOps.DatabaseCommandLogon(strSqlLatQuery);
+                string longitude = ProgOps.DatabaseCommandLogon(strSqlLongQuery);
+                StringBuilder query = new StringBuilder();
+                query.Append("https://www.google.com/maps/search/?api=1&query=");
+                query.Append(latitude + ",");
+                query.Append(longitude);
+                System.Diagnostics.Process.Start(query.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
