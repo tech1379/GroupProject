@@ -110,8 +110,8 @@ namespace Team3
         {
             try
             {
-                string strSqlLatQuery = "SELECT Latitude FROM group3fa212330.TruckLocation;";
-                string strSqlLongQuery = "SELECT Longitude FROM group3fa212330.TruckLocation;";
+                string strSqlLatQuery = "SELECT Latitude FROM group3fa212330.TruckLocation WHERE TruckLocationID = 23000;";
+                string strSqlLongQuery = "SELECT Longitude FROM group3fa212330.TruckLocation WHERE TruckLocationID = 23000;";
                 string latitude = ProgOps.DatabaseCommandLogon(strSqlLatQuery);
                 string longitude = ProgOps.DatabaseCommandLogon(strSqlLongQuery);
                 StringBuilder query = new StringBuilder();
