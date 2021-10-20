@@ -34,7 +34,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEmergencyContacts = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             this.btnPaySchedule = new System.Windows.Forms.Button();
             this.btnEventRequests = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
@@ -61,7 +60,6 @@
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnEmergencyContacts);
-            this.groupBox1.Controls.Add(this.btnHome);
             this.groupBox1.Controls.Add(this.btnPaySchedule);
             this.groupBox1.Controls.Add(this.btnEventRequests);
             this.groupBox1.Controls.Add(this.btnCustomers);
@@ -122,16 +120,6 @@
             this.btnEmergencyContacts.TabIndex = 25;
             this.btnEmergencyContacts.Text = "Emergency Contacts";
             this.btnEmergencyContacts.UseVisualStyleBackColor = true;
-            // 
-            // btnHome
-            // 
-            this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Location = new System.Drawing.Point(10, 108);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(180, 32);
-            this.btnHome.TabIndex = 14;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
             // 
             // btnPaySchedule
             // 
@@ -277,7 +265,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEmergencyContacts;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnPaySchedule;
         private System.Windows.Forms.Button btnEventRequests;
         private System.Windows.Forms.Button btnCustomers;
