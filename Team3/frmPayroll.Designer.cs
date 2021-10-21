@@ -32,7 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblSocSecurityTax = new System.Windows.Forms.Label();
             this.lblFICA = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,16 +99,6 @@
             this.lblFICA.Size = new System.Drawing.Size(100, 25);
             this.lblFICA.TabIndex = 17;
             // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(261, 393);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(97, 40);
-            this.btnClose.TabIndex = 16;
-            this.btnClose.Text = "Cl&ose";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
             // label7
             // 
             this.label7.Location = new System.Drawing.Point(15, 303);
@@ -136,6 +126,7 @@
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
+
             // 
             // btnCalculate
             // 
@@ -226,6 +217,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "EmployeeID";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(261, 393);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(97, 40);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Cl&ose";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // frmPayroll
             // 
