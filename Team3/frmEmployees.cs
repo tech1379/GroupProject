@@ -20,7 +20,13 @@ namespace Team3
         //TEST
         int EmployeeID;
         string strLogOnID;
-       
+
+        public class StatusOfEmployee
+        {
+            public string EmployeeID { get; set; }
+            public string punchDirection { get; set; }
+            public int openPunch { get; set; }
+        }
 
         //will accept a variable that holds LogOnID number
         public frmEmployees(string LogOnID )

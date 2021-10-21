@@ -97,11 +97,11 @@
     <Compile Include="frmNewAccount.Designer.cs">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNewEmployee.cs">
+    <Compile Include="frmUpdateEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNewEmployee.Designer.cs">
-      <DependentUpon>frmNewEmployee.cs</DependentUpon>
+    <Compile Include="frmUpdateEmployee.Designer.cs">
+      <DependentUpon>frmUpdateEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPayroll.cs">
       <SubType>Form</SubType>
@@ -167,8 +167,8 @@
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNewEmployee.resx">
-      <DependentUpon>frmNewEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpdateEmployee.resx">
+      <DependentUpon>frmUpdateEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayroll.resx">
       <DependentUpon>frmPayroll.cs</DependentUpon>

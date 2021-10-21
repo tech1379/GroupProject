@@ -33,8 +33,7 @@
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEmergencyContacts = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnPaySchedule = new System.Windows.Forms.Button();
             this.btnEventRequests = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
@@ -47,6 +46,8 @@
             this.inew2330fa21DataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
             this.dgvTester = new System.Windows.Forms.DataGridView();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnSalary = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).BeginInit();
@@ -60,8 +61,7 @@
             this.groupBox1.Controls.Add(this.btnSchedule);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.btnEmergencyContacts);
-            this.groupBox1.Controls.Add(this.btnHome);
+            this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Controls.Add(this.btnPaySchedule);
             this.groupBox1.Controls.Add(this.btnEventRequests);
             this.groupBox1.Controls.Add(this.btnCustomers);
@@ -113,25 +113,15 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // btnEmergencyContacts
+            // btnLogout
             // 
-            this.btnEmergencyContacts.ForeColor = System.Drawing.Color.Black;
-            this.btnEmergencyContacts.Location = new System.Drawing.Point(10, 541);
-            this.btnEmergencyContacts.Name = "btnEmergencyContacts";
-            this.btnEmergencyContacts.Size = new System.Drawing.Size(180, 32);
-            this.btnEmergencyContacts.TabIndex = 25;
-            this.btnEmergencyContacts.Text = "Emergency Contacts";
-            this.btnEmergencyContacts.UseVisualStyleBackColor = true;
-            // 
-            // btnHome
-            // 
-            this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Location = new System.Drawing.Point(10, 108);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(180, 32);
-            this.btnHome.TabIndex = 14;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnLogout.ForeColor = System.Drawing.Color.Black;
+            this.btnLogout.Location = new System.Drawing.Point(10, 541);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(180, 32);
+            this.btnLogout.TabIndex = 25;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // btnPaySchedule
             // 
@@ -226,7 +216,7 @@
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Size = new System.Drawing.Size(180, 32);
             this.btnEmployees.TabIndex = 15;
-            this.btnEmployees.Text = "Employees";
+            this.btnEmployees.Text = "Employee";
             this.btnEmployees.UseVisualStyleBackColor = true;
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
@@ -248,6 +238,26 @@
             this.dgvTester.Size = new System.Drawing.Size(749, 544);
             this.dgvTester.TabIndex = 27;
             // 
+            // btnView
+            // 
+            this.btnView.ForeColor = System.Drawing.Color.Black;
+            this.btnView.Location = new System.Drawing.Point(219, 37);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(180, 32);
+            this.btnView.TabIndex = 29;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            // 
+            // btnSalary
+            // 
+            this.btnSalary.ForeColor = System.Drawing.Color.Black;
+            this.btnSalary.Location = new System.Drawing.Point(432, 37);
+            this.btnSalary.Name = "btnSalary";
+            this.btnSalary.Size = new System.Drawing.Size(180, 32);
+            this.btnSalary.TabIndex = 30;
+            this.btnSalary.Text = "Salary";
+            this.btnSalary.UseVisualStyleBackColor = true;
+            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -255,6 +265,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(961, 623);
+            this.Controls.Add(this.btnSalary);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.dgvTester);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,8 +288,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnEmergencyContacts;
-        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnPaySchedule;
         private System.Windows.Forms.Button btnEventRequests;
         private System.Windows.Forms.Button btnCustomers;
@@ -290,7 +301,9 @@
         private System.Windows.Forms.BindingSource inew2330fa21DataBindingSource;
         private inew2330fa21DataSet inew2330fa21DataSet;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.DataGridView dgvTester;
+        private System.Windows.Forms.Button btnSchedule;
+        private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Button btnSalary;
     }
 }
