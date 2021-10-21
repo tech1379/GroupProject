@@ -29,7 +29,7 @@ namespace Team3
 
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {
-            frmNewEmployee formNewEmployee = new frmNewEmployee();
+            frmUpdateEmployee formNewEmployee = new frmUpdateEmployee();
             formNewEmployee.ShowDialog();
         }
 
@@ -102,5 +102,7 @@ namespace Team3
             sqlAll = "SELECT * FROM group3fa212330.Schedule";
             ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
         }
+
+
     }
 }
