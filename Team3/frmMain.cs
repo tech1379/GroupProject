@@ -12,17 +12,30 @@ namespace Team3
 {
     public partial class frmMain : Form
     {
+       
         public static string message = "An error has occurred in the program.";
         int intToggle = 0;
         public frmMain()
         {
             InitializeComponent();
+           
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        internal void frmMain_Load(object sender, EventArgs e)
         {
-          //  Image myimage = new Bitmap(@"Background.jpg");
-          //  this.BackgroundImage = myimage;
+            try
+            {
+                //just to see if it works on github
+                Image myimage = new Bitmap(@"Background.jpg");
+                this.BackgroundImage = myimage;
+                tbxLogin.Clear();
+                tbxPassword.Clear();
+                tbxLogin.Focus();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lblSignUp_Click(object sender, EventArgs e)
@@ -91,6 +104,26 @@ namespace Team3
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lblTruckLocation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strSqlLatQuery = "SELECT Latitude FROM group3fa212330.TruckLocation WHERE TruckLocationID = 23000;";
+                string strSqlLongQuery = "SELECT Longitude FROM group3fa212330.TruckLocation WHERE TruckLocationID = 23000;";
+                string latitude = ProgOps.DatabaseCommandLogon(strSqlLatQuery);
+                string longitude = ProgOps.DatabaseCommandLogon(strSqlLongQuery);
+                StringBuilder query = new StringBuilder();
+                query.Append("https://www.google.com/maps/search/?api=1&query=");
+                query.Append(latitude + ",");
+                query.Append(longitude);
+                System.Diagnostics.Process.Start(query.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

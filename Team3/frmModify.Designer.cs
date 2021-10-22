@@ -144,7 +144,6 @@ namespace Team3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(448, 288);
             this.Controls.Add(this.lblModify);
             this.Controls.Add(this.tbxPhone);
@@ -158,7 +157,6 @@ namespace Team3
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnExit);
             this.Name = "frmModify";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmModify";
             this.Load += new System.EventHandler(this.frmModify_Load);
             this.ResumeLayout(false);

@@ -47,13 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsLogo.cs" />
     <Compile Include="Contact.cs" />
-    <Compile Include="Employees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employees.Designer.cs">
-      <DependentUpon>Employees.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,12 +66,6 @@
     </Compile>
     <Compile Include="frmEmployees.Designer.cs">
       <DependentUpon>frmEmployees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEventRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEventRequest.Designer.cs">
-      <DependentUpon>frmEventRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -108,11 +97,11 @@
     <Compile Include="frmNewAccount.Designer.cs">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNewEmployee.cs">
+    <Compile Include="frmUpdateEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNewEmployee.Designer.cs">
-      <DependentUpon>frmNewEmployee.cs</DependentUpon>
+    <Compile Include="frmUpdateEmployee.Designer.cs">
+      <DependentUpon>frmUpdateEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPayroll.cs">
       <SubType>Form</SubType>
@@ -154,9 +143,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
-    <EmbeddedResource Include="Employees.resx">
-      <DependentUpon>Employees.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,9 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployees.resx">
       <DependentUpon>frmEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEventRequest.resx">
-      <DependentUpon>frmEventRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -184,8 +167,8 @@
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNewEmployee.resx">
-      <DependentUpon>frmNewEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpdateEmployee.resx">
+      <DependentUpon>frmUpdateEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayroll.resx">
       <DependentUpon>frmPayroll.cs</DependentUpon>
@@ -275,6 +258,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

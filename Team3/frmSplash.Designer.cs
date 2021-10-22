@@ -42,13 +42,12 @@ namespace Team3
             // pbxLogo
             // 
             this.pbxLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pbxLogo.Location = new System.Drawing.Point(-16, -13);
+            this.pbxLogo.Location = new System.Drawing.Point(-20, 2);
             this.pbxLogo.Name = "pbxLogo";
             this.pbxLogo.Size = new System.Drawing.Size(676, 336);
             this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxLogo.TabIndex = 0;
             this.pbxLogo.TabStop = false;
-
             // 
             // frmSplash
             // 

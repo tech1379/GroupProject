@@ -29,14 +29,13 @@ namespace Team3
 
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {
-            frmNewEmployee formNewEmployee = new frmNewEmployee();
+            frmUpdateEmployee formNewEmployee = new frmUpdateEmployee();
             formNewEmployee.ShowDialog();
         }
 
         private void btnEventRequests_Click(object sender, EventArgs e)
         {
-            frmEventRequest formEventRequest = new frmEventRequest();
-            formEventRequest.ShowDialog();
+
         }
         //add to database if you use this form
         //private void btnEmergencyContacts_Click(object sender, EventArgs e)
@@ -60,7 +59,7 @@ namespace Team3
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-
+            //shows customer information from database
             sqlAll = "SELECT * FROM group3fa212330.Customers";
             ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
 
@@ -68,6 +67,7 @@ namespace Team3
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
+            //shows employee information from database
             sqlAll = "SELECT * FROM group3fa212330.Employees";
             ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
         }
@@ -102,5 +102,7 @@ namespace Team3
             sqlAll = "SELECT * FROM group3fa212330.Schedule";
             ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
         }
+
+
     }
 }

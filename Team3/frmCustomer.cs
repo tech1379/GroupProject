@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using WMPLib;
 
 namespace Team3
 {
     public partial class frmCustomer : Form
     {
+        public static frmMain frmMainForm;
         public static string message = "An error has occurred in the program.";
         public static List<Menu> lstEntrees = new List<Menu>();
         public static List<Menu> lstDrinks = new List<Menu>();
@@ -27,12 +29,15 @@ namespace Team3
         NumericUpDown[] numQuantityDrinks;
         NumericUpDown[] numQuantityDesserts;
         public static List<int> lstQuantityEntrees = new List<int>();
+        public static List<int> lstMenuIDEntrees = new List<int>();
         public static List<string> lstNameEntrees = new List<string>();
         public static List<decimal> lstPriceEntrees = new List<decimal>();
         public static List<int> lstQuantityDrinks = new List<int>();
+        public static List<int> lstMenuIDDrinks = new List<int>();
         public static List<string> lstNameDrinks = new List<string>();
         public static List<decimal> lstPriceDrinks = new List<decimal>();
         public static List<int> lstQuantityDesserts = new List<int>();
+        public static List<int> lstMenuIDDesserts = new List<int>();
         public static List<string> lstNameDesserts = new List<string>();
         public static List<decimal> lstPriceDesserts = new List<decimal>();
         public static bool boolAdded = false;
@@ -40,6 +45,12 @@ namespace Team3
         public static decimal decSubTotal = 0;
         public static decimal decTaxes = 0;
         public static decimal decTotal = 0;
+        public static string strMaxOrderID;
+        public static string strPhoneNumber;
+        public static int intMusicCount = 0;
+        public static bool boolOrderMade = false;
+        public static bool boolPlayMusic = false;
+        WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
 
 
 
@@ -50,6 +61,7 @@ namespace Team3
             strFirstName = FirstName;
             strLastName = LastName;
             strCustomerID = CustomerID;
+            
         }
 
         private void frmCustomer_Load(object sender, EventArgs e)
@@ -64,8 +76,9 @@ namespace Team3
             tbDesserts.BackgroundImage = myimage;
             tbOrder.BackgroundImage = myimage;
             lblCustomerName.Text = strFirstName + " " + strLastName;
-           
-            //load images to the tabs
+
+                
+                //load images to the tabs
                 string strCommand = $"SELECT MenuID, CategoryID, Name, Description, Price, Image FROM group3fa212330.Menu WHERE CategoryID = 9000;"; // 
                 lstEntrees = ProgOps.ReloadImageList(strCommand);
                 lstImages = ListImages(lstEntrees);
@@ -87,6 +100,26 @@ namespace Team3
                 dgvResults.Columns.Add("Menu Item", "Menu Item");
                 dgvResults.Columns.Add("Quantity", "Quantity");
                 dgvResults.Columns.Add("Line Item Total", "Line Item Total");
+
+                try
+                {
+
+                   
+                    wplayer.PlayStateChange +=
+               new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(Player_PlayStateChange);
+                    wplayer.MediaError +=
+                        new WMPLib._WMPOCXEvents_MediaErrorEventHandler(Player_MediaError);
+                    wplayer.URL = "runningdownadream.mp3";
+                    //wplayer.settings.setMode("loop", true);
+                    wplayer.controls.play();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Windows Media Player Error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
 
             }
             catch (Exception ex)
@@ -165,6 +198,7 @@ namespace Team3
                         lstQuantityEntrees.Add(Convert.ToInt32(numQuantity[i].Value));
                         lstNameEntrees.Add(lstEntrees[i].name);
                         lstPriceEntrees.Add(lstEntrees[i].price);
+                        lstMenuIDEntrees.Add(lstEntrees[i].menuID);
                         numQuantity[i].Value = 0;
                     }
                 }
@@ -175,6 +209,7 @@ namespace Team3
                         lstQuantityDrinks.Add(Convert.ToInt32(numQuantityDrinks[i].Value));
                         lstNameDrinks.Add(lstDrinks[i].name);
                         lstPriceDrinks.Add(lstDrinks[i].price);
+                        lstMenuIDDrinks.Add(lstDrinks[i].menuID);
                         numQuantityDrinks[i].Value = 0;
                     }
                 }
@@ -185,6 +220,7 @@ namespace Team3
                         lstQuantityDesserts.Add(Convert.ToInt32(numQuantityDesserts[i].Value));
                         lstNameDesserts.Add(lstDesserts[i].name);
                         lstPriceDesserts.Add(lstDesserts[i].price);
+                        lstMenuIDDesserts.Add(lstDesserts[i].menuID);
                         numQuantityDesserts[i].Value = 0;
                     }
                 }
@@ -466,6 +502,9 @@ namespace Team3
                 lstQuantityDesserts.Clear();
                 lstQuantityDrinks.Clear();
                 lstQuantityEntrees.Clear();
+                lstMenuIDDesserts.Clear();
+                lstMenuIDDrinks.Clear();
+                lstMenuIDEntrees.Clear();
 
                 //clear the datagrid view
                 dgvResults.Rows.Clear();
@@ -502,6 +541,7 @@ namespace Team3
                             lstNameEntrees.Remove(lstNameEntrees[i]);
                             lstPriceEntrees.Remove(lstPriceEntrees[i]);
                             lstQuantityEntrees.Remove(lstQuantityEntrees[i]);
+                            lstMenuIDEntrees.Remove(lstMenuIDEntrees[i]);
                         }
                     }
                 }
@@ -514,6 +554,7 @@ namespace Team3
                             lstNameDrinks.Remove(lstNameDrinks[i]);
                             lstPriceDrinks.Remove(lstPriceDrinks[i]);
                             lstQuantityDrinks.Remove(lstQuantityDrinks[i]);
+                            lstMenuIDDrinks.Remove(lstMenuIDDrinks[i]);
                         }
                     }
                 }
@@ -526,6 +567,7 @@ namespace Team3
                             lstNameDesserts.Remove(lstNameDesserts[i]);
                             lstPriceDesserts.Remove(lstPriceDesserts[i]);
                             lstQuantityDesserts.Remove(lstQuantityDesserts[i]);
+                            lstMenuIDDesserts.Remove(lstMenuIDDesserts[i]);
                         }
                     }
                 }
@@ -633,14 +675,206 @@ namespace Team3
         private void btnOrder_Click(object sender, EventArgs e)
         {
             bool boolCreditCardValid = CreditCardUpdate();
-            if (boolCreditCardValid == true)
+            try
             {
-                MessageBox.Show("Valid CC");
+                if (boolCreditCardValid == true)
+                {
+                    MessageBox.Show("Valid CC");
+                }
+                else
+                {
+                    MessageBox.Show("Invalid CC. Please Try Again!", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                //save order to db
+                int rowCount = dgvResults.RowCount;
+                if (dgvResults.RowCount == 0 || dgvResults.RowCount == 3)
+                {
+                    MessageBox.Show("Nothing to Order. Please make selection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                var date = DateTime.Now.ToString("yyyy-MM-dd");
+                string strInsertOrder = "INSERT INTO group3fa212330.Orders VALUES (" + Convert.ToInt32(strCustomerID) + ", '" + date + "', " + decTotal + ");";
+                ProgOps.UpdateDatabase(strInsertOrder);
+                string strMaxOrderIDQuery = "SELECT MAX(OrderID) FROM group3fa212330.Orders;";
+                string strCustomerPhoneQuery = "SELECT Phone FROM group3fa212330.Customers WHERE CustomerID = " + Convert.ToInt32(strCustomerID) + ";";
+                strMaxOrderID = ProgOps.DatabaseCommandLogon(strMaxOrderIDQuery);
+                strPhoneNumber = ProgOps.DatabaseCommandLogon(strCustomerPhoneQuery);
+                for(int i = 0; i < lstNameEntrees.Count; i++)
+                {
+                    string strInsertOrderItems = "INSERT INTO group3fa212330.OrderItems VALUES (" + lstMenuIDEntrees[i] + ", " + Convert.ToInt32(strMaxOrderID) + ", " + lstQuantityEntrees[i] + ", " + (lstQuantityEntrees[i] * lstPriceEntrees[i]) + ");";
+                    ProgOps.UpdateDatabase(strInsertOrderItems);
+                }
+                for (int i = 0; i < lstNameDrinks.Count; i++)
+                {
+                    string strInsertOrderItems = "INSERT INTO group3fa212330.OrderItems VALUES (" + lstMenuIDDrinks[i] + ", " + Convert.ToInt32(strMaxOrderID) + ", " + lstQuantityDrinks[i] + ", " + (lstQuantityDrinks[i] * lstPriceDrinks[i]) + ");";
+                    ProgOps.UpdateDatabase(strInsertOrderItems);
+                }
+                for (int i = 0; i < lstNameDesserts.Count; i++)
+                {
+                    string strInsertOrderItems = "INSERT INTO group3fa212330.OrderItems VALUES (" + lstMenuIDDesserts[i] + ", " + Convert.ToInt32(strMaxOrderID) + ", " + lstQuantityDesserts[i] + ", " + (lstQuantityDesserts[i] * lstPriceDesserts[i]) + ");";
+                    ProgOps.UpdateDatabase(strInsertOrderItems);
+                }
+                MessageBox.Show("Order Updated Successfully.", "Order Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                boolOrderMade = true;
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid CC");
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private StringBuilder GenerateReport()
+        {
+            StringBuilder html = new StringBuilder();
+            StringBuilder css = new StringBuilder();
+            try
+            {
+                // CSS is a way to style the HTML page. Each HTML tag can be customized.
+                // In this example, the H1 and TD tags are customized.
+                // Refer to this website for examples: https://www.w3schools.com/Css/css_syntax.asp
+
+                css.AppendLine("<style>");
+                css.AppendLine("td {padding: 5px; text-align:center; font-weight: bold; text-align: center; font-size: 12px;}");
+                css.AppendLine("h1 {color: blue;}");
+                css.AppendLine("</style>");
+
+                html.AppendLine("<html>");
+                css.AppendLine("<center {display: block;margin - left: auto;margin - right: auto;width: 50 %;}</center>");
+                html.AppendLine($"<head style = 'align:center'>{css}<title>{"Receipt"}</title></head>");
+                css.AppendLine("<left {display: block;margin - left: auto;margin - right: auto;width: 50 %;}</left>");
+                html.Append("<img src= " + clsLogo.strLogo + " style=' align: center; width: 75px; height: 50px;'>");
+                html.AppendLine("<body>");
+
+                html.AppendLine($"<h1>{" Order Receipt"}</h1>");
+                html.Append($"<br>{css}</br>");
+                html.Append($"<p style = 'text-align: left; font-size: 25px'><b>{"Customer: " + strFirstName + " " + strLastName}</b></p>");
+                html.Append($"<p style = 'text-align: left; font-size: 15px'><b>{"Order Number: " + strMaxOrderID}</b></p>");
+                html.Append($"<p style = 'text-align: left; font-size: 15px'><b>{"Phone Number: " + strPhoneNumber}</b></p>");
+                // Create table of data
+                // <TABLE> and </TABLE> is the start and end of a table of rows and data.
+                // <TR> and </TR> is one row of data. They contain <TD> and </TD> tags.
+                // <TD> and </TD> represents the data inside of the table in a particular row.
+                // https://www.w3schools.com/tags/tag_table.asp
+
+                // I used an <HR /> tag which is a "horizontal rule" as table data.
+                // You can "span" it across multiple columns of data.
+
+                html.AppendLine("<table>");
+                html.AppendLine("<tr ><td style = 'font-size: 20px'>Menu Item</td><td style = 'font-size: 20px'>Quantity</td><td style = 'font-size: 20px'>Price</td></tr>");
+                html.AppendLine("<tr><td colspan=3><hr /></td></tr>");
+                html.Append("<tr><td style = 'font-size: 15px'>**********Entrees**********</tr></td>");
+                for (int i = 0; i < lstNameEntrees.Count; i++)
+                {
+                    html.Append("<tr>");
+                    html.Append($"<td>{lstNameEntrees[i]}</td>");
+                    html.Append($"<td>{lstQuantityEntrees[i]}</td>");
+                    html.Append($"<td>{(lstQuantityEntrees[i]* lstPriceEntrees[i])}</td>");
+                    html.Append("</tr>");
+                    html.AppendLine("<tr><td colspan=4><hr /></td></tr>");
+                }
+                html.Append("<tr><td style = 'font-size: 15px' >**********Drinks**********</tr></td>");
+                for (int i = 0; i < lstNameDrinks.Count; i++)
+                {
+                    html.Append("<tr>");
+                    html.Append($"<td>{lstNameDrinks[i]}</td>");
+                    html.Append($"<td>{lstQuantityDrinks[i]}</td>");
+                    html.Append($"<td>{(lstQuantityDrinks[i] * lstPriceDrinks[i])}</td>");
+                    html.Append("</tr>");
+                    html.AppendLine("<tr><td colspan=4><hr /></td></tr>");
+                }
+                html.Append("<tr><td style = 'font-size: 15px'>**********Desserts**********</tr></td>");
+                for (int i = 0; i < lstNameDesserts.Count; i++)
+                {
+                    html.Append("<tr>");
+                    html.Append($"<td>{lstNameDesserts[i]}</td>");
+                    html.Append($"<td>{lstQuantityDesserts[i]}</td>");
+                    html.Append($"<td>{(lstQuantityDesserts[i] * lstPriceDesserts[i])}</td>");
+                    html.Append("</tr>");
+                    html.AppendLine("<tr><td colspan=4><hr /></td></tr>");
+                }
+                html.AppendLine("</table>");
+                html.Append($"<br></br><br></br>");
+                html.Append($"<p style = 'text-align:right; text-indent: 0px; font-size: 15px '><b>{"SubTotal: " + decSubTotal.ToString("C2")}</b></p>");
+                html.Append($"<p style = 'text-align:right; text-indent: -5px; font-size: 15px '><b>{"Taxes: " + decTaxes.ToString("C2")}</b></p>");
+                html.Append($"<p style = 'text-align:right; text-indent: 0px; font-size: 20px ' ><b>{"Total: " + decTotal.ToString("C2")}</b></p>");
+                html.Append($"<div><button onClick='window.print()'> {"Print this page"}</ button ></ div >");
+                html.AppendLine("</body></html>");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return html; // The returned value has all the HTML and CSS code to represent a webpage
+        }
+        private void PrintReport(StringBuilder html)
+        {
+            // Write (and overwrite) to the hard drive using the same filename of "Report.html"
+            try
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                // A "using" statement will automatically close a file after opening it.
+                // It never hurts to include a file.Close() once you are done with a file.
+                using (StreamWriter writer = new StreamWriter(path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html"))
+                {
+                    writer.WriteLine(html);
+                }
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyReceipts"));
+                System.Diagnostics.Process.Start(@path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html"); //Open the report in the default web browser
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnReceipt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (boolOrderMade == false)
+                {
+                    MessageBox.Show("You must make a order.", "Order Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                StringBuilder html = new StringBuilder();
+                html = GenerateReport();
+                PrintReport(html);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                wplayer.controls.stop();
+                this.Hide();
+                Application.OpenForms["frmMain"].Show();
+                frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
+                f2.frmMain_Load(f2, EventArgs.Empty);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Player_PlayStateChange(int NewState)
+        {
+            if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+
+            }
+        }
+
+        private void Player_MediaError(object pMediaObject)
+        {
+            MessageBox.Show("Cannot play media file.");
+            this.Close();
         }
     }
 }

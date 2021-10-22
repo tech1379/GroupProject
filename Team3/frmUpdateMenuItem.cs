@@ -31,5 +31,10 @@ namespace Team3
         {
 
         }
+
+        private void btnClearForm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
