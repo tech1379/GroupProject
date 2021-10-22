@@ -21,10 +21,11 @@ namespace Team3
         SqlConnection con = new SqlConnection(@"Server=cstnt.tstc.edu;Database= inew2330fa21;User Id=group3fa212330;password=3954755");
 
         private void btnAdd_Click(object sender, EventArgs e)
-        { //INSERT INTO [group3fa212330].[Employees] ([EmployeeID], [FirstName], [LastName], [Gender], [Address], [City], [State], [ZipCode], [PhoneNumber], [Email], [JobTitle], [DOB], [Age], [StartDate], [LogOnID], [isManager])
-          //VALUES (1000, N'Eric', N'Tekell', N'M', N'317 Penny Lane ', N'Waco', N'TX', N'79567', N'320-534-9243 ', N'billyH@Hmail.com', N'Dishwasher', N'1980-11-20', 40, N'2021-02-20', 3000, 0)
-            if (tbxFirstName.Text == "" || tbxLastName.Text == "" || tbxAddress.Text == "" ||
-                tbxCity.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || tbxAge.Text == "")
+        {
+            MessageBox.Show(mskDOB.Text);
+            if (tbxEmployeeID.Text == ""||tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
+                tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
+                mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
             {
                 MessageBox.Show("You forgot something! Please go back and make sure you filled in everything.");
             }
@@ -33,11 +34,14 @@ namespace Team3
                 try
                 {
                     con.Open();
-                    /////////////////////fix SQL statement
-                    string query = "insert into group3fa212330.Employees values(" + tbxEmployeeID.Text + "','" + tbxFirstName.Text + "','" + tbxLastName.Text + "'," +
-                        "'" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "'," +
-                        "'" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "'," +
-                        "'" + dtpDOB.Value.Date + "','" + tbxAge.Text + "','" + dtpStartDate.Value.Date + "','" + tbxLogOnID.Text + "')";
+                    SqlCommand resultsCmd = null;
+                    
+                    string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
+                    ProgOps.UpdateDatabase(queryLogOn);
+                    string queryLogOnID = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogOnName = '"+tbxLogOnName.Text+"' AND Password = '"+tbxLogOnPassword+"'";
+                    resultsCmd = new SqlCommand(queryLogOnID, con);
+                    string LogonID = (string)resultsCmd.ExecuteScalar();
+                    string query = "insert into group3fa212330.Employees values(" + tbxEmployeeID.Text + ",'" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + dtDOB. () + "'," + tbxAge.Text + "," + mskStartDate.Text + ",'" + LogonID + "')";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Successfully Added");
@@ -63,6 +67,7 @@ namespace Team3
 
         private void frmUpdateEmployee_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(mskDOB.Text);
             populate();
         }
 

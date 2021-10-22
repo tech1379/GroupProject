@@ -205,7 +205,7 @@
             this.btnNewEmployee.Name = "btnNewEmployee";
             this.btnNewEmployee.Size = new System.Drawing.Size(180, 32);
             this.btnNewEmployee.TabIndex = 16;
-            this.btnNewEmployee.Text = "New Employee";
+            this.btnNewEmployee.Text = "Manage Employee";
             this.btnNewEmployee.UseVisualStyleBackColor = true;
             this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
             // 
