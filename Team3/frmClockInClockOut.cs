@@ -16,5 +16,20 @@ namespace Team3
         {
             InitializeComponent();
         }
+
+        private void pbxClockIn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxStartBreak_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxClockOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

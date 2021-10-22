@@ -37,13 +37,18 @@ namespace Team3
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblSchedule = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.calSchedule = new System.Windows.Forms.MonthCalendar();
+            this.pbxLogo = new System.Windows.Forms.PictureBox();
+            this.gbxLabels = new System.Windows.Forms.GroupBox();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
+            this.lblCalendar = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
+            this.gbxLabels.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogOut
             // 
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Location = new System.Drawing.Point(416, 378);
             this.btnLogOut.Name = "btnLogOut";
@@ -55,6 +60,7 @@ namespace Team3
             // 
             // btnModify
             // 
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.Location = new System.Drawing.Point(12, 378);
             this.btnModify.Name = "btnModify";
@@ -67,7 +73,7 @@ namespace Team3
             // lblWelcome
             // 
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(9, 9);
+            this.lblWelcome.Location = new System.Drawing.Point(0, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(275, 23);
             this.lblWelcome.TabIndex = 2;
@@ -77,7 +83,7 @@ namespace Team3
             // 
             this.lblPosition.AutoSize = true;
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(12, 48);
+            this.lblPosition.Location = new System.Drawing.Point(3, 37);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(62, 16);
             this.lblPosition.TabIndex = 3;
@@ -87,7 +93,7 @@ namespace Team3
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(12, 74);
+            this.lblEmail.Location = new System.Drawing.Point(3, 67);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 4;
@@ -97,7 +103,7 @@ namespace Team3
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(12, 100);
+            this.lblAddress.Location = new System.Drawing.Point(3, 97);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(62, 16);
             this.lblAddress.TabIndex = 5;
@@ -107,7 +113,7 @@ namespace Team3
             // 
             this.lblContact.AutoSize = true;
             this.lblContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContact.Location = new System.Drawing.Point(12, 125);
+            this.lblContact.Location = new System.Drawing.Point(3, 127);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(107, 16);
             this.lblContact.TabIndex = 6;
@@ -117,47 +123,84 @@ namespace Team3
             // 
             this.lblSchedule.AutoSize = true;
             this.lblSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchedule.Location = new System.Drawing.Point(12, 167);
+            this.lblSchedule.Location = new System.Drawing.Point(3, 157);
             this.lblSchedule.Name = "lblSchedule";
             this.lblSchedule.Size = new System.Drawing.Size(68, 16);
             this.lblSchedule.TabIndex = 7;
             this.lblSchedule.Text = "Schedule:";
             // 
-            // monthCalendar1
+            // calSchedule
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(77, 167);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 8;
+            this.calSchedule.Location = new System.Drawing.Point(77, 204);
+            this.calSchedule.Name = "calSchedule";
+            this.calSchedule.TabIndex = 8;
+            this.calSchedule.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calSchedule_DateChanged);
             // 
-            // pictureBox1
+            // pbxLogo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(316, 167);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 162);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.pbxLogo.Image = global::Team3.Properties.Resources.denali_logo;
+            this.pbxLogo.Location = new System.Drawing.Point(316, 210);
+            this.pbxLogo.Name = "pbxLogo";
+            this.pbxLogo.Size = new System.Drawing.Size(216, 162);
+            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxLogo.TabIndex = 9;
+            this.pbxLogo.TabStop = false;
+            // 
+            // gbxLabels
+            // 
+            this.gbxLabels.Controls.Add(this.lblEmployeeID);
+            this.gbxLabels.Controls.Add(this.lblWelcome);
+            this.gbxLabels.Controls.Add(this.lblPosition);
+            this.gbxLabels.Controls.Add(this.lblEmail);
+            this.gbxLabels.Controls.Add(this.lblSchedule);
+            this.gbxLabels.Controls.Add(this.lblAddress);
+            this.gbxLabels.Controls.Add(this.lblContact);
+            this.gbxLabels.Location = new System.Drawing.Point(12, 13);
+            this.gbxLabels.Name = "gbxLabels";
+            this.gbxLabels.Size = new System.Drawing.Size(520, 182);
+            this.gbxLabels.TabIndex = 10;
+            this.gbxLabels.TabStop = false;
+            // 
+            // lblEmployeeID
+            // 
+            this.lblEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeID.Location = new System.Drawing.Point(350, 0);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(170, 23);
+            this.lblEmployeeID.TabIndex = 8;
+            this.lblEmployeeID.Text = "EmployeeID:";
+            // 
+            // lblCalendar
+            // 
+            this.lblCalendar.BackColor = System.Drawing.Color.Transparent;
+            this.lblCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalendar.ForeColor = System.Drawing.Color.Red;
+            this.lblCalendar.Location = new System.Drawing.Point(9, 210);
+            this.lblCalendar.Name = "lblCalendar";
+            this.lblCalendar.Size = new System.Drawing.Size(65, 100);
+            this.lblCalendar.TabIndex = 11;
+            this.lblCalendar.Text = "The bolded dates on the calendar are the days you are scheduled.";
             // 
             // frmEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(544, 431);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.lblSchedule);
-            this.Controls.Add(this.lblContact);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblPosition);
-            this.Controls.Add(this.lblWelcome);
+            this.Controls.Add(this.lblCalendar);
+            this.Controls.Add(this.gbxLabels);
+            this.Controls.Add(this.pbxLogo);
+            this.Controls.Add(this.calSchedule);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnLogOut);
             this.Name = "frmEmployees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employees";
             this.Load += new System.EventHandler(this.frmEmployees_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
+            this.gbxLabels.ResumeLayout(false);
+            this.gbxLabels.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -171,7 +214,10 @@ namespace Team3
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblSchedule;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MonthCalendar calSchedule;
+        private System.Windows.Forms.PictureBox pbxLogo;
+        private System.Windows.Forms.GroupBox gbxLabels;
+        private System.Windows.Forms.Label lblEmployeeID;
+        private System.Windows.Forms.Label lblCalendar;
     }
 }

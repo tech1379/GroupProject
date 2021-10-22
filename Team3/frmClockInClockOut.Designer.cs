@@ -95,6 +95,7 @@
             this.pbxClockOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxClockOut.TabIndex = 3;
             this.pbxClockOut.TabStop = false;
+            this.pbxClockOut.Click += new System.EventHandler(this.pbxClockOut_Click);
             // 
             // pbxStartBreak
             // 
@@ -105,6 +106,7 @@
             this.pbxStartBreak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxStartBreak.TabIndex = 2;
             this.pbxStartBreak.TabStop = false;
+            this.pbxStartBreak.Click += new System.EventHandler(this.pbxStartBreak_Click);
             // 
             // pbxClockIn
             // 
@@ -115,6 +117,7 @@
             this.pbxClockIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxClockIn.TabIndex = 1;
             this.pbxClockIn.TabStop = false;
+            this.pbxClockIn.Click += new System.EventHandler(this.pbxClockIn_Click);
             // 
             // pictureBox1
             // 
