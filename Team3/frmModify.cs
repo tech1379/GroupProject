@@ -25,6 +25,10 @@ namespace Team3
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            tbxAddress.Clear();
+            tbxPhone.Clear();
+            tbxEmail.Clear();
+            tbxCity.Clear();
             this.Close();
         }
 
