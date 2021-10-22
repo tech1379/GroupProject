@@ -20,13 +20,7 @@ namespace Team3
         //TEST
         int EmployeeID;
         string strLogOnID;
-
-        public class StatusOfEmployee
-        {
-            public string EmployeeID { get; set; }
-            public string punchDirection { get; set; }
-            public int openPunch { get; set; }
-        }
+       
 
         //will accept a variable that holds LogOnID number
         public frmEmployees(string LogOnID )
@@ -97,14 +91,143 @@ namespace Team3
             resultsCmd = new SqlCommand(sqlStatement, dbConnection);
             EmployeeID = (int)resultsCmd.ExecuteScalar();
 
+            lblEmployeeID.Text = "EmployeeID: " + EmployeeID;
+
+            sqlStatement = "SELECT PhoneNumber FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
+
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            string strPhone = (string)resultsCmd.ExecuteScalar();
+
+            lblContact.Text = "Contact Number: " + strPhone;
+
+
+            //statement to get work date
+            sqlStatement = "SELECT Monday FROM group3fa212330.WorkSchedule WHERE EmployeeID = '" + EmployeeID + "';";
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            //CODE FOR CALENDAR
+
+            DateTime Monday;
+
+            //if db returns a null if statement will handle it
+            if (resultsCmd.ExecuteScalar() == DBNull.Value)
+            {
+                //assigning minimum datetime if value is null
+               Monday = DateTime.MinValue;
+            }
+            else
+            {
+                Monday = (DateTime)resultsCmd.ExecuteScalar();
+            }
+
+            sqlStatement = "SELECT Tuesday FROM group3fa212330.WorkSchedule WHERE EmployeeID = '" + EmployeeID + "';";
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            DateTime Tuesday ;
+
+            if (resultsCmd.ExecuteScalar() == DBNull.Value)
+            {
+
+                Tuesday = DateTime.MinValue;
+            }
+            else
+            {
+                Tuesday = (DateTime)resultsCmd.ExecuteScalar();
+            }
+
+            sqlStatement = "SELECT Wednesday FROM group3fa212330.WorkSchedule WHERE EmployeeID = '" + EmployeeID + "';";
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+            DateTime Wednesday;
+
+            if (resultsCmd.ExecuteScalar() == DBNull.Value)
+            {
+
+                Wednesday = DateTime.MinValue;
+            }
+            else
+            {
+                Wednesday = (DateTime)resultsCmd.ExecuteScalar();
+            }
+            sqlStatement = "SELECT Thursday FROM group3fa212330.WorkSchedule WHERE EmployeeID = '" + EmployeeID + "';";
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            DateTime Thursday;
+            if (resultsCmd.ExecuteScalar() == DBNull.Value)
+            {
+
+                Thursday = DateTime.MinValue;
+            }
+            else
+            {
+                Thursday = (DateTime)resultsCmd.ExecuteScalar();
+            }
+
+            sqlStatement = "SELECT Friday FROM group3fa212330.WorkSchedule WHERE EmployeeID = '" + EmployeeID + "';";
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            DateTime Friday;
+
+            if (resultsCmd.ExecuteScalar() == DBNull.Value)
+            {
+
+                Friday = DateTime.MinValue;
+            }
+            else
+            {
+                Friday = (DateTime)resultsCmd.ExecuteScalar();
+            }
+
+
+            sqlStatement = "SELECT Saturday FROM group3fa212330.WorkSchedule WHERE EmployeeID = '" + EmployeeID + "';";
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            DateTime Saturday;
+
+            if (resultsCmd.ExecuteScalar() == DBNull.Value)
+            {
+
+                Saturday = DateTime.MinValue;
+            }
+            else
+            {
+                Saturday = (DateTime)resultsCmd.ExecuteScalar();
+            }
+
+
+            sqlStatement = "SELECT Sunday FROM group3fa212330.WorkSchedule WHERE EmployeeID = '" + EmployeeID + "';";
+            resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+            DateTime Sunday;
+
+            if (resultsCmd.ExecuteScalar() == DBNull.Value)
+            {
+
+                Sunday = DateTime.MinValue;
+            }
+            else
+            {
+               Sunday = (DateTime)resultsCmd.ExecuteScalar();
+            }
+
+
+            DateTime[] DateArray = { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday };
+
+
+            //will now bold dates
+            calSchedule.BoldedDates = DateArray;
+            
+
+
+
+
             resultsCmd.Dispose();
 
         }
 
-        private void btnTimeClock_Click(object sender, EventArgs e)
+        private void calSchedule_DateChanged(object sender, DateRangeEventArgs e)
         {
-            frmClockInClockOut formTimeClock = new frmClockInClockOut();
-            formTimeClock.ShowDialog();
+
         }
     }
 }
