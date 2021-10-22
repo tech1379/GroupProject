@@ -147,7 +147,7 @@ namespace Team3
             this.btnTimeClock.TabIndex = 10;
             this.btnTimeClock.Text = "&TIME CLOCK";
             this.btnTimeClock.UseVisualStyleBackColor = true;
-            this.btnTimeClock.Click += new System.EventHandler(this.btnTimeClock_Click);
+            //this.btnTimeClock.Click += new System.EventHandler(this.btnTimeClock_Click);
             // 
             // frmEmployees
             // 
