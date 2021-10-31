@@ -175,6 +175,7 @@
             this.btnManageMenuItems.TabIndex = 20;
             this.btnManageMenuItems.Text = "Manage Menu Items";
             this.btnManageMenuItems.UseVisualStyleBackColor = true;
+            this.btnManageMenuItems.Click += new System.EventHandler(this.btnManageMenuItems_Click);
             // 
             // btnOrders
             // 

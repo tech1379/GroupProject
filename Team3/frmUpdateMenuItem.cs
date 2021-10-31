@@ -13,6 +13,7 @@ namespace Team3
 {
     public partial class frmUpdateMenuItem : Form
     {
+        public static string message = "An error has occurred in the program.";
         public frmUpdateMenuItem()
         {
             InitializeComponent();
@@ -33,24 +34,56 @@ namespace Team3
         private void frmUpdateMenuItem_Load(object sender, EventArgs e)
         {
             populate();
+            cbxCategoryID.Items.Add("9000");
+            cbxCategoryID.Items.Add("9001");
+            cbxCategoryID.Items.Add("9001");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //if (tbxMenuID.Text == "" || tbxCategoryID.Text == "" || tbxName.Text == "" || tbxDescription.Text == "" || tbxPrice.Text == "")
-            //{
-            //    MessageBox.Show("Please Fill All of the Data");
-            //}
-            //else
-            //{
-            //    con.Open();
-            //    string query = "update group3fa212330.Menu set CategoryID='" + tbxCategoryID.Text + "',Name='" + tbxName.Text + "',Description='" + tbxDescription.Text + "',Price=" + tbxPrice.Text + " where MenuID=" + tbxMenuID + "";
-            //    SqlCommand cmd = new SqlCommand(query, con);
-            //    cmd.ExecuteNonQuery();
-            //    MessageBox.Show("Item Updated");
-            //    con.Close();
-            //    populate();
-            //}
+            try
+            {
+                if (tbxName.Text == "")
+                {
+                    MessageBox.Show("Name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbxName.Focus();
+                    return;
+                }
+                else if (tbxDescription.Text == "")
+                {
+                    MessageBox.Show("Description cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbxDescription.Focus();
+                    return;
+                }
+                else if (tbxPrice.Text == "")
+                {
+                    MessageBox.Show("Price cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbxPrice.Focus();
+                    return;
+                }
+                if (!Validation.ValidDecimal(tbxPrice.Text))
+                {
+                    MessageBox.Show("Retail Price must be in decimal form.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbxPrice.Clear();
+                    tbxPrice.Focus();
+                    return;
+                }
+                if(cbxCategoryID.SelectedIndex == -1)
+                {
+                    MessageBox.Show("You must select a category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int intCategoryID = Convert.ToInt32(cbxCategoryID.SelectedItem);
+                string strName = tbxName.Text;
+                string strDesc = tbxDescription.Text;
+                decimal decRetailPrice = Convert.ToDecimal(tbxPrice.Text);
+                ProgOps.DatabaseCommandAddItem(intCategoryID, strName, strDesc, decRetailPrice);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -76,6 +109,22 @@ namespace Team3
             //        MessageBox.Show(ex.Message);
             //    }
             //}
+        }
+
+        private void tbxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (int)e.KeyChar == 8)
+            { //acceptable keystrokes
+                e.Handled = false;
+            }
+            else if ((int)e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

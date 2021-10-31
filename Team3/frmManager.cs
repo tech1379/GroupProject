@@ -103,6 +103,10 @@ namespace Team3
             ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
         }
 
-
+        private void btnManageMenuItems_Click(object sender, EventArgs e)
+        {
+            frmUpdateMenuItem updateMenu = new frmUpdateMenuItem();
+            updateMenu.ShowDialog();
+        }
     }
 }
