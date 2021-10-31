@@ -878,11 +878,12 @@
             // 
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 180);
+            this.label2.Location = new System.Drawing.Point(27, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 171);
             this.label2.TabIndex = 127;
             this.label2.Text = "1.5 Toppings weighing about 1.5 lbs";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblEntrees
             // 
@@ -950,7 +951,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(1295, 849);
+            this.ClientSize = new System.Drawing.Size(1295, 749);
             this.Controls.Add(this.gbxMenu);
             this.Controls.Add(this.groupBox4);
             this.Name = "frmMenu";
