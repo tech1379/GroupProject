@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.IO;
 namespace Team3
 {
     class ProgOps
@@ -209,6 +209,43 @@ namespace Team3
             }
             return lstMenu;
         }
+        public static void DatabaseCommandAddItem(int CategoryID, string strName, string strDesc, decimal Price)
+        {
 
+            MessageBox.Show("You must add an image to save to the database.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //OpenFileDialog Properties------------------------------------------
+            OpenFileDialog openFile = new OpenFileDialog(); //New instance
+            openFile.ValidateNames = true; //Prevent illegal characters
+            openFile.AddExtension = false; //Auto fixes file extension problems
+            openFile.Filter = "Image File|*.png|Image File|*.jpg"; //Allow types
+            openFile.Title = "File to Upload"; //Title of dialog box
+                                               //-------------------------------------------------------------------
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                //TODO: Add some validation to make sure the file is an image.
+
+                byte[] image = File.ReadAllBytes(openFile.FileName); //Convert image into a byte array
+                try
+                {
+                    _cntDatabase.Open();
+                    //TODO: Change (Image) to the name of your image column [e.g (ProductImages)]
+                    string insertQuery = $"INSERT INTO {strTableName} VALUES('" + CategoryID + "', '" + strName + "', '" + strDesc + "', " + Price + ", @Image)"; // @Image is a parameter we will fill in later                        
+                    SqlCommand insertCmd = new SqlCommand(insertQuery, _cntDatabase);
+                    SqlParameter sqlParams = insertCmd.Parameters.AddWithValue("@Image", image); // The parameter will be the image as a byte array
+                    sqlParams.DbType = System.Data.DbType.Binary; // The type of data we are sending to the server will be a binary file
+                    insertCmd.ExecuteNonQuery();
+                    _cntDatabase.Close();
+
+                    MessageBox.Show("File was successfully added to the database.", "File Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error During Upload", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
     }
 }
