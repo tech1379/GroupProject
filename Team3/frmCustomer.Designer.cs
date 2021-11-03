@@ -327,6 +327,7 @@ namespace Team3
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            //this.btnClose.MouseHover += new System.EventHandler(this.btnClose_MouseHover);
             // 
             // frmCustomer
             // 
@@ -344,7 +345,6 @@ namespace Team3
             this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            //this.Activated += new System.EventHandler(this.frmCustomer_Activated);
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             this.tbMenu.ResumeLayout(false);
             this.tbOrder.ResumeLayout(false);

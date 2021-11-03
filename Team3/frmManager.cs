@@ -46,15 +46,10 @@ namespace Team3
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //Exit confirmation
-            DialogResult response;
-            response = MessageBox.Show("Are you sure you want to exit?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (response == DialogResult.No)
-            {
-                return;
-            }
-            //Exit the Program
-            Application.Exit();
+            this.Hide();
+            Application.OpenForms["frmMain"].Show();
+            frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
+            f2.frmMain_Load(f2, EventArgs.Empty);
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -107,6 +102,12 @@ namespace Team3
         {
             frmUpdateMenuItem updateMenu = new frmUpdateMenuItem();
             updateMenu.ShowDialog();
+        }
+
+        private void btnLocationToday_Click(object sender, EventArgs e)
+        {
+            frmTruckLocation truckLocation = new frmTruckLocation();
+            truckLocation.ShowDialog();
         }
     }
 }
