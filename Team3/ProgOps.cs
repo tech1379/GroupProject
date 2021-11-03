@@ -17,7 +17,10 @@ namespace Team3
         //build a connection to database
         private static SqlConnection _cntDatabase = new SqlConnection(CONNECT_STRING);
         private static SqlCommand _sqlLogOnCommand;
+        private static SqlCommand _sqlMenuCommand;
         private static SqlCommand _sqlUpdateCommand;
+        private static SqlDataAdapter _daMenu = new SqlDataAdapter();
+        private static DataTable _dtMenuTable = new DataTable();
         private static string strTableName = "group3fa212330.Menu";
 
         ////add command object managers form
@@ -35,10 +38,10 @@ namespace Team3
                 //SqlConnection _cntDatabase = new SqlConnection(CONNECT_STRING);
                 //open the connection to db
                 _cntDatabase.Open();
-                MessageBox.Show("Database Open");
+                //MessageBox.Show("Database Open");
                 _cntDatabase.Close();
                 _cntDatabase.Dispose();
-                MessageBox.Show("Database Closed");
+                //MessageBox.Show("Database Closed");
             }
             catch (Exception ex)
             {
@@ -58,7 +61,7 @@ namespace Team3
             try
             {
                 _cntDatabase.Open();
-                MessageBox.Show("Database Open");
+                //MessageBox.Show("Database Open");
                 //establish a command object
                 _sqlResultsCommand = new SqlCommand(stringQuery, _cntDatabase);
                 //establish data adapter
@@ -68,7 +71,7 @@ namespace Team3
                 dgvTester.DataSource = _dtResultsTable;
                 _cntDatabase.Close();
                 _cntDatabase.Dispose();
-                MessageBox.Show("Database Closed");
+                //MessageBox.Show("Database Closed");
             }
             catch (Exception ex)
             {
@@ -79,8 +82,8 @@ namespace Team3
             _sqlResultsCommand.Dispose();
             _daResults.Dispose();
             _dtResultsTable.Dispose();
-  
- 
+
+
         }
 
         public static string DatabaseCommandLogon(string query)
@@ -244,6 +247,106 @@ namespace Team3
                 {
                     MessageBox.Show(ex.Message, "Error During Upload", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+
+        }
+        public static void DatabaseCommandMenu(TextBox tbxName, TextBox tbxDescription, TextBox tbxPrice, int MenuID)
+        {
+            try
+            {
+                tbxName.DataBindings.Clear();
+                tbxDescription.DataBindings.Clear();
+                tbxPrice.DataBindings.Clear();
+                //string to build query
+                string query = "SELECT * FROM group3fa212330.Menu WHERE MenuID = " + MenuID + ";";
+                //establish command object
+                _sqlMenuCommand = new SqlCommand(query, _cntDatabase);
+                //establish data adapter
+                _daMenu = new SqlDataAdapter();
+                _daMenu.SelectCommand = _sqlMenuCommand;
+                //fill datatable
+                _dtMenuTable = new DataTable();
+                _daMenu.Fill(_dtMenuTable);
+                //bind controls to textboxes
+                tbxName.DataBindings.Add("Text", _dtMenuTable, "Name");
+                tbxDescription.DataBindings.Add("Text", _dtMenuTable, "Description");
+                tbxPrice.DataBindings.Add("Text", _dtMenuTable, "Price");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public static void DatabaseCommandEditItem(int CategoryID, string strName, string strDesc, decimal Price, int MenuID)
+        {
+
+            MessageBox.Show("You must add an image to save to the database.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //OpenFileDialog Properties------------------------------------------
+            OpenFileDialog openFile = new OpenFileDialog(); //New instance
+            openFile.ValidateNames = true; //Prevent illegal characters
+            openFile.AddExtension = false; //Auto fixes file extension problems
+            openFile.Filter = "Image File|*.png|Image File|*.jpg"; //Allow types
+            openFile.Title = "File to Upload"; //Title of dialog box
+                                               //-------------------------------------------------------------------
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                //TODO: Add some validation to make sure the file is an image.
+
+                byte[] image = File.ReadAllBytes(openFile.FileName); //Convert image into a byte array
+                try
+                {
+                    _cntDatabase.Open();
+                    //TODO: Change (Image) to the name of your image column [e.g (ProductImages)]
+                    string insertQuery = $"UPDATE {strTableName} SET CategoryID = " + CategoryID + ", Name= '" + strName + "', Description = '" + strDesc + "', Price = " + Price + ", Image = @Image WHERE MenuID = " + MenuID + ";"; // @Image is a parameter we will fill in later                        
+                    SqlCommand insertCmd = new SqlCommand(insertQuery, _cntDatabase);
+                    SqlParameter sqlParams = insertCmd.Parameters.AddWithValue("@Image", image); // The parameter will be the image as a byte array
+                    sqlParams.DbType = System.Data.DbType.Binary; // The type of data we are sending to the server will be a binary file
+                    insertCmd.ExecuteNonQuery();
+                    _cntDatabase.Close();
+
+                    MessageBox.Show("File was successfully added to the database.", "File Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error During Upload", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        public static void DatabaseCommandDGV(string query, DataGridView dgvResults)
+        {
+            try
+            {
+                SqlConnection _cntDatabase = new SqlConnection(CONNECT_STRING);
+                //OPEN DB
+                _cntDatabase.Open();
+                //set cmd obj to null
+                _sqlResultsCommand = null;
+                //reset data adapter and data table to new
+                _daResults = new SqlDataAdapter();
+                _dtResultsTable = new DataTable();
+
+
+                //est command obj
+                _sqlResultsCommand = new SqlCommand(query, _cntDatabase);
+                //est data adapter
+                _daResults.SelectCommand = _sqlResultsCommand;
+                //fill data table
+                _daResults.Fill(_dtResultsTable);
+                //bind to dgv to data table
+                dgvResults.DataSource = _dtResultsTable;
+                //dispose of cmd, adapter, and table obj
+                _sqlResultsCommand.Dispose();
+                _daResults.Dispose();
+                _dtResultsTable.Dispose();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

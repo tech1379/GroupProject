@@ -186,6 +186,7 @@ namespace Team3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(645, 372);
+            this.ControlBox = false;
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pbxEye);
             this.Controls.Add(this.lblSignUp);
@@ -199,6 +200,7 @@ namespace Team3
             this.Controls.Add(this.pbxLogo);
             this.Controls.Add(this.lblTruckLocation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Denali Indian Tacos";

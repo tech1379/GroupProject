@@ -50,13 +50,14 @@ namespace Team3
                     strLogOnID = ProgOps.DatabaseCommandLogon(strSqlStatement);
                     if (strIsManager == "True")
                     {
-                        MessageBox.Show("Managers Form", "Managers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       // MessageBox.Show("Managers Form", "Managers", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //open manager form
-                        frmManager formManager = new frmManager();
-                        formManager.ShowDialog();
+                        
                         //Close frmMain
                         Application.OpenForms["frmMain"].Hide();
-                      
+                        frmManager formManager = new frmManager();
+                        formManager.ShowDialog();
+
                     }
                     else if (strIsCustomer == "True")
                     {
@@ -73,7 +74,7 @@ namespace Team3
                     }
                     else
                     {
-                        MessageBox.Show("Employee Form", "Employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       // MessageBox.Show("Employee Form", "Employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         //EMPLOYEE FORM SUBJECT TO CHANGE 9/23/2021
                         var frmEmployees = new frmEmployees(strLogOnID);

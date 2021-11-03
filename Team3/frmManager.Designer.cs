@@ -33,7 +33,6 @@
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btnPaySchedule = new System.Windows.Forms.Button();
             this.btnEventRequests = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
@@ -61,7 +60,6 @@
             this.groupBox1.Controls.Add(this.btnSchedule);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Controls.Add(this.btnPaySchedule);
             this.groupBox1.Controls.Add(this.btnEventRequests);
             this.groupBox1.Controls.Add(this.btnCustomers);
@@ -97,7 +95,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(180, 32);
             this.btnExit.TabIndex = 27;
-            this.btnExit.Text = "E&XIT";
+            this.btnExit.Text = "&Close";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -112,16 +110,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(10, 541);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(180, 32);
-            this.btnLogout.TabIndex = 25;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // btnPaySchedule
             // 
@@ -165,6 +153,7 @@
             this.btnLocationToday.TabIndex = 21;
             this.btnLocationToday.Text = "Location Today";
             this.btnLocationToday.UseVisualStyleBackColor = true;
+            this.btnLocationToday.Click += new System.EventHandler(this.btnLocationToday_Click);
             // 
             // btnManageMenuItems
             // 
@@ -266,6 +255,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(961, 623);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSalary);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.dgvTester);
@@ -289,7 +279,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnPaySchedule;
         private System.Windows.Forms.Button btnEventRequests;
         private System.Windows.Forms.Button btnCustomers;

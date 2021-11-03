@@ -97,6 +97,12 @@
     <Compile Include="frmNewAccount.Designer.cs">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTruckLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTruckLocation.Designer.cs">
+      <DependentUpon>frmTruckLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUpdateEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTruckLocation.resx">
+      <DependentUpon>frmTruckLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdateEmployee.resx">
       <DependentUpon>frmUpdateEmployee.cs</DependentUpon>
