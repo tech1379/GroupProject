@@ -229,5 +229,11 @@ namespace Team3
         {
 
         }
+
+        private void btnTimeClock_Click(object sender, EventArgs e)
+        {
+            frmClockInClockOut timeClock = new frmClockInClockOut();
+            timeClock.ShowDialog();
+        }
     }
 }
