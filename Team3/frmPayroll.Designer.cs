@@ -47,7 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbxOutput
@@ -126,7 +128,7 @@
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
-
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCalculate
             // 
@@ -228,6 +230,11 @@
             this.btnClose.Text = "Cl&ose";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
+            // inew2330fa21DataSet
+            // 
+            this.inew2330fa21DataSet.DataSetName = "inew2330fa21DataSet";
+            this.inew2330fa21DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmPayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +248,7 @@
             this.Text = "frmPayroll";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,5 +273,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private inew2330fa21DataSet inew2330fa21DataSet;
     }
 }
