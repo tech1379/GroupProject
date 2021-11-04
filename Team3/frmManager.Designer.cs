@@ -45,8 +45,6 @@
             this.inew2330fa21DataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
             this.dgvTester = new System.Windows.Forms.DataGridView();
-            this.btnView = new System.Windows.Forms.Button();
-            this.btnSalary = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).BeginInit();
@@ -228,26 +226,6 @@
             this.dgvTester.Size = new System.Drawing.Size(749, 544);
             this.dgvTester.TabIndex = 27;
             // 
-            // btnView
-            // 
-            this.btnView.ForeColor = System.Drawing.Color.Black;
-            this.btnView.Location = new System.Drawing.Point(219, 37);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(180, 32);
-            this.btnView.TabIndex = 29;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            // 
-            // btnSalary
-            // 
-            this.btnSalary.ForeColor = System.Drawing.Color.Black;
-            this.btnSalary.Location = new System.Drawing.Point(432, 37);
-            this.btnSalary.Name = "btnSalary";
-            this.btnSalary.Size = new System.Drawing.Size(180, 32);
-            this.btnSalary.TabIndex = 30;
-            this.btnSalary.Text = "Salary";
-            this.btnSalary.UseVisualStyleBackColor = true;
-            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -256,8 +234,6 @@
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(961, 623);
             this.ControlBox = false;
-            this.Controls.Add(this.btnSalary);
-            this.Controls.Add(this.btnView);
             this.Controls.Add(this.dgvTester);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,7 +269,5 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridView dgvTester;
         private System.Windows.Forms.Button btnSchedule;
-        private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnSalary;
     }
 }
