@@ -70,7 +70,7 @@ namespace Team3
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(6, 55);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(100, 16);
+            this.lblPhone.Size = new System.Drawing.Size(101, 16);
             this.lblPhone.TabIndex = 2;
             this.lblPhone.Text = "Phone Number:";
             // 
@@ -80,7 +80,7 @@ namespace Team3
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(54, 94);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 16);
+            this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Email:";
             // 
@@ -90,7 +90,7 @@ namespace Team3
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(37, 170);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(61, 16);
+            this.lblAddress.Size = new System.Drawing.Size(62, 16);
             this.lblAddress.TabIndex = 4;
             this.lblAddress.Text = "Address:";
             // 
@@ -100,7 +100,7 @@ namespace Team3
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCity.Location = new System.Drawing.Point(66, 132);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(32, 16);
+            this.lblCity.Size = new System.Drawing.Size(33, 16);
             this.lblCity.TabIndex = 5;
             this.lblCity.Text = "City:";
             // 
