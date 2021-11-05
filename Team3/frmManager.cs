@@ -44,65 +44,28 @@ namespace Team3
         //    //formEmergencyContact.ShowDialog();
         //}
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            //Exit confirmation
-            DialogResult response;
-            response = MessageBox.Show("Are you sure you want to exit?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (response == DialogResult.No)
-            {
-                return;
-            }
-            //Exit the Program
-            Application.Exit();
-        }
-
-        private void btnCustomers_Click(object sender, EventArgs e)
-        {
-            //shows customer information from database
-            sqlAll = "SELECT * FROM group3fa212330.Customers";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-
-        }
-
-        private void btnEmployees_Click(object sender, EventArgs e)
-        {
-            //shows employee information from database
-            sqlAll = "SELECT * FROM group3fa212330.Employees";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-        }
-
-        private void btnOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                sqlAll = "SELECT * FROM group3fa212330.Orders";
-                ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error");
-            }
-        }
-
-        private void btnPayDetails_Click(object sender, EventArgs e)
-        {
-            sqlAll = "SELECT * FROM group3fa212330.PayDetails";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-        }
-
-        private void btnPaySchedule_Click(object sender, EventArgs e)
-        {
-            sqlAll = "SELECT * FROM group3fa212330.PaySchedule";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-        }
-
         private void btnSchedule_Click(object sender, EventArgs e)
         {
             sqlAll = "SELECT * FROM group3fa212330.Schedule";
             ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
         }
 
+        private void btnManageMenuItems_Click(object sender, EventArgs e)
+        {
+            frmUpdateMenuItem updateMenu = new frmUpdateMenuItem();
+            updateMenu.ShowDialog();
+        }
 
+        private void btnLocationToday_Click(object sender, EventArgs e)
+        {
+            frmTruckLocation truckLocation = new frmTruckLocation();
+            truckLocation.ShowDialog();
+        }
+
+        private void btnPaySchedule_Click(object sender, EventArgs e)
+        {
+            frmPayroll payroll = new frmPayroll();
+            payroll.ShowDialog();
+        }
     }
 }
