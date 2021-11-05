@@ -234,6 +234,34 @@ namespace Team3
                 MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void globalMouseHoverEvent(object sender, System.EventArgs e)
+        {
+            PictureBox picBox = sender as PictureBox;
+            for (int i = 0; i < lstEntrees.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstEntrees[i].name)
+                {
+                    MessageBox.Show("Description: " + lstEntrees[i].description + "\n\n" + "Price: " + lstEntrees[i].price.ToString("C2"));
+                    return;
+                }
+            }
+            for (int i = 0; i < lstDrinks.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstDrinks[i].name)
+                {
+                    MessageBox.Show("Description: " + lstDrinks[i].description + "\n\n" + "Price: " + lstDrinks[i].price.ToString("C2"));
+                    return;
+                }
+            }
+            for (int i = 0; i < lstDesserts.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstDesserts[i].name)
+                {
+                    MessageBox.Show("Description: " + lstDesserts[i].description + "\n\n" + "Price: " + lstDesserts[i].price.ToString("C2"));
+                    return;
+                }
+            }
+        }
         public void LoadEntrees()
         {
             int perCol = 5;
@@ -259,6 +287,7 @@ namespace Team3
                     myPicBox[i].Size = new System.Drawing.Size(width, height);
                     myPicBox[i].Image = lstImages[i];
                     myPicBox[i].Click += new EventHandler(myPicBox_click);
+                    myPicBox[i].MouseHover += globalMouseHoverEvent;
                     lblMenuName[i] = new Label();
                     lblMenuName[i].Size = new Size(150, 50);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
@@ -312,6 +341,7 @@ namespace Team3
                     myPicBox[i].Size = new System.Drawing.Size(width, height);
                     myPicBox[i].Image = lstImagesDrinks[i];
                     myPicBox[i].Click += new EventHandler(myPicBoxDrinks_click);
+                    myPicBox[i].MouseHover += globalMouseHoverEvent;
                     lblMenuName[i] = new Label();
                     lblMenuName[i].Size = new Size(150, 50);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
@@ -363,8 +393,9 @@ namespace Team3
                     myPicBox[i].Size = new System.Drawing.Size(width, height);
                     myPicBox[i].Image = lstImagesDesserts[i];
                     myPicBox[i].Click += new EventHandler(myPicBoxDesserts_click);
+                    myPicBox[i].MouseHover += globalMouseHoverEvent;
                     lblMenuName[i] = new Label();
-                    lblMenuName[i].Size = new Size(150, 50);
+                    lblMenuName[i].Size = new Size(150, 100);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
                         65 + (65 * (i / perCol)) + (lblHeight * (i / perCol)));
                     lblMenuName[i].Name = "lbl" + lstDesserts[i].name;
@@ -812,6 +843,7 @@ namespace Team3
             try
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyReceipts"));
                 // A "using" statement will automatically close a file after opening it.
                 // It never hurts to include a file.Close() once you are done with a file.
                 using (StreamWriter writer = new StreamWriter(path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html"))
@@ -876,5 +908,7 @@ namespace Team3
             MessageBox.Show("Cannot play media file.");
             this.Close();
         }
+
+        
     }
 }
