@@ -16,7 +16,7 @@ namespace Team3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmClockInClockOut());
+            Application.Run(new frmSplash());
         }
     }
 }
