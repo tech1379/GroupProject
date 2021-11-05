@@ -22,6 +22,7 @@ namespace Team3
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(mskDOB.Text);
             if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
                 tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
                 mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
@@ -40,13 +41,15 @@ namespace Team3
                     string queryLogOnID = "SELECT MAX(LogOnID) FROM group3fa212330.LogOn";
                     string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
                     MessageBox.Show(LogonID);
-                    string query = "insert into group3fa212330.Employees VALUES('" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + dtDOB.Value.Date + "'," + Convert.ToInt32(tbxAge.Text) + "," + mskStartDate.Text + "," + Convert.ToInt32(LogonID) + ", 0)";
+                    string query = "insert into group3fa212330.Employees values('" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + dtDOB.Value.Date + "'," + Convert.ToInt32(tbxAge.Text) + ",'" + mskStartDate.Text + "'," + Convert.ToInt32(LogonID) + ", 0)";
+                    MessageBox.Show(query);
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Successfully Added");
                     con.Close();
                     populate();
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
