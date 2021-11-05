@@ -53,12 +53,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtDOB = new System.Windows.Forms.DateTimePicker();
-            this.tbxStartDate = new System.Windows.Forms.TextBox();
-            this.tbxDOB = new System.Windows.Forms.TextBox();
             this.mskStartDate = new System.Windows.Forms.MaskedTextBox();
             this.mskDOB = new System.Windows.Forms.MaskedTextBox();
             this.tbxEmployeeID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblEmplID = new System.Windows.Forms.Label();
             this.tbxLogOnPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxLogOnName = new System.Windows.Forms.TextBox();
@@ -67,16 +65,16 @@
             this.lblAge = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.dgvEmpManager = new System.Windows.Forms.DataGridView();
+            this.inew2330fa21DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
-            this.inew2330fa21DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -378,12 +376,10 @@
             // 
             this.panel1.Controls.Add(this.dtStartDate);
             this.panel1.Controls.Add(this.dtDOB);
-            this.panel1.Controls.Add(this.tbxStartDate);
-            this.panel1.Controls.Add(this.tbxDOB);
             this.panel1.Controls.Add(this.mskStartDate);
             this.panel1.Controls.Add(this.mskDOB);
             this.panel1.Controls.Add(this.tbxEmployeeID);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lblEmplID);
             this.panel1.Controls.Add(this.tbxLogOnPassword);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.tbxLogOnName);
@@ -424,31 +420,21 @@
             // 
             // dtStartDate
             // 
-            this.dtStartDate.Location = new System.Drawing.Point(554, 461);
+            this.dtStartDate.CustomFormat = "yyyy-MM-dd";
+            this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtStartDate.Location = new System.Drawing.Point(418, 461);
             this.dtStartDate.Name = "dtStartDate";
             this.dtStartDate.Size = new System.Drawing.Size(200, 20);
             this.dtStartDate.TabIndex = 83;
             // 
             // dtDOB
             // 
-            this.dtDOB.Location = new System.Drawing.Point(554, 418);
+            this.dtDOB.CustomFormat = "yyyy-MM-dd";
+            this.dtDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDOB.Location = new System.Drawing.Point(418, 422);
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(200, 20);
             this.dtDOB.TabIndex = 82;
-            // 
-            // tbxStartDate
-            // 
-            this.tbxStartDate.Location = new System.Drawing.Point(420, 461);
-            this.tbxStartDate.Name = "tbxStartDate";
-            this.tbxStartDate.Size = new System.Drawing.Size(100, 20);
-            this.tbxStartDate.TabIndex = 81;
-            // 
-            // tbxDOB
-            // 
-            this.tbxDOB.Location = new System.Drawing.Point(420, 421);
-            this.tbxDOB.Name = "tbxDOB";
-            this.tbxDOB.Size = new System.Drawing.Size(100, 20);
-            this.tbxDOB.TabIndex = 80;
             // 
             // mskStartDate
             // 
@@ -475,18 +461,18 @@
             this.tbxEmployeeID.Size = new System.Drawing.Size(283, 29);
             this.tbxEmployeeID.TabIndex = 76;
             // 
-            // label5
+            // lblEmplID
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(11, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 22);
-            this.label5.TabIndex = 77;
-            this.label5.Text = "First Name:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblEmplID.AutoSize = true;
+            this.lblEmplID.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmplID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmplID.ForeColor = System.Drawing.Color.Black;
+            this.lblEmplID.Location = new System.Drawing.Point(11, 13);
+            this.lblEmplID.Name = "lblEmplID";
+            this.lblEmplID.Size = new System.Drawing.Size(99, 22);
+            this.lblEmplID.TabIndex = 77;
+            this.lblEmplID.Text = "EmployeeID:";
+            this.lblEmplID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tbxLogOnPassword
             // 
@@ -579,6 +565,16 @@
             this.dgvEmpManager.TabIndex = 60;
             this.dgvEmpManager.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpManager_CellContentClick);
             // 
+            // inew2330fa21DataSetBindingSource
+            // 
+            this.inew2330fa21DataSetBindingSource.DataSource = this.inew2330fa21DataSet;
+            this.inew2330fa21DataSetBindingSource.Position = 0;
+            // 
+            // inew2330fa21DataSet
+            // 
+            this.inew2330fa21DataSet.DataSetName = "inew2330fa21DataSet";
+            this.inew2330fa21DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnHome
             // 
             this.btnHome.Location = new System.Drawing.Point(146, 663);
@@ -618,16 +614,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // inew2330fa21DataSet
-            // 
-            this.inew2330fa21DataSet.DataSetName = "inew2330fa21DataSet";
-            this.inew2330fa21DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inew2330fa21DataSetBindingSource
-            // 
-            this.inew2330fa21DataSetBindingSource.DataSource = this.inew2330fa21DataSet;
-            this.inew2330fa21DataSetBindingSource.Position = 0;
-            // 
             // frmUpdateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,8 +629,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -685,11 +671,9 @@
         private System.Windows.Forms.TextBox tbxLogOnName;
         private System.Windows.Forms.Label lblLogOnName;
         private System.Windows.Forms.TextBox tbxEmployeeID;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblEmplID;
         private System.Windows.Forms.MaskedTextBox mskStartDate;
         private System.Windows.Forms.MaskedTextBox mskDOB;
-        private System.Windows.Forms.TextBox tbxStartDate;
-        private System.Windows.Forms.TextBox tbxDOB;
         private System.Windows.Forms.DateTimePicker dtStartDate;
         private System.Windows.Forms.DateTimePicker dtDOB;
         private System.Windows.Forms.BindingSource inew2330fa21DataSetBindingSource;

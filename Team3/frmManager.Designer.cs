@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblClose = new System.Windows.Forms.Label();
             this.lblSchedule = new System.Windows.Forms.Label();
             this.lblLocationToday = new System.Windows.Forms.Label();
             this.lblUpdateMenu = new System.Windows.Forms.Label();
@@ -43,19 +45,21 @@
             this.btnLocationToday = new System.Windows.Forms.Button();
             this.btnManageMenuItems = new System.Windows.Forms.Button();
             this.btnNewEmployee = new System.Windows.Forms.Button();
+            this.dgvTester = new System.Windows.Forms.DataGridView();
             this.inew2330fa21DataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
-            this.dgvTester = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.lblClose);
             this.groupBox1.Controls.Add(this.lblSchedule);
             this.groupBox1.Controls.Add(this.lblLocationToday);
             this.groupBox1.Controls.Add(this.lblUpdateMenu);
@@ -71,15 +75,37 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 748);
+            this.groupBox1.Size = new System.Drawing.Size(200, 757);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Denali Indian Tacos";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.ForeColor = System.Drawing.Color.Black;
+            this.btnClose.Location = new System.Drawing.Point(65, 670);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(70, 59);
+            this.btnClose.TabIndex = 35;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblClose
+            // 
+            this.lblClose.AutoSize = true;
+            this.lblClose.Location = new System.Drawing.Point(76, 732);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(46, 22);
+            this.lblClose.TabIndex = 34;
+            this.lblClose.Text = "Close";
+            this.lblClose.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // lblSchedule
             // 
             this.lblSchedule.AutoSize = true;
-            this.lblSchedule.Location = new System.Drawing.Point(50, 696);
+            this.lblSchedule.Location = new System.Drawing.Point(51, 643);
             this.lblSchedule.Name = "lblSchedule";
             this.lblSchedule.Size = new System.Drawing.Size(98, 22);
             this.lblSchedule.TabIndex = 33;
@@ -89,7 +115,7 @@
             // lblLocationToday
             // 
             this.lblLocationToday.AutoSize = true;
-            this.lblLocationToday.Location = new System.Drawing.Point(50, 294);
+            this.lblLocationToday.Location = new System.Drawing.Point(51, 241);
             this.lblLocationToday.Name = "lblLocationToday";
             this.lblLocationToday.Size = new System.Drawing.Size(116, 22);
             this.lblLocationToday.TabIndex = 32;
@@ -99,7 +125,7 @@
             // lblUpdateMenu
             // 
             this.lblUpdateMenu.AutoSize = true;
-            this.lblUpdateMenu.Location = new System.Drawing.Point(50, 397);
+            this.lblUpdateMenu.Location = new System.Drawing.Point(51, 344);
             this.lblUpdateMenu.Name = "lblUpdateMenu";
             this.lblUpdateMenu.Size = new System.Drawing.Size(105, 22);
             this.lblUpdateMenu.TabIndex = 31;
@@ -108,7 +134,7 @@
             // 
             // lblPayroll
             // 
-            this.lblPayroll.Location = new System.Drawing.Point(60, 593);
+            this.lblPayroll.Location = new System.Drawing.Point(61, 540);
             this.lblPayroll.Name = "lblPayroll";
             this.lblPayroll.Size = new System.Drawing.Size(74, 22);
             this.lblPayroll.TabIndex = 30;
@@ -118,7 +144,7 @@
             // lblUpdateEmployee
             // 
             this.lblUpdateEmployee.AutoSize = true;
-            this.lblUpdateEmployee.Location = new System.Drawing.Point(35, 494);
+            this.lblUpdateEmployee.Location = new System.Drawing.Point(36, 441);
             this.lblUpdateEmployee.Name = "lblUpdateEmployee";
             this.lblUpdateEmployee.Size = new System.Drawing.Size(133, 22);
             this.lblUpdateEmployee.TabIndex = 29;
@@ -130,7 +156,7 @@
             this.btnSchedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSchedule.BackgroundImage")));
             this.btnSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnSchedule.Location = new System.Drawing.Point(64, 634);
+            this.btnSchedule.Location = new System.Drawing.Point(65, 581);
             this.btnSchedule.Name = "btnSchedule";
             this.btnSchedule.Size = new System.Drawing.Size(70, 59);
             this.btnSchedule.TabIndex = 28;
@@ -154,7 +180,7 @@
             this.btnPaySchedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPaySchedule.BackgroundImage")));
             this.btnPaySchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPaySchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnPaySchedule.Location = new System.Drawing.Point(64, 531);
+            this.btnPaySchedule.Location = new System.Drawing.Point(65, 478);
             this.btnPaySchedule.Name = "btnPaySchedule";
             this.btnPaySchedule.Size = new System.Drawing.Size(70, 59);
             this.btnPaySchedule.TabIndex = 24;
@@ -164,7 +190,7 @@
             // btnEventRequests
             // 
             this.btnEventRequests.ForeColor = System.Drawing.Color.Black;
-            this.btnEventRequests.Location = new System.Drawing.Point(10, 169);
+            this.btnEventRequests.Location = new System.Drawing.Point(11, 109);
             this.btnEventRequests.Name = "btnEventRequests";
             this.btnEventRequests.Size = new System.Drawing.Size(180, 32);
             this.btnEventRequests.TabIndex = 23;
@@ -177,7 +203,7 @@
             this.btnLocationToday.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLocationToday.BackgroundImage")));
             this.btnLocationToday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLocationToday.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationToday.Location = new System.Drawing.Point(64, 232);
+            this.btnLocationToday.Location = new System.Drawing.Point(65, 179);
             this.btnLocationToday.Name = "btnLocationToday";
             this.btnLocationToday.Size = new System.Drawing.Size(70, 59);
             this.btnLocationToday.TabIndex = 21;
@@ -189,7 +215,7 @@
             this.btnManageMenuItems.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnManageMenuItems.BackgroundImage")));
             this.btnManageMenuItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnManageMenuItems.ForeColor = System.Drawing.Color.Black;
-            this.btnManageMenuItems.Location = new System.Drawing.Point(64, 335);
+            this.btnManageMenuItems.Location = new System.Drawing.Point(65, 282);
             this.btnManageMenuItems.Name = "btnManageMenuItems";
             this.btnManageMenuItems.Size = new System.Drawing.Size(70, 59);
             this.btnManageMenuItems.TabIndex = 20;
@@ -201,12 +227,20 @@
             this.btnNewEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNewEmployee.BackgroundImage")));
             this.btnNewEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewEmployee.ForeColor = System.Drawing.Color.Black;
-            this.btnNewEmployee.Location = new System.Drawing.Point(64, 433);
+            this.btnNewEmployee.Location = new System.Drawing.Point(65, 380);
             this.btnNewEmployee.Name = "btnNewEmployee";
             this.btnNewEmployee.Size = new System.Drawing.Size(70, 59);
             this.btnNewEmployee.TabIndex = 16;
             this.btnNewEmployee.UseVisualStyleBackColor = true;
             this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
+            // 
+            // dgvTester
+            // 
+            this.dgvTester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTester.Location = new System.Drawing.Point(207, 75);
+            this.dgvTester.Name = "dgvTester";
+            this.dgvTester.Size = new System.Drawing.Size(749, 673);
+            this.dgvTester.TabIndex = 27;
             // 
             // inew2330fa21DataBindingSource
             // 
@@ -217,14 +251,6 @@
             // 
             this.inew2330fa21DataSet.DataSetName = "inew2330fa21DataSet";
             this.inew2330fa21DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dgvTester
-            // 
-            this.dgvTester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTester.Location = new System.Drawing.Point(207, 75);
-            this.dgvTester.Name = "dgvTester";
-            this.dgvTester.Size = new System.Drawing.Size(749, 673);
-            this.dgvTester.TabIndex = 27;
             // 
             // frmManager
             // 
@@ -245,9 +271,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -270,5 +296,7 @@
         private System.Windows.Forms.Label lblPayroll;
         private System.Windows.Forms.Label lblUpdateEmployee;
         private System.Windows.Forms.Label lblSchedule;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblClose;
     }
 }

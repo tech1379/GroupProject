@@ -37,12 +37,6 @@ namespace Team3
         {
 
         }
-        //add to database if you use this form
-        //private void btnEmergencyContacts_Click(object sender, EventArgs e)
-        //{
-        //    //frmEmergencyContact formEmergencyContact = new frmEmergencyContact();
-        //    //formEmergencyContact.ShowDialog();
-        //}
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
@@ -66,6 +60,14 @@ namespace Team3
         {
             frmPayroll payroll = new frmPayroll();
             payroll.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Application.OpenForms["frmMain"].Show();
+            frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
+            f2.frmMain_Load(f2, EventArgs.Empty);
         }
     }
 }
