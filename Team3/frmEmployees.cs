@@ -31,6 +31,10 @@ namespace Team3
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            //once logged out it will take you to main screen
+            var frmMain = new frmMain();
+            frmMain.Show();
+
             this.Close();
             ProgOps.CloseDatabase(dbConnection);
         }
@@ -91,7 +95,7 @@ namespace Team3
             resultsCmd = new SqlCommand(sqlStatement, dbConnection);
             EmployeeID = (int)resultsCmd.ExecuteScalar();
 
-            //lblEmployeeID.Text = "EmployeeID: " + EmployeeID;
+            lblEmployeeID.Text = "EmployeeID: " + EmployeeID;
 
             sqlStatement = "SELECT PhoneNumber FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
 
@@ -215,7 +219,7 @@ namespace Team3
 
 
             //will now bold dates
-            //calSchedule.BoldedDates = DateArray;
+            calSchedule.BoldedDates = DateArray;
             
 
 
@@ -232,8 +236,9 @@ namespace Team3
 
         private void btnTimeClock_Click(object sender, EventArgs e)
         {
-            frmClockInClockOut timeClock = new frmClockInClockOut();
-            timeClock.ShowDialog();
+            //passing the employee ID
+            var frmClock = new frmClockInClockOut(EmployeeID);
+           frmClock.Show();
         }
     }
 }

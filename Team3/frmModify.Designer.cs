@@ -146,6 +146,7 @@ namespace Team3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(448, 288);
+            this.ControlBox = false;
             this.Controls.Add(this.lblModify);
             this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.tbxEmail);

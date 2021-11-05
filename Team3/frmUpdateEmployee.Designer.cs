@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label13 = new System.Windows.Forms.Label();
             this.tbxPhoneNumber = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,32 +50,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxGender = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtDOB = new System.Windows.Forms.DateTimePicker();
-            this.tbxStartDate = new System.Windows.Forms.TextBox();
-            this.tbxDOB = new System.Windows.Forms.TextBox();
-            this.mskStartDate = new System.Windows.Forms.MaskedTextBox();
-            this.mskDOB = new System.Windows.Forms.MaskedTextBox();
-            this.tbxEmployeeID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbxLogOnPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbxLogOnName = new System.Windows.Forms.TextBox();
-            this.lblLogOnName = new System.Windows.Forms.Label();
-            this.tbxAge = new System.Windows.Forms.TextBox();
-            this.lblAge = new System.Windows.Forms.Label();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lblStartDate = new System.Windows.Forms.Label();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.dgvEmpManager = new System.Windows.Forms.DataGridView();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
-            this.inew2330fa21DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbxLogOnID = new System.Windows.Forms.TextBox();
+            this.lblLogonID = new System.Windows.Forms.Label();
+            this.tbxEmployeeID = new System.Windows.Forms.TextBox();
+            this.lblEmpID = new System.Windows.Forms.Label();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.tbxAge = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -376,21 +365,15 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dtStartDate);
-            this.panel1.Controls.Add(this.dtDOB);
-            this.panel1.Controls.Add(this.tbxStartDate);
-            this.panel1.Controls.Add(this.tbxDOB);
-            this.panel1.Controls.Add(this.mskStartDate);
-            this.panel1.Controls.Add(this.mskDOB);
-            this.panel1.Controls.Add(this.tbxEmployeeID);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.tbxLogOnPassword);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.tbxLogOnName);
-            this.panel1.Controls.Add(this.lblLogOnName);
             this.panel1.Controls.Add(this.tbxAge);
             this.panel1.Controls.Add(this.lblAge);
+            this.panel1.Controls.Add(this.tbxLogOnID);
+            this.panel1.Controls.Add(this.lblLogonID);
+            this.panel1.Controls.Add(this.dtpStartDate);
             this.panel1.Controls.Add(this.lblStartDate);
+            this.panel1.Controls.Add(this.tbxEmployeeID);
+            this.panel1.Controls.Add(this.lblEmpID);
+            this.panel1.Controls.Add(this.dtpDOB);
             this.panel1.Controls.Add(this.dgvEmpManager);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnEdit);
@@ -422,137 +405,13 @@
             this.panel1.Size = new System.Drawing.Size(1479, 715);
             this.panel1.TabIndex = 57;
             // 
-            // dtStartDate
+            // dtpStartDate
             // 
-            this.dtStartDate.Location = new System.Drawing.Point(554, 461);
-            this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dtStartDate.TabIndex = 83;
-            // 
-            // dtDOB
-            // 
-            this.dtDOB.Location = new System.Drawing.Point(554, 418);
-            this.dtDOB.Name = "dtDOB";
-            this.dtDOB.Size = new System.Drawing.Size(200, 20);
-            this.dtDOB.TabIndex = 82;
-            // 
-            // tbxStartDate
-            // 
-            this.tbxStartDate.Location = new System.Drawing.Point(420, 461);
-            this.tbxStartDate.Name = "tbxStartDate";
-            this.tbxStartDate.Size = new System.Drawing.Size(100, 20);
-            this.tbxStartDate.TabIndex = 81;
-            // 
-            // tbxDOB
-            // 
-            this.tbxDOB.Location = new System.Drawing.Point(420, 421);
-            this.tbxDOB.Name = "tbxDOB";
-            this.tbxDOB.Size = new System.Drawing.Size(100, 20);
-            this.tbxDOB.TabIndex = 80;
-            // 
-            // mskStartDate
-            // 
-            this.mskStartDate.Location = new System.Drawing.Point(109, 459);
-            this.mskStartDate.Mask = "0000-00-00";
-            this.mskStartDate.Name = "mskStartDate";
-            this.mskStartDate.Size = new System.Drawing.Size(283, 20);
-            this.mskStartDate.TabIndex = 79;
-            // 
-            // mskDOB
-            // 
-            this.mskDOB.Location = new System.Drawing.Point(104, 422);
-            this.mskDOB.Mask = "0000-00-00";
-            this.mskDOB.Name = "mskDOB";
-            this.mskDOB.Size = new System.Drawing.Size(283, 20);
-            this.mskDOB.TabIndex = 78;
-            // 
-            // tbxEmployeeID
-            // 
-            this.tbxEmployeeID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmployeeID.ForeColor = System.Drawing.Color.Red;
-            this.tbxEmployeeID.Location = new System.Drawing.Point(104, 6);
-            this.tbxEmployeeID.Name = "tbxEmployeeID";
-            this.tbxEmployeeID.Size = new System.Drawing.Size(283, 29);
-            this.tbxEmployeeID.TabIndex = 76;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(11, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 22);
-            this.label5.TabIndex = 77;
-            this.label5.Text = "First Name:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tbxLogOnPassword
-            // 
-            this.tbxLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLogOnPassword.ForeColor = System.Drawing.Color.Red;
-            this.tbxLogOnPassword.Location = new System.Drawing.Point(146, 533);
-            this.tbxLogOnPassword.Name = "tbxLogOnPassword";
-            this.tbxLogOnPassword.Size = new System.Drawing.Size(283, 29);
-            this.tbxLogOnPassword.TabIndex = 74;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(3, 540);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 22);
-            this.label3.TabIndex = 75;
-            this.label3.Text = "LogOn Password:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tbxLogOnName
-            // 
-            this.tbxLogOnName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLogOnName.ForeColor = System.Drawing.Color.Red;
-            this.tbxLogOnName.Location = new System.Drawing.Point(146, 499);
-            this.tbxLogOnName.Name = "tbxLogOnName";
-            this.tbxLogOnName.Size = new System.Drawing.Size(283, 29);
-            this.tbxLogOnName.TabIndex = 72;
-            // 
-            // lblLogOnName
-            // 
-            this.lblLogOnName.AutoSize = true;
-            this.lblLogOnName.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogOnName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOnName.ForeColor = System.Drawing.Color.Black;
-            this.lblLogOnName.Location = new System.Drawing.Point(3, 502);
-            this.lblLogOnName.Name = "lblLogOnName";
-            this.lblLogOnName.Size = new System.Drawing.Size(109, 22);
-            this.lblLogOnName.TabIndex = 73;
-            this.lblLogOnName.Text = "LogOn Name:";
-            this.lblLogOnName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tbxAge
-            // 
-            this.tbxAge.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAge.ForeColor = System.Drawing.Color.Red;
-            this.tbxAge.Location = new System.Drawing.Point(311, 131);
-            this.tbxAge.Name = "tbxAge";
-            this.tbxAge.Size = new System.Drawing.Size(79, 29);
-            this.tbxAge.TabIndex = 71;
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.BackColor = System.Drawing.Color.Transparent;
-            this.lblAge.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.ForeColor = System.Drawing.Color.Black;
-            this.lblAge.Location = new System.Drawing.Point(262, 134);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(41, 22);
-            this.lblAge.TabIndex = 70;
-            this.lblAge.Text = "Age:";
-            this.lblAge.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dtpStartDate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.Location = new System.Drawing.Point(107, 452);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(283, 29);
+            this.dtpStartDate.TabIndex = 65;
             // 
             // lblStartDate
             // 
@@ -567,12 +426,18 @@
             this.lblStartDate.Text = "Start Date:";
             this.lblStartDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Location = new System.Drawing.Point(108, 412);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(283, 29);
+            this.dtpDOB.TabIndex = 61;
+            // 
             // dgvEmpManager
             // 
-            this.dgvEmpManager.AutoGenerateColumns = false;
             this.dgvEmpManager.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvEmpManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpManager.DataSource = this.inew2330fa21DataSetBindingSource;
             this.dgvEmpManager.Location = new System.Drawing.Point(434, 13);
             this.dgvEmpManager.Name = "dgvEmpManager";
             this.dgvEmpManager.Size = new System.Drawing.Size(1033, 644);
@@ -618,15 +483,71 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // inew2330fa21DataSet
+            // tbxLogOnID
             // 
-            this.inew2330fa21DataSet.DataSetName = "inew2330fa21DataSet";
-            this.inew2330fa21DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tbxLogOnID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxLogOnID.ForeColor = System.Drawing.Color.Red;
+            this.tbxLogOnID.Location = new System.Drawing.Point(108, 492);
+            this.tbxLogOnID.Name = "tbxLogOnID";
+            this.tbxLogOnID.Size = new System.Drawing.Size(85, 29);
+            this.tbxLogOnID.TabIndex = 66;
             // 
-            // inew2330fa21DataSetBindingSource
+            // lblLogonID
             // 
-            this.inew2330fa21DataSetBindingSource.DataSource = this.inew2330fa21DataSet;
-            this.inew2330fa21DataSetBindingSource.Position = 0;
+            this.lblLogonID.AutoSize = true;
+            this.lblLogonID.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogonID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogonID.ForeColor = System.Drawing.Color.Black;
+            this.lblLogonID.Location = new System.Drawing.Point(18, 499);
+            this.lblLogonID.Name = "lblLogonID";
+            this.lblLogonID.Size = new System.Drawing.Size(80, 22);
+            this.lblLogonID.TabIndex = 67;
+            this.lblLogonID.Text = "LogOnID:";
+            this.lblLogonID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxEmployeeID
+            // 
+            this.tbxEmployeeID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxEmployeeID.ForeColor = System.Drawing.Color.Red;
+            this.tbxEmployeeID.Location = new System.Drawing.Point(107, 12);
+            this.tbxEmployeeID.Name = "tbxEmployeeID";
+            this.tbxEmployeeID.Size = new System.Drawing.Size(283, 29);
+            this.tbxEmployeeID.TabIndex = 62;
+            // 
+            // lblEmpID
+            // 
+            this.lblEmpID.AutoSize = true;
+            this.lblEmpID.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpID.ForeColor = System.Drawing.Color.Black;
+            this.lblEmpID.Location = new System.Drawing.Point(3, 19);
+            this.lblEmpID.Name = "lblEmpID";
+            this.lblEmpID.Size = new System.Drawing.Size(99, 22);
+            this.lblEmpID.TabIndex = 63;
+            this.lblEmpID.Text = "EmployeeID:";
+            this.lblEmpID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.BackColor = System.Drawing.Color.Transparent;
+            this.lblAge.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAge.ForeColor = System.Drawing.Color.Black;
+            this.lblAge.Location = new System.Drawing.Point(262, 134);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(41, 22);
+            this.lblAge.TabIndex = 70;
+            this.lblAge.Text = "Age:";
+            this.lblAge.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxAge
+            // 
+            this.tbxAge.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAge.ForeColor = System.Drawing.Color.Red;
+            this.tbxAge.Location = new System.Drawing.Point(311, 131);
+            this.tbxAge.Name = "tbxAge";
+            this.tbxAge.Size = new System.Drawing.Size(79, 29);
+            this.tbxAge.TabIndex = 71;
             // 
             // frmUpdateEmployee
             // 
@@ -643,8 +564,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -677,22 +596,14 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label lblStartDate;
+        private System.Windows.Forms.TextBox tbxLogOnID;
+        private System.Windows.Forms.Label lblLogonID;
+        private System.Windows.Forms.TextBox tbxEmployeeID;
+        private System.Windows.Forms.Label lblEmpID;
         private System.Windows.Forms.TextBox tbxAge;
         private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.TextBox tbxLogOnPassword;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbxLogOnName;
-        private System.Windows.Forms.Label lblLogOnName;
-        private System.Windows.Forms.TextBox tbxEmployeeID;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox mskStartDate;
-        private System.Windows.Forms.MaskedTextBox mskDOB;
-        private System.Windows.Forms.TextBox tbxStartDate;
-        private System.Windows.Forms.TextBox tbxDOB;
-        private System.Windows.Forms.DateTimePicker dtStartDate;
-        private System.Windows.Forms.DateTimePicker dtDOB;
-        private System.Windows.Forms.BindingSource inew2330fa21DataSetBindingSource;
-        private inew2330fa21DataSet inew2330fa21DataSet;
     }
 }

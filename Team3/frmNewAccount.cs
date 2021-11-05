@@ -23,14 +23,8 @@ namespace Team3
         private void frmNewAccount_Load(object sender, EventArgs e)
         {
             //set background image
-            Image myimage = new Bitmap(@"background.jpg");
+            Image myimage = new Bitmap(@"taco.jpg");
             this.BackgroundImage = myimage;
-            StateArray states = new StateArray();
-            for(int i = 0; i < states.states.Count(); i++)
-            {
-                cbxState.Items.Add(states.states[i]);
-            }
-           
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -45,18 +39,7 @@ namespace Team3
             string strLastName = tbxLastName.Text.Trim();
             string strAddress = tbxAddress.Text.Trim();
             string strCity = tbxCity.Text.Trim();
-            string strState = "";
-            StateArray states = new StateArray();
-            states.States();
-            if(cbxState.SelectedIndex == -1)
-            {
-                strState = "";
-            }
-            else
-            {
-                strState = (cbxState.SelectedItem.ToString());
-            }
-            
+            string strState = tbxState.Text.Trim();
             string strZipCode = tbxZipCode.Text.Trim();
             string strPhone = tbxPhone.Text.Trim();
             try
@@ -121,7 +104,6 @@ namespace Team3
                     "', '" + strLastName + "', '" + strAddress + "', '" + strCity + "', '" + strState + "', '" + strZipCode +
                     "', '" + strEmail + "', '" + strPhone + "');";
                 ProgOps.UpdateDatabase(strInsertCustomer);
-                MessageBox.Show("Account created successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -191,10 +173,9 @@ namespace Team3
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            frmMain main = new frmMain();
             this.Hide();
-            Application.OpenForms["frmMain"].Show();
-            frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
-            f2.frmMain_Load(f2, EventArgs.Empty);
+            main.ShowDialog();
         }
     }
 }

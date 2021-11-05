@@ -75,26 +75,5 @@ namespace Team3
             }
             return boolExpiration;
         }
-        public static bool ValidDecimal(string strDecimal)
-        {
-            bool boolValidDecimal = false;
-            try
-            {
-                string strDecimalPattern = @"^-?[0-9]*\.?[0-9]+$";
-                if ((Regex.Match(strDecimal, strDecimalPattern).Success))
-                {
-                    boolValidDecimal = true;
-                }
-                else
-                {
-                    boolValidDecimal = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return boolValidDecimal;
-        }
     }
 }

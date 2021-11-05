@@ -37,9 +37,10 @@ namespace Team3
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblSchedule = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.calSchedule = new System.Windows.Forms.MonthCalendar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTimeClock = new System.Windows.Forms.Button();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@ namespace Team3
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosition.Location = new System.Drawing.Point(12, 48);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(61, 16);
+            this.lblPosition.Size = new System.Drawing.Size(62, 16);
             this.lblPosition.TabIndex = 3;
             this.lblPosition.Text = "Position: ";
             // 
@@ -90,7 +91,7 @@ namespace Team3
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(12, 74);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 16);
+            this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email:";
             // 
@@ -100,7 +101,7 @@ namespace Team3
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(12, 100);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(61, 16);
+            this.lblAddress.Size = new System.Drawing.Size(62, 16);
             this.lblAddress.TabIndex = 5;
             this.lblAddress.Text = "Address:";
             // 
@@ -110,7 +111,7 @@ namespace Team3
             this.lblContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.Location = new System.Drawing.Point(12, 125);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(106, 16);
+            this.lblContact.Size = new System.Drawing.Size(107, 16);
             this.lblContact.TabIndex = 6;
             this.lblContact.Text = "Contact Number:";
             // 
@@ -118,23 +119,25 @@ namespace Team3
             // 
             this.lblSchedule.AutoSize = true;
             this.lblSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchedule.Location = new System.Drawing.Point(12, 167);
+            this.lblSchedule.Location = new System.Drawing.Point(6, 167);
             this.lblSchedule.Name = "lblSchedule";
-            this.lblSchedule.Size = new System.Drawing.Size(67, 16);
+            this.lblSchedule.Size = new System.Drawing.Size(68, 16);
             this.lblSchedule.TabIndex = 7;
             this.lblSchedule.Text = "Schedule:";
             // 
-            // monthCalendar1
+            // calSchedule
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(77, 167);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 8;
+            this.calSchedule.Location = new System.Drawing.Point(77, 167);
+            this.calSchedule.Name = "calSchedule";
+            this.calSchedule.TabIndex = 8;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Team3.Properties.Resources.denali_logo;
             this.pictureBox1.Location = new System.Drawing.Point(316, 167);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(216, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -149,14 +152,26 @@ namespace Team3
             this.btnTimeClock.UseVisualStyleBackColor = true;
             this.btnTimeClock.Click += new System.EventHandler(this.btnTimeClock_Click);
             // 
+            // lblEmployeeID
+            // 
+            this.lblEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeID.Location = new System.Drawing.Point(366, 9);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(166, 23);
+            this.lblEmployeeID.TabIndex = 11;
+            this.lblEmployeeID.Text = "Employee ID: ";
+            // 
             // frmEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(544, 431);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.btnTimeClock);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.calSchedule);
             this.Controls.Add(this.lblSchedule);
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.lblAddress);
@@ -166,6 +181,8 @@ namespace Team3
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnLogOut);
             this.Name = "frmEmployees";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employees";
             this.Load += new System.EventHandler(this.frmEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -184,8 +201,9 @@ namespace Team3
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblSchedule;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar calSchedule;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTimeClock;
+        private System.Windows.Forms.Label lblEmployeeID;
     }
 }
