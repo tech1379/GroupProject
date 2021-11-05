@@ -23,7 +23,7 @@ namespace Team3
         private void btnAdd_Click(object sender, EventArgs e)
         {
             MessageBox.Show(mskDOB.Text);
-            if (tbxEmployeeID.Text == "" || tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
+            if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
                 tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
                 mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
             {
@@ -38,10 +38,11 @@ namespace Team3
 
                     string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
                     ProgOps.UpdateDatabase(queryLogOn);
-                    string queryLogOnID = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogOnName = '" + tbxLogOnName.Text + "' AND Password = '" + tbxLogOnPassword + "'";
-                    resultsCmd = new SqlCommand(queryLogOnID, con);
-                    string LogonID = (string)resultsCmd.ExecuteScalar();
-                    string query = "insert into group3fa212330.Employees values(" + tbxEmployeeID.Text + ",'" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + dtDOB.Value.Date + "'," + tbxAge.Text + "," + mskStartDate.Text + ",'" + LogonID + "')";
+                    string queryLogOnID = "SELECT MAX(LogOnID) FROM group3fa212330.LogOn";
+                    string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
+                    MessageBox.Show(LogonID);
+                    string query = "insert into group3fa212330.Employees values('" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + dtDOB.Value.Date + "'," + Convert.ToInt32(tbxAge.Text) + ",'" + mskStartDate.Text + "'," + Convert.ToInt32(LogonID) + ", 0)";
+                    MessageBox.Show(query);
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Successfully Added");
