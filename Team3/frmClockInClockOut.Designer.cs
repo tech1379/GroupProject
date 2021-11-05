@@ -173,6 +173,7 @@
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(560, 347);
+            this.ControlBox = false;
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.tbxTimeOutput);

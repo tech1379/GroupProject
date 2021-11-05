@@ -621,6 +621,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1500, 768);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Name = "frmUpdateEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
