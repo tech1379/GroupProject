@@ -952,6 +952,7 @@
             this.AutoSize = true;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1295, 749);
+            this.ControlBox = false;
             this.Controls.Add(this.gbxMenu);
             this.Controls.Add(this.groupBox4);
             this.Name = "frmMenu";

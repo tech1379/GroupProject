@@ -48,7 +48,8 @@ namespace Team3
                     MessageBox.Show("Employee Successfully Added");
                     con.Close();
                     populate();
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

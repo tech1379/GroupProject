@@ -154,6 +154,7 @@ namespace Team3
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 431);
+            this.ControlBox = false;
             this.Controls.Add(this.btnTimeClock);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.monthCalendar1);

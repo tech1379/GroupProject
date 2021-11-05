@@ -22,17 +22,20 @@ namespace Team3
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            //timer1.Stop();
             this.Close();
+
         }
 
-        void Start()
-        {
-            clockInTime = DateTime.Now;
-        }
-        void upDateTime()
-        {
-            TimeSpan totalTime = DateTime.Now - clockInTime;
-        }
+        //void Start()
+        //{
+        //    clockInTime = DateTime.Now;
+        //}
+        //void upDateTime()
+        //{
+        //    TimeSpan totalTime = DateTime.Now - clockInTime;
+        //}
+
         //to show in label the current time and date
         private void frmClockInClockOut_Load(object sender, EventArgs e)
         {
@@ -44,7 +47,7 @@ namespace Team3
             lblDate.Text = DateTime.Now.ToLongDateString();
         }
 
-        //running clock that displays time change my the second
+        //running clock that displays time change by the second
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToLongTimeString();
@@ -53,28 +56,47 @@ namespace Team3
 
         private void btnClockIn_Click(object sender, EventArgs e)
         {
-            if (timer1.Enabled)
+            try
             {
-                timer1.Start();
-                MessageBox.Show("You have clocked in. ");
-                this.Hide();
+                if (timer1.Enabled)
+                {
+                    timer1.Start();
+                    MessageBox.Show("You have clocked in. ");
+                    //this.Hide();
+                    clockInTime = DateTime.Now;
+                }
+                else
+                {
+                    timer1.Stop();
+                }
             }
-            else
-            {
-                timer1.Stop();
-            }
+            catch (Exception ex) { }
+            
             //current time is set to the clockInTime
             //clockInTime = DateTime.Now;
         }
 
         private void btnClockOut_Click(object sender, EventArgs e)
         {
-            //current time is set to the clockOutTime
-            clockOutTime = DateTime.Now;
-            //by subtracting we get the working time in minutes
-            System.TimeSpan diffResult = clockOutTime.Subtract(clockInTime);
-            ////pass the total hours as string to the textbox
-            tbxTimeOutput.Text = Convert.ToString(diffResult.TotalHours);
+            try
+            {
+                string strHours = "";
+                double dblMinutes = 0;
+
+                //current time is set to the clockOutTime
+                clockOutTime = DateTime.Now;
+                //by subtracting we get the working time in minutes
+                System.TimeSpan diffResult = clockOutTime.Subtract(clockInTime);
+                ////pass the total hours as string to the textbox
+                //tbxTimeOutput.Text = Convert.ToString(diffResult.TotalHours);
+                //tbxTimeOutput.Text = Convert.ToString(diffResult.
+                strHours = diffResult.Hours.ToString();
+                dblMinutes = diffResult.Minutes / 60;
+                //strMinutes = diffResult.Minutes.ToString();
+                tbxTimeOutput.Text = strHours + dblMinutes.ToString();
+            }
+            catch (Exception ex) { }
+
         }
     }
 }
