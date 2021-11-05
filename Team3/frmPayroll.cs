@@ -17,18 +17,5 @@ namespace Team3
             InitializeComponent();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            tbxEmployeeID.Clear();
-            tbxHoursWorked.Clear();
-            tbxRateOfPay.Clear();
-            lblFICA.Text = "";
-            lblSocSecurityTax.Text = "";
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

@@ -49,11 +49,11 @@ namespace Team3
             // 
             this.lblTruckLocation.AutoSize = true;
             this.lblTruckLocation.BackColor = System.Drawing.Color.Transparent;
-            this.lblTruckLocation.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTruckLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTruckLocation.ForeColor = System.Drawing.Color.White;
             this.lblTruckLocation.Location = new System.Drawing.Point(12, 9);
             this.lblTruckLocation.Name = "lblTruckLocation";
-            this.lblTruckLocation.Size = new System.Drawing.Size(122, 18);
+            this.lblTruckLocation.Size = new System.Drawing.Size(127, 20);
             this.lblTruckLocation.TabIndex = 0;
             this.lblTruckLocation.Text = "&Truck Location";
             this.lblTruckLocation.Click += new System.EventHandler(this.lblTruckLocation_Click);
@@ -62,10 +62,10 @@ namespace Team3
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Goldenrod;
-            this.lblTitle.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(20, 110);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(605, 54);
+            this.lblTitle.Size = new System.Drawing.Size(642, 55);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Aho To Denali Indian Tacos";
             // 
@@ -200,8 +200,8 @@ namespace Team3
             this.Controls.Add(this.pbxLogo);
             this.Controls.Add(this.lblTruckLocation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "frmMain";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Denali Indian Tacos";
             this.Load += new System.EventHandler(this.frmMain_Load);

@@ -21,11 +21,10 @@ namespace Team3
         SqlConnection con = new SqlConnection(@"Server=cstnt.tstc.edu;Database= inew2330fa21;User Id=group3fa212330;password=3954755");
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(mskDOB.Text);
-            if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
-                tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
-                mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
+        { //INSERT INTO [group3fa212330].[Employees] ([EmployeeID], [FirstName], [LastName], [Gender], [Address], [City], [State], [ZipCode], [PhoneNumber], [Email], [JobTitle], [DOB], [Age], [StartDate], [LogOnID], [isManager])
+          //VALUES (1000, N'Eric', N'Tekell', N'M', N'317 Penny Lane ', N'Waco', N'TX', N'79567', N'320-534-9243 ', N'billyH@Hmail.com', N'Dishwasher', N'1980-11-20', 40, N'2021-02-20', 3000, 0)
+            if (tbxFirstName.Text == "" || tbxLastName.Text == "" || tbxAddress.Text == "" ||
+                tbxCity.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || tbxAge.Text == "")
             {
                 MessageBox.Show("You forgot something! Please go back and make sure you filled in everything.");
             }
@@ -34,22 +33,17 @@ namespace Team3
                 try
                 {
                     con.Open();
-                    SqlCommand resultsCmd = null;
-
-                    string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
-                    ProgOps.UpdateDatabase(queryLogOn);
-                    string queryLogOnID = "SELECT MAX(LogOnID) FROM group3fa212330.LogOn";
-                    string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
-                    MessageBox.Show(LogonID);
-                    string query = "insert into group3fa212330.Employees values('" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + dtDOB.Value.Date + "'," + Convert.ToInt32(tbxAge.Text) + ",'" + mskStartDate.Text + "'," + Convert.ToInt32(LogonID) + ", 0)";
-                    MessageBox.Show(query);
+                    /////////////////////fix SQL statement
+                    string query = "insert into group3fa212330.Employees values(" + tbxEmployeeID.Text + "','" + tbxFirstName.Text + "','" + tbxLastName.Text + "'," +
+                        "'" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "'," +
+                        "'" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "'," +
+                        "'" + dtpDOB.Value.Date + "','" + tbxAge.Text + "','" + dtpStartDate.Value.Date + "','" + tbxLogOnID.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Successfully Added");
                     con.Close();
                     populate();
-                }
-                catch (Exception ex)
+                }catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -69,13 +63,12 @@ namespace Team3
 
         private void frmUpdateEmployee_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show(mskDOB.Text);
             populate();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (tbxEmployeeID.Text == "")
+            if(tbxEmployeeID.Text == "")
             {
                 MessageBox.Show("Please enter EmployeeID");
             }
@@ -91,7 +84,7 @@ namespace Team3
                     con.Close();
                     populate();
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -117,35 +110,7 @@ namespace Team3
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
-                tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
-                dtDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
-            {
-                MessageBox.Show("You forgot something! Please go back and make sure you filled in everything.");
-            }
-            else
-            {
-                try
-                {
-                    con.Open();
-                    SqlCommand resultsCmd = null;
-                    string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
-                    ProgOps.UpdateDatabase(queryLogOn);
-                    string queryLogOnID = "SELECT LogOnID FROM group3fa212330.LogOn WHERE LogOnID ='" + tbxLogOnName.Text + "' AND Password ='" + tbxLogOnPassword + "'";
-                    resultsCmd = new SqlCommand(queryLogOnID, con);
-                    string LogonID = (string)resultsCmd.ExecuteScalar();
-                    string query = "update group3fa212330.Employees set FirstName='" + tbxFirstName.Text + "',Address='" + tbxAddress.Text + "',City='" + tbxCity.Text + "',ZipCode='" + tbxZipCode.Text + "',PhoneNumber='" + tbxPhoneNumber.Text + "',Email='" + tbxEmail.Text + "',JobTitle='" + cbxRole.SelectedItem.ToString() + "',DOB='" + dtDOB.Value.Date + "',Age='" + tbxAge.Text + "',StartDate='" + dtStartDate.Value.Date + "',LogOnID='" + LogonID + "' where EmployeeID='" + tbxEmployeeID.Text + "';";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Employee Update Successfully");
-                    con.Close();
-                    populate();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            //if(tbxEmployeeID.Text == "" || tbxFirstName.Text == "" || tbxLastName.Text == "" || 
         }
     }
 }
