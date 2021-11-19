@@ -134,9 +134,9 @@ namespace Team3
             // 
             // btnReceipt
             // 
-            this.btnReceipt.Location = new System.Drawing.Point(517, 472);
+            this.btnReceipt.Location = new System.Drawing.Point(560, 472);
             this.btnReceipt.Name = "btnReceipt";
-            this.btnReceipt.Size = new System.Drawing.Size(75, 54);
+            this.btnReceipt.Size = new System.Drawing.Size(90, 54);
             this.btnReceipt.TabIndex = 15;
             this.btnReceipt.Text = "&Print Receipt";
             this.btnReceipt.UseVisualStyleBackColor = true;
@@ -144,9 +144,9 @@ namespace Team3
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(417, 472);
+            this.btnOrder.Location = new System.Drawing.Point(449, 472);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(75, 54);
+            this.btnOrder.Size = new System.Drawing.Size(90, 54);
             this.btnOrder.TabIndex = 14;
             this.btnOrder.Text = "&Order";
             this.btnOrder.UseVisualStyleBackColor = true;
@@ -190,9 +190,9 @@ namespace Team3
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.Location = new System.Drawing.Point(305, 472);
+            this.btnRemoveItem.Location = new System.Drawing.Point(338, 472);
             this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(75, 54);
+            this.btnRemoveItem.Size = new System.Drawing.Size(90, 54);
             this.btnRemoveItem.TabIndex = 9;
             this.btnRemoveItem.Text = "Remove &Item";
             this.btnRemoveItem.UseVisualStyleBackColor = true;
@@ -200,9 +200,9 @@ namespace Team3
             // 
             // btnRemoveAll
             // 
-            this.btnRemoveAll.Location = new System.Drawing.Point(200, 472);
+            this.btnRemoveAll.Location = new System.Drawing.Point(227, 474);
             this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(75, 54);
+            this.btnRemoveAll.Size = new System.Drawing.Size(90, 54);
             this.btnRemoveAll.TabIndex = 2;
             this.btnRemoveAll.Text = "&Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = true;

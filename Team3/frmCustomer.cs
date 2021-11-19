@@ -366,7 +366,7 @@ namespace Team3
                     lblMenuName[i] = new Label();
                     lblMenuName[i].Size = new Size(150, 50);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
-                        65 + (65 * (i / perCol)) + (lblHeight * (i / perCol)));
+                        55 + (55 * (i / perCol)) + (lblHeight * (i / perCol)));
                     lblMenuName[i].Name = "lbl" + lstDesserts[i].name;
                     lblMenuName[i].Text = (i + 1).ToString() + ". " + lstDesserts[i].name;
                     lblMenuName[i].ForeColor = System.Drawing.Color.White;
