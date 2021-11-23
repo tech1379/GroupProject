@@ -23,7 +23,7 @@ namespace Team3
         private void frmNewAccount_Load(object sender, EventArgs e)
         {
             //set background image
-            Image myimage = new Bitmap(@"taco.jpg");
+            Image myimage = new Bitmap(@"background.jpg");
             this.BackgroundImage = myimage;
         }
 

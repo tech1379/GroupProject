@@ -41,7 +41,6 @@
             this.btnSchedule = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPaySchedule = new System.Windows.Forms.Button();
-            this.btnEventRequests = new System.Windows.Forms.Button();
             this.btnLocationToday = new System.Windows.Forms.Button();
             this.btnManageMenuItems = new System.Windows.Forms.Button();
             this.btnNewEmployee = new System.Windows.Forms.Button();
@@ -68,7 +67,6 @@
             this.groupBox1.Controls.Add(this.btnSchedule);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnPaySchedule);
-            this.groupBox1.Controls.Add(this.btnEventRequests);
             this.groupBox1.Controls.Add(this.btnLocationToday);
             this.groupBox1.Controls.Add(this.btnManageMenuItems);
             this.groupBox1.Controls.Add(this.btnNewEmployee);
@@ -187,17 +185,6 @@
             this.btnPaySchedule.UseVisualStyleBackColor = true;
             this.btnPaySchedule.Click += new System.EventHandler(this.btnPaySchedule_Click);
             // 
-            // btnEventRequests
-            // 
-            this.btnEventRequests.ForeColor = System.Drawing.Color.Black;
-            this.btnEventRequests.Location = new System.Drawing.Point(11, 109);
-            this.btnEventRequests.Name = "btnEventRequests";
-            this.btnEventRequests.Size = new System.Drawing.Size(180, 32);
-            this.btnEventRequests.TabIndex = 23;
-            this.btnEventRequests.Text = "Event Requests";
-            this.btnEventRequests.UseVisualStyleBackColor = true;
-            this.btnEventRequests.Click += new System.EventHandler(this.btnEventRequests_Click);
-            // 
             // btnLocationToday
             // 
             this.btnLocationToday.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLocationToday.BackgroundImage")));
@@ -283,7 +270,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnPaySchedule;
-        private System.Windows.Forms.Button btnEventRequests;
         private System.Windows.Forms.Button btnLocationToday;
         private System.Windows.Forms.Button btnManageMenuItems;
         private System.Windows.Forms.Button btnNewEmployee;
