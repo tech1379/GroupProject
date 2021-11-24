@@ -130,7 +130,7 @@ namespace Team3
             if (intToggle2 % 2 == 0)
             {
                 tbxConfirm.PasswordChar = '\0';
-                intToggle++;
+                intToggle2++;
             }
             else
             {
