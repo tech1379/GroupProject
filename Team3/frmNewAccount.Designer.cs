@@ -46,7 +46,6 @@ namespace Team3
             this.tbxLastName = new System.Windows.Forms.TextBox();
             this.tbxAddress = new System.Windows.Forms.TextBox();
             this.tbxCity = new System.Windows.Forms.TextBox();
-            this.tbxState = new System.Windows.Forms.TextBox();
             this.tbxZipCode = new System.Windows.Forms.TextBox();
             this.tbxPhone = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@ namespace Team3
             this.lblLogin = new System.Windows.Forms.Label();
             this.pbxToggle = new System.Windows.Forms.PictureBox();
             this.pbxToggle2 = new System.Windows.Forms.PictureBox();
+            this.cbxState = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxToggle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxToggle2)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@ namespace Team3
             this.lblEmail.Location = new System.Drawing.Point(112, 23);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(58, 20);
-            this.lblEmail.TabIndex = 0;
+            this.lblEmail.TabIndex = 13;
             this.lblEmail.Text = "Email:";
             // 
             // lblPassword
@@ -80,7 +80,7 @@ namespace Team3
             this.lblPassword.Location = new System.Drawing.Point(79, 106);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(91, 20);
-            this.lblPassword.TabIndex = 1;
+            this.lblPassword.TabIndex = 15;
             this.lblPassword.Text = "Password:";
             // 
             // lblConfirm
@@ -92,7 +92,7 @@ namespace Team3
             this.lblConfirm.Location = new System.Drawing.Point(12, 145);
             this.lblConfirm.Name = "lblConfirm";
             this.lblConfirm.Size = new System.Drawing.Size(158, 20);
-            this.lblConfirm.TabIndex = 2;
+            this.lblConfirm.TabIndex = 16;
             this.lblConfirm.Text = "Confirm Password:";
             // 
             // lblFirstName
@@ -104,7 +104,7 @@ namespace Team3
             this.lblFirstName.Location = new System.Drawing.Point(69, 184);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(101, 20);
-            this.lblFirstName.TabIndex = 3;
+            this.lblFirstName.TabIndex = 17;
             this.lblFirstName.Text = "First Name:";
             // 
             // lblLastName
@@ -116,7 +116,7 @@ namespace Team3
             this.lblLastName.Location = new System.Drawing.Point(70, 223);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(100, 20);
-            this.lblLastName.TabIndex = 4;
+            this.lblLastName.TabIndex = 18;
             this.lblLastName.Text = "Last Name:";
             // 
             // lblAddress
@@ -128,7 +128,7 @@ namespace Team3
             this.lblAddress.Location = new System.Drawing.Point(90, 262);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(80, 20);
-            this.lblAddress.TabIndex = 5;
+            this.lblAddress.TabIndex = 19;
             this.lblAddress.Text = "Address:";
             // 
             // lblCity
@@ -140,7 +140,7 @@ namespace Team3
             this.lblCity.Location = new System.Drawing.Point(126, 301);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(44, 20);
-            this.lblCity.TabIndex = 6;
+            this.lblCity.TabIndex = 20;
             this.lblCity.Text = "City:";
             // 
             // lblState
@@ -152,7 +152,7 @@ namespace Team3
             this.lblState.Location = new System.Drawing.Point(112, 340);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(58, 20);
-            this.lblState.TabIndex = 7;
+            this.lblState.TabIndex = 21;
             this.lblState.Text = "State:";
             // 
             // lblZip
@@ -164,7 +164,7 @@ namespace Team3
             this.lblZip.Location = new System.Drawing.Point(84, 379);
             this.lblZip.Name = "lblZip";
             this.lblZip.Size = new System.Drawing.Size(86, 20);
-            this.lblZip.TabIndex = 8;
+            this.lblZip.TabIndex = 22;
             this.lblZip.Text = "Zip Code:";
             // 
             // label1
@@ -176,7 +176,7 @@ namespace Team3
             this.label1.Location = new System.Drawing.Point(105, 418);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 23;
             this.label1.Text = "Phone:";
             // 
             // tbxEmail
@@ -185,7 +185,7 @@ namespace Team3
             this.tbxEmail.Location = new System.Drawing.Point(209, 20);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(329, 26);
-            this.tbxEmail.TabIndex = 10;
+            this.tbxEmail.TabIndex = 0;
             // 
             // tbxPassword
             // 
@@ -194,7 +194,7 @@ namespace Team3
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.PasswordChar = '*';
             this.tbxPassword.Size = new System.Drawing.Size(329, 26);
-            this.tbxPassword.TabIndex = 11;
+            this.tbxPassword.TabIndex = 2;
             // 
             // tbxConfirm
             // 
@@ -203,7 +203,7 @@ namespace Team3
             this.tbxConfirm.Name = "tbxConfirm";
             this.tbxConfirm.PasswordChar = '*';
             this.tbxConfirm.Size = new System.Drawing.Size(329, 26);
-            this.tbxConfirm.TabIndex = 12;
+            this.tbxConfirm.TabIndex = 3;
             // 
             // tbxFirstName
             // 
@@ -211,7 +211,7 @@ namespace Team3
             this.tbxFirstName.Location = new System.Drawing.Point(209, 181);
             this.tbxFirstName.Name = "tbxFirstName";
             this.tbxFirstName.Size = new System.Drawing.Size(329, 26);
-            this.tbxFirstName.TabIndex = 13;
+            this.tbxFirstName.TabIndex = 4;
             // 
             // tbxLastName
             // 
@@ -219,7 +219,7 @@ namespace Team3
             this.tbxLastName.Location = new System.Drawing.Point(209, 223);
             this.tbxLastName.Name = "tbxLastName";
             this.tbxLastName.Size = new System.Drawing.Size(329, 26);
-            this.tbxLastName.TabIndex = 14;
+            this.tbxLastName.TabIndex = 5;
             // 
             // tbxAddress
             // 
@@ -227,7 +227,7 @@ namespace Team3
             this.tbxAddress.Location = new System.Drawing.Point(209, 259);
             this.tbxAddress.Name = "tbxAddress";
             this.tbxAddress.Size = new System.Drawing.Size(329, 26);
-            this.tbxAddress.TabIndex = 15;
+            this.tbxAddress.TabIndex = 6;
             // 
             // tbxCity
             // 
@@ -235,15 +235,7 @@ namespace Team3
             this.tbxCity.Location = new System.Drawing.Point(209, 295);
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.Size = new System.Drawing.Size(329, 26);
-            this.tbxCity.TabIndex = 16;
-            // 
-            // tbxState
-            // 
-            this.tbxState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxState.Location = new System.Drawing.Point(209, 334);
-            this.tbxState.Name = "tbxState";
-            this.tbxState.Size = new System.Drawing.Size(329, 26);
-            this.tbxState.TabIndex = 17;
+            this.tbxCity.TabIndex = 7;
             // 
             // tbxZipCode
             // 
@@ -251,7 +243,7 @@ namespace Team3
             this.tbxZipCode.Location = new System.Drawing.Point(209, 373);
             this.tbxZipCode.Name = "tbxZipCode";
             this.tbxZipCode.Size = new System.Drawing.Size(329, 26);
-            this.tbxZipCode.TabIndex = 18;
+            this.tbxZipCode.TabIndex = 9;
             this.tbxZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxZipCode_KeyPress);
             // 
             // tbxPhone
@@ -260,7 +252,7 @@ namespace Team3
             this.tbxPhone.Location = new System.Drawing.Point(209, 415);
             this.tbxPhone.Name = "tbxPhone";
             this.tbxPhone.Size = new System.Drawing.Size(329, 26);
-            this.tbxPhone.TabIndex = 19;
+            this.tbxPhone.TabIndex = 10;
             this.tbxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPhone_KeyPress);
             // 
             // btnCreate
@@ -269,7 +261,7 @@ namespace Team3
             this.btnCreate.Location = new System.Drawing.Point(225, 478);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(98, 55);
-            this.btnCreate.TabIndex = 20;
+            this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "&Create Account";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -280,7 +272,7 @@ namespace Team3
             this.btnCancel.Location = new System.Drawing.Point(381, 478);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 55);
-            this.btnCancel.TabIndex = 21;
+            this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cance&l";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -291,7 +283,7 @@ namespace Team3
             this.tbxLogin.Location = new System.Drawing.Point(209, 61);
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(329, 26);
-            this.tbxLogin.TabIndex = 22;
+            this.tbxLogin.TabIndex = 1;
             // 
             // lblLogin
             // 
@@ -302,7 +294,7 @@ namespace Team3
             this.lblLogin.Location = new System.Drawing.Point(105, 64);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(58, 20);
-            this.lblLogin.TabIndex = 23;
+            this.lblLogin.TabIndex = 14;
             this.lblLogin.Text = "Login:";
             // 
             // pbxToggle
@@ -329,12 +321,23 @@ namespace Team3
             this.pbxToggle2.TabStop = false;
             this.pbxToggle2.Click += new System.EventHandler(this.pbxToggle2_Click);
             // 
+            // cbxState
+            // 
+            this.cbxState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxState.FormattingEnabled = true;
+            this.cbxState.Location = new System.Drawing.Point(209, 339);
+            this.cbxState.Name = "cbxState";
+            this.cbxState.Size = new System.Drawing.Size(329, 28);
+            this.cbxState.TabIndex = 26;
+            this.cbxState.SelectedIndexChanged += new System.EventHandler(this.cbxState_SelectedIndexChanged);
+            // 
             // frmNewAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 545);
             this.ControlBox = false;
+            this.Controls.Add(this.cbxState);
             this.Controls.Add(this.pbxToggle2);
             this.Controls.Add(this.pbxToggle);
             this.Controls.Add(this.lblLogin);
@@ -343,7 +346,6 @@ namespace Team3
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.tbxZipCode);
-            this.Controls.Add(this.tbxState);
             this.Controls.Add(this.tbxCity);
             this.Controls.Add(this.tbxAddress);
             this.Controls.Add(this.tbxLastName);
@@ -391,7 +393,6 @@ namespace Team3
         private System.Windows.Forms.TextBox tbxLastName;
         private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.TextBox tbxCity;
-        private System.Windows.Forms.TextBox tbxState;
         private System.Windows.Forms.TextBox tbxZipCode;
         private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.Button btnCreate;
@@ -400,5 +401,6 @@ namespace Team3
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.PictureBox pbxToggle;
         private System.Windows.Forms.PictureBox pbxToggle2;
+        private System.Windows.Forms.ComboBox cbxState;
     }
 }

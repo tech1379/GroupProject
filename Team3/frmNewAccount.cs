@@ -39,7 +39,16 @@ namespace Team3
             string strLastName = tbxLastName.Text.Trim();
             string strAddress = tbxAddress.Text.Trim();
             string strCity = tbxCity.Text.Trim();
-            string strState = cbxState.SelectedItem.ToString();
+            string strState = "";
+            if(cbxState.SelectedIndex ==  -1)
+            {
+                strState = "";
+            }
+            else
+            {
+               strState = cbxState.SelectedItem.ToString();
+            }
+            
             string strZipCode = tbxZipCode.Text.Trim();
             string strPhone = tbxPhone.Text.Trim();
             try
@@ -176,6 +185,11 @@ namespace Team3
             frmMain main = new frmMain();
             this.Hide();
             main.ShowDialog();
+        }
+
+        private void cbxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
