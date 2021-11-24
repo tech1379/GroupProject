@@ -15,6 +15,7 @@ namespace Team3
         public static string message = "An error has occurred in the program.";
         int intToggle = 0;
         int intToggle2 = 0;
+        public static List<String> lstStates = new List<String>();
         public frmNewAccount()
         {
             InitializeComponent();
@@ -23,8 +24,16 @@ namespace Team3
         private void frmNewAccount_Load(object sender, EventArgs e)
         {
             //set background image
-            Image myimage = new Bitmap(@"taco.jpg");
+            Image myimage = new Bitmap(@"background.jpg");
             this.BackgroundImage = myimage;
+            StateArray states = new StateArray();
+            for(int i = 0; i < states.States().Count; i++)
+            {
+               cbxState.Items.Add(states.States()[i]);
+            }
+
+          
+            
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -39,7 +48,16 @@ namespace Team3
             string strLastName = tbxLastName.Text.Trim();
             string strAddress = tbxAddress.Text.Trim();
             string strCity = tbxCity.Text.Trim();
-            string strState = tbxState.Text.Trim();
+            string strState = "";
+            if(cbxState.SelectedIndex ==  -1)
+            {
+                strState = "";
+            }
+            else
+            {
+               strState = cbxState.SelectedItem.ToString();
+            }
+            
             string strZipCode = tbxZipCode.Text.Trim();
             string strPhone = tbxPhone.Text.Trim();
             try
@@ -87,7 +105,7 @@ namespace Team3
                 string strLoginQuery = "SELECT COUNT(LogOnName) FROM group3fa212330.LogOn WHERE LogOnName = '" + strLogin + "';";
                 string strLoginCount = ProgOps.DatabaseCommandLogon(strLoginQuery);
                 int intLoginCount = Convert.ToInt32(strLoginCount);
-                if (intLoginCount > 0)
+                if (intLoginCount > 1)
                 {
                     MessageBox.Show("Login already used.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbxLogin.Clear();
@@ -130,7 +148,7 @@ namespace Team3
             if (intToggle2 % 2 == 0)
             {
                 tbxConfirm.PasswordChar = '\0';
-                intToggle++;
+                intToggle2++;
             }
             else
             {
@@ -176,6 +194,11 @@ namespace Team3
             frmMain main = new frmMain();
             this.Hide();
             main.ShowDialog();
+        }
+
+        private void cbxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

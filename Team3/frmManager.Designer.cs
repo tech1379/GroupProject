@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -45,13 +44,9 @@
             this.btnManageMenuItems = new System.Windows.Forms.Button();
             this.btnNewEmployee = new System.Windows.Forms.Button();
             this.dgvTester = new System.Windows.Forms.DataGridView();
-            this.inew2330fa21DataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inew2330fa21DataSet = new Team3.inew2330fa21DataSet();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -229,23 +224,13 @@
             this.dgvTester.Size = new System.Drawing.Size(749, 673);
             this.dgvTester.TabIndex = 27;
             // 
-            // inew2330fa21DataBindingSource
-            // 
-            this.inew2330fa21DataBindingSource.DataSource = this.inew2330fa21DataSet;
-            this.inew2330fa21DataBindingSource.Position = 0;
-            // 
-            // inew2330fa21DataSet
-            // 
-            this.inew2330fa21DataSet.DataSetName = "inew2330fa21DataSet";
-            this.inew2330fa21DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(961, 760);
+            this.ClientSize = new System.Drawing.Size(961, 749);
             this.ControlBox = false;
             this.Controls.Add(this.dgvTester);
             this.Controls.Add(this.groupBox1);
@@ -259,8 +244,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inew2330fa21DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,8 +256,6 @@
         private System.Windows.Forms.Button btnLocationToday;
         private System.Windows.Forms.Button btnManageMenuItems;
         private System.Windows.Forms.Button btnNewEmployee;
-        private System.Windows.Forms.BindingSource inew2330fa21DataBindingSource;
-        private inew2330fa21DataSet inew2330fa21DataSet;
         private System.Windows.Forms.DataGridView dgvTester;
         private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Label lblLocationToday;

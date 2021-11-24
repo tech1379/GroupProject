@@ -46,7 +46,6 @@ namespace Team3
             this.tbxLastName = new System.Windows.Forms.TextBox();
             this.tbxAddress = new System.Windows.Forms.TextBox();
             this.tbxCity = new System.Windows.Forms.TextBox();
-            this.tbxState = new System.Windows.Forms.TextBox();
             this.tbxZipCode = new System.Windows.Forms.TextBox();
             this.tbxPhone = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@ namespace Team3
             this.lblLogin = new System.Windows.Forms.Label();
             this.pbxToggle = new System.Windows.Forms.PictureBox();
             this.pbxToggle2 = new System.Windows.Forms.PictureBox();
+            this.cbxState = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxToggle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxToggle2)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,7 @@ namespace Team3
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(112, 23);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(58, 20);
@@ -75,6 +76,7 @@ namespace Team3
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
             this.lblPassword.Location = new System.Drawing.Point(79, 106);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(91, 20);
@@ -86,6 +88,7 @@ namespace Team3
             this.lblConfirm.AutoSize = true;
             this.lblConfirm.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirm.ForeColor = System.Drawing.Color.White;
             this.lblConfirm.Location = new System.Drawing.Point(12, 145);
             this.lblConfirm.Name = "lblConfirm";
             this.lblConfirm.Size = new System.Drawing.Size(158, 20);
@@ -97,6 +100,7 @@ namespace Team3
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.White;
             this.lblFirstName.Location = new System.Drawing.Point(69, 184);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(101, 20);
@@ -108,6 +112,7 @@ namespace Team3
             this.lblLastName.AutoSize = true;
             this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.White;
             this.lblLastName.Location = new System.Drawing.Point(70, 223);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(100, 20);
@@ -119,6 +124,7 @@ namespace Team3
             this.lblAddress.AutoSize = true;
             this.lblAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.ForeColor = System.Drawing.Color.White;
             this.lblAddress.Location = new System.Drawing.Point(90, 262);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(80, 20);
@@ -130,6 +136,7 @@ namespace Team3
             this.lblCity.AutoSize = true;
             this.lblCity.BackColor = System.Drawing.Color.Transparent;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.ForeColor = System.Drawing.Color.White;
             this.lblCity.Location = new System.Drawing.Point(126, 301);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(44, 20);
@@ -141,6 +148,7 @@ namespace Team3
             this.lblState.AutoSize = true;
             this.lblState.BackColor = System.Drawing.Color.Transparent;
             this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.ForeColor = System.Drawing.Color.White;
             this.lblState.Location = new System.Drawing.Point(112, 340);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(58, 20);
@@ -152,6 +160,7 @@ namespace Team3
             this.lblZip.AutoSize = true;
             this.lblZip.BackColor = System.Drawing.Color.Transparent;
             this.lblZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZip.ForeColor = System.Drawing.Color.White;
             this.lblZip.Location = new System.Drawing.Point(84, 379);
             this.lblZip.Name = "lblZip";
             this.lblZip.Size = new System.Drawing.Size(86, 20);
@@ -163,6 +172,7 @@ namespace Team3
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(105, 418);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
@@ -227,14 +237,6 @@ namespace Team3
             this.tbxCity.Size = new System.Drawing.Size(329, 26);
             this.tbxCity.TabIndex = 16;
             // 
-            // tbxState
-            // 
-            this.tbxState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxState.Location = new System.Drawing.Point(209, 334);
-            this.tbxState.Name = "tbxState";
-            this.tbxState.Size = new System.Drawing.Size(329, 26);
-            this.tbxState.TabIndex = 17;
-            // 
             // tbxZipCode
             // 
             this.tbxZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,6 +290,7 @@ namespace Team3
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.Color.White;
             this.lblLogin.Location = new System.Drawing.Point(105, 64);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(58, 20);
@@ -296,7 +299,7 @@ namespace Team3
             // 
             // pbxToggle
             // 
-            this.pbxToggle.BackColor = System.Drawing.Color.Transparent;
+            this.pbxToggle.BackColor = System.Drawing.Color.White;
             this.pbxToggle.Image = global::Team3.Properties.Resources.eye;
             this.pbxToggle.Location = new System.Drawing.Point(581, 90);
             this.pbxToggle.Name = "pbxToggle";
@@ -308,7 +311,7 @@ namespace Team3
             // 
             // pbxToggle2
             // 
-            this.pbxToggle2.BackColor = System.Drawing.Color.Transparent;
+            this.pbxToggle2.BackColor = System.Drawing.Color.White;
             this.pbxToggle2.Image = global::Team3.Properties.Resources.eye;
             this.pbxToggle2.Location = new System.Drawing.Point(581, 135);
             this.pbxToggle2.Name = "pbxToggle2";
@@ -318,12 +321,22 @@ namespace Team3
             this.pbxToggle2.TabStop = false;
             this.pbxToggle2.Click += new System.EventHandler(this.pbxToggle2_Click);
             // 
+            // cbxState
+            // 
+            this.cbxState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxState.FormattingEnabled = true;
+            this.cbxState.Location = new System.Drawing.Point(209, 337);
+            this.cbxState.Name = "cbxState";
+            this.cbxState.Size = new System.Drawing.Size(329, 28);
+            this.cbxState.TabIndex = 26;
+            // 
             // frmNewAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 545);
             this.ControlBox = false;
+            this.Controls.Add(this.cbxState);
             this.Controls.Add(this.pbxToggle2);
             this.Controls.Add(this.pbxToggle);
             this.Controls.Add(this.lblLogin);
@@ -332,7 +345,6 @@ namespace Team3
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.tbxZipCode);
-            this.Controls.Add(this.tbxState);
             this.Controls.Add(this.tbxCity);
             this.Controls.Add(this.tbxAddress);
             this.Controls.Add(this.tbxLastName);
@@ -380,7 +392,6 @@ namespace Team3
         private System.Windows.Forms.TextBox tbxLastName;
         private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.TextBox tbxCity;
-        private System.Windows.Forms.TextBox tbxState;
         private System.Windows.Forms.TextBox tbxZipCode;
         private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.Button btnCreate;
@@ -389,5 +400,6 @@ namespace Team3
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.PictureBox pbxToggle;
         private System.Windows.Forms.PictureBox pbxToggle2;
+        private System.Windows.Forms.ComboBox cbxState;
     }
 }
