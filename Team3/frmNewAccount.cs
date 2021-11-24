@@ -39,7 +39,7 @@ namespace Team3
             string strLastName = tbxLastName.Text.Trim();
             string strAddress = tbxAddress.Text.Trim();
             string strCity = tbxCity.Text.Trim();
-            string strState = tbxState.Text.Trim();
+            string strState = cbxState.SelectedItem.ToString();
             string strZipCode = tbxZipCode.Text.Trim();
             string strPhone = tbxPhone.Text.Trim();
             try
