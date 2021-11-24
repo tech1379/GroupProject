@@ -31,6 +31,7 @@ namespace Team3
                 tbxLogin.Clear();
                 tbxPassword.Clear();
                 tbxLogin.Focus();
+                hlpMain.HelpNamespace = Application.StartupPath + "\\LoginHelp.chm";
             }
             catch(Exception ex)
             {
@@ -124,6 +125,11 @@ namespace Team3
             {
                 MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void lblHelp_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, hlpMain.HelpNamespace);
         }
     }
 }

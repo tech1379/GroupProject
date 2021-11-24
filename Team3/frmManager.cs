@@ -37,60 +37,6 @@ namespace Team3
         {
 
         }
-        //add to database if you use this form
-        //private void btnEmergencyContacts_Click(object sender, EventArgs e)
-        //{
-        //    //frmEmergencyContact formEmergencyContact = new frmEmergencyContact();
-        //    //formEmergencyContact.ShowDialog();
-        //}
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Application.OpenForms["frmMain"].Show();
-            frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
-            f2.frmMain_Load(f2, EventArgs.Empty);
-        }
-
-        private void btnCustomers_Click(object sender, EventArgs e)
-        {
-            //shows customer information from database
-            sqlAll = "SELECT * FROM group3fa212330.Customers";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-
-        }
-
-        private void btnEmployees_Click(object sender, EventArgs e)
-        {
-            //shows employee information from database
-            sqlAll = "SELECT * FROM group3fa212330.Employees";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-        }
-
-        private void btnOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                sqlAll = "SELECT * FROM group3fa212330.Orders";
-                ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error");
-            }
-        }
-
-        private void btnPayDetails_Click(object sender, EventArgs e)
-        {
-            sqlAll = "SELECT * FROM group3fa212330.PayDetails";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-        }
-
-        private void btnPaySchedule_Click(object sender, EventArgs e)
-        {
-            sqlAll = "SELECT * FROM group3fa212330.PaySchedule";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
-        }
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
@@ -108,6 +54,20 @@ namespace Team3
         {
             frmTruckLocation truckLocation = new frmTruckLocation();
             truckLocation.ShowDialog();
+        }
+
+        private void btnPaySchedule_Click(object sender, EventArgs e)
+        {
+            frmPayroll payroll = new frmPayroll();
+            payroll.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Application.OpenForms["frmMain"].Show();
+            frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
+            f2.frmMain_Load(f2, EventArgs.Empty);
         }
     }
 }

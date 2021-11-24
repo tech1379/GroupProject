@@ -54,6 +54,8 @@ namespace Team3
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblHelp = new System.Windows.Forms.Label();
+            this.hlpMain = new System.Windows.Forms.HelpProvider();
             this.tbMenu.SuspendLayout();
             this.tbOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
@@ -75,32 +77,32 @@ namespace Team3
             // tbMenuItems
             // 
             this.tbMenuItems.AutoScroll = true;
-            this.tbMenuItems.Location = new System.Drawing.Point(4, 26);
+            this.tbMenuItems.Location = new System.Drawing.Point(4, 29);
             this.tbMenuItems.Margin = new System.Windows.Forms.Padding(4);
             this.tbMenuItems.Name = "tbMenuItems";
             this.tbMenuItems.Padding = new System.Windows.Forms.Padding(4);
-            this.tbMenuItems.Size = new System.Drawing.Size(876, 565);
+            this.tbMenuItems.Size = new System.Drawing.Size(876, 562);
             this.tbMenuItems.TabIndex = 0;
             this.tbMenuItems.Text = "Entrees";
             this.tbMenuItems.UseVisualStyleBackColor = true;
             // 
             // tbDesserts
             // 
-            this.tbDesserts.Location = new System.Drawing.Point(4, 26);
+            this.tbDesserts.Location = new System.Drawing.Point(4, 29);
             this.tbDesserts.Margin = new System.Windows.Forms.Padding(4);
             this.tbDesserts.Name = "tbDesserts";
             this.tbDesserts.Padding = new System.Windows.Forms.Padding(4);
-            this.tbDesserts.Size = new System.Drawing.Size(876, 565);
+            this.tbDesserts.Size = new System.Drawing.Size(876, 562);
             this.tbDesserts.TabIndex = 1;
             this.tbDesserts.Text = "Desserts";
             this.tbDesserts.UseVisualStyleBackColor = true;
             // 
             // tbDrinks
             // 
-            this.tbDrinks.Location = new System.Drawing.Point(4, 26);
+            this.tbDrinks.Location = new System.Drawing.Point(4, 29);
             this.tbDrinks.Name = "tbDrinks";
             this.tbDrinks.Padding = new System.Windows.Forms.Padding(3);
-            this.tbDrinks.Size = new System.Drawing.Size(876, 565);
+            this.tbDrinks.Size = new System.Drawing.Size(876, 562);
             this.tbDrinks.TabIndex = 2;
             this.tbDrinks.Text = "Drinks";
             this.tbDrinks.UseVisualStyleBackColor = true;
@@ -124,19 +126,19 @@ namespace Team3
             this.tbOrder.Controls.Add(this.dgvResults);
             this.tbOrder.Controls.Add(this.lblCustomerName);
             this.tbOrder.Controls.Add(this.lblCust);
-            this.tbOrder.Location = new System.Drawing.Point(4, 26);
+            this.tbOrder.Location = new System.Drawing.Point(4, 29);
             this.tbOrder.Name = "tbOrder";
             this.tbOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.tbOrder.Size = new System.Drawing.Size(876, 565);
+            this.tbOrder.Size = new System.Drawing.Size(876, 562);
             this.tbOrder.TabIndex = 3;
             this.tbOrder.Text = "View Order";
             this.tbOrder.UseVisualStyleBackColor = true;
             // 
             // btnReceipt
             // 
-            this.btnReceipt.Location = new System.Drawing.Point(517, 472);
+            this.btnReceipt.Location = new System.Drawing.Point(560, 472);
             this.btnReceipt.Name = "btnReceipt";
-            this.btnReceipt.Size = new System.Drawing.Size(75, 54);
+            this.btnReceipt.Size = new System.Drawing.Size(90, 54);
             this.btnReceipt.TabIndex = 15;
             this.btnReceipt.Text = "&Print Receipt";
             this.btnReceipt.UseVisualStyleBackColor = true;
@@ -144,9 +146,9 @@ namespace Team3
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(417, 472);
+            this.btnOrder.Location = new System.Drawing.Point(449, 472);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(75, 54);
+            this.btnOrder.Size = new System.Drawing.Size(90, 54);
             this.btnOrder.TabIndex = 14;
             this.btnOrder.Text = "&Order";
             this.btnOrder.UseVisualStyleBackColor = true;
@@ -157,7 +159,7 @@ namespace Team3
             this.tbxExpirationDate.Location = new System.Drawing.Point(18, 352);
             this.tbxExpirationDate.MaxLength = 5;
             this.tbxExpirationDate.Name = "tbxExpirationDate";
-            this.tbxExpirationDate.Size = new System.Drawing.Size(100, 25);
+            this.tbxExpirationDate.Size = new System.Drawing.Size(100, 26);
             this.tbxExpirationDate.TabIndex = 13;
             // 
             // tbxCreditCard
@@ -165,7 +167,7 @@ namespace Team3
             this.tbxCreditCard.Location = new System.Drawing.Point(18, 259);
             this.tbxCreditCard.MaxLength = 19;
             this.tbxCreditCard.Name = "tbxCreditCard";
-            this.tbxCreditCard.Size = new System.Drawing.Size(219, 25);
+            this.tbxCreditCard.Size = new System.Drawing.Size(219, 26);
             this.tbxCreditCard.TabIndex = 12;
             // 
             // lblExpirationDate
@@ -174,7 +176,7 @@ namespace Team3
             this.lblExpirationDate.ForeColor = System.Drawing.Color.White;
             this.lblExpirationDate.Location = new System.Drawing.Point(15, 311);
             this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(122, 17);
+            this.lblExpirationDate.Size = new System.Drawing.Size(122, 20);
             this.lblExpirationDate.TabIndex = 11;
             this.lblExpirationDate.Text = "Expiration Date:";
             // 
@@ -184,15 +186,15 @@ namespace Team3
             this.lblCreditCard.ForeColor = System.Drawing.Color.White;
             this.lblCreditCard.Location = new System.Drawing.Point(15, 228);
             this.lblCreditCard.Name = "lblCreditCard";
-            this.lblCreditCard.Size = new System.Drawing.Size(95, 17);
+            this.lblCreditCard.Size = new System.Drawing.Size(93, 20);
             this.lblCreditCard.TabIndex = 10;
             this.lblCreditCard.Text = "Credit Card:";
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.Location = new System.Drawing.Point(305, 472);
+            this.btnRemoveItem.Location = new System.Drawing.Point(338, 472);
             this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(75, 54);
+            this.btnRemoveItem.Size = new System.Drawing.Size(90, 54);
             this.btnRemoveItem.TabIndex = 9;
             this.btnRemoveItem.Text = "Remove &Item";
             this.btnRemoveItem.UseVisualStyleBackColor = true;
@@ -200,9 +202,9 @@ namespace Team3
             // 
             // btnRemoveAll
             // 
-            this.btnRemoveAll.Location = new System.Drawing.Point(200, 472);
+            this.btnRemoveAll.Location = new System.Drawing.Point(227, 474);
             this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(75, 54);
+            this.btnRemoveAll.Size = new System.Drawing.Size(90, 54);
             this.btnRemoveAll.TabIndex = 2;
             this.btnRemoveAll.Text = "&Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
@@ -241,7 +243,7 @@ namespace Team3
             this.lblTt.ForeColor = System.Drawing.Color.White;
             this.lblTt.Location = new System.Drawing.Point(644, 496);
             this.lblTt.Name = "lblTt";
-            this.lblTt.Size = new System.Drawing.Size(47, 17);
+            this.lblTt.Size = new System.Drawing.Size(48, 20);
             this.lblTt.TabIndex = 5;
             this.lblTt.Text = "Total:";
             // 
@@ -251,7 +253,7 @@ namespace Team3
             this.lblTx.ForeColor = System.Drawing.Color.White;
             this.lblTx.Location = new System.Drawing.Point(644, 438);
             this.lblTx.Name = "lblTx";
-            this.lblTx.Size = new System.Drawing.Size(53, 17);
+            this.lblTx.Size = new System.Drawing.Size(55, 20);
             this.lblTx.TabIndex = 4;
             this.lblTx.Text = "Taxes:";
             // 
@@ -261,7 +263,7 @@ namespace Team3
             this.lblSub.ForeColor = System.Drawing.Color.White;
             this.lblSub.Location = new System.Drawing.Point(623, 386);
             this.lblSub.Name = "lblSub";
-            this.lblSub.Size = new System.Drawing.Size(74, 17);
+            this.lblSub.Size = new System.Drawing.Size(77, 20);
             this.lblSub.TabIndex = 3;
             this.lblSub.Text = "SubTotal:";
             // 
@@ -279,7 +281,7 @@ namespace Team3
             // 
             // lblCustomerName
             // 
-            this.lblCustomerName.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerName.ForeColor = System.Drawing.Color.White;
             this.lblCustomerName.Location = new System.Drawing.Point(18, 80);
             this.lblCustomerName.Name = "lblCustomerName";
@@ -292,7 +294,7 @@ namespace Team3
             this.lblCust.ForeColor = System.Drawing.Color.White;
             this.lblCust.Location = new System.Drawing.Point(15, 33);
             this.lblCust.Name = "lblCust";
-            this.lblCust.Size = new System.Drawing.Size(126, 17);
+            this.lblCust.Size = new System.Drawing.Size(128, 20);
             this.lblCust.TabIndex = 0;
             this.lblCust.Text = "Customer Name:";
             // 
@@ -303,7 +305,7 @@ namespace Team3
             this.lblInfo.ForeColor = System.Drawing.Color.White;
             this.lblInfo.Location = new System.Drawing.Point(12, 12);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(382, 34);
+            this.lblInfo.Size = new System.Drawing.Size(378, 40);
             this.lblInfo.TabIndex = 1;
             this.lblInfo.Text = "Please click Menu image for description and price.\r\nThen you can select your quan" +
     "tity and Add To Order.";
@@ -328,17 +330,31 @@ namespace Team3
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblHelp
+            // 
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.Color.White;
+            this.lblHelp.Location = new System.Drawing.Point(824, 29);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(46, 20);
+            this.lblHelp.TabIndex = 3;
+            this.lblHelp.Text = "&Help";
+            this.lblHelp.Click += new System.EventHandler(this.lblHelp_Click);
+            // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 694);
             this.ControlBox = false;
+            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.tbMenu);
-            this.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -382,5 +398,7 @@ namespace Team3
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnReceipt;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblHelp;
+        private System.Windows.Forms.HelpProvider hlpMain;
     }
 }

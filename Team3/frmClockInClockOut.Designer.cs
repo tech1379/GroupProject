@@ -30,8 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClockIn = new System.Windows.Forms.Button();
             this.btnClockOut = new System.Windows.Forms.Button();
@@ -55,25 +54,17 @@
             this.lblWelcome.Text = "WELCOME";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblEmployeeID
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(212, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 23);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Enter EmployeeID";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(209, 145);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 29);
-            this.textBox1.TabIndex = 5;
+            this.lblEmployeeID.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeID.ForeColor = System.Drawing.Color.White;
+            this.lblEmployeeID.Location = new System.Drawing.Point(212, 121);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(146, 23);
+            this.lblEmployeeID.TabIndex = 4;
+            this.lblEmployeeID.Text = "Enter EmployeeID";
+            this.lblEmployeeID.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnCancel
             // 
@@ -172,6 +163,7 @@
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(560, 415);
+            this.ControlBox = false;
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.tbxTimeOutput);
@@ -180,11 +172,12 @@
             this.Controls.Add(this.btnClockOut);
             this.Controls.Add(this.btnClockIn);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.lblWelcome);
             this.DoubleBuffered = true;
             this.Name = "frmClockInClockOut";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clock In / Clock Out";
             this.Load += new System.EventHandler(this.frmClockInClockOut_Load);
             this.ResumeLayout(false);
@@ -195,8 +188,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClockIn;
         private System.Windows.Forms.Button btnClockOut;

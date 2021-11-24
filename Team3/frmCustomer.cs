@@ -67,9 +67,10 @@ namespace Team3
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             try 
-            { 
+            {
+                hlpMain.HelpNamespace = Application.StartupPath + "\\CustomerHelp.chm";
                 //setup background
-            Image myimage = new Bitmap(@"Background.jpg");
+                Image myimage = new Bitmap(@"Background.jpg");
             this.BackgroundImage = myimage;
             tbMenuItems.BackgroundImage = myimage;
             tbDrinks.BackgroundImage = myimage;
@@ -234,34 +235,6 @@ namespace Team3
                 MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void globalMouseHoverEvent(object sender, System.EventArgs e)
-        {
-            PictureBox picBox = sender as PictureBox;
-            for (int i = 0; i < lstEntrees.Count; i++)
-            {
-                if (picBox.Name == "pbx" + lstEntrees[i].name)
-                {
-                    MessageBox.Show("Description: " + lstEntrees[i].description + "\n\n" + "Price: " + lstEntrees[i].price.ToString("C2"));
-                    return;
-                }
-            }
-            for (int i = 0; i < lstDrinks.Count; i++)
-            {
-                if (picBox.Name == "pbx" + lstDrinks[i].name)
-                {
-                    MessageBox.Show("Description: " + lstDrinks[i].description + "\n\n" + "Price: " + lstDrinks[i].price.ToString("C2"));
-                    return;
-                }
-            }
-            for (int i = 0; i < lstDesserts.Count; i++)
-            {
-                if (picBox.Name == "pbx" + lstDesserts[i].name)
-                {
-                    MessageBox.Show("Description: " + lstDesserts[i].description + "\n\n" + "Price: " + lstDesserts[i].price.ToString("C2"));
-                    return;
-                }
-            }
-        }
         public void LoadEntrees()
         {
             int perCol = 5;
@@ -395,9 +368,9 @@ namespace Team3
                     myPicBox[i].Click += new EventHandler(myPicBoxDesserts_click);
                     myPicBox[i].MouseHover += globalMouseHoverEvent;
                     lblMenuName[i] = new Label();
-                    lblMenuName[i].Size = new Size(150, 100);
+                    lblMenuName[i].Size = new Size(150, 50);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
-                        65 + (65 * (i / perCol)) + (lblHeight * (i / perCol)));
+                        55 + (55 * (i / perCol)) + (lblHeight * (i / perCol)));
                     lblMenuName[i].Name = "lbl" + lstDesserts[i].name;
                     lblMenuName[i].Text = (i + 1).ToString() + ". " + lstDesserts[i].name;
                     lblMenuName[i].ForeColor = System.Drawing.Color.White;
@@ -878,7 +851,34 @@ namespace Team3
                 MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        public void globalMouseHoverEvent(object sender, System.EventArgs e)
+        {
+            PictureBox picBox = sender as PictureBox;
+            for (int i = 0; i < lstEntrees.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstEntrees[i].name)
+                {
+                    MessageBox.Show("Description: " + lstEntrees[i].description + "\n\n" + "Price: " + lstEntrees[i].price.ToString("C2"));
+                    return;
+                }
+            }
+            for (int i = 0; i < lstDrinks.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstDrinks[i].name)
+                {
+                    MessageBox.Show("Description: " + lstDrinks[i].description + "\n\n" + "Price: " + lstDrinks[i].price.ToString("C2"));
+                    return;
+                }
+            }
+            for (int i = 0; i < lstDesserts.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstDesserts[i].name)
+                {
+                    MessageBox.Show("Description: " + lstDesserts[i].description + "\n\n" + "Price: " + lstDesserts[i].price.ToString("C2"));
+                    return;
+                }
+            }
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             try
@@ -909,6 +909,9 @@ namespace Team3
             this.Close();
         }
 
-        
+        private void lblHelp_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, hlpMain.HelpNamespace);
+        }
     }
 }
