@@ -46,7 +46,6 @@ namespace Team3
             this.tbxLastName = new System.Windows.Forms.TextBox();
             this.tbxAddress = new System.Windows.Forms.TextBox();
             this.tbxCity = new System.Windows.Forms.TextBox();
-            this.tbxState = new System.Windows.Forms.TextBox();
             this.tbxZipCode = new System.Windows.Forms.TextBox();
             this.tbxPhone = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@ namespace Team3
             this.lblLogin = new System.Windows.Forms.Label();
             this.pbxToggle = new System.Windows.Forms.PictureBox();
             this.pbxToggle2 = new System.Windows.Forms.PictureBox();
+            this.cbxState = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxToggle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxToggle2)).BeginInit();
             this.SuspendLayout();
@@ -237,14 +237,6 @@ namespace Team3
             this.tbxCity.Size = new System.Drawing.Size(329, 26);
             this.tbxCity.TabIndex = 16;
             // 
-            // tbxState
-            // 
-            this.tbxState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxState.Location = new System.Drawing.Point(209, 334);
-            this.tbxState.Name = "tbxState";
-            this.tbxState.Size = new System.Drawing.Size(329, 26);
-            this.tbxState.TabIndex = 17;
-            // 
             // tbxZipCode
             // 
             this.tbxZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,12 +321,22 @@ namespace Team3
             this.pbxToggle2.TabStop = false;
             this.pbxToggle2.Click += new System.EventHandler(this.pbxToggle2_Click);
             // 
+            // cbxState
+            // 
+            this.cbxState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxState.FormattingEnabled = true;
+            this.cbxState.Location = new System.Drawing.Point(209, 337);
+            this.cbxState.Name = "cbxState";
+            this.cbxState.Size = new System.Drawing.Size(329, 28);
+            this.cbxState.TabIndex = 26;
+            // 
             // frmNewAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 545);
             this.ControlBox = false;
+            this.Controls.Add(this.cbxState);
             this.Controls.Add(this.pbxToggle2);
             this.Controls.Add(this.pbxToggle);
             this.Controls.Add(this.lblLogin);
@@ -343,7 +345,6 @@ namespace Team3
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.tbxZipCode);
-            this.Controls.Add(this.tbxState);
             this.Controls.Add(this.tbxCity);
             this.Controls.Add(this.tbxAddress);
             this.Controls.Add(this.tbxLastName);
@@ -391,7 +392,6 @@ namespace Team3
         private System.Windows.Forms.TextBox tbxLastName;
         private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.TextBox tbxCity;
-        private System.Windows.Forms.TextBox tbxState;
         private System.Windows.Forms.TextBox tbxZipCode;
         private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.Button btnCreate;
@@ -400,5 +400,6 @@ namespace Team3
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.PictureBox pbxToggle;
         private System.Windows.Forms.PictureBox pbxToggle2;
+        private System.Windows.Forms.ComboBox cbxState;
     }
 }
