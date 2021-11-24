@@ -15,6 +15,7 @@ namespace Team3
         public static string message = "An error has occurred in the program.";
         int intToggle = 0;
         int intToggle2 = 0;
+        public static List<String> lstStates = new List<String>();
         public frmNewAccount()
         {
             InitializeComponent();
@@ -25,6 +26,14 @@ namespace Team3
             //set background image
             Image myimage = new Bitmap(@"background.jpg");
             this.BackgroundImage = myimage;
+            StateArray states = new StateArray();
+            for(int i = 0; i < states.States().Count; i++)
+            {
+               cbxState.Items.Add(states.States()[i]);
+            }
+
+          
+            
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
