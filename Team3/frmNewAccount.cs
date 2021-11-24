@@ -87,7 +87,7 @@ namespace Team3
                 string strLoginQuery = "SELECT COUNT(LogOnName) FROM group3fa212330.LogOn WHERE LogOnName = '" + strLogin + "';";
                 string strLoginCount = ProgOps.DatabaseCommandLogon(strLoginQuery);
                 int intLoginCount = Convert.ToInt32(strLoginCount);
-                if (intLoginCount > 0)
+                if (intLoginCount > 1)
                 {
                     MessageBox.Show("Login already used.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbxLogin.Clear();
