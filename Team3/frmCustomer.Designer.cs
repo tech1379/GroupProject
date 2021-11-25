@@ -140,7 +140,7 @@ namespace Team3
             this.btnReceipt.Name = "btnReceipt";
             this.btnReceipt.Size = new System.Drawing.Size(90, 54);
             this.btnReceipt.TabIndex = 15;
-            this.btnReceipt.Text = "&Print Receipt";
+            this.btnReceipt.Text = "&View Receipt";
             this.btnReceipt.UseVisualStyleBackColor = true;
             this.btnReceipt.Click += new System.EventHandler(this.btnReceipt_Click);
             // 
