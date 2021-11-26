@@ -50,6 +50,7 @@ namespace Team3
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
             this.lblPassword.Location = new System.Drawing.Point(78, 62);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(82, 20);
@@ -61,6 +62,7 @@ namespace Team3
             this.lblNewPassword.AutoSize = true;
             this.lblNewPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPassword.ForeColor = System.Drawing.Color.White;
             this.lblNewPassword.Location = new System.Drawing.Point(43, 128);
             this.lblNewPassword.Name = "lblNewPassword";
             this.lblNewPassword.Size = new System.Drawing.Size(117, 20);
@@ -72,6 +74,7 @@ namespace Team3
             this.lblConfirm.AutoSize = true;
             this.lblConfirm.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirm.ForeColor = System.Drawing.Color.White;
             this.lblConfirm.Location = new System.Drawing.Point(29, 197);
             this.lblConfirm.Name = "lblConfirm";
             this.lblConfirm.Size = new System.Drawing.Size(141, 20);
