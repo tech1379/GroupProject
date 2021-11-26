@@ -29,7 +29,7 @@ namespace Team3
         {
             try
             {
-                dgvMenu.RowTemplate.Height = 200;
+                dgvMenu.RowTemplate.Height = 63;
                 //dgvMenu.ColumnTemplate.Width = 200;
                 string query = "SELECT * FROM group3fa212330.Menu";
                 ProgOps.DatabaseCommandDGV(query, dgvMenu);
@@ -52,18 +52,22 @@ namespace Team3
                         break;
                     }
 
-                dgvMenu.Columns[0].Width = 250;
-                dgvMenu.Columns[1].Width = 250;
-                dgvMenu.Columns[2].Width = 250;
-                dgvMenu.Columns[3].Width = 250;
-                dgvMenu.Columns[4].Width = 250;
-                dgvMenu.Columns[5].Width = 250;
+                dgvMenu.Columns[0].Width = 100;
+                dgvMenu.Columns[1].Width = 100;
+                dgvMenu.Columns[2].Width = 150;
+                dgvMenu.Columns[3].Width = 350;
+                dgvMenu.Columns[4].Width = 100;
+                dgvMenu.Columns[5].Width = 125;
                 dgvMenu.CurrentCell = null;
                 dgvMenu.ClearSelection();
 
                 cbxCategoryID.Items.Add("9000");
                 cbxCategoryID.Items.Add("9001");
                 cbxCategoryID.Items.Add("9001");
+                cbxCategoryID.SelectedIndex = -1;
+                tbxName.Text = "";
+                tbxDescription.Text = "";
+                tbxPrice.Text = "";
             }
             catch (Exception ex)
             {
@@ -126,11 +130,18 @@ namespace Team3
         {
             try
             {
+
                 if (dgvMenu.RowCount == 0)
                 {
                     MessageBox.Show("No Menu Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                if (dgvMenu.CurrentCell == null)
+                {
+                    MessageBox.Show("You must select a row.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
                 int intIndex = dgvMenu.CurrentRow.Index;
                 string strMenuName = dgvMenu.Rows[intIndex].Cells[2].Value.ToString();
                 DialogResult dialogResult = MessageBox.Show("Are you sure you would like to delete " + strMenuName + " ?", "Inventory Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -242,11 +253,11 @@ namespace Team3
 
         private void btnDelete_MouseHover(object sender, EventArgs e)
         {
-            if (intMouseHover2 == 0)
-            {
-                MessageBox.Show("Please select a menu item to edit in the datagrid view.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                intMouseHover2++;
-            }
+            //if (intMouseHover2 == 0)
+            //{
+            //    MessageBox.Show("Please select a menu item to delete in the datagrid view.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    intMouseHover2++;
+            //}
         }
 
         private void btnClose_Click(object sender, EventArgs e)
