@@ -172,9 +172,12 @@
             // 
             // dgvMenu
             // 
+            this.dgvMenu.AllowUserToAddRows = false;
+            this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Location = new System.Drawing.Point(286, 3);
             this.dgvMenu.Name = "dgvMenu";
+            this.dgvMenu.ReadOnly = true;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMenu.Size = new System.Drawing.Size(469, 303);
             this.dgvMenu.TabIndex = 12;

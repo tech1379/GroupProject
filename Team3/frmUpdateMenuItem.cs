@@ -42,7 +42,13 @@ namespace Team3
         private void frmUpdateMenuItem_Load(object sender, EventArgs e)
         {
 
-            populate(); 
+            populate();
+            for (int i = 0; i < dgvMenu.Columns.Count; i++)
+                if (dgvMenu.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgvMenu.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
             dgvMenu.CurrentCell = null;
             dgvMenu.ClearSelection();
 
