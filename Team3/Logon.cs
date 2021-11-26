@@ -175,7 +175,7 @@ namespace Team3
                 message.To.Add(new MailAddress(strEmail));
                 message.Subject = "Password Reset";
                 message.IsBodyHtml = true; //to make message body as html  
-                message.Body = "Here is your key to reset your password. Key: " + strRandomPassword;
+                message.Body = "Here is your new password. Password: " + strRandomPassword;
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com"; //for gmail host  
                 smtp.EnableSsl = true;
