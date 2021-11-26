@@ -105,7 +105,7 @@ namespace Team3
                 string strLoginQuery = "SELECT COUNT(LogOnName) FROM group3fa212330.LogOn WHERE LogOnName = '" + strLogin + "';";
                 string strLoginCount = ProgOps.DatabaseCommandLogon(strLoginQuery);
                 int intLoginCount = Convert.ToInt32(strLoginCount);
-                if (intLoginCount > 1)
+                if (intLoginCount >= 1)
                 {
                     MessageBox.Show("Login already used.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbxLogin.Clear();
@@ -122,6 +122,8 @@ namespace Team3
                     "', '" + strLastName + "', '" + strAddress + "', '" + strCity + "', '" + strState + "', '" + strZipCode +
                     "', '" + strEmail + "', '" + strPhone + "');";
                 ProgOps.UpdateDatabase(strInsertCustomer);
+                MessageBox.Show("Customer successfully added.", "Customer Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearAll();
             }
             catch (Exception ex)
             {
@@ -199,6 +201,20 @@ namespace Team3
         private void cbxState_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void ClearAll()
+        {
+            tbxEmail.Text = "";
+            tbxLogin.Text = "";
+            tbxPassword.Text = "";
+            tbxConfirm.Text = "";
+            tbxFirstName.Text = "";
+            tbxLastName.Text = "";
+            tbxAddress.Text = "";
+            tbxCity.Text = "";
+            cbxState.SelectedIndex = -1;
+            tbxZipCode.Text = "";
+            tbxPhone.Text = "";
         }
     }
 }
