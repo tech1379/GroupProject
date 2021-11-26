@@ -29,7 +29,8 @@ namespace Team3
         {
             try
             {
-                
+                dgvMenu.RowTemplate.Height = 200;
+                //dgvMenu.ColumnTemplate.Width = 200;
                 string query = "SELECT * FROM group3fa212330.Menu";
                 ProgOps.DatabaseCommandDGV(query, dgvMenu);
                 dgvMenu.ClearSelection();
@@ -41,14 +42,33 @@ namespace Team3
         }
         private void frmUpdateMenuItem_Load(object sender, EventArgs e)
         {
+            try
+            {
+                populate();
+                for (int i = 0; i < dgvMenu.Columns.Count; i++)
+                    if (dgvMenu.Columns[i] is DataGridViewImageColumn)
+                    {
+                        ((DataGridViewImageColumn)dgvMenu.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                        break;
+                    }
 
-            populate(); 
-            dgvMenu.CurrentCell = null;
-            dgvMenu.ClearSelection();
+                dgvMenu.Columns[0].Width = 250;
+                dgvMenu.Columns[1].Width = 250;
+                dgvMenu.Columns[2].Width = 250;
+                dgvMenu.Columns[3].Width = 250;
+                dgvMenu.Columns[4].Width = 250;
+                dgvMenu.Columns[5].Width = 250;
+                dgvMenu.CurrentCell = null;
+                dgvMenu.ClearSelection();
 
-            cbxCategoryID.Items.Add("9000");
-            cbxCategoryID.Items.Add("9001");
-            cbxCategoryID.Items.Add("9001");
+                cbxCategoryID.Items.Add("9000");
+                cbxCategoryID.Items.Add("9001");
+                cbxCategoryID.Items.Add("9001");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
