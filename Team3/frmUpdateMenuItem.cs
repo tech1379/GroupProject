@@ -29,7 +29,7 @@ namespace Team3
         {
             try
             {
-                dgvMenu.RowTemplate.Height = 200;
+                dgvMenu.RowTemplate.Height = 125;
                 //dgvMenu.ColumnTemplate.Width = 200;
                 string query = "SELECT * FROM group3fa212330.Menu";
                 ProgOps.DatabaseCommandDGV(query, dgvMenu);
