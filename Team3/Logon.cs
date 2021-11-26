@@ -189,5 +189,31 @@ namespace Team3
                 MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public static void ResetPassword(string strLogin, string strOldPassword, string strNewPassword)
+        {
+            try
+            {
+                string strQueryLogOnPass = "";
+                string strResult = "";
+                strQueryLogOnPass = "SELECT COUNT(*) FROM group3fa212330.LogOn WHERE LogonName = '" + strLogin + "' AND Password = '"
+                + strOldPassword + "';";
+                strResult = ProgOps.DatabaseCommandLogon(strQueryLogOnPass);
+                int logon = Int32.Parse(strResult);
+                if (logon == 1)
+                {
+                    string strResetPassword = "UPDATE group3fa212330.LogOn SET Password = '" + strNewPassword + "' WHERE LogOnName = '" + strLogin + "'";
+                    ProgOps.UpdateDatabase(strResetPassword);
+                    MessageBox.Show("Password successfully changed", "Password Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Password is not correct. Try Again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
