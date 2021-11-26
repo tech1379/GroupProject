@@ -38,6 +38,10 @@
 			<param name="Local" value="EyeToggles.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ForgotPassword">
+			<param name="Local" value="ForgotPassword.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Exit">
 			<param name="Local" value="Exit.htm">
 			</OBJECT>
