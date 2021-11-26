@@ -47,8 +47,10 @@ namespace Team3
                 if (dgvMenu.Columns[i] is DataGridViewImageColumn)
                 {
                     ((DataGridViewImageColumn)dgvMenu.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    dgvMenu.RowTemplate.Height = 200;
                     break;
                 }
+            //dgvMenu.RowTemplate.Height = 200;
             dgvMenu.CurrentCell = null;
             dgvMenu.ClearSelection();
 
