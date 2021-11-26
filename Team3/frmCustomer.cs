@@ -808,7 +808,7 @@ namespace Team3
                 }
                 //Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyReceipts"));
                 //System.Diagnostics.Process.Start(@path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html"); //Open the report in the default web browser
-                MessageBox.Show("Receipt saved to \\MyReceipts", "Receipt Saved.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Receipt saved to " + path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html", "Receipt Saved.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
