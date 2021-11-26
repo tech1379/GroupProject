@@ -97,6 +97,7 @@ namespace Team3
                 }
                 Logon.VerifyLogon(strLogin);
                 MessageBox.Show("An email was sent to your email with a new password. Check your spam folder.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
                 frmResetPassword resetPassword = new frmResetPassword();
                 resetPassword.ShowDialog();
             }
