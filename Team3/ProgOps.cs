@@ -280,8 +280,10 @@ namespace Team3
         }
         public static void DatabaseCommandEditItem(int CategoryID, string strName, string strDesc, decimal Price, int MenuID)
         {
-
-            MessageBox.Show("You must add an image to save to the database.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show("Would you like to edit the image?", "Edit Image", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //MessageBox.Show("Would you like to edit the image?.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //OpenFileDialog Properties------------------------------------------
             OpenFileDialog openFile = new OpenFileDialog(); //New instance
             openFile.ValidateNames = true; //Prevent illegal characters
@@ -290,28 +292,48 @@ namespace Team3
             openFile.Title = "File to Upload"; //Title of dialog box
                                                //-------------------------------------------------------------------
 
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                //TODO: Add some validation to make sure the file is an image.
+              
+                    //TODO: Add some validation to make sure the file is an image.
 
-                byte[] image = File.ReadAllBytes(openFile.FileName); //Convert image into a byte array
+                    byte[] image = File.ReadAllBytes(openFile.FileName); //Convert image into a byte array
+                    try
+                    {
+                        _cntDatabase.Open();
+                        //TODO: Change (Image) to the name of your image column [e.g (ProductImages)]
+                        string insertQuery = $"UPDATE {strTableName} SET CategoryID = " + CategoryID + ", Name= '" + strName + "', Description = '" + strDesc + "', Price = " + Price + ", Image = @Image WHERE MenuID = " + MenuID + ";"; // @Image is a parameter we will fill in later                        
+                        SqlCommand insertCmd = new SqlCommand(insertQuery, _cntDatabase);
+                        SqlParameter sqlParams = insertCmd.Parameters.AddWithValue("@Image", image); // The parameter will be the image as a byte array
+                        sqlParams.DbType = System.Data.DbType.Binary; // The type of data we are sending to the server will be a binary file
+                        insertCmd.ExecuteNonQuery();
+                        _cntDatabase.Close();
+
+                        MessageBox.Show("File was successfully edited.", "File Edited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error During Upload", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                
+            }
+            else
+            {
                 try
                 {
                     _cntDatabase.Open();
                     //TODO: Change (Image) to the name of your image column [e.g (ProductImages)]
-                    string insertQuery = $"UPDATE {strTableName} SET CategoryID = " + CategoryID + ", Name= '" + strName + "', Description = '" + strDesc + "', Price = " + Price + ", Image = @Image WHERE MenuID = " + MenuID + ";"; // @Image is a parameter we will fill in later                        
+                    string insertQuery = $"UPDATE {strTableName} SET CategoryID = " + CategoryID + ", Name= '" + strName + "', Description = '" + strDesc + "', Price = " + Price + " WHERE MenuID = " + MenuID + ";"; // @Image is a parameter we will fill in later                        
                     SqlCommand insertCmd = new SqlCommand(insertQuery, _cntDatabase);
-                    SqlParameter sqlParams = insertCmd.Parameters.AddWithValue("@Image", image); // The parameter will be the image as a byte array
-                    sqlParams.DbType = System.Data.DbType.Binary; // The type of data we are sending to the server will be a binary file
+                   // SqlParameter sqlParams = insertCmd.Parameters.AddWithValue("@Image", image); // The parameter will be the image as a byte array
+                    //sqlParams.DbType = System.Data.DbType.Binary; // The type of data we are sending to the server will be a binary file
                     insertCmd.ExecuteNonQuery();
                     _cntDatabase.Close();
 
-                    MessageBox.Show("File was successfully added to the database.", "File Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("File was successfully edited.", "File Edited", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (SqlException ex)
+                catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error During Upload", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Error in SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

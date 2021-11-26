@@ -91,6 +91,12 @@
     <Compile Include="frmNewAccount.Designer.cs">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResetPassword.Designer.cs">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTruckLocation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResetPassword.resx">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTruckLocation.resx">
       <DependentUpon>frmTruckLocation.cs</DependentUpon>

@@ -44,7 +44,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClearForm = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -77,7 +76,6 @@
             this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.btnDelete);
             this.tabPage1.Controls.Add(this.btnClearForm);
-            this.tabPage1.Controls.Add(this.btnEdit);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -88,7 +86,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(635, 312);
+            this.btnClose.Location = new System.Drawing.Point(634, 312);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 34);
             this.btnClose.TabIndex = 22;
@@ -98,7 +96,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(272, 312);
+            this.btnSave.Location = new System.Drawing.Point(181, 312);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 34);
             this.btnSave.TabIndex = 21;
@@ -177,8 +175,10 @@
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Location = new System.Drawing.Point(286, 3);
             this.dgvMenu.Name = "dgvMenu";
+            this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMenu.Size = new System.Drawing.Size(469, 303);
             this.dgvMenu.TabIndex = 12;
+            this.dgvMenu.SelectionChanged += new System.EventHandler(this.dgvMenu_SelectionChanged);
             // 
             // btnAdd
             // 
@@ -192,7 +192,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(514, 312);
+            this.btnDelete.Location = new System.Drawing.Point(483, 312);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 34);
             this.btnDelete.TabIndex = 11;
@@ -203,24 +203,13 @@
             // 
             // btnClearForm
             // 
-            this.btnClearForm.Location = new System.Drawing.Point(393, 312);
+            this.btnClearForm.Location = new System.Drawing.Point(332, 312);
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(96, 34);
             this.btnClearForm.TabIndex = 10;
             this.btnClearForm.Text = "C&lear Form";
             this.btnClearForm.UseVisualStyleBackColor = true;
             this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(151, 312);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(96, 34);
-            this.btnEdit.TabIndex = 9;
-            this.btnEdit.Text = "&Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            this.btnEdit.MouseHover += new System.EventHandler(this.btnEdit_MouseHover);
             // 
             // pictureBox1
             // 
@@ -262,7 +251,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClearForm;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvMenu;

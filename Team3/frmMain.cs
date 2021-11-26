@@ -15,6 +15,7 @@ namespace Team3
        
         public static string message = "An error has occurred in the program.";
         int intToggle = 0;
+        public static string strLogin;
         public frmMain()
         {
             InitializeComponent();
@@ -86,7 +87,7 @@ namespace Team3
 
         private void lblForgot_Click(object sender, EventArgs e)
         {
-            string strLogin = tbxLogin.Text.Trim();
+            strLogin = tbxLogin.Text.Trim();
             try
             {
                 if (tbxLogin.Text == "")
@@ -95,6 +96,10 @@ namespace Team3
                     return;
                 }
                 Logon.VerifyLogon(strLogin);
+                MessageBox.Show("An email was sent to your email with a new password. Check your spam folder.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                frmResetPassword resetPassword = new frmResetPassword();
+                resetPassword.ShowDialog();
             }
             catch (Exception ex)
             {

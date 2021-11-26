@@ -69,5 +69,17 @@ namespace Team3
             frmMain f2 = (frmMain)Application.OpenForms["frmMain"];
             f2.frmMain_Load(f2, EventArgs.Empty);
         }
+
+        private void btnSeeMenuItems_Click(object sender, EventArgs e)
+        {
+            sqlAll = "SELECT * FROM group3fa212330.Menu";
+            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
+        }
+
+        private void btnViewEmployees_Click(object sender, EventArgs e)
+        {
+            sqlAll = "SELECT * FROM group3fa212330.Employees";
+            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
+        }
     }
 }
