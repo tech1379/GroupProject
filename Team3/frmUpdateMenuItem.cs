@@ -52,11 +52,11 @@ namespace Team3
                         break;
                     }
 
-                dgvMenu.Columns[0].Width = 250;
-                dgvMenu.Columns[1].Width = 250;
-                dgvMenu.Columns[2].Width = 250;
-                dgvMenu.Columns[3].Width = 250;
-                dgvMenu.Columns[4].Width = 250;
+                dgvMenu.Columns[0].Width = 100;
+                dgvMenu.Columns[1].Width = 100;
+                dgvMenu.Columns[2].Width = 100;
+                dgvMenu.Columns[3].Width = 300;
+                dgvMenu.Columns[4].Width = 100;
                 dgvMenu.Columns[5].Width = 250;
                 dgvMenu.CurrentCell = null;
                 dgvMenu.ClearSelection();
