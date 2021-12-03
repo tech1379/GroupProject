@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+
 
 namespace Team3
 {
@@ -14,6 +17,7 @@ namespace Team3
     {
         DateTime clockInTime;
         DateTime clockOutTime;
+        SqlConnection dbConnection;
 
         int intEmployeeID;
 
@@ -42,8 +46,59 @@ namespace Team3
             //current date
             lblDate.Text = DateTime.Now.ToLongDateString();
 
-            //hiding button clock out so user cannot clock out when they arent clocked in
-            btnClockOut.Hide();
+            try
+            {
+                //will grab clockin data from db
+                dbConnection = new SqlConnection("Server = cstnt.tstc.edu; Database = inew2330fa21; User Id = group3fa212330; password = 3954755");
+                ProgOps.OpenDatabase(dbConnection);
+
+
+                
+                SqlCommand resultsCmd = null;
+                String sqlStatement = "SELECT ClockInTime FROM group3fa212330.ClockInClockOut WHERE EmployeeID = '" + intEmployeeID + "';";
+                resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+                DateTime ClockIn = (DateTime)resultsCmd.ExecuteScalar();
+
+                sqlStatement = "SELECT ClockOutTime FROM group3fa212330.ClockInClockOut WHERE EmployeeID = '" + intEmployeeID + "';";
+                resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+                DateTime ClockOut = (DateTime)resultsCmd.ExecuteScalar();
+
+                DateTime ZeroTime = new DateTime(1800, 01, 01, 0, 0, 0);
+
+
+                //this will check if employee is clocked in or clocked out 
+                if (ClockOut == ZeroTime && ClockIn != ZeroTime)
+                {
+                    clockInTime = ClockIn;
+                    btnClockOut.Show();
+                    btnClockIn.Hide();
+                }
+                else if (ClockIn == ZeroTime)
+                {
+                    btnClockIn.Show();
+                    btnClockOut.Hide();
+                }
+                else if(ClockIn != ZeroTime && ClockOut != ZeroTime)
+                { 
+                   btnClockIn.Show();
+                   btnClockOut.Hide();
+                }
+                else if (ClockIn == ZeroTime && ClockOut == ZeroTime)
+                { 
+                   btnClockIn.Show();
+                   btnClockOut.Hide();
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR 402" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
 
         //running clock that displays time change my the second
@@ -65,8 +120,13 @@ namespace Team3
                 //showing the user the clock out button
                 btnClockOut.Show();
 
+                 string sqlStatement = "UPDATE group3fa212330.ClockInClockOut SET ClockInTime = '" + clockInTime.ToString("yyyy-MM-dd HH:mm:ss") + "', ClockOutTime = '1800-01-01 00:00:00'  WHERE EmployeeID = '" + intEmployeeID + "';";
+                 ProgOps.UpdateDatabase(sqlStatement);
+
                 //maybe add an if statement and show message box that confirms clock in or clock out
                 MessageBox.Show("You are now clocking in at: " + clockInTime.ToString(), "Clocking In", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnClockIn.Hide();
+                this.Refresh();
             }
             catch (Exception ex)
             {
@@ -77,6 +137,7 @@ namespace Team3
 
         private void btnClockOut_Click(object sender, EventArgs e)
         {
+            string Hours;
             //hiding clock out button again
             btnClockOut.Hide();
             //current time is set to the clockOutTime
@@ -84,7 +145,16 @@ namespace Team3
             //by subtracting we get the working time in minutes
             System.TimeSpan diffResult = clockOutTime.Subtract(clockInTime);
             //pass the total hours as string to the textbox
+            Hours = Convert.ToString(diffResult.TotalHours);
             tbxTimeOutput.Text = Convert.ToString(diffResult.TotalHours);
+            
+            string sqlStatement = "UPDATE group3fa212330.ClockInClockOut SET ClockInTime = '1800-01-01 00:00:00', ClockOutTime = '" + clockOutTime.ToString("yyyy-MM-dd HH:mm:ss") + "', HoursTotal = '" +  Hours + "' WHERE EmployeeID = '" + intEmployeeID + "';";
+            ProgOps.UpdateDatabase(sqlStatement);
+
+            btnClockIn.Show();
+
+            this.Refresh();
+
         }
     }
 }
