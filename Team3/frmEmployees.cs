@@ -51,7 +51,7 @@ namespace Team3
         {
             //SQL statements will be used to load employees info
 
-            /* FORM HAS NOT BEEN TESTED YET (9/21/21) AND IS UP FOR CHANGE */
+           
             dbConnection = new SqlConnection("Server = cstnt.tstc.edu; Database = inew2330fa21; User Id = group3fa212330; password = 3954755");
             ProgOps.OpenDatabase(dbConnection);
 
