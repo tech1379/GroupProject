@@ -67,9 +67,10 @@ namespace Team3
         private void frmCustomer_Load(object sender, EventArgs e)
         {
             try 
-            { 
+            {
+                hlpMain.HelpNamespace = Application.StartupPath + "\\CustomerHelp.chm";
                 //setup background
-            Image myimage = new Bitmap(@"Background.jpg");
+                Image myimage = new Bitmap(@"Background.jpg");
             this.BackgroundImage = myimage;
             tbMenuItems.BackgroundImage = myimage;
             tbDrinks.BackgroundImage = myimage;
@@ -259,6 +260,7 @@ namespace Team3
                     myPicBox[i].Size = new System.Drawing.Size(width, height);
                     myPicBox[i].Image = lstImages[i];
                     myPicBox[i].Click += new EventHandler(myPicBox_click);
+                    myPicBox[i].MouseHover += globalMouseHoverEvent;
                     lblMenuName[i] = new Label();
                     lblMenuName[i].Size = new Size(150, 50);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
@@ -312,6 +314,7 @@ namespace Team3
                     myPicBox[i].Size = new System.Drawing.Size(width, height);
                     myPicBox[i].Image = lstImagesDrinks[i];
                     myPicBox[i].Click += new EventHandler(myPicBoxDrinks_click);
+                    myPicBox[i].MouseHover += globalMouseHoverEvent;
                     lblMenuName[i] = new Label();
                     lblMenuName[i].Size = new Size(150, 50);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
@@ -363,6 +366,7 @@ namespace Team3
                     myPicBox[i].Size = new System.Drawing.Size(width, height);
                     myPicBox[i].Image = lstImagesDesserts[i];
                     myPicBox[i].Click += new EventHandler(myPicBoxDesserts_click);
+                    myPicBox[i].MouseHover += globalMouseHoverEvent;
                     lblMenuName[i] = new Label();
                     lblMenuName[i].Size = new Size(150, 50);
                     lblMenuName[i].Location = new System.Drawing.Point(disBetWeen + (disBetWeen * (i % perCol) + (width * (i % perCol))),
@@ -486,40 +490,7 @@ namespace Team3
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvResults.RowCount == 0)
-                {
-                    MessageBox.Show("Nothing to Remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                lstNameEntrees.Clear();
-                lstNameDrinks.Clear();
-                lstNameDesserts.Clear();
-                lstPriceDrinks.Clear();
-                lstPriceDesserts.Clear();
-                lstPriceEntrees.Clear();
-                lstQuantityDesserts.Clear();
-                lstQuantityDrinks.Clear();
-                lstQuantityEntrees.Clear();
-                lstMenuIDDesserts.Clear();
-                lstMenuIDDrinks.Clear();
-                lstMenuIDEntrees.Clear();
-
-                //clear the datagrid view
-                dgvResults.Rows.Clear();
-
-                //clear labels
-                decSubTotal = 0;
-                lblSubTotal.Text = "";
-                lblTaxes.Text = "";
-                lblTotal.Text = "";
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ClearAll();
         }
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
@@ -717,6 +688,22 @@ namespace Team3
                 }
                 MessageBox.Show("Order Updated Successfully.", "Order Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 boolOrderMade = true;
+                try
+                {
+                    if (boolOrderMade == false)
+                    {
+                        MessageBox.Show("You must make a order.", "Order Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    StringBuilder html = new StringBuilder();
+                    html = GenerateReport();
+                    PrintReport(html);
+                    ClearAll();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -812,14 +799,16 @@ namespace Team3
             try
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyReceipts"));
                 // A "using" statement will automatically close a file after opening it.
                 // It never hurts to include a file.Close() once you are done with a file.
                 using (StreamWriter writer = new StreamWriter(path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html"))
                 {
                     writer.WriteLine(html);
                 }
-                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyReceipts"));
-                System.Diagnostics.Process.Start(@path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html"); //Open the report in the default web browser
+                //Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MyReceipts"));
+                //System.Diagnostics.Process.Start(@path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html"); //Open the report in the default web browser
+                MessageBox.Show("Receipt saved to " + path + "\\MyReceipts\\" + strMaxOrderID + "Receipt.html", "Receipt Saved.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -832,21 +821,52 @@ namespace Team3
         {
             try
             {
-                if (boolOrderMade == false)
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                openFileDialog1.InitialDirectory = @path + "\\MyReceipts\\";
+                openFileDialog1.DefaultExt = "html";
+                openFileDialog1.Filter = "html files (*.html)|*.html|All files (*.*)|*.*";
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("You must make a order.", "Order Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    var onlyFileName = System.IO.Path.GetFileName(openFileDialog1.FileName);
+                    System.Diagnostics.Process.Start(@path + "\\MyReceipts\\" + onlyFileName); //Open the report in the default web browser
+
                 }
-                StringBuilder html = new StringBuilder();
-                html = GenerateReport();
-                PrintReport(html);
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        public void globalMouseHoverEvent(object sender, System.EventArgs e)
+        {
+            PictureBox picBox = sender as PictureBox;
+            for (int i = 0; i < lstEntrees.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstEntrees[i].name)
+                {
+                    MessageBox.Show("Description: " + lstEntrees[i].description + "\n\n" + "Price: " + lstEntrees[i].price.ToString("C2"));
+                    return;
+                }
+            }
+            for (int i = 0; i < lstDrinks.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstDrinks[i].name)
+                {
+                    MessageBox.Show("Description: " + lstDrinks[i].description + "\n\n" + "Price: " + lstDrinks[i].price.ToString("C2"));
+                    return;
+                }
+            }
+            for (int i = 0; i < lstDesserts.Count; i++)
+            {
+                if (picBox.Name == "pbx" + lstDesserts[i].name)
+                {
+                    MessageBox.Show("Description: " + lstDesserts[i].description + "\n\n" + "Price: " + lstDesserts[i].price.ToString("C2"));
+                    return;
+                }
+            }
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             try
@@ -875,6 +895,48 @@ namespace Team3
         {
             MessageBox.Show("Cannot play media file.");
             this.Close();
+        }
+
+        private void lblHelp_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, hlpMain.HelpNamespace);
+        }
+        public void ClearAll()
+        {
+            try
+            {
+                if (dgvResults.RowCount == 0)
+                {
+                    MessageBox.Show("Nothing to Remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                lstNameEntrees.Clear();
+                lstNameDrinks.Clear();
+                lstNameDesserts.Clear();
+                lstPriceDrinks.Clear();
+                lstPriceDesserts.Clear();
+                lstPriceEntrees.Clear();
+                lstQuantityDesserts.Clear();
+                lstQuantityDrinks.Clear();
+                lstQuantityEntrees.Clear();
+                lstMenuIDDesserts.Clear();
+                lstMenuIDDrinks.Clear();
+                lstMenuIDEntrees.Clear();
+
+                //clear the datagrid view
+                dgvResults.Rows.Clear();
+
+                //clear labels
+                decSubTotal = 0;
+                lblSubTotal.Text = "";
+                lblTaxes.Text = "";
+                lblTotal.Text = "";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

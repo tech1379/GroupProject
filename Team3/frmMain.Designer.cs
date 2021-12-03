@@ -41,6 +41,8 @@ namespace Team3
             this.lblForgot = new System.Windows.Forms.Label();
             this.pbxEye = new System.Windows.Forms.PictureBox();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
+            this.hlpMain = new System.Windows.Forms.HelpProvider();
+            this.lblHelp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
@@ -180,6 +182,19 @@ namespace Team3
             this.pbxLogo.TabIndex = 1;
             this.pbxLogo.TabStop = false;
             // 
+            // lblHelp
+            // 
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.Color.White;
+            this.lblHelp.Location = new System.Drawing.Point(551, 18);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(46, 20);
+            this.lblHelp.TabIndex = 13;
+            this.lblHelp.Text = "&Help";
+            this.lblHelp.Click += new System.EventHandler(this.lblHelp_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +202,7 @@ namespace Team3
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(645, 372);
             this.ControlBox = false;
+            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pbxEye);
             this.Controls.Add(this.lblSignUp);
@@ -226,5 +242,7 @@ namespace Team3
         private System.Windows.Forms.Label lblForgot;
         public System.Windows.Forms.TextBox tbxLogin;
         public System.Windows.Forms.TextBox tbxPassword;
+        private System.Windows.Forms.HelpProvider hlpMain;
+        private System.Windows.Forms.Label lblHelp;
     }
 }

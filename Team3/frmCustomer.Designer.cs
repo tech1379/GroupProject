@@ -54,6 +54,8 @@ namespace Team3
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblHelp = new System.Windows.Forms.Label();
+            this.hlpMain = new System.Windows.Forms.HelpProvider();
             this.tbMenu.SuspendLayout();
             this.tbOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
@@ -134,17 +136,17 @@ namespace Team3
             // 
             // btnReceipt
             // 
-            this.btnReceipt.Location = new System.Drawing.Point(560, 472);
+            this.btnReceipt.Location = new System.Drawing.Point(534, 472);
             this.btnReceipt.Name = "btnReceipt";
             this.btnReceipt.Size = new System.Drawing.Size(90, 54);
             this.btnReceipt.TabIndex = 15;
-            this.btnReceipt.Text = "&Print Receipt";
+            this.btnReceipt.Text = "&View Receipt";
             this.btnReceipt.UseVisualStyleBackColor = true;
             this.btnReceipt.Click += new System.EventHandler(this.btnReceipt_Click);
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(449, 472);
+            this.btnOrder.Location = new System.Drawing.Point(417, 474);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(90, 54);
             this.btnOrder.TabIndex = 14;
@@ -190,7 +192,7 @@ namespace Team3
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.Location = new System.Drawing.Point(338, 472);
+            this.btnRemoveItem.Location = new System.Drawing.Point(309, 474);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(90, 54);
             this.btnRemoveItem.TabIndex = 9;
@@ -200,7 +202,7 @@ namespace Team3
             // 
             // btnRemoveAll
             // 
-            this.btnRemoveAll.Location = new System.Drawing.Point(227, 474);
+            this.btnRemoveAll.Location = new System.Drawing.Point(195, 474);
             this.btnRemoveAll.Name = "btnRemoveAll";
             this.btnRemoveAll.Size = new System.Drawing.Size(90, 54);
             this.btnRemoveAll.TabIndex = 2;
@@ -328,12 +330,26 @@ namespace Team3
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblHelp
+            // 
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.Color.White;
+            this.lblHelp.Location = new System.Drawing.Point(824, 29);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(46, 20);
+            this.lblHelp.TabIndex = 3;
+            this.lblHelp.Text = "&Help";
+            this.lblHelp.Click += new System.EventHandler(this.lblHelp_Click);
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 694);
             this.ControlBox = false;
+            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblInfo);
@@ -382,5 +398,7 @@ namespace Team3
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnReceipt;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblHelp;
+        private System.Windows.Forms.HelpProvider hlpMain;
     }
 }

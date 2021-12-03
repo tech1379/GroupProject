@@ -44,7 +44,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClearForm = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -55,10 +54,10 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(0, 31);
+            this.tabControl1.Location = new System.Drawing.Point(1, 92);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(769, 387);
+            this.tabControl1.Size = new System.Drawing.Size(895, 501);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -77,18 +76,17 @@
             this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.btnDelete);
             this.tabPage1.Controls.Add(this.btnClearForm);
-            this.tabPage1.Controls.Add(this.btnEdit);
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(761, 352);
+            this.tabPage1.Size = new System.Drawing.Size(887, 466);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Edit Menu Items";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(635, 312);
+            this.btnClose.Location = new System.Drawing.Point(721, 414);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 34);
             this.btnClose.TabIndex = 22;
@@ -98,7 +96,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(272, 312);
+            this.btnSave.Location = new System.Drawing.Point(232, 414);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 34);
             this.btnSave.TabIndex = 21;
@@ -174,15 +172,20 @@
             // 
             // dgvMenu
             // 
+            this.dgvMenu.AllowUserToAddRows = false;
+            this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMenu.Location = new System.Drawing.Point(286, 3);
+            this.dgvMenu.Location = new System.Drawing.Point(271, 0);
             this.dgvMenu.Name = "dgvMenu";
-            this.dgvMenu.Size = new System.Drawing.Size(469, 303);
+            this.dgvMenu.ReadOnly = true;
+            this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMenu.Size = new System.Drawing.Size(600, 408);
             this.dgvMenu.TabIndex = 12;
+            this.dgvMenu.SelectionChanged += new System.EventHandler(this.dgvMenu_SelectionChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(30, 312);
+            this.btnAdd.Location = new System.Drawing.Point(69, 414);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 34);
             this.btnAdd.TabIndex = 12;
@@ -192,7 +195,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(514, 312);
+            this.btnDelete.Location = new System.Drawing.Point(558, 414);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 34);
             this.btnDelete.TabIndex = 11;
@@ -203,7 +206,7 @@
             // 
             // btnClearForm
             // 
-            this.btnClearForm.Location = new System.Drawing.Point(393, 312);
+            this.btnClearForm.Location = new System.Drawing.Point(395, 414);
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(96, 34);
             this.btnClearForm.TabIndex = 10;
@@ -211,23 +214,12 @@
             this.btnClearForm.UseVisualStyleBackColor = true;
             this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(151, 312);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(96, 34);
-            this.btnEdit.TabIndex = 9;
-            this.btnEdit.Text = "&Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            this.btnEdit.MouseHover += new System.EventHandler(this.btnEdit_MouseHover);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Team3.Properties.Resources.EditMenuPic;
-            this.pictureBox1.Location = new System.Drawing.Point(321, 420);
+            this.pictureBox1.Location = new System.Drawing.Point(399, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 105);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 74);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -237,7 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(781, 530);
+            this.ClientSize = new System.Drawing.Size(929, 605);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
@@ -262,7 +254,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClearForm;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvMenu;

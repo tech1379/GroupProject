@@ -91,6 +91,12 @@
     <Compile Include="frmNewAccount.Designer.cs">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResetPassword.Designer.cs">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTruckLocation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,14 +126,6 @@
     </Compile>
     <Compile Include="frmClockInClockOut.Designer.cs">
       <DependentUpon>frmClockInClockOut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="inew2330fa21DataSet.cs">
-      <DependentUpon>inew2330fa21DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="inew2330fa21DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>inew2330fa21DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Logon.cs" />
     <Compile Include="Menu.cs" />
@@ -168,6 +166,9 @@
     <EmbeddedResource Include="frmNewAccount.resx">
       <DependentUpon>frmNewAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmResetPassword.resx">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTruckLocation.resx">
       <DependentUpon>frmTruckLocation.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,17 +193,6 @@
     <EmbeddedResource Include="frmUpdateMenuItem.resx">
       <DependentUpon>frmUpdateMenuItem.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="inew2330fa21DataSet.xsc">
-      <DependentUpon>inew2330fa21DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="inew2330fa21DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>inew2330fa21DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="inew2330fa21DataSet.xss">
-      <DependentUpon>inew2330fa21DataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
