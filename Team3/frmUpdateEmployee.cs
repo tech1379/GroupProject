@@ -145,29 +145,39 @@ namespace Team3
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //try
+            //if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
+            //    tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
+            //    mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
             //{
-            //    var row = dgvEmpManager.CurrentCell.RowIndex;
-            //    var id = Convert.ToString(dgvEmpManager.Rows[row].Cells[0].Value);
-            //    var name = Convert.ToString(dgvEmpManager.Rows[row].Cells[1].Value);
-            //    var address = Convert.ToString(dgvEmpManager.Rows[row].Cells[2].Value);
-            //    var contact = Convert.ToString(dgvEmpManager.Rows[row].Cells[3].Value);
-            //    var email = Convert.ToString(dgvEmpManager.Rows[row].Cells[4].Value);
-            //    var desigination = Convert.ToString(dgvEmpManager.Rows[row].Cells[5].Value);
-            //    var department = Convert.ToString(dgvEmpManager.Rows[row].Cells[6].Value);
-            //    var dateOfJoin = Convert.ToString(dgvEmpManager.Rows[row].Cells[7].Value);
-            //    var wageRate = Convert.ToString(dgvEmpManager.Rows[row].Cells[8].Value);
-            //    var hourWorked = Convert.ToString(dgvEmpManager.Rows[row].Cells[9].Value);
-
+            //    MessageBox.Show("Missing Information");
             //}
-            //catch (Exception exception)
+            //else
             //{
-            //    MessageBox.Show(exception.Message, "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            //    try
+            //    {
+            //        con.Open();
+            //        SqlCommand resultsCmd = null;
 
+            //        string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
+            //        ProgOps.UpdateDatabase(queryLogOn);
+            //        string queryLogOnID = "SELECT MAX(LogOnID) FROM group3fa212330.LogOn";
+            //        string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
+            //        MessageBox.Show(LogonID);
+            //        string query = "UPDATE group3fa212330.Employees SET FirstName='" + tbxFirstName.Text + "', LastName='" + tbxLastName.Text + "',Gender='" + cbxGender.SelectedItem.ToString() + "',Address='" + tbxAddress.Text + "',City='" + tbxCity.Text + "',State='" + cbxState.SelectedItem.ToString() + "',ZipCode='" + tbxZipCode.Text + "',PhoneNumber='" + tbxPhoneNumber.Text + "',Email='" + tbxEmail.Text + "',JobTitle='" + cbxRole.SelectedItem.ToString() + "',DOB='" + mskDOB.Text + "',Age=" + Convert.ToInt32(tbxAge.Text) + ",StartDate='" + mskStartDate.Text + "',LogonID=" + Convert.ToInt32(LogonID) + ";";
+            //        //MessageBox.Show(query);
+            //        SqlCommand cmd = new SqlCommand(query, con);
+            //        cmd.ExecuteNonQuery();
+            //        MessageBox.Show("Employee Updated Successfully");
+            //        Clear(); //clear form
+            //        con.Close();
+            //        populate();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
         }
-
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
