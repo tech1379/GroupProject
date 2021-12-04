@@ -372,5 +372,46 @@ namespace Team3
             }
 
         }
+        //public static void DatabaseCommandEditEmployee(strFName, strLName, strGender, strAge, strAddress, strCity, strState, intZipCode, intPhone, strEmail, strJobTitle, intDOB, intStartDate)
+        //{
+        //    try
+        //    {
+        //        _cntDatabase.Open();
+        //        string insertQuery = $"UPDATE group3fa212330.Employees SET FirstName= '" + strFName + "', LastName = '" + strLName + "', Gender = " + cbxGender + "," +
+        //            " Age = " + strAge + ",  Address = " + strAddress + "," City = " +strCity+ "," State = " + strAge + ","ZipCode = " +strZipCode+ "," Phone = " + strPhone + "" +
+        //              "" JobTitle = " +intJobTitle+ "," DOB = " + intDOB + "," StartDate = " +intStartDate+ ";
+        //        SqlCommand insertCmd = new SqlCommand(insertQuery, _cntDatabase);
+        //        sqlParams.DbType = System.Data.DbType.Binary; // The type of data we are sending to the server will be a binary file
+        //        insertCmd.ExecuteNonQuery();
+        //        _cntDatabase.Close();
+        //        MessageBox.Show("Employee was successfully edited.", "File Edited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error During Upload", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    else
+        //    {
+        //        try
+        //        {
+        //            _cntDatabase.Open();
+        //            //TODO: Change (Image) to the name of your image column [e.g (ProductImages)]
+        //            string insertQuery = $"UPDATE {strTableName} SET CategoryID = " + CategoryID + ", Name= '" + strName + "', Description = '" + strDesc + "'," +
+        //                " Price = " + Price + " WHERE MenuID = " + MenuID + ";";
+        //            SqlCommand insertCmd = new SqlCommand(insertQuery, _cntDatabase);
+        //            // SqlParameter sqlParams = insertCmd.Parameters.AddWithValue("@Image", image); // The parameter will be the image as a byte array
+        //            //sqlParams.DbType = System.Data.DbType.Binary; // The type of data we are sending to the server will be a binary file
+        //            insertCmd.ExecuteNonQuery();
+        //            _cntDatabase.Close();
+
+        //            MessageBox.Show("File was successfully edited.", "File Edited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message, "Error in SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+            //}
+        //}
     }
 }

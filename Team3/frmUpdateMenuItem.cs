@@ -246,6 +246,7 @@ namespace Team3
         private void btnClearForm_Click(object sender, EventArgs e)
         {
             cbxCategoryID.SelectedIndex = -1;
+            cbxCategoryID.Text = "";
             tbxName.Text = "";
             tbxDescription.Text = "";
             tbxPrice.Text = "";
@@ -296,6 +297,11 @@ namespace Team3
                     MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

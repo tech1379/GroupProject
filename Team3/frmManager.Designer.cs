@@ -249,7 +249,7 @@
             this.pictureBox1.Image = global::Team3.Properties.Resources.denali_logo;
             this.pictureBox1.Location = new System.Drawing.Point(174, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(782, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(708, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
