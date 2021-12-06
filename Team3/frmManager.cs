@@ -81,5 +81,10 @@ namespace Team3
             sqlAll = "SELECT * FROM group3fa212330.Employees";
             ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
