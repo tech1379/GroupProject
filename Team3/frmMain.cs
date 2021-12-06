@@ -1,4 +1,10 @@
-﻿using System;
+﻿//Team 3 Group Project
+//Michal Downing
+//Guillermo Hernandez
+//Eric Tekell
+//Please use Login: michal and Password:michal to login as manager the first time...
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
