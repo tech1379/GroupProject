@@ -194,7 +194,7 @@ namespace Team3
                     string LogonID = dgvEmpManager.Rows[intIndex].Cells[14].Value.ToString();
                    // MessageBox.Show(LogonID);
                     string query = "UPDATE group3fa212330.Employees SET FirstName='" + tbxFirstName.Text + "', LastName='" + tbxLastName.Text + "',Gender='" + cbxGender.SelectedItem.ToString() + "',Address='" + tbxAddress.Text + "',City='" + tbxCity.Text + "',State='" + cbxState.SelectedItem.ToString() + "',ZipCode='" + tbxZipCode.Text + "',PhoneNumber='" + tbxPhoneNumber.Text + "',Email='" + tbxEmail.Text + "',JobTitle='" + cbxRole.SelectedItem.ToString() + "',DOB='" + mskDOB.Text + "',Age=" + Convert.ToInt32(tbxAge.Text) + ",StartDate='" + mskStartDate.Text + "',LogonID=" + Convert.ToInt32(LogonID) + ", isManager= " + isManager + " WHERE EmployeeID = " + Convert.ToInt32(strEmpID) + ";";
-                    MessageBox.Show(query);
+                   // MessageBox.Show(query);
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Updated Successfully");
