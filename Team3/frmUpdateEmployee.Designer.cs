@@ -50,8 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxGender = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbxLogOnPassword = new System.Windows.Forms.TextBox();
-            this.lblLogOnPassword = new System.Windows.Forms.Label();
+            this.lblHintInfo = new System.Windows.Forms.Label();
             this.mskStartDate = new System.Windows.Forms.MaskedTextBox();
             this.mskDOB = new System.Windows.Forms.MaskedTextBox();
             this.tbxAge = new System.Windows.Forms.TextBox();
@@ -59,14 +58,15 @@
             this.tbxLogOnName = new System.Windows.Forms.TextBox();
             this.lblLogonName = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
-            this.tbxEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmpID = new System.Windows.Forms.Label();
             this.dgvEmpManager = new System.Windows.Forms.DataGridView();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblHintInfo = new System.Windows.Forms.Label();
+            this.cbxType = new System.Windows.Forms.ComboBox();
+            this.tbxLogOnPassword = new System.Windows.Forms.TextBox();
+            this.lblLogOnPassword = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpManager)).BeginInit();
             this.SuspendLayout();
@@ -368,6 +368,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbxType);
             this.panel1.Controls.Add(this.lblHintInfo);
             this.panel1.Controls.Add(this.tbxLogOnPassword);
             this.panel1.Controls.Add(this.lblLogOnPassword);
@@ -378,7 +379,6 @@
             this.panel1.Controls.Add(this.tbxLogOnName);
             this.panel1.Controls.Add(this.lblLogonName);
             this.panel1.Controls.Add(this.lblStartDate);
-            this.panel1.Controls.Add(this.tbxEmployeeID);
             this.panel1.Controls.Add(this.lblEmpID);
             this.panel1.Controls.Add(this.dgvEmpManager);
             this.panel1.Controls.Add(this.btnHome);
@@ -411,27 +411,15 @@
             this.panel1.Size = new System.Drawing.Size(1222, 573);
             this.panel1.TabIndex = 57;
             // 
-            // tbxLogOnPassword
+            // lblHintInfo
             // 
-            this.tbxLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLogOnPassword.ForeColor = System.Drawing.Color.Red;
-            this.tbxLogOnPassword.Location = new System.Drawing.Point(122, 527);
-            this.tbxLogOnPassword.Name = "tbxLogOnPassword";
-            this.tbxLogOnPassword.Size = new System.Drawing.Size(152, 29);
-            this.tbxLogOnPassword.TabIndex = 16;
-            // 
-            // lblLogOnPassword
-            // 
-            this.lblLogOnPassword.AutoSize = true;
-            this.lblLogOnPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOnPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblLogOnPassword.Location = new System.Drawing.Point(38, 530);
-            this.lblLogOnPassword.Name = "lblLogOnPassword";
-            this.lblLogOnPassword.Size = new System.Drawing.Size(78, 22);
-            this.lblLogOnPassword.TabIndex = 75;
-            this.lblLogOnPassword.Text = "Password:";
-            this.lblLogOnPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblHintInfo.AutoSize = true;
+            this.lblHintInfo.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHintInfo.Location = new System.Drawing.Point(707, 514);
+            this.lblHintInfo.Name = "lblHintInfo";
+            this.lblHintInfo.Size = new System.Drawing.Size(465, 25);
+            this.lblHintInfo.TabIndex = 76;
+            this.lblHintInfo.Text = "Double click on a cell to insert employee information ";
             // 
             // mskStartDate
             // 
@@ -506,26 +494,17 @@
             this.lblStartDate.Text = "Start Date:";
             this.lblStartDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // tbxEmployeeID
-            // 
-            this.tbxEmployeeID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEmployeeID.ForeColor = System.Drawing.Color.Red;
-            this.tbxEmployeeID.Location = new System.Drawing.Point(122, 12);
-            this.tbxEmployeeID.Name = "tbxEmployeeID";
-            this.tbxEmployeeID.Size = new System.Drawing.Size(283, 29);
-            this.tbxEmployeeID.TabIndex = 1;
-            // 
             // lblEmpID
             // 
             this.lblEmpID.AutoSize = true;
             this.lblEmpID.BackColor = System.Drawing.Color.Transparent;
             this.lblEmpID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpID.ForeColor = System.Drawing.Color.Black;
-            this.lblEmpID.Location = new System.Drawing.Point(17, 15);
+            this.lblEmpID.Location = new System.Drawing.Point(0, 13);
             this.lblEmpID.Name = "lblEmpID";
-            this.lblEmpID.Size = new System.Drawing.Size(99, 22);
+            this.lblEmpID.Size = new System.Drawing.Size(120, 22);
             this.lblEmpID.TabIndex = 63;
-            this.lblEmpID.Text = "EmployeeID:";
+            this.lblEmpID.Text = "Employee Type:";
             this.lblEmpID.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // dgvEmpManager
@@ -578,15 +557,36 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblHintInfo
+            // cbxType
             // 
-            this.lblHintInfo.AutoSize = true;
-            this.lblHintInfo.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHintInfo.Location = new System.Drawing.Point(707, 514);
-            this.lblHintInfo.Name = "lblHintInfo";
-            this.lblHintInfo.Size = new System.Drawing.Size(465, 25);
-            this.lblHintInfo.TabIndex = 76;
-            this.lblHintInfo.Text = "Double click on a cell to insert employee information ";
+            this.cbxType.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Location = new System.Drawing.Point(122, 13);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(283, 30);
+            this.cbxType.TabIndex = 77;
+            // 
+            // tbxLogOnPassword
+            // 
+            this.tbxLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxLogOnPassword.ForeColor = System.Drawing.Color.Red;
+            this.tbxLogOnPassword.Location = new System.Drawing.Point(122, 527);
+            this.tbxLogOnPassword.Name = "tbxLogOnPassword";
+            this.tbxLogOnPassword.Size = new System.Drawing.Size(152, 29);
+            this.tbxLogOnPassword.TabIndex = 16;
+            // 
+            // lblLogOnPassword
+            // 
+            this.lblLogOnPassword.AutoSize = true;
+            this.lblLogOnPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOnPassword.ForeColor = System.Drawing.Color.Black;
+            this.lblLogOnPassword.Location = new System.Drawing.Point(38, 530);
+            this.lblLogOnPassword.Name = "lblLogOnPassword";
+            this.lblLogOnPassword.Size = new System.Drawing.Size(78, 22);
+            this.lblLogOnPassword.TabIndex = 75;
+            this.lblLogOnPassword.Text = "Password:";
+            this.lblLogOnPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmUpdateEmployee
             // 
@@ -638,14 +638,14 @@
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.TextBox tbxLogOnName;
         private System.Windows.Forms.Label lblLogonName;
-        private System.Windows.Forms.TextBox tbxEmployeeID;
         private System.Windows.Forms.Label lblEmpID;
         private System.Windows.Forms.TextBox tbxAge;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.MaskedTextBox mskStartDate;
         private System.Windows.Forms.MaskedTextBox mskDOB;
+        private System.Windows.Forms.Label lblHintInfo;
+        private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.TextBox tbxLogOnPassword;
         private System.Windows.Forms.Label lblLogOnPassword;
-        private System.Windows.Forms.Label lblHintInfo;
     }
 }

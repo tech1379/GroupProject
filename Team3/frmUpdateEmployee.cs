@@ -23,7 +23,7 @@ namespace Team3
         //clear form
         public void Clear()
         {
-            tbxEmployeeID.Clear();
+            //tbxEmployeeID.Clear();
             tbxFirstName.Clear();
             tbxLastName.Clear();
             cbxGender.Text = string.Empty;
@@ -46,7 +46,7 @@ namespace Team3
         { 
             if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
                 tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
-                mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
+                mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "" || cbxType.SelectedIndex == -1)
             {
                 MessageBox.Show("You forgot something! Please go back and make sure you filled in everything.");
             }
@@ -54,19 +54,28 @@ namespace Team3
             {
                 try
                 {
+                    int isManager = 0;
+                    if (cbxType.SelectedItem.ToString() == "Manager")
+                    {
+                        isManager = 1;
+                    }
+                    else
+                    {
+                        isManager = 0;
+                    }
                     con.Open();
                     SqlCommand resultsCmd = null;
 
-                    string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
+                    string queryLogOn = "INSERT INTO group3fa212330.LogOn VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "', " + isManager + ", 0);";
                     ProgOps.UpdateDatabase(queryLogOn);
                     string queryLogOnID = "SELECT MAX(LogOnID) FROM group3fa212330.LogOn";
                     string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
-                    MessageBox.Show(LogonID);
-                    string query = "insert into group3fa212330.Employees values('" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + mskDOB.Text + "'," + Convert.ToInt32(tbxAge.Text) + ",'" + mskStartDate.Text + "'," + Convert.ToInt32(LogonID) + ", 0)";
-                    MessageBox.Show(query);
+                    //MessageBox.Show(LogonID);
+                    string query = "insert into group3fa212330.Employees values('" + tbxFirstName.Text + "','" + tbxLastName.Text + "','" + cbxGender.SelectedItem.ToString() + "','" + tbxAddress.Text + "','" + tbxCity.Text + "','" + cbxState.SelectedItem.ToString() + "','" + tbxZipCode.Text + "','" + tbxPhoneNumber.Text + "','" + tbxEmail.Text + "','" + cbxRole.SelectedItem.ToString() + "','" + mskDOB.Text + "'," + Convert.ToInt32(tbxAge.Text) + ",'" + mskStartDate.Text + "'," + Convert.ToInt32(LogonID) + ", " + isManager + ")";
+                    //MessageBox.Show(query);
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Employee Successfully Added");
+                    //MessageBox.Show("Employee Successfully Added");
                     Clear(); //clear form
                     con.Close();
                     populate();
@@ -91,21 +100,28 @@ namespace Team3
 
         private void frmUpdateEmployee_Load(object sender, EventArgs e)
         {
+            cbxType.Items.Add("Manager");
+            cbxType.Items.Add("Employee");
             populate();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(tbxEmployeeID.Text == "")
+            try
             {
-                MessageBox.Show("Please enter EmployeeID");
+                if (dgvEmpManager.CurrentCell == null)
+            {
+                MessageBox.Show("You must select a row.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
-            {
-                try
-                {
+
+            int intIndex = dgvEmpManager.CurrentRow.Index;
+            string strEmpID = dgvEmpManager.Rows[intIndex].Cells[0].Value.ToString();
+
+
+          
                     con.Open();
-                    string query = "DELETE FROM group3fa212330.Employees WHERE EmployeeID='" + tbxEmployeeID.Text + "';";
+                    string query = "DELETE FROM group3fa212330.Employees WHERE EmployeeID=" + Convert.ToInt32(strEmpID) + ";";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Deleted Successfully");
@@ -116,14 +132,14 @@ namespace Team3
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            
         }
         //when cell content is clicked the info will fill text boxes information
         private void dgvEmpManager_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvEmpManager.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                tbxEmployeeID.Text = dgvEmpManager.Rows[e.RowIndex].Cells["EmployeeID"].FormattedValue.ToString();
+                //tbxEmployeeID.Text = dgvEmpManager.Rows[e.RowIndex].Cells["EmployeeID"].FormattedValue.ToString();
                 tbxFirstName.Text = dgvEmpManager.Rows[e.RowIndex].Cells["FirstName"].FormattedValue.ToString();
                 tbxLastName.Text = dgvEmpManager.Rows[e.RowIndex].Cells["LastName"].FormattedValue.ToString();
                 cbxGender.Text = dgvEmpManager.Rows[e.RowIndex].Cells["Gender"].FormattedValue.ToString();
@@ -137,7 +153,9 @@ namespace Team3
                 mskDOB.Text = dgvEmpManager.Rows[e.RowIndex].Cells["DOB"].FormattedValue.ToString();
                 mskStartDate.Text = dgvEmpManager.Rows[e.RowIndex].Cells["StartDate"].FormattedValue.ToString();
                 tbxAge.Text = dgvEmpManager.Rows[e.RowIndex].Cells["Age"].FormattedValue.ToString();
-                tbxLogOnName.Text = dgvEmpManager.Rows[e.RowIndex].Cells["LogOnID"].FormattedValue.ToString();
+                //tbxLogOnName.Text = dgvEmpManager.Rows[e.RowIndex].Cells["LogOnID"].FormattedValue.ToString();
+                tbxLogOnName.Visible = false;
+                tbxLogOnPassword.Visible = false;
  
             }
 
@@ -145,38 +163,50 @@ namespace Team3
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
-            //    tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
-            //    mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
-            //{
-            //    MessageBox.Show("Missing Information");
-            //}
-            //else
-            //{
-            //    try
-            //    {
-            //        con.Open();
-            //        SqlCommand resultsCmd = null;
+            if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
+                tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
+                mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    int isManager = 0;
+                    if (cbxType.SelectedItem.ToString() == "Manager")
+                    {
+                        isManager = 1;
+                    }
+                    else
+                    {
+                        isManager = 0;
+                    }
+                    int intIndex = dgvEmpManager.CurrentRow.Index;
+                    string strEmpID = dgvEmpManager.Rows[intIndex].Cells[0].Value.ToString();
+                    con.Open();
+                    SqlCommand resultsCmd = null;
 
-            //        string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
-            //        ProgOps.UpdateDatabase(queryLogOn);
-            //        string queryLogOnID = "SELECT MAX(LogOnID) FROM group3fa212330.LogOn";
-            //        string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
-            //        MessageBox.Show(LogonID);
-            //        string query = "UPDATE group3fa212330.Employees SET FirstName='" + tbxFirstName.Text + "', LastName='" + tbxLastName.Text + "',Gender='" + cbxGender.SelectedItem.ToString() + "',Address='" + tbxAddress.Text + "',City='" + tbxCity.Text + "',State='" + cbxState.SelectedItem.ToString() + "',ZipCode='" + tbxZipCode.Text + "',PhoneNumber='" + tbxPhoneNumber.Text + "',Email='" + tbxEmail.Text + "',JobTitle='" + cbxRole.SelectedItem.ToString() + "',DOB='" + mskDOB.Text + "',Age=" + Convert.ToInt32(tbxAge.Text) + ",StartDate='" + mskStartDate.Text + "',LogonID=" + Convert.ToInt32(LogonID) + ";";
-            //        //MessageBox.Show(query);
-            //        SqlCommand cmd = new SqlCommand(query, con);
-            //        cmd.ExecuteNonQuery();
-            //        MessageBox.Show("Employee Updated Successfully");
-            //        Clear(); //clear form
-            //        con.Close();
-            //        populate();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //}
+                    //string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
+                    //ProgOps.UpdateDatabase(queryLogOn);
+                    //string queryLogOnID = "SELECT (LogOnID) FROM group3fa212330.LogOn WHERE LogOnName = '" + tbxLogOnName.Text + "' AND Password ='" + tbxLogOnPassword.Text + "';";
+                    //string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
+                    string LogonID = dgvEmpManager.Rows[intIndex].Cells[14].Value.ToString();
+                   // MessageBox.Show(LogonID);
+                    string query = "UPDATE group3fa212330.Employees SET FirstName='" + tbxFirstName.Text + "', LastName='" + tbxLastName.Text + "',Gender='" + cbxGender.SelectedItem.ToString() + "',Address='" + tbxAddress.Text + "',City='" + tbxCity.Text + "',State='" + cbxState.SelectedItem.ToString() + "',ZipCode='" + tbxZipCode.Text + "',PhoneNumber='" + tbxPhoneNumber.Text + "',Email='" + tbxEmail.Text + "',JobTitle='" + cbxRole.SelectedItem.ToString() + "',DOB='" + mskDOB.Text + "',Age=" + Convert.ToInt32(tbxAge.Text) + ",StartDate='" + mskStartDate.Text + "',LogonID=" + Convert.ToInt32(LogonID) + ", isManager= " + isManager + " WHERE EmployeeID = " + Convert.ToInt32(strEmpID) + ";";
+                    MessageBox.Show(query);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Employee Updated Successfully");
+                    Clear(); //clear form
+                    con.Close();
+                    populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private void btnHome_Click(object sender, EventArgs e)
         {

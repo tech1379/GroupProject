@@ -124,6 +124,9 @@ namespace Team3
                 ProgOps.UpdateDatabase(strInsertCustomer);
                 MessageBox.Show("Customer successfully added.", "Customer Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearAll();
+                frmMain main = new frmMain();
+                this.Hide();
+                main.ShowDialog();
             }
             catch (Exception ex)
             {

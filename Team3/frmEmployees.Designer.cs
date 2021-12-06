@@ -29,6 +29,7 @@ namespace Team3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployees));
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
@@ -81,7 +82,7 @@ namespace Team3
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosition.Location = new System.Drawing.Point(12, 48);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(61, 16);
+            this.lblPosition.Size = new System.Drawing.Size(62, 16);
             this.lblPosition.TabIndex = 3;
             this.lblPosition.Text = "Position: ";
             // 
@@ -91,7 +92,7 @@ namespace Team3
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(12, 74);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 16);
+            this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email:";
             // 
@@ -101,7 +102,7 @@ namespace Team3
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(12, 100);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(61, 16);
+            this.lblAddress.Size = new System.Drawing.Size(62, 16);
             this.lblAddress.TabIndex = 5;
             this.lblAddress.Text = "Address:";
             // 
@@ -111,7 +112,7 @@ namespace Team3
             this.lblContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.Location = new System.Drawing.Point(12, 125);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(106, 16);
+            this.lblContact.Size = new System.Drawing.Size(107, 16);
             this.lblContact.TabIndex = 6;
             this.lblContact.Text = "Contact Number:";
             // 
@@ -121,7 +122,7 @@ namespace Team3
             this.lblSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSchedule.Location = new System.Drawing.Point(6, 167);
             this.lblSchedule.Name = "lblSchedule";
-            this.lblSchedule.Size = new System.Drawing.Size(67, 16);
+            this.lblSchedule.Size = new System.Drawing.Size(68, 16);
             this.lblSchedule.TabIndex = 7;
             this.lblSchedule.Text = "Schedule:";
             // 
@@ -180,6 +181,7 @@ namespace Team3
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnLogOut);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEmployees";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

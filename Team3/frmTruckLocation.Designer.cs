@@ -29,6 +29,7 @@ namespace Team3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTruckLocation));
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblLat = new System.Windows.Forms.Label();
             this.lblLong = new System.Windows.Forms.Label();
@@ -125,6 +126,7 @@ namespace Team3
             this.Controls.Add(this.lblLong);
             this.Controls.Add(this.lblLat);
             this.Controls.Add(this.lblInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTruckLocation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Truck Location";
