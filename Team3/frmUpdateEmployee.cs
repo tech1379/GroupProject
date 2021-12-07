@@ -23,7 +23,7 @@ namespace Team3
         //clear form
         public void Clear()
         {
-            //tbxEmployeeID.Clear();
+            cbxType.SelectedIndex = -1;
             tbxFirstName.Clear();
             tbxLastName.Clear();
             cbxGender.Text = string.Empty;
@@ -163,7 +163,7 @@ namespace Team3
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
+            if (cbxType.Text== "" || tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
                 tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
                 mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
             {
@@ -186,15 +186,10 @@ namespace Team3
                     string strEmpID = dgvEmpManager.Rows[intIndex].Cells[0].Value.ToString();
                     con.Open();
                     SqlCommand resultsCmd = null;
-
-                    //string queryLogOn = "INSERT INTO group3fa212330.LogOn(LogOnName, Password) VALUES('" + tbxLogOnName.Text + "','" + tbxLogOnPassword.Text + "')";
-                    //ProgOps.UpdateDatabase(queryLogOn);
-                    //string queryLogOnID = "SELECT (LogOnID) FROM group3fa212330.LogOn WHERE LogOnName = '" + tbxLogOnName.Text + "' AND Password ='" + tbxLogOnPassword.Text + "';";
-                    //string LogonID = ProgOps.DatabaseCommandLogon(queryLogOnID);
                     string LogonID = dgvEmpManager.Rows[intIndex].Cells[14].Value.ToString();
-                   // MessageBox.Show(LogonID);
+
                     string query = "UPDATE group3fa212330.Employees SET FirstName='" + tbxFirstName.Text + "', LastName='" + tbxLastName.Text + "',Gender='" + cbxGender.SelectedItem.ToString() + "',Address='" + tbxAddress.Text + "',City='" + tbxCity.Text + "',State='" + cbxState.SelectedItem.ToString() + "',ZipCode='" + tbxZipCode.Text + "',PhoneNumber='" + tbxPhoneNumber.Text + "',Email='" + tbxEmail.Text + "',JobTitle='" + cbxRole.SelectedItem.ToString() + "',DOB='" + mskDOB.Text + "',Age=" + Convert.ToInt32(tbxAge.Text) + ",StartDate='" + mskStartDate.Text + "',LogonID=" + Convert.ToInt32(LogonID) + ", isManager= " + isManager + " WHERE EmployeeID = " + Convert.ToInt32(strEmpID) + ";";
-                   // MessageBox.Show(query);
+
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Updated Successfully");

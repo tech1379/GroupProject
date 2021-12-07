@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblTimeClock = new System.Windows.Forms.Label();
-            this.btnTimeClock = new System.Windows.Forms.Button();
             this.lblViewEmployees = new System.Windows.Forms.Label();
             this.btnViewEmployees = new System.Windows.Forms.Button();
             this.lblSeeMenu = new System.Windows.Forms.Label();
@@ -55,8 +53,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.lblTimeClock);
-            this.groupBox1.Controls.Add(this.btnTimeClock);
             this.groupBox1.Controls.Add(this.lblViewEmployees);
             this.groupBox1.Controls.Add(this.btnViewEmployees);
             this.groupBox1.Controls.Add(this.lblSeeMenu);
@@ -77,30 +73,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Denali Indian Tacos";
             // 
-            // lblTimeClock
-            // 
-            this.lblTimeClock.Location = new System.Drawing.Point(10, 503);
-            this.lblTimeClock.Name = "lblTimeClock";
-            this.lblTimeClock.Size = new System.Drawing.Size(78, 51);
-            this.lblTimeClock.TabIndex = 42;
-            this.lblTimeClock.Text = "Time Clock";
-            this.lblTimeClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnTimeClock
-            // 
-            this.btnTimeClock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTimeClock.BackgroundImage")));
-            this.btnTimeClock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTimeClock.ForeColor = System.Drawing.Color.Black;
-            this.btnTimeClock.Location = new System.Drawing.Point(92, 503);
-            this.btnTimeClock.Name = "btnTimeClock";
-            this.btnTimeClock.Size = new System.Drawing.Size(68, 56);
-            this.btnTimeClock.TabIndex = 41;
-            this.btnTimeClock.UseVisualStyleBackColor = true;
-            this.btnTimeClock.Click += new System.EventHandler(this.btnTimeClock_Click);
-            // 
             // lblViewEmployees
             // 
-            this.lblViewEmployees.Location = new System.Drawing.Point(10, 266);
+            this.lblViewEmployees.Location = new System.Drawing.Point(12, 329);
             this.lblViewEmployees.Name = "lblViewEmployees";
             this.lblViewEmployees.Size = new System.Drawing.Size(78, 51);
             this.lblViewEmployees.TabIndex = 39;
@@ -112,7 +87,7 @@
             this.btnViewEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewEmployees.BackgroundImage")));
             this.btnViewEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnViewEmployees.ForeColor = System.Drawing.Color.Black;
-            this.btnViewEmployees.Location = new System.Drawing.Point(92, 263);
+            this.btnViewEmployees.Location = new System.Drawing.Point(94, 326);
             this.btnViewEmployees.Name = "btnViewEmployees";
             this.btnViewEmployees.Size = new System.Drawing.Size(68, 56);
             this.btnViewEmployees.TabIndex = 38;
@@ -121,7 +96,7 @@
             // 
             // lblSeeMenu
             // 
-            this.lblSeeMenu.Location = new System.Drawing.Point(8, 108);
+            this.lblSeeMenu.Location = new System.Drawing.Point(10, 171);
             this.lblSeeMenu.Name = "lblSeeMenu";
             this.lblSeeMenu.Size = new System.Drawing.Size(78, 51);
             this.lblSeeMenu.TabIndex = 37;
@@ -133,7 +108,7 @@
             this.btnSeeMenuItems.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeeMenuItems.BackgroundImage")));
             this.btnSeeMenuItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeeMenuItems.ForeColor = System.Drawing.Color.Black;
-            this.btnSeeMenuItems.Location = new System.Drawing.Point(92, 103);
+            this.btnSeeMenuItems.Location = new System.Drawing.Point(94, 166);
             this.btnSeeMenuItems.Name = "btnSeeMenuItems";
             this.btnSeeMenuItems.Size = new System.Drawing.Size(68, 56);
             this.btnSeeMenuItems.TabIndex = 36;
@@ -142,7 +117,7 @@
             // 
             // lblLocationToday
             // 
-            this.lblLocationToday.Location = new System.Drawing.Point(8, 28);
+            this.lblLocationToday.Location = new System.Drawing.Point(10, 91);
             this.lblLocationToday.Name = "lblLocationToday";
             this.lblLocationToday.Size = new System.Drawing.Size(78, 51);
             this.lblLocationToday.TabIndex = 32;
@@ -151,7 +126,7 @@
             // 
             // lblUpdateMenu
             // 
-            this.lblUpdateMenu.Location = new System.Drawing.Point(12, 186);
+            this.lblUpdateMenu.Location = new System.Drawing.Point(14, 249);
             this.lblUpdateMenu.Name = "lblUpdateMenu";
             this.lblUpdateMenu.Size = new System.Drawing.Size(78, 51);
             this.lblUpdateMenu.TabIndex = 31;
@@ -160,7 +135,7 @@
             // 
             // lblPayroll
             // 
-            this.lblPayroll.Location = new System.Drawing.Point(12, 426);
+            this.lblPayroll.Location = new System.Drawing.Point(14, 489);
             this.lblPayroll.Name = "lblPayroll";
             this.lblPayroll.Size = new System.Drawing.Size(78, 51);
             this.lblPayroll.TabIndex = 30;
@@ -169,7 +144,7 @@
             // 
             // lblUpdateEmployee
             // 
-            this.lblUpdateEmployee.Location = new System.Drawing.Point(12, 348);
+            this.lblUpdateEmployee.Location = new System.Drawing.Point(14, 411);
             this.lblUpdateEmployee.Name = "lblUpdateEmployee";
             this.lblUpdateEmployee.Size = new System.Drawing.Size(78, 51);
             this.lblUpdateEmployee.TabIndex = 29;
@@ -181,7 +156,7 @@
             this.btnPaySchedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPaySchedule.BackgroundImage")));
             this.btnPaySchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPaySchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnPaySchedule.Location = new System.Drawing.Point(92, 423);
+            this.btnPaySchedule.Location = new System.Drawing.Point(94, 486);
             this.btnPaySchedule.Name = "btnPaySchedule";
             this.btnPaySchedule.Size = new System.Drawing.Size(68, 56);
             this.btnPaySchedule.TabIndex = 24;
@@ -193,7 +168,7 @@
             this.btnLocationToday.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLocationToday.BackgroundImage")));
             this.btnLocationToday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLocationToday.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationToday.Location = new System.Drawing.Point(92, 23);
+            this.btnLocationToday.Location = new System.Drawing.Point(94, 86);
             this.btnLocationToday.Name = "btnLocationToday";
             this.btnLocationToday.Size = new System.Drawing.Size(68, 56);
             this.btnLocationToday.TabIndex = 21;
@@ -205,7 +180,7 @@
             this.btnManageMenuItems.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnManageMenuItems.BackgroundImage")));
             this.btnManageMenuItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnManageMenuItems.ForeColor = System.Drawing.Color.Black;
-            this.btnManageMenuItems.Location = new System.Drawing.Point(92, 183);
+            this.btnManageMenuItems.Location = new System.Drawing.Point(94, 246);
             this.btnManageMenuItems.Name = "btnManageMenuItems";
             this.btnManageMenuItems.Size = new System.Drawing.Size(68, 56);
             this.btnManageMenuItems.TabIndex = 20;
@@ -217,7 +192,7 @@
             this.btnNewEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNewEmployee.BackgroundImage")));
             this.btnNewEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewEmployee.ForeColor = System.Drawing.Color.Black;
-            this.btnNewEmployee.Location = new System.Drawing.Point(92, 343);
+            this.btnNewEmployee.Location = new System.Drawing.Point(94, 406);
             this.btnNewEmployee.Name = "btnNewEmployee";
             this.btnNewEmployee.Size = new System.Drawing.Size(68, 56);
             this.btnNewEmployee.TabIndex = 16;
@@ -278,7 +253,7 @@
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager";
-            this.Load += new System.EventHandler(this.frmManager_Load);
+
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).EndInit();
@@ -305,8 +280,6 @@
         private System.Windows.Forms.Button btnSeeMenuItems;
         private System.Windows.Forms.Label lblViewEmployees;
         private System.Windows.Forms.Button btnViewEmployees;
-        private System.Windows.Forms.Label lblTimeClock;
-        private System.Windows.Forms.Button btnTimeClock;
 
     }
 }
