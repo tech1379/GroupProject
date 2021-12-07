@@ -165,7 +165,7 @@ namespace Team3
         {
             if (tbxFirstName.Text == "" || tbxLastName.Text == "" || cbxGender.Text == "" || tbxAddress.Text == "" ||
                 tbxCity.Text == "" || cbxState.Text == "" || tbxZipCode.Text == "" || tbxPhoneNumber.Text == "" || tbxEmail.Text == "" || cbxRole.Text == "" ||
-                mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "")
+                mskDOB.Text == "" || tbxAge.Text == "" || mskStartDate.Text == "" || cbxType.SelectedIndex == -1)
             {
                 MessageBox.Show("Missing Information");
             }
@@ -211,6 +211,11 @@ namespace Team3
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

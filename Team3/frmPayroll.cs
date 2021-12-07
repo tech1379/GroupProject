@@ -125,5 +125,10 @@ namespace Team3
         {
 
         }
+
+        private void frmPayroll_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

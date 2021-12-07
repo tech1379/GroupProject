@@ -50,7 +50,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxGender = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             this.lblHintInfo = new System.Windows.Forms.Label();
+            this.tbxLogOnPassword = new System.Windows.Forms.TextBox();
+            this.lblLogOnPassword = new System.Windows.Forms.Label();
             this.mskStartDate = new System.Windows.Forms.MaskedTextBox();
             this.mskDOB = new System.Windows.Forms.MaskedTextBox();
             this.tbxAge = new System.Windows.Forms.TextBox();
@@ -64,9 +67,6 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.cbxType = new System.Windows.Forms.ComboBox();
-            this.tbxLogOnPassword = new System.Windows.Forms.TextBox();
-            this.lblLogOnPassword = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpManager)).BeginInit();
             this.SuspendLayout();
@@ -410,6 +410,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1222, 573);
             this.panel1.TabIndex = 57;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cbxType
+            // 
+            this.cbxType.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Location = new System.Drawing.Point(122, 13);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(283, 30);
+            this.cbxType.TabIndex = 77;
             // 
             // lblHintInfo
             // 
@@ -420,6 +430,28 @@
             this.lblHintInfo.Size = new System.Drawing.Size(465, 25);
             this.lblHintInfo.TabIndex = 76;
             this.lblHintInfo.Text = "Double click on a cell to insert employee information ";
+            // 
+            // tbxLogOnPassword
+            // 
+            this.tbxLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxLogOnPassword.ForeColor = System.Drawing.Color.Red;
+            this.tbxLogOnPassword.Location = new System.Drawing.Point(122, 527);
+            this.tbxLogOnPassword.Name = "tbxLogOnPassword";
+            this.tbxLogOnPassword.Size = new System.Drawing.Size(152, 29);
+            this.tbxLogOnPassword.TabIndex = 16;
+            // 
+            // lblLogOnPassword
+            // 
+            this.lblLogOnPassword.AutoSize = true;
+            this.lblLogOnPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOnPassword.ForeColor = System.Drawing.Color.Black;
+            this.lblLogOnPassword.Location = new System.Drawing.Point(38, 530);
+            this.lblLogOnPassword.Name = "lblLogOnPassword";
+            this.lblLogOnPassword.Size = new System.Drawing.Size(78, 22);
+            this.lblLogOnPassword.TabIndex = 75;
+            this.lblLogOnPassword.Text = "Password:";
+            this.lblLogOnPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // mskStartDate
             // 
@@ -556,37 +588,6 @@
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // cbxType
-            // 
-            this.cbxType.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxType.FormattingEnabled = true;
-            this.cbxType.Location = new System.Drawing.Point(122, 13);
-            this.cbxType.Name = "cbxType";
-            this.cbxType.Size = new System.Drawing.Size(283, 30);
-            this.cbxType.TabIndex = 77;
-            // 
-            // tbxLogOnPassword
-            // 
-            this.tbxLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLogOnPassword.ForeColor = System.Drawing.Color.Red;
-            this.tbxLogOnPassword.Location = new System.Drawing.Point(122, 527);
-            this.tbxLogOnPassword.Name = "tbxLogOnPassword";
-            this.tbxLogOnPassword.Size = new System.Drawing.Size(152, 29);
-            this.tbxLogOnPassword.TabIndex = 16;
-            // 
-            // lblLogOnPassword
-            // 
-            this.lblLogOnPassword.AutoSize = true;
-            this.lblLogOnPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogOnPassword.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOnPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblLogOnPassword.Location = new System.Drawing.Point(38, 530);
-            this.lblLogOnPassword.Name = "lblLogOnPassword";
-            this.lblLogOnPassword.Size = new System.Drawing.Size(78, 22);
-            this.lblLogOnPassword.TabIndex = 75;
-            this.lblLogOnPassword.Text = "Password:";
-            this.lblLogOnPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmUpdateEmployee
             // 

@@ -60,6 +60,8 @@ namespace Team3
         {
             frmPayroll payroll = new frmPayroll();
             payroll.ShowDialog();
+
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
