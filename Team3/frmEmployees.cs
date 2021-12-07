@@ -17,7 +17,7 @@ namespace Team3
 
         SqlConnection dbConnection;
 
-        //TEST
+       
         int EmployeeID;
         string strLogOnID;
        
@@ -50,7 +50,7 @@ namespace Team3
         private void frmEmployees_Load(object sender, EventArgs e)
         {
             //SQL statements will be used to load employees info
-
+            hlpEmployees.HelpNamespace = Application.StartupPath + "\\EmployeeInterfaceHelp.chm";
            
             dbConnection = new SqlConnection("Server = cstnt.tstc.edu; Database = inew2330fa21; User Id = group3fa212330; password = 3954755");
             ProgOps.OpenDatabase(dbConnection);
@@ -239,6 +239,11 @@ namespace Team3
             //passing the employee ID
             var frmClock = new frmClockInClockOut(EmployeeID);
            frmClock.Show();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, hlpEmployees.HelpNamespace);
         }
     }
 }
