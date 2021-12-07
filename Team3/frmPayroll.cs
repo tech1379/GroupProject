@@ -84,7 +84,7 @@ namespace Team3
                 lblEmployeeID.Text = tbxEmployeeID.Text;
                 lblHourlyRate.Text = tbxRateOfPay.Text;
                 lblWeekHoursWorked.Text = tbxHoursWorked.Text;
-                lblOTHoursWorked.Text = overtimeHours.ToString("c");
+                lblOTHoursWorked.Text = overtimeHours.ToString();
                 lblOTPay.Text = overtimePay.ToString("c");
                 lblGrossPay.Text = grossPay.ToString("c");
                 lblSocSecWithheld.Text = socSec.ToString("c");
