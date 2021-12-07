@@ -29,6 +29,7 @@ namespace Team3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lblTruckLocation = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -216,6 +217,7 @@ namespace Team3
             this.Controls.Add(this.pbxLogo);
             this.Controls.Add(this.lblTruckLocation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

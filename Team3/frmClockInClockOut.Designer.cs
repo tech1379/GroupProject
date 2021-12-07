@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClockInClockOut));
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -175,6 +176,7 @@
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.lblWelcome);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmClockInClockOut";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

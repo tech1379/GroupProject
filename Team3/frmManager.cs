@@ -15,17 +15,28 @@ namespace Team3
     {
         //var to hold default sql statement
         string sqlAll;
- 
+        public static string message = "An error has occurred in the program.";
 
         public frmManager()
         {
             InitializeComponent();
         }
 
-        private void frmManager_Load(object sender, EventArgs e)
+        public void populate()
         {
-
+            try
+            {
+                dgvTest.RowTemplate.Height = 63;
+                string query = "SELECT * FROM group3fa212330.Menu";
+                ProgOps.DatabaseCommandDGV(query, dgvTest);
+                dgvTest.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {
@@ -41,7 +52,7 @@ namespace Team3
         private void btnSchedule_Click(object sender, EventArgs e)
         {
             sqlAll = "SELECT * FROM group3fa212330.Schedule";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
+            ProgOps.DatabaseCommandManager(sqlAll, dgvTest);
         }
 
         private void btnManageMenuItems_Click(object sender, EventArgs e)
@@ -60,6 +71,8 @@ namespace Team3
         {
             frmPayroll payroll = new frmPayroll();
             payroll.ShowDialog();
+
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -73,13 +86,38 @@ namespace Team3
         private void btnSeeMenuItems_Click(object sender, EventArgs e)
         {
             sqlAll = "SELECT * FROM group3fa212330.Menu";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
+            ProgOps.DatabaseCommandManager(sqlAll, dgvTest);
+            try
+            {
+                populate();
+                for (int i = 0; i < dgvTest.Columns.Count; i++)
+                    if (dgvTest.Columns[i] is DataGridViewImageColumn)
+                    {
+                        ((DataGridViewImageColumn)dgvTest.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                        break;
+                    }
+
+                dgvTest.Columns[0].Width = 100;
+                dgvTest.Columns[1].Width = 100;
+                dgvTest.Columns[2].Width = 150;
+                dgvTest.Columns[3].Width = 350;
+                dgvTest.Columns[4].Width = 100;
+                dgvTest.Columns[5].Width = 125;
+                dgvTest.CurrentCell = null;
+                dgvTest.ClearSelection();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(message + ex.Message, "Program Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnViewEmployees_Click(object sender, EventArgs e)
         {
             sqlAll = "SELECT * FROM group3fa212330.Employees";
-            ProgOps.DatabaseCommandManager(sqlAll, dgvTester);
+            ProgOps.DatabaseCommandManager(sqlAll, dgvTest);
         }
     }
 }

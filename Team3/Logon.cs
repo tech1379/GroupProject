@@ -171,7 +171,7 @@ namespace Team3
             {
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
-                message.From = new MailAddress("denalindiantacos@gmail.com");
+                message.From = new MailAddress("denaliindiantacos@gmail.com");
                 message.To.Add(new MailAddress(strEmail));
                 message.Subject = "Password Reset";
                 message.IsBodyHtml = true; //to make message body as html  

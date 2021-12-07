@@ -24,14 +24,19 @@ namespace Team3
                 //constants
                 const decimal BASE_HOURS = 40m;
                 const decimal OVERTIME_RATE = 1.5m;
+                const decimal FICAtax = 0.0145m;
+                const decimal SStax = 0.062m;
 
                 // Local variables 
                 decimal hoursWorked;
                 decimal hourlyPayRate;
                 decimal basePay;
-                decimal overtimeHours;
-                decimal overtimePay;
+                decimal overtimeHours = 0.0m;
+                decimal overtimePay = 0.0m;
                 decimal grossPay;
+                decimal decFICA = 0.0m;
+                decimal socSec = 0.0m;
+                decimal netPay = 0.0m;
 
                 // Get the hours worked and hourly pay rate. 
                 hoursWorked = decimal.Parse(tbxHoursWorked.Text);
@@ -51,15 +56,41 @@ namespace Team3
 
                     // Calculate the gross pay. 
                     grossPay = basePay + overtimePay;
+
+                    //Taxes
+                    decFICA = grossPay * FICAtax;
+
+                    //soc Security
+                    socSec = grossPay * SStax;
+
+                    //net
+                    netPay = grossPay - decFICA - socSec;
                 }
                 else
                 {
                     // Calculate the gross pay. 
                     grossPay = hoursWorked * hourlyPayRate;
+
+                    //Taxes
+                    decFICA = grossPay * FICAtax;
+
+                    //soc Security
+                    socSec = grossPay * SStax;
+
+                    //net
+                    netPay = grossPay - decFICA - socSec;
                 }
 
-                // Display the gross pay. 
-                lblGross.Text = grossPay.ToString("c");
+                lblEmployeeID.Text = tbxEmployeeID.Text;
+                lblHourlyRate.Text = tbxRateOfPay.Text;
+                lblWeekHoursWorked.Text = tbxHoursWorked.Text;
+                lblOTHoursWorked.Text = overtimeHours.ToString("c");
+                lblOTPay.Text = overtimePay.ToString("c");
+                lblGrossPay.Text = grossPay.ToString("c");
+                lblSocSecWithheld.Text = socSec.ToString("c");
+                lblFICAWithheld.Text = decFICA.ToString("c");
+                lblNetPay.Text = netPay.ToString("c");
+
             }
             catch (Exception ex)
             {
@@ -73,6 +104,16 @@ namespace Team3
             tbxEmployeeID.Text = "";
             tbxHoursWorked.Text = "";
             tbxRateOfPay.Text = "";
+            lblEmployeeID.Text = "";
+            lblEmployeeName.Text = "";
+            lblHourlyRate.Text = "";
+            lblWeekHoursWorked.Text = "";
+            lblOTHoursWorked.Text = "";
+            lblOTPay.Text = "";
+            lblGrossPay.Text = "";
+            lblSocSecWithheld.Text = "";
+            lblFICAWithheld.Text = "";
+            lblNetPay.Text = "";
 
             //reset focus
             tbxHoursWorked.Focus();
@@ -81,6 +122,21 @@ namespace Team3
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPayroll_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

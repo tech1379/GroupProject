@@ -34,22 +34,20 @@
             this.btnViewEmployees = new System.Windows.Forms.Button();
             this.lblSeeMenu = new System.Windows.Forms.Label();
             this.btnSeeMenuItems = new System.Windows.Forms.Button();
-            this.lblSchedule = new System.Windows.Forms.Label();
             this.lblLocationToday = new System.Windows.Forms.Label();
             this.lblUpdateMenu = new System.Windows.Forms.Label();
             this.lblPayroll = new System.Windows.Forms.Label();
             this.lblUpdateEmployee = new System.Windows.Forms.Label();
-            this.btnSchedule = new System.Windows.Forms.Button();
             this.btnPaySchedule = new System.Windows.Forms.Button();
             this.btnLocationToday = new System.Windows.Forms.Button();
             this.btnManageMenuItems = new System.Windows.Forms.Button();
             this.btnNewEmployee = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvTester = new System.Windows.Forms.DataGridView();
+            this.dgvTest = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -59,137 +57,108 @@
             this.groupBox1.Controls.Add(this.btnViewEmployees);
             this.groupBox1.Controls.Add(this.lblSeeMenu);
             this.groupBox1.Controls.Add(this.btnSeeMenuItems);
-            this.groupBox1.Controls.Add(this.lblSchedule);
             this.groupBox1.Controls.Add(this.lblLocationToday);
             this.groupBox1.Controls.Add(this.lblUpdateMenu);
             this.groupBox1.Controls.Add(this.lblPayroll);
             this.groupBox1.Controls.Add(this.lblUpdateEmployee);
-            this.groupBox1.Controls.Add(this.btnSchedule);
             this.groupBox1.Controls.Add(this.btnPaySchedule);
             this.groupBox1.Controls.Add(this.btnLocationToday);
             this.groupBox1.Controls.Add(this.btnManageMenuItems);
             this.groupBox1.Controls.Add(this.btnNewEmployee);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1, 0);
+            this.groupBox1.Location = new System.Drawing.Point(2, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 719);
+            this.groupBox1.Size = new System.Drawing.Size(166, 581);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Denali Indian Tacos";
             // 
             // lblViewEmployees
             // 
-            this.lblViewEmployees.AutoSize = true;
-            this.lblViewEmployees.Location = new System.Drawing.Point(11, 387);
+            this.lblViewEmployees.Location = new System.Drawing.Point(12, 329);
             this.lblViewEmployees.Name = "lblViewEmployees";
-            this.lblViewEmployees.Size = new System.Drawing.Size(122, 22);
+            this.lblViewEmployees.Size = new System.Drawing.Size(78, 51);
             this.lblViewEmployees.TabIndex = 39;
             this.lblViewEmployees.Text = "View Employees";
-            this.lblViewEmployees.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblViewEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnViewEmployees
             // 
             this.btnViewEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewEmployees.BackgroundImage")));
             this.btnViewEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnViewEmployees.ForeColor = System.Drawing.Color.Black;
-            this.btnViewEmployees.Location = new System.Drawing.Point(40, 326);
+            this.btnViewEmployees.Location = new System.Drawing.Point(94, 326);
             this.btnViewEmployees.Name = "btnViewEmployees";
-            this.btnViewEmployees.Size = new System.Drawing.Size(70, 59);
+            this.btnViewEmployees.Size = new System.Drawing.Size(68, 56);
             this.btnViewEmployees.TabIndex = 38;
             this.btnViewEmployees.UseVisualStyleBackColor = true;
             this.btnViewEmployees.Click += new System.EventHandler(this.btnViewEmployees_Click);
             // 
             // lblSeeMenu
             // 
-            this.lblSeeMenu.AutoSize = true;
-            this.lblSeeMenu.Location = new System.Drawing.Point(36, 187);
+            this.lblSeeMenu.Location = new System.Drawing.Point(10, 171);
             this.lblSeeMenu.Name = "lblSeeMenu";
-            this.lblSeeMenu.Size = new System.Drawing.Size(77, 22);
+            this.lblSeeMenu.Size = new System.Drawing.Size(78, 51);
             this.lblSeeMenu.TabIndex = 37;
             this.lblSeeMenu.Text = "See Menu";
-            this.lblSeeMenu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblSeeMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSeeMenuItems
             // 
             this.btnSeeMenuItems.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSeeMenuItems.BackgroundImage")));
             this.btnSeeMenuItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeeMenuItems.ForeColor = System.Drawing.Color.Black;
-            this.btnSeeMenuItems.Location = new System.Drawing.Point(40, 125);
+            this.btnSeeMenuItems.Location = new System.Drawing.Point(94, 166);
             this.btnSeeMenuItems.Name = "btnSeeMenuItems";
-            this.btnSeeMenuItems.Size = new System.Drawing.Size(70, 59);
+            this.btnSeeMenuItems.Size = new System.Drawing.Size(68, 56);
             this.btnSeeMenuItems.TabIndex = 36;
             this.btnSeeMenuItems.UseVisualStyleBackColor = true;
             this.btnSeeMenuItems.Click += new System.EventHandler(this.btnSeeMenuItems_Click);
             // 
-            // lblSchedule
-            // 
-            this.lblSchedule.AutoSize = true;
-            this.lblSchedule.Location = new System.Drawing.Point(26, 691);
-            this.lblSchedule.Name = "lblSchedule";
-            this.lblSchedule.Size = new System.Drawing.Size(98, 22);
-            this.lblSchedule.TabIndex = 33;
-            this.lblSchedule.Text = "See Schedule";
-            this.lblSchedule.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // lblLocationToday
             // 
-            this.lblLocationToday.AutoSize = true;
-            this.lblLocationToday.Location = new System.Drawing.Point(15, 90);
+            this.lblLocationToday.Location = new System.Drawing.Point(10, 91);
             this.lblLocationToday.Name = "lblLocationToday";
-            this.lblLocationToday.Size = new System.Drawing.Size(116, 22);
+            this.lblLocationToday.Size = new System.Drawing.Size(78, 51);
             this.lblLocationToday.TabIndex = 32;
             this.lblLocationToday.Text = "Location Today";
-            this.lblLocationToday.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblLocationToday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUpdateMenu
             // 
-            this.lblUpdateMenu.AutoSize = true;
-            this.lblUpdateMenu.Location = new System.Drawing.Point(26, 287);
+            this.lblUpdateMenu.Location = new System.Drawing.Point(14, 249);
             this.lblUpdateMenu.Name = "lblUpdateMenu";
-            this.lblUpdateMenu.Size = new System.Drawing.Size(105, 22);
+            this.lblUpdateMenu.Size = new System.Drawing.Size(78, 51);
             this.lblUpdateMenu.TabIndex = 31;
             this.lblUpdateMenu.Text = "Update Menu";
-            this.lblUpdateMenu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblUpdateMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPayroll
             // 
-            this.lblPayroll.Location = new System.Drawing.Point(36, 593);
+            this.lblPayroll.Location = new System.Drawing.Point(14, 489);
             this.lblPayroll.Name = "lblPayroll";
-            this.lblPayroll.Size = new System.Drawing.Size(74, 22);
+            this.lblPayroll.Size = new System.Drawing.Size(78, 51);
             this.lblPayroll.TabIndex = 30;
             this.lblPayroll.Text = "Payroll";
-            this.lblPayroll.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblPayroll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUpdateEmployee
             // 
-            this.lblUpdateEmployee.AutoSize = true;
-            this.lblUpdateEmployee.Location = new System.Drawing.Point(0, 491);
+            this.lblUpdateEmployee.Location = new System.Drawing.Point(14, 411);
             this.lblUpdateEmployee.Name = "lblUpdateEmployee";
-            this.lblUpdateEmployee.Size = new System.Drawing.Size(167, 22);
+            this.lblUpdateEmployee.Size = new System.Drawing.Size(78, 51);
             this.lblUpdateEmployee.TabIndex = 29;
-            this.lblUpdateEmployee.Text = "Add/Update Employee";
-            this.lblUpdateEmployee.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnSchedule
-            // 
-            this.btnSchedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSchedule.BackgroundImage")));
-            this.btnSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnSchedule.Location = new System.Drawing.Point(40, 629);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(70, 59);
-            this.btnSchedule.TabIndex = 28;
-            this.btnSchedule.UseVisualStyleBackColor = true;
-            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
+            this.lblUpdateEmployee.Text = "Update Employee";
+            this.lblUpdateEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPaySchedule
             // 
             this.btnPaySchedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPaySchedule.BackgroundImage")));
             this.btnPaySchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPaySchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnPaySchedule.Location = new System.Drawing.Point(40, 531);
+            this.btnPaySchedule.Location = new System.Drawing.Point(94, 486);
             this.btnPaySchedule.Name = "btnPaySchedule";
-            this.btnPaySchedule.Size = new System.Drawing.Size(70, 59);
+            this.btnPaySchedule.Size = new System.Drawing.Size(68, 56);
             this.btnPaySchedule.TabIndex = 24;
             this.btnPaySchedule.UseVisualStyleBackColor = true;
             this.btnPaySchedule.Click += new System.EventHandler(this.btnPaySchedule_Click);
@@ -199,9 +168,9 @@
             this.btnLocationToday.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLocationToday.BackgroundImage")));
             this.btnLocationToday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLocationToday.ForeColor = System.Drawing.Color.Black;
-            this.btnLocationToday.Location = new System.Drawing.Point(40, 28);
+            this.btnLocationToday.Location = new System.Drawing.Point(94, 86);
             this.btnLocationToday.Name = "btnLocationToday";
-            this.btnLocationToday.Size = new System.Drawing.Size(70, 59);
+            this.btnLocationToday.Size = new System.Drawing.Size(68, 56);
             this.btnLocationToday.TabIndex = 21;
             this.btnLocationToday.UseVisualStyleBackColor = true;
             this.btnLocationToday.Click += new System.EventHandler(this.btnLocationToday_Click);
@@ -211,9 +180,9 @@
             this.btnManageMenuItems.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnManageMenuItems.BackgroundImage")));
             this.btnManageMenuItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnManageMenuItems.ForeColor = System.Drawing.Color.Black;
-            this.btnManageMenuItems.Location = new System.Drawing.Point(40, 225);
+            this.btnManageMenuItems.Location = new System.Drawing.Point(94, 246);
             this.btnManageMenuItems.Name = "btnManageMenuItems";
-            this.btnManageMenuItems.Size = new System.Drawing.Size(70, 59);
+            this.btnManageMenuItems.Size = new System.Drawing.Size(68, 56);
             this.btnManageMenuItems.TabIndex = 20;
             this.btnManageMenuItems.UseVisualStyleBackColor = true;
             this.btnManageMenuItems.Click += new System.EventHandler(this.btnManageMenuItems_Click);
@@ -223,9 +192,9 @@
             this.btnNewEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNewEmployee.BackgroundImage")));
             this.btnNewEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewEmployee.ForeColor = System.Drawing.Color.Black;
-            this.btnNewEmployee.Location = new System.Drawing.Point(40, 429);
+            this.btnNewEmployee.Location = new System.Drawing.Point(94, 406);
             this.btnNewEmployee.Name = "btnNewEmployee";
-            this.btnNewEmployee.Size = new System.Drawing.Size(70, 59);
+            this.btnNewEmployee.Size = new System.Drawing.Size(68, 56);
             this.btnNewEmployee.TabIndex = 16;
             this.btnNewEmployee.UseVisualStyleBackColor = true;
             this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
@@ -249,19 +218,22 @@
             this.pictureBox1.Image = global::Team3.Properties.Resources.denali_logo;
             this.pictureBox1.Location = new System.Drawing.Point(174, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(782, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(708, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // dgvTester
+            // dgvTest
             // 
-            this.dgvTester.AllowUserToOrderColumns = true;
-            this.dgvTester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTester.Location = new System.Drawing.Point(174, 109);
-            this.dgvTester.Name = "dgvTester";
-            this.dgvTester.Size = new System.Drawing.Size(782, 610);
-            this.dgvTester.TabIndex = 27;
+            this.dgvTest.AllowUserToAddRows = false;
+            this.dgvTest.AllowUserToDeleteRows = false;
+            this.dgvTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTest.Location = new System.Drawing.Point(177, 112);
+            this.dgvTest.Name = "dgvTest";
+            this.dgvTest.ReadOnly = true;
+            this.dgvTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTest.Size = new System.Drawing.Size(779, 467);
+            this.dgvTest.TabIndex = 36;
             // 
             // frmManager
             // 
@@ -269,22 +241,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(961, 727);
+            this.ClientSize = new System.Drawing.Size(961, 591);
             this.ControlBox = false;
+            this.Controls.Add(this.dgvTest);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dgvTester);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager";
-            this.Load += new System.EventHandler(this.frmManager_Load);
+
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTester)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,16 +270,16 @@
         private System.Windows.Forms.Button btnManageMenuItems;
         private System.Windows.Forms.Button btnNewEmployee;
         private System.Windows.Forms.DataGridView dgvTester;
-        private System.Windows.Forms.Button btnSchedule;
+        private System.Windows.Forms.DataGridView dgvTest;
         private System.Windows.Forms.Label lblLocationToday;
         private System.Windows.Forms.Label lblUpdateMenu;
         private System.Windows.Forms.Label lblPayroll;
         private System.Windows.Forms.Label lblUpdateEmployee;
-        private System.Windows.Forms.Label lblSchedule;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblSeeMenu;
         private System.Windows.Forms.Button btnSeeMenuItems;
         private System.Windows.Forms.Label lblViewEmployees;
         private System.Windows.Forms.Button btnViewEmployees;
+
     }
 }

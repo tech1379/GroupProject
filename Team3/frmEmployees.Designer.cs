@@ -29,6 +29,7 @@ namespace Team3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployees));
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
@@ -41,8 +42,6 @@ namespace Team3
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTimeClock = new System.Windows.Forms.Button();
             this.lblEmployeeID = new System.Windows.Forms.Label();
-            this.btnHelp = new System.Windows.Forms.Button();
-            this.hlpEmployees = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,17 +162,6 @@ namespace Team3
             this.lblEmployeeID.TabIndex = 11;
             this.lblEmployeeID.Text = "Employee ID: ";
             // 
-            // btnHelp
-            // 
-            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelp.Location = new System.Drawing.Point(481, 351);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(51, 25);
-            this.btnHelp.TabIndex = 12;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
             // frmEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,7 +169,6 @@ namespace Team3
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(544, 431);
             this.ControlBox = false;
-            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.btnTimeClock);
             this.Controls.Add(this.pictureBox1);
@@ -194,6 +181,7 @@ namespace Team3
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnLogOut);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEmployees";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -219,7 +207,5 @@ namespace Team3
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTimeClock;
         private System.Windows.Forms.Label lblEmployeeID;
-        private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.HelpProvider hlpEmployees;
     }
 }

@@ -29,6 +29,7 @@ namespace Team3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModify));
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -158,6 +159,7 @@ namespace Team3
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnExit);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmModify";

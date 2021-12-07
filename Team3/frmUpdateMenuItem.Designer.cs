@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateMenuItem));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tbxPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -44,25 +44,23 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClearForm = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHide = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(1, 92);
+            this.tabControl1.Location = new System.Drawing.Point(12, 29);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(895, 501);
+            this.tabControl1.Size = new System.Drawing.Size(990, 490);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btnClose);
             this.tabPage1.Controls.Add(this.btnSave);
             this.tabPage1.Controls.Add(this.tbxPrice);
             this.tabPage1.Controls.Add(this.lblPrice);
@@ -79,43 +77,33 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(887, 466);
+            this.tabPage1.Size = new System.Drawing.Size(982, 455);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Edit Menu Items";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(721, 414);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(96, 34);
-            this.btnClose.TabIndex = 22;
-            this.btnClose.Text = "&Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(232, 414);
+            this.btnSave.Location = new System.Drawing.Point(22, 316);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 34);
-            this.btnSave.TabIndex = 21;
+            this.btnSave.Size = new System.Drawing.Size(243, 34);
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save &Edits";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tbxPrice
             // 
-            this.tbxPrice.Location = new System.Drawing.Point(22, 220);
+            this.tbxPrice.Location = new System.Drawing.Point(22, 213);
             this.tbxPrice.Name = "tbxPrice";
             this.tbxPrice.Size = new System.Drawing.Size(243, 29);
-            this.tbxPrice.TabIndex = 20;
+            this.tbxPrice.TabIndex = 4;
             this.tbxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrice_KeyPress);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(18, 195);
+            this.lblPrice.Location = new System.Drawing.Point(18, 188);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(48, 22);
             this.lblPrice.TabIndex = 19;
@@ -123,15 +111,15 @@
             // 
             // tbxDescription
             // 
-            this.tbxDescription.Location = new System.Drawing.Point(22, 163);
+            this.tbxDescription.Location = new System.Drawing.Point(22, 146);
             this.tbxDescription.Name = "tbxDescription";
             this.tbxDescription.Size = new System.Drawing.Size(243, 29);
-            this.tbxDescription.TabIndex = 18;
+            this.tbxDescription.TabIndex = 3;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(18, 138);
+            this.lblDescription.Location = new System.Drawing.Point(18, 121);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(91, 22);
             this.lblDescription.TabIndex = 17;
@@ -139,15 +127,15 @@
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(22, 106);
+            this.tbxName.Location = new System.Drawing.Point(22, 89);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(243, 29);
-            this.tbxName.TabIndex = 16;
+            this.tbxName.TabIndex = 2;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(18, 81);
+            this.lblName.Location = new System.Drawing.Point(18, 64);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 22);
             this.lblName.TabIndex = 15;
@@ -156,15 +144,15 @@
             // cbxCategoryID
             // 
             this.cbxCategoryID.FormattingEnabled = true;
-            this.cbxCategoryID.Location = new System.Drawing.Point(22, 48);
+            this.cbxCategoryID.Location = new System.Drawing.Point(22, 31);
             this.cbxCategoryID.Name = "cbxCategoryID";
             this.cbxCategoryID.Size = new System.Drawing.Size(121, 30);
-            this.cbxCategoryID.TabIndex = 14;
+            this.cbxCategoryID.TabIndex = 1;
             // 
             // lblMenu
             // 
             this.lblMenu.AutoSize = true;
-            this.lblMenu.Location = new System.Drawing.Point(18, 23);
+            this.lblMenu.Location = new System.Drawing.Point(18, 6);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(94, 22);
             this.lblMenu.TabIndex = 13;
@@ -175,30 +163,30 @@
             this.dgvMenu.AllowUserToAddRows = false;
             this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMenu.Location = new System.Drawing.Point(271, 0);
+            this.dgvMenu.Location = new System.Drawing.Point(271, 6);
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.ReadOnly = true;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenu.Size = new System.Drawing.Size(600, 408);
+            this.dgvMenu.Size = new System.Drawing.Size(705, 443);
             this.dgvMenu.TabIndex = 12;
             this.dgvMenu.SelectionChanged += new System.EventHandler(this.dgvMenu_SelectionChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(69, 414);
+            this.btnAdd.Location = new System.Drawing.Point(22, 267);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(96, 34);
-            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Size = new System.Drawing.Size(243, 34);
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(558, 414);
+            this.btnDelete.Location = new System.Drawing.Point(22, 365);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(96, 34);
-            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Size = new System.Drawing.Size(243, 34);
+            this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -206,34 +194,37 @@
             // 
             // btnClearForm
             // 
-            this.btnClearForm.Location = new System.Drawing.Point(395, 414);
+            this.btnClearForm.Location = new System.Drawing.Point(22, 414);
             this.btnClearForm.Name = "btnClearForm";
-            this.btnClearForm.Size = new System.Drawing.Size(96, 34);
-            this.btnClearForm.TabIndex = 10;
+            this.btnClearForm.Size = new System.Drawing.Size(243, 34);
+            this.btnClearForm.TabIndex = 8;
             this.btnClearForm.Text = "C&lear Form";
             this.btnClearForm.UseVisualStyleBackColor = true;
             this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
-            // pictureBox1
+            // btnHide
             // 
-            this.pictureBox1.Image = global::Team3.Properties.Resources.EditMenuPic;
-            this.pictureBox1.Location = new System.Drawing.Point(399, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.btnHide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHide.BackgroundImage")));
+            this.btnHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHide.ForeColor = System.Drawing.Color.Black;
+            this.btnHide.Location = new System.Drawing.Point(958, 12);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(44, 39);
+            this.btnHide.TabIndex = 9;
+            this.btnHide.UseVisualStyleBackColor = true;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
             // frmUpdateMenuItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(929, 605);
+            this.ClientSize = new System.Drawing.Size(1014, 546);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnHide);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmUpdateMenuItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -243,7 +234,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,7 +242,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClearForm;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
@@ -266,6 +255,6 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox tbxPrice;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnHide;
     }
 }
