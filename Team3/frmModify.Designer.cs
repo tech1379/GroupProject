@@ -39,8 +39,8 @@ namespace Team3
             this.tbxAddress = new System.Windows.Forms.TextBox();
             this.tbxCity = new System.Windows.Forms.TextBox();
             this.tbxEmail = new System.Windows.Forms.TextBox();
-            this.tbxPhone = new System.Windows.Forms.TextBox();
             this.lblModify = new System.Windows.Forms.Label();
+            this.mskPhone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnExit
@@ -69,7 +69,7 @@ namespace Team3
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(6, 55);
+            this.lblPhone.Location = new System.Drawing.Point(7, 56);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(101, 16);
             this.lblPhone.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace Team3
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(54, 94);
+            this.lblEmail.Location = new System.Drawing.Point(63, 94);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 3;
@@ -89,7 +89,7 @@ namespace Team3
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(37, 170);
+            this.lblAddress.Location = new System.Drawing.Point(46, 170);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(62, 16);
             this.lblAddress.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace Team3
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(66, 132);
+            this.lblCity.Location = new System.Drawing.Point(75, 132);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(33, 16);
             this.lblCity.TabIndex = 5;
@@ -107,31 +107,25 @@ namespace Team3
             // 
             // tbxAddress
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(104, 169);
+            this.tbxAddress.Location = new System.Drawing.Point(114, 169);
             this.tbxAddress.Name = "tbxAddress";
             this.tbxAddress.Size = new System.Drawing.Size(243, 20);
             this.tbxAddress.TabIndex = 6;
             // 
             // tbxCity
             // 
-            this.tbxCity.Location = new System.Drawing.Point(104, 131);
+            this.tbxCity.Location = new System.Drawing.Point(114, 131);
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.Size = new System.Drawing.Size(243, 20);
             this.tbxCity.TabIndex = 7;
+            this.tbxCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCity_KeyPress);
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(105, 94);
+            this.tbxEmail.Location = new System.Drawing.Point(114, 93);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(243, 20);
             this.tbxEmail.TabIndex = 8;
-            // 
-            // tbxPhone
-            // 
-            this.tbxPhone.Location = new System.Drawing.Point(104, 55);
-            this.tbxPhone.Name = "tbxPhone";
-            this.tbxPhone.Size = new System.Drawing.Size(243, 20);
-            this.tbxPhone.TabIndex = 9;
             // 
             // lblModify
             // 
@@ -141,6 +135,14 @@ namespace Team3
             this.lblModify.TabIndex = 10;
             this.lblModify.Text = "Enter up to date employee info";
             // 
+            // mskPhone
+            // 
+            this.mskPhone.Location = new System.Drawing.Point(114, 55);
+            this.mskPhone.Mask = "(999)000-0000";
+            this.mskPhone.Name = "mskPhone";
+            this.mskPhone.Size = new System.Drawing.Size(243, 20);
+            this.mskPhone.TabIndex = 11;
+            // 
             // frmModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,8 +150,8 @@ namespace Team3
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(448, 288);
             this.ControlBox = false;
+            this.Controls.Add(this.mskPhone);
             this.Controls.Add(this.lblModify);
-            this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.tbxCity);
             this.Controls.Add(this.tbxAddress);
@@ -180,7 +182,7 @@ namespace Team3
         private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.TextBox tbxCity;
         private System.Windows.Forms.TextBox tbxEmail;
-        private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.Label lblModify;
+        private System.Windows.Forms.MaskedTextBox mskPhone;
     }
 }

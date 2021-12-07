@@ -26,7 +26,7 @@ namespace Team3
         private void btnExit_Click(object sender, EventArgs e)
         {
             tbxAddress.Clear();
-            tbxPhone.Clear();
+            mskPhone.Clear();
             tbxEmail.Clear();
             tbxCity.Clear();
             this.Close();
@@ -49,7 +49,7 @@ namespace Team3
 
                     //HAS BEEN TESTED 
 
-                    strPhone = tbxPhone.Text;
+                    strPhone = mskPhone.Text;
                     strAddress = tbxAddress.Text;
                     strEmail = tbxEmail.Text;
                     strCity = tbxCity.Text;
@@ -61,12 +61,17 @@ namespace Team3
                     }
                     else
                     {
-                      
+                       bool PhoneValid = validatePhoneNumber(strPhone);
+                        if (PhoneValid == false)
+                        {
+                            throw (new Exception(""));
+                        }
+
                         string sqlStatement = "UPDATE group3fa212330.Employees SET PhoneNumber = '" + strPhone + "', Address = '" + strAddress + "', City = '" + strCity + "', Email = '" + strEmail + "' WHERE EmployeeID = '" + intEmployeeID + "';";
                         ProgOps.UpdateDatabase(sqlStatement);
                         MessageBox.Show("Info Updated successfully.", "Update Completed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         tbxAddress.Clear();
-                        tbxPhone.Clear();
+                        mskPhone.Clear();
                         tbxEmail.Clear();
                         tbxCity.Clear();
 
@@ -80,6 +85,41 @@ namespace Team3
                 }
                 
 
+            }
+        }
+
+        private void tbxCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static bool validatePhoneNumber(string Phone)
+        {
+
+
+            try
+            {
+
+                char[] phoneArray;
+                phoneArray = Phone.ToCharArray();
+                foreach (char Number in phoneArray)
+                {
+                    if (Number == ' ')
+                    {
+                        throw (new Exception());
+                    }
+
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Phone number has a empty space be sure to properly fill the blanks.", "Phone Textbox Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
     }
