@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPayroll));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.tbxRateOfPay = new System.Windows.Forms.TextBox();
             this.tbxHoursWorked = new System.Windows.Forms.TextBox();
@@ -39,9 +37,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.lblPayStub = new System.Windows.Forms.Label();
             this.lblTextEmpID = new System.Windows.Forms.Label();
-            this.lblTextEmpName = new System.Windows.Forms.Label();
             this.lblTextHourlyRate = new System.Windows.Forms.Label();
             this.lblTextWeeklyHours = new System.Windows.Forms.Label();
             this.lblTextOTHours = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             this.lblTextFICAwithheld = new System.Windows.Forms.Label();
             this.lblTextNetPay = new System.Windows.Forms.Label();
             this.lblEmployeeID = new System.Windows.Forms.Label();
-            this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblHourlyRate = new System.Windows.Forms.Label();
             this.lblWeekHoursWorked = new System.Windows.Forms.Label();
             this.lblOTHoursWorked = new System.Windows.Forms.Label();
@@ -79,28 +77,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payroll Information";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(400, 467);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(97, 33);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "Cl&ose";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(280, 467);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(97, 33);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "C&lear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCalculate
             // 
@@ -169,6 +145,28 @@
             this.label1.Text = "EmployeeID";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(400, 407);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(97, 33);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "Cl&ose";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(275, 407);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(97, 33);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "C&lear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // lblPayStub
             // 
             this.lblPayStub.AutoSize = true;
@@ -193,25 +191,13 @@
             this.lblTextEmpID.TabIndex = 17;
             this.lblTextEmpID.Text = "EmployeeID";
             // 
-            // lblTextEmpName
-            // 
-            this.lblTextEmpName.AutoSize = true;
-            this.lblTextEmpName.BackColor = System.Drawing.Color.Transparent;
-            this.lblTextEmpName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextEmpName.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextEmpName.Location = new System.Drawing.Point(376, 108);
-            this.lblTextEmpName.Name = "lblTextEmpName";
-            this.lblTextEmpName.Size = new System.Drawing.Size(128, 22);
-            this.lblTextEmpName.TabIndex = 18;
-            this.lblTextEmpName.Text = "EmployeeName";
-            // 
             // lblTextHourlyRate
             // 
             this.lblTextHourlyRate.AutoSize = true;
             this.lblTextHourlyRate.BackColor = System.Drawing.Color.Transparent;
             this.lblTextHourlyRate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextHourlyRate.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextHourlyRate.Location = new System.Drawing.Point(405, 144);
+            this.lblTextHourlyRate.Location = new System.Drawing.Point(406, 110);
             this.lblTextHourlyRate.Name = "lblTextHourlyRate";
             this.lblTextHourlyRate.Size = new System.Drawing.Size(100, 22);
             this.lblTextHourlyRate.TabIndex = 19;
@@ -223,7 +209,7 @@
             this.lblTextWeeklyHours.BackColor = System.Drawing.Color.Transparent;
             this.lblTextWeeklyHours.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextWeeklyHours.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextWeeklyHours.Location = new System.Drawing.Point(324, 180);
+            this.lblTextWeeklyHours.Location = new System.Drawing.Point(325, 146);
             this.lblTextWeeklyHours.Name = "lblTextWeeklyHours";
             this.lblTextWeeklyHours.Size = new System.Drawing.Size(179, 22);
             this.lblTextWeeklyHours.TabIndex = 20;
@@ -235,7 +221,7 @@
             this.lblTextOTHours.BackColor = System.Drawing.Color.Transparent;
             this.lblTextOTHours.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextOTHours.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextOTHours.Location = new System.Drawing.Point(310, 216);
+            this.lblTextOTHours.Location = new System.Drawing.Point(311, 182);
             this.lblTextOTHours.Name = "lblTextOTHours";
             this.lblTextOTHours.Size = new System.Drawing.Size(195, 22);
             this.lblTextOTHours.TabIndex = 21;
@@ -247,7 +233,7 @@
             this.lblTextOT.BackColor = System.Drawing.Color.Transparent;
             this.lblTextOT.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextOT.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextOT.Location = new System.Drawing.Point(395, 252);
+            this.lblTextOT.Location = new System.Drawing.Point(396, 218);
             this.lblTextOT.Name = "lblTextOT";
             this.lblTextOT.Size = new System.Drawing.Size(111, 22);
             this.lblTextOT.TabIndex = 22;
@@ -259,7 +245,7 @@
             this.lblTextGross.BackColor = System.Drawing.Color.Transparent;
             this.lblTextGross.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextGross.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextGross.Location = new System.Drawing.Point(418, 288);
+            this.lblTextGross.Location = new System.Drawing.Point(419, 254);
             this.lblTextGross.Name = "lblTextGross";
             this.lblTextGross.Size = new System.Drawing.Size(83, 22);
             this.lblTextGross.TabIndex = 23;
@@ -271,7 +257,7 @@
             this.lblTextSocSecWithheld.BackColor = System.Drawing.Color.Transparent;
             this.lblTextSocSecWithheld.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextSocSecWithheld.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextSocSecWithheld.Location = new System.Drawing.Point(306, 324);
+            this.lblTextSocSecWithheld.Location = new System.Drawing.Point(307, 290);
             this.lblTextSocSecWithheld.Name = "lblTextSocSecWithheld";
             this.lblTextSocSecWithheld.Size = new System.Drawing.Size(194, 22);
             this.lblTextSocSecWithheld.TabIndex = 24;
@@ -283,7 +269,7 @@
             this.lblTextFICAwithheld.BackColor = System.Drawing.Color.Transparent;
             this.lblTextFICAwithheld.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextFICAwithheld.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextFICAwithheld.Location = new System.Drawing.Point(384, 360);
+            this.lblTextFICAwithheld.Location = new System.Drawing.Point(385, 326);
             this.lblTextFICAwithheld.Name = "lblTextFICAwithheld";
             this.lblTextFICAwithheld.Size = new System.Drawing.Size(123, 22);
             this.lblTextFICAwithheld.TabIndex = 25;
@@ -295,7 +281,7 @@
             this.lblTextNetPay.BackColor = System.Drawing.Color.Transparent;
             this.lblTextNetPay.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextNetPay.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextNetPay.Location = new System.Drawing.Point(438, 396);
+            this.lblTextNetPay.Location = new System.Drawing.Point(439, 362);
             this.lblTextNetPay.Name = "lblTextNetPay";
             this.lblTextNetPay.Size = new System.Drawing.Size(67, 22);
             this.lblTextNetPay.TabIndex = 26;
@@ -310,20 +296,11 @@
             this.lblEmployeeID.Size = new System.Drawing.Size(214, 23);
             this.lblEmployeeID.TabIndex = 7;
             // 
-            // lblEmployeeName
-            // 
-            this.lblEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblEmployeeName.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeName.Location = new System.Drawing.Point(521, 107);
-            this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(214, 23);
-            this.lblEmployeeName.TabIndex = 8;
-            // 
             // lblHourlyRate
             // 
             this.lblHourlyRate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblHourlyRate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHourlyRate.Location = new System.Drawing.Point(521, 143);
+            this.lblHourlyRate.Location = new System.Drawing.Point(522, 109);
             this.lblHourlyRate.Name = "lblHourlyRate";
             this.lblHourlyRate.Size = new System.Drawing.Size(214, 23);
             this.lblHourlyRate.TabIndex = 9;
@@ -332,7 +309,7 @@
             // 
             this.lblWeekHoursWorked.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblWeekHoursWorked.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWeekHoursWorked.Location = new System.Drawing.Point(521, 179);
+            this.lblWeekHoursWorked.Location = new System.Drawing.Point(522, 145);
             this.lblWeekHoursWorked.Name = "lblWeekHoursWorked";
             this.lblWeekHoursWorked.Size = new System.Drawing.Size(214, 23);
             this.lblWeekHoursWorked.TabIndex = 10;
@@ -341,7 +318,7 @@
             // 
             this.lblOTHoursWorked.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOTHoursWorked.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOTHoursWorked.Location = new System.Drawing.Point(521, 215);
+            this.lblOTHoursWorked.Location = new System.Drawing.Point(522, 181);
             this.lblOTHoursWorked.Name = "lblOTHoursWorked";
             this.lblOTHoursWorked.Size = new System.Drawing.Size(214, 23);
             this.lblOTHoursWorked.TabIndex = 11;
@@ -350,7 +327,7 @@
             // 
             this.lblOTPay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOTPay.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOTPay.Location = new System.Drawing.Point(521, 251);
+            this.lblOTPay.Location = new System.Drawing.Point(522, 217);
             this.lblOTPay.Name = "lblOTPay";
             this.lblOTPay.Size = new System.Drawing.Size(214, 23);
             this.lblOTPay.TabIndex = 12;
@@ -359,7 +336,7 @@
             // 
             this.lblGrossPay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblGrossPay.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrossPay.Location = new System.Drawing.Point(521, 287);
+            this.lblGrossPay.Location = new System.Drawing.Point(522, 253);
             this.lblGrossPay.Name = "lblGrossPay";
             this.lblGrossPay.Size = new System.Drawing.Size(214, 23);
             this.lblGrossPay.TabIndex = 13;
@@ -368,7 +345,7 @@
             // 
             this.lblSocSecWithheld.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblSocSecWithheld.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSocSecWithheld.Location = new System.Drawing.Point(521, 323);
+            this.lblSocSecWithheld.Location = new System.Drawing.Point(522, 289);
             this.lblSocSecWithheld.Name = "lblSocSecWithheld";
             this.lblSocSecWithheld.Size = new System.Drawing.Size(214, 23);
             this.lblSocSecWithheld.TabIndex = 14;
@@ -377,7 +354,7 @@
             // 
             this.lblFICAWithheld.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblFICAWithheld.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFICAWithheld.Location = new System.Drawing.Point(521, 359);
+            this.lblFICAWithheld.Location = new System.Drawing.Point(522, 325);
             this.lblFICAWithheld.Name = "lblFICAWithheld";
             this.lblFICAWithheld.Size = new System.Drawing.Size(214, 23);
             this.lblFICAWithheld.TabIndex = 15;
@@ -386,7 +363,7 @@
             // 
             this.lblNetPay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblNetPay.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNetPay.Location = new System.Drawing.Point(521, 395);
+            this.lblNetPay.Location = new System.Drawing.Point(522, 361);
             this.lblNetPay.Name = "lblNetPay";
             this.lblNetPay.Size = new System.Drawing.Size(214, 23);
             this.lblNetPay.TabIndex = 16;
@@ -396,7 +373,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(763, 519);
+            this.ClientSize = new System.Drawing.Size(763, 480);
             this.Controls.Add(this.lblNetPay);
             this.Controls.Add(this.lblFICAWithheld);
             this.Controls.Add(this.lblSocSecWithheld);
@@ -405,7 +382,6 @@
             this.Controls.Add(this.lblOTHoursWorked);
             this.Controls.Add(this.lblWeekHoursWorked);
             this.Controls.Add(this.lblHourlyRate);
-            this.Controls.Add(this.lblEmployeeName);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.lblTextNetPay);
             this.Controls.Add(this.lblTextFICAwithheld);
@@ -415,7 +391,6 @@
             this.Controls.Add(this.lblTextOTHours);
             this.Controls.Add(this.lblTextWeeklyHours);
             this.Controls.Add(this.lblTextHourlyRate);
-            this.Controls.Add(this.lblTextEmpName);
             this.Controls.Add(this.lblTextEmpID);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblPayStub);
@@ -445,7 +420,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPayStub;
         private System.Windows.Forms.Label lblTextEmpID;
-        private System.Windows.Forms.Label lblTextEmpName;
         private System.Windows.Forms.Label lblTextHourlyRate;
         private System.Windows.Forms.Label lblTextWeeklyHours;
         private System.Windows.Forms.Label lblTextOTHours;
@@ -455,7 +429,6 @@
         private System.Windows.Forms.Label lblTextFICAwithheld;
         private System.Windows.Forms.Label lblTextNetPay;
         private System.Windows.Forms.Label lblEmployeeID;
-        private System.Windows.Forms.Label lblEmployeeName;
         private System.Windows.Forms.Label lblHourlyRate;
         private System.Windows.Forms.Label lblWeekHoursWorked;
         private System.Windows.Forms.Label lblOTHoursWorked;
