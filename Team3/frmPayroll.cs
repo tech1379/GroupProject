@@ -105,7 +105,6 @@ namespace Team3
             tbxHoursWorked.Text = "";
             tbxRateOfPay.Text = "";
             lblEmployeeID.Text = "";
-            lblEmployeeName.Text = "";
             lblHourlyRate.Text = "";
             lblWeekHoursWorked.Text = "";
             lblOTHoursWorked.Text = "";
@@ -124,14 +123,5 @@ namespace Team3
             this.Close();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

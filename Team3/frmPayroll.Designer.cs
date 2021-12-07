@@ -122,7 +122,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Hourly Rate";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -133,7 +132,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Weekly Hours Worked";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label1
             // 
@@ -373,7 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Team3.Properties.Resources.Background;
-            this.ClientSize = new System.Drawing.Size(763, 480);
+            this.ClientSize = new System.Drawing.Size(763, 470);
             this.Controls.Add(this.lblNetPay);
             this.Controls.Add(this.lblFICAWithheld);
             this.Controls.Add(this.lblSocSecWithheld);
