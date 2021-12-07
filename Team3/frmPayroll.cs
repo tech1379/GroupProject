@@ -31,12 +31,12 @@ namespace Team3
                 decimal hoursWorked;
                 decimal hourlyPayRate;
                 decimal basePay;
-                decimal overtimeHours;
-                decimal overtimePay;
+                decimal overtimeHours = 0.0m;
+                decimal overtimePay = 0.0m;
                 decimal grossPay;
-                decimal decFICA;
-                decimal socSec;
-                decimal netPay;
+                decimal decFICA = 0.0m;
+                decimal socSec = 0.0m;
+                decimal netPay = 0.0m;
 
                 // Get the hours worked and hourly pay rate. 
                 hoursWorked = decimal.Parse(tbxHoursWorked.Text);
@@ -70,18 +70,26 @@ namespace Team3
                 {
                     // Calculate the gross pay. 
                     grossPay = hoursWorked * hourlyPayRate;
+
+                    //Taxes
+                    decFICA = grossPay * FICAtax;
+
+                    //soc Security
+                    socSec = grossPay * SStax;
+
+                    //net
+                    netPay = grossPay - decFICA - socSec;
                 }
 
                 lblEmployeeID.Text = tbxEmployeeID.Text;
-                ////lblEmployeeName.Text = ???
                 lblHourlyRate.Text = tbxRateOfPay.Text;
                 lblWeekHoursWorked.Text = tbxHoursWorked.Text;
-                //lblOTHoursWorked.Text = overtimeHours.ToString("c");
-                //lblOTPay.Text = overtimePay.ToString("c");
+                lblOTHoursWorked.Text = overtimeHours.ToString("c");
+                lblOTPay.Text = overtimePay.ToString("c");
                 lblGrossPay.Text = grossPay.ToString("c");
-                //lblSocSecWithheld.Text = socSec.ToString("c");
-                //lblFICAWithheld.Text = decFICA.ToString("c");
-                //lblNetPay.Text = netPay.ToString("c");
+                lblSocSecWithheld.Text = socSec.ToString("c");
+                lblFICAWithheld.Text = decFICA.ToString("c");
+                lblNetPay.Text = netPay.ToString("c");
 
             }
             catch (Exception ex)
