@@ -255,11 +255,12 @@
             this.lblTextSocSecWithheld.BackColor = System.Drawing.Color.Transparent;
             this.lblTextSocSecWithheld.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextSocSecWithheld.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.lblTextSocSecWithheld.Location = new System.Drawing.Point(307, 290);
+            this.lblTextSocSecWithheld.Location = new System.Drawing.Point(313, 290);
             this.lblTextSocSecWithheld.Name = "lblTextSocSecWithheld";
             this.lblTextSocSecWithheld.Size = new System.Drawing.Size(194, 22);
             this.lblTextSocSecWithheld.TabIndex = 24;
             this.lblTextSocSecWithheld.Text = "Social Security Withheld";
+            this.lblTextSocSecWithheld.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblTextFICAwithheld
             // 
