@@ -35,8 +35,8 @@ namespace Team3
                 //just to see if it works on github
                 Image myimage = new Bitmap(@"Background.jpg");
                 this.BackgroundImage = myimage;
-                tbxLogin.Clear();
-                tbxPassword.Clear();
+                tbxLogin.Text = "";
+                tbxPassword.Text = "";
                 tbxLogin.Focus();
                 hlpMain.HelpNamespace = Application.StartupPath + "\\LoginHelp.chm";
             }
