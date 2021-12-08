@@ -65,7 +65,14 @@ namespace Team3
 
                 resultsCmd = new SqlCommand(sqlStatement, dbConnection);
 
+                if (resultsCmd.ExecuteScalar() == null)
+                {
+                    throw (new Exception());
+                    
+                }
+
                 string name = (string)resultsCmd.ExecuteScalar();
+
 
 
                 lblWelcome.Text = "Welcome " + name + "!";
@@ -98,6 +105,8 @@ namespace Team3
                 sqlStatement = "SELECT EmployeeID FROM group3fa212330.Employees WHERE LogOnID = '" + strLogOnID + "';";
 
                 resultsCmd = new SqlCommand(sqlStatement, dbConnection);
+
+
                 EmployeeID = (int)resultsCmd.ExecuteScalar();
 
                 lblEmployeeID.Text = "EmployeeID: " + EmployeeID;
@@ -120,7 +129,7 @@ namespace Team3
                 DateTime Monday;
 
                 //if db returns a null if statement will handle it
-                if (resultsCmd.ExecuteScalar() == DBNull.Value)
+                if (resultsCmd.ExecuteScalar() == null)
                 {
                     //assigning minimum datetime if value is null
                     Monday = DateTime.MinValue;
@@ -135,7 +144,7 @@ namespace Team3
 
                 DateTime Tuesday;
 
-                if (resultsCmd.ExecuteScalar() == DBNull.Value)
+                if (resultsCmd.ExecuteScalar() == null)
                 {
 
                     Tuesday = DateTime.MinValue;
@@ -149,7 +158,7 @@ namespace Team3
                 resultsCmd = new SqlCommand(sqlStatement, dbConnection);
                 DateTime Wednesday;
 
-                if (resultsCmd.ExecuteScalar() == DBNull.Value)
+                if (resultsCmd.ExecuteScalar() == null)
                 {
 
                     Wednesday = DateTime.MinValue;
@@ -162,7 +171,7 @@ namespace Team3
                 resultsCmd = new SqlCommand(sqlStatement, dbConnection);
 
                 DateTime Thursday;
-                if (resultsCmd.ExecuteScalar() == DBNull.Value)
+                if (resultsCmd.ExecuteScalar() == null)
                 {
 
                     Thursday = DateTime.MinValue;
@@ -177,7 +186,7 @@ namespace Team3
 
                 DateTime Friday;
 
-                if (resultsCmd.ExecuteScalar() == DBNull.Value)
+                if (resultsCmd.ExecuteScalar() == null)
                 {
 
                     Friday = DateTime.MinValue;
@@ -193,7 +202,7 @@ namespace Team3
 
                 DateTime Saturday;
 
-                if (resultsCmd.ExecuteScalar() == DBNull.Value)
+                if (resultsCmd.ExecuteScalar() == null)
                 {
 
                     Saturday = DateTime.MinValue;
@@ -209,7 +218,7 @@ namespace Team3
 
                 DateTime Sunday;
 
-                if (resultsCmd.ExecuteScalar() == DBNull.Value)
+                if (resultsCmd.ExecuteScalar() == null)
                 {
 
                     Sunday = DateTime.MinValue;

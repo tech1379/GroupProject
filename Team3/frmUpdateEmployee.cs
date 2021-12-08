@@ -75,6 +75,15 @@ namespace Team3
                     //MessageBox.Show(query);
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
+
+                    //CREATE CLOCKIN FOR NEW EMPLOYEE
+                    string queryEmployeeID = "SELECT EmployeeID FROM group3fa212330.Employees WHERE LogOnID = '" + LogonID +"';";
+                    string EmployeeID = ProgOps.DatabaseCommandLogon(queryEmployeeID);
+                    string queryClockinClockOut = "insert into group3fa212330.ClockInClockOut values ("+ EmployeeID + ", '1800-01-01 00:00:00', '1800-01-01 00:00:00', 0)";
+                    ProgOps.UpdateDatabase(queryClockinClockOut);
+
+                    string queryWorkSchedule = "insert into group3fa212330.WorkSchedule(EmployeeID) values (" + EmployeeID +")";
+                    ProgOps.UpdateDatabase(queryWorkSchedule);
                     //MessageBox.Show("Employee Successfully Added");
                     Clear(); //clear form
                     con.Close();
@@ -121,8 +130,17 @@ namespace Team3
 
           
                     con.Open();
-                    string query = "DELETE FROM group3fa212330.Employees WHERE EmployeeID=" + Convert.ToInt32(strEmpID) + ";";
-                    SqlCommand cmd = new SqlCommand(query, con);
+                string queryDeleteClock = "DELETE FROM group3fa212330.ClockInClockOut WHERE EmployeeID=" + Convert.ToInt32(strEmpID) + ";";
+                string queryDeleteWork = "DELETE FROM group3fa212330.WorkSchedule WHERE EmployeeID=" + Convert.ToInt32(strEmpID) + ";";
+                string query = "DELETE FROM group3fa212330.Employees WHERE EmployeeID=" + Convert.ToInt32(strEmpID) + ";";
+
+                SqlCommand cmdOne = new SqlCommand(queryDeleteClock, con);
+                cmdOne.ExecuteNonQuery();
+
+                SqlCommand cmdTwo = new SqlCommand(queryDeleteWork, con);
+                cmdTwo.ExecuteNonQuery();
+
+                SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Deleted Successfully");
                     con.Close();
